@@ -1,0 +1,25 @@
+
+/* MEDIUM AND LARGER DEVICE HERE */
+.form-item-search-api-fulltext {
+    width: 240px;
+}
+
+@media only screen and (min-width : 768px) and (max-width: 1024px) {
+    .form-item-search-api-fulltext {
+        width: 100% !important;
+    }
+
+    .idmc-form-search #edit-submit-search-site, 
+    .idmc-form-search #edit-submit-list-publications, 
+    .idmc-form-search #edit-submit-list-media-centres, 
+    .idmc-form-search #edit-submit-list-expert-opinion {
+        border-left: 1px solid #008dca;
+    }
+}
+
+/* SMALL AND EXTRA SMALL DEVICE HERE */
+@media only screen and (max-width : 767px) {
+    .form-item-search-api-fulltext {
+        width: 100% !important;
+    }
+}

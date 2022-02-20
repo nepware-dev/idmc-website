@@ -1,0 +1,31 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'priority-countries-block full-width'
+  ]
+%}
+{%
+    set bgimage = content.field_priority_background_image.0
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} 
+    style="background: url({{ bgimage }}) no-repeat;background-size: cover;">
+    {% block content %}
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="text-uppercase title">{{ content.field_priority_title }}</h4>
+              <div class="description mt20">
+                  {{ content.field_priority_description }}
+              </div>
+              <div class="list-country mt30">
+                  {{ content.field_priority_country }}
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,29 @@
+<div class="row xs-padding latest-block {{ paragraph.field_background_color.value }}" 
+   {% if content.field_ptitle.0|render is empty %}
+   style="padding-top:50px;padding-bottom:50px;"
+   {% endif %}
+   >
+    <div class="container">
+       {% if content.field_ptitle.0|render is not empty %}
+        <h2 class="paragraph-title">{{ content.field_ptitle.0 }}</h2>
+        {% endif %}
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 latest-block-item">
+                <h2 class="block-title">Publications</h2>
+                {{ content.field_latest_publications_view }}
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 latest-block-item">
+                <h2 class="block-title">Events</h2>
+                {{ content.field_latest_events_view }}
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 latest-block-item">
+                <h2 class="block-title">Expert Opinion</h2>
+                {{ content.field_latest_expert_opinion_view }}
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 latest-block-item">
+                <h2 class="block-title">Media Centre</h2>
+                {{ content.field_latest_media_centre_view }}
+            </div>
+        </div>
+    </div>
+</div>

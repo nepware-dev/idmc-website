@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1097 445.1" style="enable-background:new 0 0 1097 445.1;" xml:space="preserve" onload="initSVG();">
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css?family=Roboto:400");
+	.st0{fill:#0794D2;}
+	.st1{font-family:'Roboto';}
+	.st2{font-size:24px;}
+	.st3{fill:#F68631;}
+	.st4{fill:#515558;}
+	.st5{font-size:20px;}
+	.st6{fill:none;}
+  #disasters >a >g,#conflicts >a >g {
+	transition: opacity 0.5s ease;
+	}
+</style>
+<text transform="matrix(1 0 0 1 658.7454 38.486)" class="st0 st1 st2">Disasters</text>
+<text transform="matrix(0.9964 0 0 1 255.0595 38.486)" class="st3 st1 st2">Conflict and violence</text>
+<g id="conflicts">
+  <a xlink:href="//internal-displacement.org/countries/syria" target="_blank">
+	<g id="syria" class="con">
+		<text transform="matrix(1 0 0 1 200.9624 93.0144)" class="st4 st1 st5">Syria</text>
+		<g>
+			<text transform="matrix(1 0 0 1 432.0669 93.0142)" class="st4 st1 st5">1,474,000</text>
+		</g>
+		<rect x="254" y="75.3" class="st3" width="170.1" height="26.1"/>
+		<rect x="13" y="68.4" class="st6" width="511.3" height="34"/>
+	</g>
+  </a><a xlink:href="//internal-displacement.org/countries/democratic-republic-of-the-congo" target="_blank">
+	<g id="drc" class="con">
+		<text transform="matrix(1 0 0 1 90.9039 129.9231)" class="st4 st1 st5">Dem. Rep. Congo</text>
+		<g>
+			<text transform="matrix(1 0 0 1 432.0671 129.9231)" class="st4 st1 st5">1,427,000</text>
+		</g>
+		<rect x="254" y="111.7" class="st3" width="164.7" height="26.1"/>
+		<rect x="13" y="105" class="st6" width="511.3" height="34"/>
+	</g>
+  </a><a xlink:href="//internal-displacement.org/countries/burkina-faso" target="_blank">
+	<g id="burkinafaso" class="con">
+		<text transform="matrix(1 0 0 1 129.0384 167.7133)" class="st4 st1 st5">Burkina Faso</text>
+		<g>
+			<text transform="matrix(1 0 0 1 307.1627 167.7131)" class="st4 st1 st5">419,000</text>
+		</g>
+		<rect x="254" y="148" class="st3" width="48.4" height="26.1"/>
+		<rect x="13" y="141.6" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/south-sudan" target="_blank">
+	<g id="southsudan" class="con">
+		<text transform="matrix(1 0 0 1 131.9095 204.0576)" class="st4 st1 st5">South Sudan</text>
+		<g>
+			<text transform="matrix(1 0 0 1 286.2265 204.0579)" class="st4 st1 st5">232,000</text>
+		</g>
+		<rect x="254" y="184.3" class="st3" width="26.8" height="26.1"/>
+		<rect x="13" y="178.2" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/somalia" target="_blank">
+	<g id="somalia" class="con">
+		<text transform="matrix(1 0 0 1 172.5248 239.1288)" class="st4 st1 st5">Somalia</text>
+		<g>
+			<text transform="matrix(1 0 0 1 279.6665 239.1289)" class="st4 st1 st5">189,000</text>
+		</g>
+		<rect x="254" y="220.6" class="st3" width="21.8" height="26.1"/>
+		<rect x="13" y="214.8" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/mozambique" target="_blank">
+	<g id="mozambique" class="con">
+		<text transform="matrix(1 0 0 1 128.5406 276.1359)" class="st4 st1 st5">Mozambique</text>
+		<g>
+			<text transform="matrix(1 0 0 1 274.1065 276.1358)" class="st4 st1 st5">122,000</text>
+		</g>
+		<rect x="254" y="256.9" class="st3" width="14.1" height="26.1"/>
+		<rect x="13" y="251.4" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/afghanistan" target="_blank">
+	<g id="afghanistan" class="con">
+		<text transform="matrix(1 0 0 1 137.0365 312.9061)" class="st4 st1 st5">Afghanistan</text>
+		<g>
+			<text transform="matrix(1 0 0 1 272.9924 315.0763)" class="st4 st1 st5">117,000</text>
+		</g>
+		<rect x="254" y="293.2" class="st3" width="13.5" height="26.1"/>
+		<rect x="13" y="288" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/mali" target="_blank">
+	<g id="mali" class="con">
+		<text transform="matrix(1 0 0 1 206.7437 347.4988)" class="st4 st1 st5">Mali</text>
+		<g>
+			<text transform="matrix(1 0 0 1 272.9921 347.4991)" class="st4 st1 st5">113,000</text>
+		</g>
+		<rect x="254" y="329.5" class="st3" width="13" height="26.1"/>
+		<rect x="13" y="324.6" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/yemen" target="_blank">
+	<g id="yemen" class="con">
+		<text transform="matrix(1 0 0 1 183.0231 387.138)" class="st4 st1 st5">Yemen</text>
+		<g>
+			<text transform="matrix(1 0 0 1 273.1031 387.1385)" class="st4 st1 st5">89,000</text>
+		</g>
+		<rect x="254" y="365.8" class="st3" width="10.3" height="26.1"/>
+		<rect x="13" y="361.2" class="st6" width="448.7" height="34"/>
+  </g></a><a xlink:href="//internal-displacement.org/countries/central-african-republic" target="_blank">
+	<g id="car" class="con">
+		<text transform="matrix(1 0 0 1 30.6598 423.0504)" class="st4 st1 st5">Central African Republic</text>
+		<g>
+			<text transform="matrix(1 0 0 1 273.1031 423.0506)" class="st4 st1 st5">80,000</text>
+		</g>
+		<rect x="254" y="402.1" class="st3" width="9.2" height="26.1"/>
+		<rect x="13" y="397.8" class="st6" width="448.7" height="34"/>
+  </g></a>
+</g>
+<g id="disasters">
+  <a xlink:href="//internal-displacement.org/countries/india" target="_blank">
+	<g id="india" class="dis">
+		<g>
+			<text transform="matrix(1 0 0 1 605.2372 93.0141)" class="st4 st1 st5">India</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 977.8268 93.0144)" class="st4 st1 st5">2,670,000</text>
+		</g>
+		<rect x="659.1" y="74.6" class="st0" width="308.1" height="26.1"/>
+		<rect x="538.3" y="68.4" class="st6" width="529.3" height="34"/>
+    </g></a><a xlink:href="//internal-displacement.org/countries/bangladesh" target="_blank">
+	<g id="bangladesh" class="dis">
+		<text transform="matrix(1 0 0 1 544.2019 129.9232)" class="st4 st1 st5">Bangladesh</text>
+		<g>
+			<text transform="matrix(1 0 0 1 960.827 129.9233)" class="st4 st1 st5">2,520,000</text>
+		</g>
+		<rect x="659.1" y="110.9" class="st0" width="290.8" height="26.1"/>
+		<rect x="538.3" y="105" class="st6" width="528.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/philippines" target="_blank">
+	<g id="philippines" class="dis">
+		<text transform="matrix(1 0 0 1 551.2921 167.713)" class="st4 st1 st5">Philippines</text>
+		<g>
+			<text transform="matrix(1 0 0 1 760.3035 167.7133)" class="st4 st1 st5">811,000</text>
+		</g>
+		<rect x="659.1" y="147.2" class="st0" width="93.6" height="26.1"/>
+		<rect x="538.3" y="141.6" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/china" target="_blank">
+	<g id="china" class="dis">
+		<text transform="matrix(1 0 0 1 597.9227 204.0574)" class="st4 st1 st5">China</text>
+		<g>
+			<text transform="matrix(1 0 0 1 760.3029 204.0581)" class="st4 st1 st5">791,000</text>
+		</g>
+		<rect x="659.1" y="183.5" class="st0" width="91.3" height="26.1"/>
+		<rect x="538.3" y="178.2" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/somalia" target="_blank">
+	<g id="somaliadisasters" class="dis">
+		<text transform="matrix(1 0 0 1 576.458 239.1286)" class="st4 st1 st5">Somalia</text>
+		<g>
+			<text transform="matrix(1 0 0 1 731.3034 239.1291)" class="st4 st1 st5">514,000</text>
+		</g>
+		<rect x="659.1" y="219.8" class="st0" width="59.3" height="26.1"/>
+		<rect x="538.3" y="214.8" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/indonesia" target="_blank">
+	<g id="indonesia" class="dis">
+		<text transform="matrix(1 0 0 1 561.8875 276.1352)" class="st4 st1 st5">Indonesia</text>
+		<g>
+			<text transform="matrix(1 0 0 1 731.3029 276.136)" class="st4 st1 st5">508,000</text>
+		</g>
+		<rect x="659.1" y="256.1" class="st0" width="58.6" height="26.1"/>
+		<rect x="538.3" y="251.4" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/democratic-republic-congo" target="_blank">
+	<g id="drcdisasters" class="dis">
+		<g>
+			<text transform="matrix(1 0 0 1 494.837 312.906)" class="st4 st1 st5">Dem. Rep. Congo</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 708.3031 315.0764)" class="st4 st1 st5">349,000</text>
+		</g>
+		<rect x="659.1" y="292.5" class="st0" width="40.3" height="26.1"/>
+		<rect x="489" y="288" class="st6" width="498" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/ethiopia" target="_blank">
+	<g id="ethiopia" class="dis">
+		<g>
+			<text transform="matrix(1 0 0 1 576.5948 347.499)" class="st4 st1 st5">Ethiopia</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 708.3029 347.4994)" class="st4 st1 st5">301,000</text>
+		</g>
+		<rect x="659.1" y="328.8" class="st0" width="34.7" height="26.1"/>
+		<rect x="538.3" y="324.6" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/kenya" target="_blank">
+	<g id="kenya" class="dis">
+		<g>
+			<text transform="matrix(1 0 0 1 594.212 387.1383)" class="st4 st1 st5">Kenya</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 708.3035 387.1386)" class="st4 st1 st5">257,000</text>
+		</g>
+		<rect x="659.1" y="365.1" class="st0" width="29.7" height="26.1"/>
+		<rect x="538.3" y="361.2" class="st6" width="448.7" height="34"/>
+	</g></a><a xlink:href="//internal-displacement.org/countries/brazil" target="_blank">
+	<g id="brazil" class="dis">
+		<g>
+			<text transform="matrix(1 0 0 1 599.007 423.0508)" class="st4 st1 st5">Brazil</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 708.3035 423.0508)" class="st4 st1 st5">163,000</text>
+		</g>
+		<rect x="659.1" y="401.4" class="st0" width="18.8" height="26.1"/>
+		<rect x="538.3" y="397.8" class="st6" width="448.7" height="34"/>
+  </g></a>
+</g>
+  	<script type='application/ecmascript'>
+  <![CDATA[
+      
+      
+      if (!Array.from) {
+  Array.from = (function () {
+    var toStr = Object.prototype.toString;
+    var isCallable = function (fn) {
+      return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+    };
+    var toInteger = function (value) {
+      var number = Number(value);
+      if (isNaN(number)) { return 0; }
+      if (number === 0 || !isFinite(number)) { return number; }
+      return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+    };
+    var maxSafeInteger = Math.pow(2, 53) - 1;
+    var toLength = function (value) {
+      var len = toInteger(value);
+      return Math.min(Math.max(len, 0), maxSafeInteger);
+    };
+
+    // The length property of the from method is 1.
+    return function from(arrayLike/*, mapFn, thisArg */) {
+      // 1. Let C be the this value.
+      var C = this;
+
+      // 2. Let items be ToObject(arrayLike).
+      var items = Object(arrayLike);
+
+      // 3. ReturnIfAbrupt(items).
+      if (arrayLike == null) {
+        throw new TypeError("Array.from requires an array-like object - not null or undefined");
+      }
+
+      // 4. If mapfn is undefined, then let mapping be false.
+      var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+      var T;
+      if (typeof mapFn !== 'undefined') {
+        // 5. else
+        // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+        if (!isCallable(mapFn)) {
+          throw new TypeError('Array.from: when provided, the second argument must be a function');
+        }
+
+        // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if (arguments.length > 2) {
+          T = arguments[2];
+        }
+      }
+
+      // 10. Let lenValue be Get(items, "length").
+      // 11. Let len be ToLength(lenValue).
+      var len = toLength(items.length);
+
+      // 13. If IsConstructor(C) is true, then
+      // 13. a. Let A be the result of calling the [[Construct]] internal method of C with an argument list containing the single item len.
+      // 14. a. Else, Let A be ArrayCreate(len).
+      var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+      // 16. Let k be 0.
+      var k = 0;
+      // 17. Repeat, while k < len… (also steps a - h)
+      var kValue;
+      while (k < len) {
+        kValue = items[k];
+        if (mapFn) {
+          A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+        } else {
+          A[k] = kValue;
+        }
+        k += 1;
+      }
+      // 18. Let putStatus be Put(A, "length", len, true).
+      A.length = len;
+      // 20. Return A.
+      return A;
+    };
+  }());
+}
+
+
+
+    var disasterbars = Array.from(document.getElementsByClassName("dis"));
+    var conflictsbars = Array.from(document.getElementsByClassName("con"));
+console.log(disasterbars);
+    
+    function highlightdisaster(s) {
+        disasterbars.forEach(function(d) {
+            if (d == s) {
+                d.style.opacity=1;
+            } else {
+                d.style.opacity=0.3;
+            }
+        })
+    }
+function highlightconflict(s) {
+        conflictsbars.forEach(function(c) {
+            if (c == s) {
+                c.style.opacity=1;
+            } else {
+                c.style.opacity=0.3;
+            }
+        })
+    }
+
+
+	
+    function reset() {
+        disasterbars.forEach(function(d) {
+            d.style.opacity=1;
+           
+        });
+		conflictsbars.forEach(function(c) {
+            c.style.opacity=1;
+           
+        })
+    }
+  	function initSVG() {
+  	    disasterbars.forEach(function(d){
+  	        d.addEventListener("mouseover", function() {
+            highlightdisaster(d);
+  	        });
+  	        d.addEventListener("mouseout", function() {
+            reset();
+  	        });
+			d.addEventListener("click", function(evt){
+				//parent.openWindow("http://dev.internal-displacement.org/countries/"+this.id);
+			})
+  	    });
+
+conflictsbars.forEach(function(c){
+  	        c.addEventListener("mouseover", function() {
+            highlightconflict(c);
+  	        });
+  	        c.addEventListener("mouseout", function() {
+            reset();
+  	        });
+  	    });
+
+
+  	    
+ 		
+ 	};
+ 	
+ 	
+ 	
+ 	
+
+
+  ]]>
+</script>
+</svg>

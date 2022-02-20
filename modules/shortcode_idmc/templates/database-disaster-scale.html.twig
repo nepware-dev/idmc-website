@@ -1,0 +1,150 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+
+<!-- amCharts plugins -->
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+
+<!-- amCharts javascript code -->
+<script type="text/javascript">
+    var chartdivid = '{{ chartdivid }}'
+
+    var chart = AmCharts.makeChart(chartdivid, {
+        "type": "serial",
+        "categoryField": "year",
+        "startDuration": 1,
+        "export": {
+            "enabled": true
+        },
+        "responsive": {
+            "enabled": true
+          },
+        "categoryAxis": {
+            "autoRotateAngle": 0,
+            "gridPosition": "start",
+            "tickPosition": "start",
+            "axisColor": "#929696",
+            "gridColor": "#FFFFFF",
+            "labelRotation": 90
+        },
+        "chartCursor": {
+            "enabled": true,
+            "animationDuration": 0.61,
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0.01
+        },
+        "trendLines": [],
+        "graphs": [
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#ED7E30",
+                "id": "AmGraph-1",
+                "lineThickness": 1,
+                "lineColor": "#ED7E30",
+                "title": "Very small to medium events (fewer than 100,000 displaced)",
+                "type": "column",
+                "valueField": "very_small",
+            },
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#A1C4CB",
+                "id": "AmGraph-2",
+                "lineThickness": 1,
+                "lineColor": "#A1C4CB",
+                "title": "Large events (100,000-999,999 displaced)",
+                "type": "column",
+                "valueField": "large",
+            },
+            {
+                "accessibleLabel": "[[value]]",
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#218FC4",
+                "id": "AmGraph-3",
+                "lineThickness": 1,
+                "lineColor": "#218FC4",
+                "title": "Very large events (1-3 million displaced)",
+                "type": "column",
+                "valueField": "very_large",
+            },
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#073451",
+                "id": "AmGraph-4",
+                "lineThickness": 1,
+                "lineColor": "#073451",
+                "title": "Mega events (more than 3 million displaced)",
+                "type": "column",
+                "valueField": "mega",
+            }
+        ],
+        "guides": [],
+        "valueAxes": [
+            {
+                "id": "ValueAxis-1",
+                "stackType": "regular",
+                "autoGridCount": false,
+                "axisColor": "#929696",
+                "gridCount": 10,
+                "title": "MILLIONS",
+                "totalText": "[[total]]"
+            }
+        ],
+        "allLabels": [],
+        "balloon": {},
+        "legend": {
+            "enabled": true,
+            "useGraphSettings": true,
+            "valueText": ""
+        },
+        "titles": [
+            {
+                "id": "Title-1",
+                "size": 15,
+                "text": ""
+            }
+        ],
+        "dataLoader": {
+            "url": "https://api.idmcdb.org/public/assets/data/static_displacement_by_scale_of_event.json",
+            "format": "json",
+            "postProcess": function (data, config, chart) {
+                var newData = [];
+
+                for ( var i = 0; i < data.results.length; i++ ) {
+                  var dataPoint = [];
+                  var total = 0;
+                  if (data.results[i]['very_small'] > 0) {
+                    dataPoint['very_small'] = data.results[i]['very_small']
+                    total += dataPoint['very_small']
+                  }
+                  if (data.results[i]['large'] > 0) {
+                    dataPoint['large'] = data.results[i]['large']
+                    total += dataPoint['large']
+                  }
+                  if (data.results[i]['very_large'] > 0) {
+                    dataPoint['very_large'] = data.results[i]['very_large']
+                    total += dataPoint['very_large']
+                  }
+                  if (data.results[i]['mega'] > 0) {
+                    dataPoint['mega'] = data.results[i]['mega']
+                    total += dataPoint['mega']
+                  }
+
+                  dataPoint['total'] = total
+                  dataPoint['year'] = data.results[i]['year']
+                  newData.push( dataPoint );
+                }
+
+                return newData;
+            }
+        },
+    });
+</script>
+
+<div id="{{ chartdivid }}" style="width: 100%; height: 600px; background-color: #FFFFFF;" ></div>

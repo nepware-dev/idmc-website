@@ -1,0 +1,232 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+{#}
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/xy.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+{#}
+
+<script>
+  var url_etl = '{{ url }}'
+  var chartdivid_etl = '{{ chartdivid }}'
+
+  var intervalTimeline = setInterval(function (){
+    if (document.readyState === 'complete') {
+      clearInterval(intervalTimeline);
+
+      var chart1 = AmCharts.makeChart(chartdivid_etl, {
+          "type": "xy",
+          "theme": "light",
+          "dataDateFormat": "YYYY-MM-DD",
+          "pathToImages": "https://www.amcharts.com/lib/3/images/",
+          "balloon": {
+              "adjustBorderColor": false,
+              "shadowAlpha": 0,
+          },
+          "color": "#FFFFFF",
+          "dataLoader": {
+            "url" : url_etl,
+            "format": "json",
+            "postProcess": function(data, config, chart) {
+              var newData = [];
+              var minDate = null;
+              var maxDate = null;
+
+              for ( var i = 0; i < data.results.length; i++ ) {
+                var dataPoint = {};
+
+                dataPoint['e_n'] = data.results[i].name;
+                dataPoint['date'] = data.results[i].date.substring(0,10);
+
+                if (data.results[i].subcategory == 'Weather related') {
+                  var weatherNumber = roundChartNumberIdmc(data.results[i].new_displacements);
+                  dataPoint['ay'] = weatherNumber;
+                  dataPoint['aValue'] = weatherNumber;
+                }
+
+                if (data.results[i].subcategory == 'Geophysical') {
+                  var geophysicalNumber = roundChartNumberIdmc(data.results[i].new_displacements);
+                  dataPoint['by'] = geophysicalNumber;
+                  dataPoint['bValue'] = geophysicalNumber;
+                }
+
+                newData.push(dataPoint);
+
+                // get max + min Date
+                var dateChecking = new Date(dataPoint['date']);
+                if (minDate == null && maxDate == null) {
+                  minDate = new Date(dataPoint['date']);
+                  maxDate = new Date(dataPoint['date']);
+                } else {
+                  if (minDate.getTime() > dateChecking.getTime()) {
+                    minDate = dateChecking;
+                  }
+
+                  if (maxDate.getTime() < dateChecking.getTime()) {
+                    maxDate = dateChecking;
+                  }
+                }
+
+              }
+
+              minDate.setMonth(minDate.getMonth() - 1);
+              maxDate.setMonth(maxDate.getMonth() + 1);
+
+              console.log(minDate.toISOString().slice(0, 10));
+              console.log(maxDate.toISOString().slice(0, 10));
+
+              chart.valueAxes[1].minimumDate = minDate;
+              chart.valueAxes[1].maximumDate = maxDate;
+
+              return newData;
+            }
+          },
+          "graphs": [{
+              "balloonText": "<div style='margin:5px;color:white'><b>Geophysical</b><br/><span style='font-weight:normal;'>[[e_n]]</span><br/><span style='font-weight:normal;'>[[x]]</span><br/><b>[[y]] IDPs</b></div>",
+              "bullet": "round",
+              "id": "AmGraph-2",
+              "lineAlpha": 0,
+              "lineColor": "#d8d8d8",
+              "fillAlphas": 0,
+              "valueField": "bValue",
+              "xField": "date",
+              "yField": "by",
+              "title": "Geophysical event"
+          }, {
+              "balloonText": "<div style='margin:5px;color:white'><b>Weather related</b><br/><span style='font-weight:normal;'>[[e_n]]</span><br/><span style='font-weight:normal;'>[[x]]</span><br/><b>[[y]] IDPs</b></div>",
+              "bullet": "round",
+              "id": "AmGraph-1",
+              "lineAlpha": 0,
+              "lineColor": "#008dca",
+              "fillAlphas": 0,
+              "valueField": "aValue",
+              "xField": "date",
+              "yField": "ay",
+              "eventName": "e_n",
+              "title": "Weather related event"
+          }],
+          "valueAxes": [{
+              "id": "ValueAxis-1",
+              "axisAlpha": 1,
+              "gridAlpha": 1,
+              "title": "Displaced",
+              "gridColor": "#008dca",
+              "axisColor": "#008dca",
+          }, {
+              "id": "ValueAxis-2",
+              "axisAlpha": 0,
+              "gridAlpha": 1,
+              "position": "bottom",
+              "type": "date",
+              "gridColor": "#008dca",
+              "dateFormats": [
+                {
+                  "period": "fff",
+                  "format": "JJ:NN:SS"
+                },
+                {
+                  "period": "ss",
+                  "format": "JJ:NN:SS"
+                },
+                {
+                  "period": "mm",
+                  "format": "JJ:NN"
+                },
+                {
+                  "period": "hh",
+                  "format": "JJ:NN"
+                },
+                {
+                  "period": "DD",
+                  "format": "MMM DD"
+                },
+                {
+                  "period": "WW",
+                  "format": "MMM DD"
+                },
+                {
+                  "period": "MM",
+                  "format": "MMM/YYYY"
+                },
+                {
+                  "period": "YYYY",
+                  "format": "YYYY"
+                }
+              ],
+          }],
+          "allLabels": [],
+          "titles": [],
+          "export": {
+              "enabled": true,
+              "backgroundColor": "#4a4a4a",
+          },
+          "chartScrollbar": {
+              // "offset": 15,
+              // "scrollbarHeight": 5,
+              "oppositeAxis":false,
+              "scrollbarHeight": 4
+          },
+          "chartCursor":{
+             "pan":true,
+             "cursorAlpha":0,
+             "valueLineAlpha":0
+          },
+          "legend":{
+            "useGraphSettings": true,
+            "position":"bottom",
+            "autoMargins":true,
+            "color":"white"
+          },
+          "responsive": {
+            "enabled": true
+          }
+      });
+      
+      if ('matchMedia' in window) {
+    // Chrome, Firefox, and IE 10 support mediaMatch listeners
+    window.matchMedia('print').addListener(function(media) {
+      console.log('matchmedia',chart1);
+        chart1.validateNow();
+      
+    });
+} else {
+    // IE and Firefox fire before/after events
+    window.onbeforeprint = function () {
+      console.log('matchmedia',chart1);
+        chart1.validateNow();
+      
+    }
+}
+    }
+  }, 500);
+
+</script>
+
+<style type="text/css">
+  .country-event-timeline-div-container {
+    background-color: #4a4a4a;
+    height: 450px;
+    padding: 50px 0 10px 0;
+    font-family: Lato;
+  }
+
+  .country-event-timeline-div-map {
+    width: 95%;
+    height: 360px;
+    background-color: #4a4a4a;
+  }
+</style>
+
+<!-- HTML -->
+<div style="background-color: #4a4a4a;">
+  <div class="container country-event-timeline-div-container" align="center">
+    <div>
+      <div style="font-size: 18px;color:#FFFFFF;">Annual disaster events timeline</div>
+      <div class="country-event-timeline-div-map" id="{{ chartdivid }}"></div>
+    </div>
+  </div>
+</div>

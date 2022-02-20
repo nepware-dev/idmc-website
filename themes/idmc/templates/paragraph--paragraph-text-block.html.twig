@@ -1,0 +1,40 @@
+{%
+    set bgimage = content.field_paragraph_background_image.0
+%}
+{% if bgimage %}
+<div class="paragraph-text-block {{ content.field_background_color.0 }}" style="background: url({{ bgimage }}) no-repeat;background-size:cover;color:#fff;">
+    <div class="container">
+        {% if content.field_paragraph_title.0 is not empty %}
+        <h1 class="block-title-lvl-1 text-block-title">
+            {{ content.field_paragraph_title }}
+        </h1>
+        {% endif %}
+        <div class="text-block-body">
+            {{ content.field_paragraph_body }}
+        </div>
+        {% if content.field_paragraph_read_more.0 is not empty %}
+        <div class="text-block-read-more">
+            <a class="readmore" href="{{ content.field_paragraph_read_more.0 }}">Read more</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div class="paragraph-text-block {{ content.field_background_color.0 }}">
+    <div class="container">
+        {% if content.field_paragraph_title.0 is not empty %}
+        <h1 class="block-title-lvl-1 text-block-title">
+            {{ content.field_paragraph_title }}
+        </h1>
+        {% endif %}
+        <div class="text-block-body">
+            {{ content.field_paragraph_body }}
+        </div>
+        {% if content.field_paragraph_read_more.0 is not empty %}
+        <div class="text-block-read-more">
+            <a class="readmore" href="{{ content.field_paragraph_read_more.0 }}">Read more</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

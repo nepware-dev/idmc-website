@@ -1,0 +1,51 @@
+{#
+
+#}
+{% block content %}
+<div id="share-sidebar">
+	<ul>
+		<li><a href="javascript:popup('fb');"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="javascript:popup('in');"><i class="fa fa-linkedin"></i></a></li>
+		<li><a href="javascript:popup('tw');"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="javascript:popup('mail');"><i class="fa fa-envelope-o"></i></a></li>
+    
+	</ul> 
+</div>
+
+
+<script>
+
+// open share link in a popup
+	function popup(scl) {
+		var url = "http://www.facebook.com/sharer.php?u={{ url('<current>') }}";
+		if(scl == 'in')
+			url = "http://www.linkedin.com/shareArticle?mini=true&amp;url={{ url('<current>') }}";
+		if(scl == 'tw')
+			url = "https://twitter.com/share?url={{ url('<current>') }}&amp;text={{ 'Internal Displacement Monitoring Centre'|url_encode  }}&amp;hashtags=IDMC_Geneva";
+		if(scl == 'mail'){
+			window.location.href = "mailto:?Subject={{ 'Internal Displacement Monitoring Centre' }}&Body=I%20saw%20this%20and%20want%20share%20to%20you!%20{{ url('<current>') }}";
+			return;
+		}
+
+		// set left and top position
+		var popupWidth = 500,
+	  		popupHeight = 400,
+	  			// fix dual screen mode
+	  		dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left,
+	  		dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top,
+	  		width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
+	  		height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
+	  		// calculate top and left position
+	  		left = ((width / 2) - (popupWidth / 2)) + dualScreenLeft,
+	  		top = ((height / 2) - (popupHeight / 2)) + dualScreenTop,
+
+			// show popup
+			shareWindow = window.open(url,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=' + popupWidth + ', height=' + popupHeight + ', top=' + top + ', left=' + left);
+
+	  	// Puts focus on the newWindow
+	    if (window.focus) {
+	        shareWindow.focus();
+	    }
+	}
+</script>
+{% endblock %}

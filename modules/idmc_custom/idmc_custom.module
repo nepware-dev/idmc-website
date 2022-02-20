@@ -1,0 +1,53 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function idmc_custom_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $list_forms = array (
+    'views-exposed-form-search-site-page-1',
+    'views-exposed-form-list-publications-page-1',
+    'views-exposed-form-list-media-centres-page-1',
+    'views-exposed-form-list-expert-opinion-page-1'
+  );
+
+  if (isset($form['#id']) && in_array($form['#id'], $list_forms)) {
+    $currentYear = date('Y');
+    $options = ['All' => t('Years')];
+    for($i = $currentYear; $i >= 1990; $i--){
+      $options[$i] = $i;
+    }
+
+    $form['field_published_year'] = [
+      '#title' => new TranslatableMarkup(''),
+      '#type' => 'select',
+      '#options' => $options,
+      '#size' => NULL,
+      '#default_value' => 'All',
+    ];
+  }
+}
+
+/**
+ * Hook presave entity
+ */
+function idmc_custom_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  // To get content type, use $entity->bundle()
+  // Extract year from published date, use for filters by year
+  $allow_entities = array('publications', 'events', 'careers', 'expert_opinion', 
+    'media_centre', 'country_profile', 'article', 'external_article');
+
+  if(in_array($entity->bundle(), $allow_entities)){
+    if($entity->hasField('field_published') && $entity->hasField('field_published_year')){
+      $published_date = $entity->get('field_published')->value;
+  
+      if($published_date){
+        $published_year = date("Y", strtotime($published_date));
+        $entity->set('field_published_year', $published_year);
+      }
+    }
+  }
+}

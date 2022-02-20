@@ -1,0 +1,169 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+{#}
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+{#}
+
+<script>
+    var url_lastgrid = '{{ url }}'
+    var chartdivid_lastgrid = '{{ chartdivid }}'
+    var year = '{{ year }}'
+    var graphsConfig = [];
+    var graphsColor = ["#008dca", "#ddd","#f5f5f5", "#4a4a4a"];
+
+    var intervalLastGridStock = setInterval(function (){
+      if (document.readyState === 'complete') {
+        clearInterval(intervalLastGridStock);
+
+        AmCharts.makeChart(chartdivid_lastgrid, {
+          "type": "serial",
+          "categoryField": "category",
+          "rotate": true,
+          "fontSize": 12,
+          // "outlineColor": "",
+          "dataLoader": {
+            "url" : url_lastgrid,
+            "format": "json",
+            "postProcess": function(data, config, chart) {
+              var newDataObj = {};
+              var newDataArrSummary = [];
+
+              // get only necessary data
+              if (!!data.results) {
+                var resultsArr = data.results;
+                var resultsLength = data.results.length;
+
+                // results is an array has many objects (may be for each country in the future - not care now: now just one)
+                for (var j = 0; j < resultsLength; j++) {
+                  var strataArr = resultsArr[j].strata;
+                  var strataLength = resultsArr[j].strata.length;
+
+                  // one object in array has a strata array. Strata array has many objects {'date':, 'figure':}
+                  for (var i = 0; i < strataLength; i++ ) {
+                    var strataYear = strataArr[i].date.split("-")[0]
+                    if (year && strataYear != year) {
+                      continue;
+                    }
+
+                    // strataYear is a variable, not a string, it's value is assigned above
+                    // category, figure: string
+                    if (newDataObj[strataYear]) {
+                      newDataObj[strataYear].figure += strataArr[i].figure;
+                    } else {
+                      newDataObj[strataYear] = []
+                      newDataObj[strataYear].year = strataYear;
+                      newDataObj[strataYear].figure = strataArr[i].figure;
+                    }
+                  }
+                }
+
+                // Need to add all data in only one row
+                var oneRow = {};
+                oneRow.category = 'IDPs';
+
+                var graphCount = 0;
+                var propertyCount = Object.keys(newDataObj).length;
+                for (var propertyName in newDataObj) {
+                  graphCount += 1;
+
+                  // display label, value
+                  oneRow["label" + graphCount] = newDataObj[propertyName].year
+                  oneRow["value" + graphCount] = roundChartNumberIdmc(newDataObj[propertyName].figure)
+
+                  // add to graph configs
+                  graphsConfig.push({
+                    "balloonText": "<b>[[label" + graphCount + "]]</b> <br/><span style='font-weight:normal;'>IDPs: [[value]]</span>",
+                    "color": "#FFFFFF",
+                    "fillAlphas": 1,
+                    // years: left to right, increase
+                    // colors: from right to left, graphsColor[2][1][0] <= [3-1][3-2][3-3]
+                    "fillColors": graphsColor[propertyCount - graphCount], 
+                    "id": "AmGraph-" + graphCount,
+                    "labelPosition": "middle",
+                    "labelText": "[[label" +graphCount+ "]]",
+                    "lineAlpha": 0,
+                    "title": newDataObj[propertyName].year,  // show on legends  
+                    "type": "column",
+                    // "category": "IDPs",
+                    "valueField": "value" + graphCount
+                  });                  
+                }
+
+                // fix color if we have only one year
+                if (graphCount === 1) {
+                  graphsConfig[0].fillColors = graphsColor[0];
+                }
+
+                newDataArrSummary.push(oneRow)
+              }
+
+              return newDataArrSummary;
+            }
+          },
+          "categoryAxis": {
+            // "autoRotateCount": true,
+            // "gridPosition": "start",
+            "position": "left",
+            // "autoGridCount": true,
+            "axisColor": "#FFFFFF",
+            "gridColor": "#FFFFFF",
+            "gridThickness": 0,
+            "titleFontSize": 0
+          },
+          "trendLines": [],
+          "graphs": graphsConfig,
+          "guides": [],
+          "valueAxes": [
+            {
+              "id": "ValueAxis-1",
+              "minimum": 0,
+              "autoGridCount": true,
+              "gridColor": "#FFFFFF",
+              "title": "",
+              "offset": 30,
+              "category": "IDPs",
+              "stackType": "regular",
+              // "titleRotation": -3
+            }
+          ],
+          "allLabels": [],
+          "balloon": {},
+          "legend": {
+            "enabled": true,
+            "align": "left",
+            // "bottom": -5,
+            "position": "right",
+            "useGraphSettings": true,
+            "marginBottom": 45,
+            // "valueWidth": 45
+          },
+          "titles": [],
+          "export": {
+              "enabled": true
+          },
+          "responsive": {
+            "enabled": false
+          }
+        });
+      }
+    }, 500);
+</script>
+
+<style type="text/css">
+  .country-latest-grid-stock-containter .div-chart {
+      width: 99%;
+      height: 180px;
+      background-color: #FFFFFF;
+      overflow: visible !important;
+      text-align: left;
+  }
+</style>
+
+<!-- HTML -->
+  <div class="country-latest-grid-stock-containter">
+    <div class="div-title"><span class="span-title">Latest GRID stock figure by year of data update</span></div>
+    <div class="div-chart" id="{{ chartdivid }}"></div>
+  </div>

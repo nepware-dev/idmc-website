@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Bootstrap Layouts: "1 Column" template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ *
+ * Available region variables:
+ * - main
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+ */
+
+<{{ wrapper }}{{ attributes }}>
+  {{ title_suffix.contextual_links }}
+  <{{ main.wrapper }}{{ main.attributes }}>
+    {{ main.content }}
+  </{{ main.wrapper }}>
+</{{ wrapper }}>
+
+#}
+
+{% block content %}
+{% set urlx = node.field_job_apply_url.value | slice(0,4) == 'http' ? node.field_job_apply_url.value : 'http://' ~ node.field_job_apply_url.value %}
+<div class="container-fluid" style="margin:60px 0;">
+<div class="container career-detail">
+	<div class="col-md-9 col-sm-12">
+		<h2>{{ node.title.value }}</h2>
+		<p>
+			{{ node.field_job_advertiser.value }}
+		</p>
+		<hr />
+
+		{{ node.body.value|raw }}
+		<p></p>
+	    <p><a href="{{ urlx }}" target="_blank" class="linkarrow"> Apply for position </a></p>
+	</div>
+	<div class="col-md-3 col-sm-12" >
+		<p style="text-align:right;"><a href="{{ urlx }}" target="_blank" class="linkarrow" > Apply for position </a></p>
+		<div class="w100" style="background: #f6f6f6; padding: 30px 15px;">
+			<h3>Deadline for application:</h3>
+			{{ node.field_job_deadline.value }}
+			<hr />
+
+			<p><a class="linkarrow" href="mailto:?Subject={{ node.title.value }}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20{{ url('<current>') }}"> Tell a friend </a></p>
+
+			<p><a class="linkarrow" href="javascript:;" onclick="window.print()"> Print </a></p>
+			<hr />
+
+			<h3>Contact Info:</h3>
+			{{ node.field_job_contact_info.value|raw }}
+
+			<hr />
+
+			<h3>Job location:</h3>
+			<p>{{ node.field_job_location.value }}</p>
+			
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

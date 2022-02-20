@@ -1,0 +1,5 @@
+name: IDMC Shorthand Redirect
+type: module
+description: Redirect shorthand content pages to Shorthand page.
+core_version_requirement: ^8.8 || ^9
+package: Custom

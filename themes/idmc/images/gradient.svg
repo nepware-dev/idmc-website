@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="404" viewBox="0 0 1440 404">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="100%" y2="42.316%">
+            <stop offset="0%" stop-opacity=".821"/>
+            <stop offset="26.048%" stop-opacity=".71"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    <path fill="url(#a)" fill-rule="nonzero" d="M0 0h1445v700H0z" style="mix-blend-mode:multiply" transform="translate(-3 -296)"/>
+</svg>

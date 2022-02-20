@@ -1,0 +1,24 @@
+# Files and directories suggested to be ignored by Drupal
+# @see https://git.drupalcode.org/project/drupal/-/blob/9.2.x/example.gitignore
+vendor/
+sites/*/settings*.php
+sites/*/services*.yml
+sites/*/files/*
+!sites/*/files/config
+sites/*/private
+sites/all/libraries
+sites/gidd
+sites/displacement-downtown
+sites/grid2016
+sites/grid2017
+sites/grid2018
+sites/grid2019
+sites/grid2020
+sites/grid2021
+sites/law-and-policy
+.htaccess
+.htpasswd
+.vscode/*
+*.csv
+*.mp4
+/README.md

@@ -1,0 +1,27 @@
+{#}
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ title }}'] }}
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ view_node }}'] }}
+{#}
+
+<!-- <div class="row" id ="select2c-x">
+	<div class="container">
+		<div class="row">
+ -->			<div class="text-center" id ="select2c-container">
+					<select id="select2c" placeholder="Select a country" name="select2c" class="select2c">
+						<option value="" disabled selected>Select a country</option>
+						{% for token in rows.0.content['#view'].style_plugin.render_tokens %}
+							<option value="{{ token['{{ view_node }}']|striptags|trim }}">
+							{{ token['{{ title }}']|striptags|trim }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+		<!-- </div>
+	</div>
+</div> -->
+<script type="text/javascript">
+	document.getElementById("select2c").onchange = function(e) {
+		console.log(this[this.selectedIndex].value);
+		window.location.href = this[this.selectedIndex].value;
+	}
+</script>

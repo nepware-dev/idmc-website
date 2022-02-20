@@ -1,0 +1,86 @@
+{% block paragraph %}
+<style type="text/css">
+	@media only screen and (min-width : 768px) {
+      	.container-infographic {
+        	background-image: url("{{ file_url(content.field_background_infographic['#items'].entity.uri.value) }}");
+	        background-size: cover;
+	        background-position: center center;
+	        min-height: 550px;
+	        z-index: -1;
+	        color: white;
+	        padding-top: 100px;
+      	}
+
+      	div#hero-image > div#about-us {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+  	}
+
+</style>
+
+  <div{{ attributes.addClass(classes) }} >
+    {% block content %}
+
+    {#}
+    <ol>
+    	{% for key, value in content.field_paragraph_infographic['#items'] %}
+    		<li>{{ key }}</li>
+    	{% endfor %}
+    </ol>
+    {#}
+
+    {% set items_count = content.field_paragraph_infographic['#items']|length %}
+
+   {#} For screens has width >= 768px {#}
+	<div id="hero-image" class="row container-infographic hidden-xs">
+		<div id="about-us">
+			<div class="container">
+				<div class="row" style="display: table;">
+			    {% for key, item in content.field_paragraph_infographic if key|first != '#' %}
+					<div class="about-item">
+						<h2>
+							<div style="height: 60px;">
+								<img style="transform: scale(0.5);" src="{{file_url(content.field_paragraph_infographic[key]['#paragraph'].field_icon.entity.fileuri)}}"/>
+							</div>
+							<div class="div-under-img">
+							</div>
+						</h2>
+						<div class="infographic-text">{{content.field_paragraph_infographic[key]['#paragraph'].field_text.value}}
+						</div>	
+					</div>
+				{% endfor %}
+				</div>			
+			</div>
+		</div>
+	</div>
+
+	{#} For screens has width < 768px {#}
+	<div id="hero-image" class="row container-infographic hidden-sm hidden-md hidden-lg">
+		<div id="about-us">
+			<div class="container">
+				<div class="row">
+					<img class="img-responsive" src="{{ file_url(content.field_background_infographic['#items'].entity.uri.value) }}" style="height:216px;">
+				</div>
+			    {% for key, item in content.field_paragraph_infographic if key|first != '#' %}
+					<div class="row" style="background-color: #333132;">
+						<h2 style="margin-top: 0; margin-bottom: 20px;">
+							<div style="height: 60px;">
+								<img style="transform: scale(0.5);" src="{{file_url(content.field_paragraph_infographic[key]['#paragraph'].field_icon.entity.fileuri)}}"/>
+							</div>
+							<div class="div-under-img">
+							</div>
+						</h2>
+					</div>
+					<div class="row" style="background-color: #333132;">
+						<div class="col-sm-12 infographic-text-mobile" {% if key == items_count - 1 %}style="border-bottom:none;"{% endif %}>
+							{{content.field_paragraph_infographic[key]['#paragraph'].field_text.value}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+  {% endblock %}
+  </div>
+{% endblock paragraph %}

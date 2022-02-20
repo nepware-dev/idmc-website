@@ -1,0 +1,154 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+<style type="text/css">
+	.confidence-assessment-containter {
+		border: none;
+	}
+
+	.confidence-assessment-containter .table {
+		font-family: Lato;
+	    font-size: 14px;
+	    font-weight: normal;
+	    font-style: normal;
+	    font-stretch: normal;
+	    line-height: normal;
+	    letter-spacing: normal;
+	    color: #333132;
+	    word-break: break-word;;
+	}
+
+	.confidence-assessment-containter .table tr td {
+		padding: 20px 10px;
+	    border-bottom: solid 1px #008dca;
+	    vertical-align: middle;
+	    white-space: pre-wrap !important;
+	}
+
+	.confidence-assessment-containter .table tr:first-child td {
+		border-top: none;
+	}
+
+	.confidence-assessment-containter .table tr:first-child td+td {
+		font-weight: bold;
+	}
+
+	.confidence-assessment-containter .table tr:last-child td {
+		border-bottom: none;
+	}
+
+	.confidence-assessment-containter .odd-cell {
+		/*background: #cfe3ff;*/
+		background: #dddddd;
+	} 
+
+	.confidence-assessment-containter .even-cell {
+		/*background: #e3edfb;*/
+		background: #f5f5f5;
+	}
+
+	.confidence-assessment-containter .cell-multi-lines div {
+		margin-top: -30px;
+	}
+
+	.confidence-assessment-containter .cell-multi-lines div:last-child {
+		margin-bottom: -30px;
+	}
+
+</style>
+<div class="table-responsive confidence-assessment-containter">
+	<div class="div-title"><span class="span-title">Latest GRID confidence assessment</span></div>
+
+	<table class="table">
+		<tr class="odd-cell">
+			<td>Displacement type</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.type }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Reporting units</td>
+			{% for key, dataObj in tabledata %}
+				<td class="cell-multi-lines">
+					{% for value in dataObj.confidence_assessment.reporting_units %}
+						<div>{{ value }}</div>
+					{% endfor %}
+				</td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Methodology</td>
+			{% for key, dataObj in tabledata %}
+				<td class="cell-multi-lines">
+					{% for value in dataObj.confidence_assessment.methodology %}
+						<div>{{ value }}</div>
+					{% endfor %}
+				</td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Geographical disaggregation	</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.geographical_disaggregation }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Geographical coverage</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.geographical_coverage }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Frequency of reporting</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.frequency_of_reporting }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Disaggregation on sex</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.disaggregation_sex }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Disaggregation on age</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.disaggregation_on_age }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Data triangulation</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_trianglation }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Data on settlement elsewhere</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_on_settlements_elsewhere }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Data on returns</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_on_returns }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Data on local integration</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_on_local_integration }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="odd-cell">Data on deaths</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_on_deaths }} </td>
+			{% endfor %}
+		</tr>
+		<tr>
+			<td class="even-cell">Data on births</td>
+			{% for key, dataObj in tabledata %}
+				<td>{{ dataObj.confidence_assessment.data_on_births }} </td>
+			{% endfor %}
+		</tr>
+	</table>
+</div>

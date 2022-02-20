@@ -1,0 +1,121 @@
+{# {{ attach_library('shortcode_idmc/amchart-lib') }} #}
+
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+<script>
+    var url = '{{ url }}'
+    var chartdivid = '{{ chartdivid }}'
+    var year = '{{ year }}'
+    var gridvalue = '{{ gridvalue }}'
+
+    console.log(year)
+    console.log(gridvalue)
+
+    AmCharts.makeChart(chartdivid, {
+      "type": "serial",
+      "categoryField": "category",
+      "rotate": true,
+      "fontSize": 12,
+      "categoryAxis": {
+        "autoRotateCount": true,
+        "gridPosition": "start",
+        "position": "left",
+        "autoGridCount": true,
+        "axisColor": "#FFFFFF",
+        "gridColor": "#FFFFFF",
+        "gridThickness": 0,
+        "titleFontSize": 0
+      },
+      "trendLines": [],
+      "graphs": [
+        {
+          "balloonText": "<b>[[title]]</b> <br/><span style='font-weight:normal;'>[[category]]:[[value]]</span>",
+          "color": "#FFFFFF",
+          "fillAlphas": 1,
+          "fillColors": "#2591BF",
+          "id": "AmGraph-1",
+          "labelPosition": "middle",
+          "labelText": year,
+          "lineAlpha": 0,
+          "title": year,
+          "type": "column",
+          "valueField": "column-1"
+        }
+      ],
+      "guides": [],
+      "valueAxes": [
+        {
+          "id": "ValueAxis-1",
+          "minimum": 0,
+          "autoGridCount": true,
+          "gridColor": "#FFFFFF",
+          "title": "",
+          // "titleRotation": -3
+        }
+      ],
+      "allLabels": [],
+      "balloon": {},
+      "legend": {
+        "enabled": true,
+        "align": "right",
+        // "bottom": -5,
+        "position": "right",
+        // "useGraphSettings": true,
+        // "valueWidth": 45
+      },
+      "titles": [],
+      "dataProvider": [
+        {
+          "category": "IDPs",
+          "column-1": gridvalue
+        }
+      ],
+      // "export": {
+      //     "enabled": true
+      // },
+      "responsive": {
+        "enabled": true
+      }
+    });
+</script>
+
+<style type="text/css">
+  .country-latest-grid-stock-containter .title {
+      font-family: Lora;
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+
+      color: #333132;
+      text-transform: uppercase;
+      display: inline-block;
+      border-bottom: 1px solid #008dca;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      padding: 0 5px;
+  }
+
+  .country-latest-grid-stock-containter .div-chart {
+      width: 100%;
+      height: 220px;
+      background-color: #FFFFFF;
+      overflow: visible !important;
+      text-align: left;
+  }
+</style>
+
+<!-- HTML -->
+<div class="col-xs-12 col-sm-6">
+  <div class="country-latest-grid-stock-containter">
+    <div class="title">Latest GRID stock figure by year of data update</div>
+    <div class="div-chart" id="{{ chartdivid }}"></div>
+  </div>
+</div>

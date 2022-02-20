@@ -1,0 +1,83 @@
+{#
+
+
+
+#}
+{% block content %}
+{% set url = "" %}
+{% set file_uri_path = content.field_wwd_background_image.0['#item'].entity.uri.value %}
+{% if file_uri_path is not null %}
+    {% set url = file_url(file_uri_path) %}
+{% endif %}
+{% if paragraph.field_wwd_background_color.value == "white" %}
+	{% set bg = "#fff" %}
+	{% set cl = "#333132" %}
+{% elseif paragraph.field_wwd_background_color.value == "lightgrey" %}
+	{% set bg = "#f6f6f6" %}
+	{% set cl = "#434142" %}
+{% else %}
+	{% set bg = "#333132" %}
+	{% set cl = "#fff" %}
+{% endif %}
+{% if paragraph.field_wwd_text.2.value is empty %}
+ {% set colnum = 6 %}
+ {% else %}
+ {% set colnum = 4 %}
+{% endif %}
+<div class="row paragraph" id="wwd-{{ content['#paragraph'].id() }}" style="background-image:url({{ url }}); background-size: cover; background-color:{{ bg }};color: {{ cl }};text-align:center">
+<div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                {% if content.field_wwd_title|render|striptags|trim %}
+                    <h2 class="paragraph-title">{{ paragraph.field_wwd_title.value }}</h2>
+                    {% endif %}
+                </div>
+                <div class="col-md-4 inline-button">
+                {% if content.field_paragraph_readmore_link.0 is not empty %}
+                <a class="readmore font18" href="{{ content.field_slider_link[0]['#url'] }}">
+                      {{ content.field_paragraph_readmore_link.0 }}
+                  </a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+	<div class="container wwd-block {{ paragraph.field_wwd_background_color.value }}" style="padding-bottom:50px; color: {{ cl }}">
+		{% if content.field_wwd_title|render|striptags|trim %}
+			<!--<h1 class="paragraph-title wwd-title">
+		     	{{ paragraph.field_wwd_title.value }}
+			</h1>-->
+		{% endif %}
+		<div class="col-md-{{colnum}} col-xs-12">
+			{% if paragraph.field_wwd_heading_number.value == "show" %}
+				<h1>1</h1>
+			{% endif %}
+			<hr />
+			{{ paragraph.field_wwd_text.0.value|raw }}
+
+     	</div>
+     	<div class="col-md-{{colnum}} col-xs-12">
+     		{% if paragraph.field_wwd_heading_number.value == "show" %}
+				<h1>2</h1>
+			{% endif %}
+			<hr />
+			{{ paragraph.field_wwd_text.1.value|raw }}
+     	</div>
+     	{% if paragraph.field_wwd_text.2.value is not empty %}
+     	<div class="col-md-4 col-xs-12">
+     		{% if paragraph.field_wwd_heading_number.value == "show" %}
+				<h1>3</h1>
+			{% endif %}
+			<hr />
+			{{ paragraph.field_wwd_text.2.value|raw }}
+     	</div>
+     	{% endif %}
+
+    </div>
+</div>
+{% endblock %}
+{#
+
+
+
+
+#}

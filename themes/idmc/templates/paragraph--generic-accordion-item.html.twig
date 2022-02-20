@@ -1,0 +1,28 @@
+{% set panelId = random(10008889) %}
+
+{% if content.field_ptitle[0] is not empty or content.field_body[0] is not empty %}
+<div class="partner-accordion-item col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title partner-accordion-item-title">
+            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#{{panelId}}">
+              <div>
+                {{ content.field_ptitle[0] }}
+              </div>
+              <div>
+                <img class="accordian-arrow-right" src="{{ directory }}/images/accordian-arrow-right.svg">
+                <img class="accordian-arrow-down" src="{{ directory }}/images/accordian-arrow-down.svg">
+              </div>
+            </a>
+        </h4>
+    </div>
+    <div id="{{panelId}}" class="panel-collapse collapse">
+      <div class="panel-body partner-accordion-item-body">
+        <div class="col-xs-12">
+          <p>{{ content.field_body[0] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

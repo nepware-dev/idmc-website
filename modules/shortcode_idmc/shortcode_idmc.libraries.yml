@@ -1,0 +1,40 @@
+amchart-lib:
+  version: 1.x
+  js:
+    js/amcharts/amcharts.js: {}
+    js/amcharts/xy.js: {}
+    js/amcharts/serial.js: {}
+    js/amcharts/themes/light.js: {}
+    js/amcharts/plugins/export/export.min.js: {}
+    js/amcharts/plugins/dataloader/dataloader.js: {}
+    js/amcharts/plugins/responsive/responsive.js: {}
+    js/ammap/ammap.js: {}
+    js/amcharts/plugins/export/libs/fabric.js/fabric.min.js: {}
+    js/amcharts/plugins/export/libs/FileSaver.js/FileSaver.min.js: {}
+    js/amcharts/plugins/export/libs/jszip/jszip.js: {}
+    js/amcharts/plugins/export/libs/pdfmake/pdfmake.min.js: {}
+    js/libs/pdfmake/0.1.36/vfs_fonts.js: {}
+    js/amcharts/plugins/export/libs/xlsx/xlsx.js: {}
+    js/idmcscript/roundnumber.js: {}
+    //cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js: { type: external, minified: true }
+    js/wowinit.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      js/amcharts/plugins/export/export.css: {}
+      //cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css: { type: external, minified: true }
+      assets/myf_2019.css: {}
+ammap-lib:
+  version: 1.x
+  js:
+    js/amcharts/amcharts.js: {}
+    js/amcharts/plugins/responsive/responsive.js: {}
+    js/ammap/ammap.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    theme:
+      js/amcharts/plugins/export/export.css: {}
+      //cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css: { type: external, minified: true }
+      assets/myf_2019.css: {}

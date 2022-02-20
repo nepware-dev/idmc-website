@@ -1,0 +1,180 @@
+{# {{ attach_library('shortcode_idmc/amchart-lib') }} #}
+
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/xy.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+<script>
+    var url = '{{ url }}'
+    var chartdivid = '{{ chartdivid }}'    
+
+    var chart = AmCharts.makeChart(chartdivid, {
+        "type": "xy",
+        "theme": "light",
+        "dataDateFormat": "YYYY-MM-DD",
+        "balloon": {
+            "adjustBorderColor": false,
+            "shadowAlpha": 0,
+        },
+        "dataLoader": {
+          "url" : url,
+          "format": "json",
+          "postProcess": function(data, config, chart) {
+            var newData = [];
+            var minDate = null;
+            var maxDate = null;
+
+            for ( var i = 0; i < data.results.length; i++ ) {
+              var dataPoint = {};
+
+              dataPoint['e_n'] = data.results[i].name;
+              dataPoint['date'] = data.results[i].date.substring(0,10);
+
+              if (data.results[i].subcategory == 'Weather related') {
+                dataPoint['ay'] = data.results[i].new_displacements;
+                dataPoint['aValue'] = data.results[i].new_displacements;
+              }
+
+              if (data.results[i].subcategory == 'Geophysical') {
+                dataPoint['by'] = data.results[i].new_displacements;
+                dataPoint['bValue'] = data.results[i].new_displacements;
+              }
+
+              newData.push(dataPoint);
+
+              // get max + min Date
+              var dateChecking = new Date(dataPoint['date']);
+              if (minDate == null && maxDate == null) {
+                minDate = new Date(dataPoint['date']);
+                maxDate = new Date(dataPoint['date']);
+              } else {
+                if (minDate.getTime() > dateChecking.getTime()) {
+                  minDate = dateChecking;
+                }
+
+                if (maxDate.getTime() < dateChecking.getTime()) {
+                  maxDate = dateChecking;
+                }
+              }
+
+            }
+
+            minDate.setMonth(minDate.getMonth() - 1);
+            maxDate.setMonth(maxDate.getMonth() + 1);
+
+            console.log(minDate.toISOString().slice(0, 10));
+            console.log(maxDate.toISOString().slice(0, 10));
+
+            chart.valueAxes[1].minimumDate = minDate;
+            chart.valueAxes[1].maximumDate = maxDate;
+
+            return newData;
+          }
+        },
+        "graphs": [{
+            "balloonText": "<div style='margin:5px;color:white'><b>Weather related</b><br/><span style='font-weight:normal;'>[[e_n]]</span><br/><span style='font-weight:normal;'>[[x]]</span><br/><b>[[y]] IDPs</b></div>",
+            "bullet": "round",
+            "id": "AmGraph-1",
+            "lineAlpha": 0,
+            "lineColor": "#158ECA",
+            "fillAlphas": 0,
+            "valueField": "aValue",
+            "xField": "date",
+            "yField": "ay",
+            "eventName": "e_n",
+            "title": "Weather related event"
+        }, {
+            "balloonText": "<div style='margin:5px;color:white'><b>Geophysical</b><br/><span style='font-weight:normal;'>[[e_n]]</span><br/><span style='font-weight:normal;'>[[x]]</span><br/><b>[[y]] IDPs</b></div>",
+            "bullet": "round",
+            "id": "AmGraph-2",
+            "lineAlpha": 0,
+            "lineColor": "#EA7C22",
+            "fillAlphas": 0,
+            "valueField": "bValue",
+            "xField": "date",
+            "yField": "by",
+            "title": "Geophysical event"
+        }],
+        "valueAxes": [{
+            "id": "ValueAxis-1",
+            "axisAlpha": 0,
+            "title": "Displaced"
+        }, {
+            "id": "ValueAxis-2",
+            "axisAlpha": 0,
+            "position": "bottom",
+            "type": "date",
+            "dateFormats": [
+              {
+                "period": "fff",
+                "format": "JJ:NN:SS"
+              },
+              {
+                "period": "ss",
+                "format": "JJ:NN:SS"
+              },
+              {
+                "period": "mm",
+                "format": "JJ:NN"
+              },
+              {
+                "period": "hh",
+                "format": "JJ:NN"
+              },
+              {
+                "period": "DD",
+                "format": "MMM DD"
+              },
+              {
+                "period": "WW",
+                "format": "MMM DD"
+              },
+              {
+                "period": "MM",
+                "format": "MMM/YYYY"
+              },
+              {
+                "period": "YYYY",
+                "format": "YYYY"
+              }
+            ],
+        }],
+        "allLabels": [],
+        "titles": [],
+        "export": {
+            "enabled": true
+        },
+
+        "chartScrollbar": {
+            "offset": 15,
+            "scrollbarHeight": 5
+        },
+
+        "chartCursor":{
+           "pan":true,
+           "cursorAlpha":0,
+           "valueLineAlpha":0
+        },
+        "legend":{
+          "useGraphSettings": true,
+          "position":"bottom",
+          "autoMargins":true
+        },
+        "chartScrollbar": {
+          "oppositeAxis":false,
+          "scrollbarHeight": 4,
+        },
+        "responsive": {
+          "enabled": true
+        }
+    });
+
+</script>
+
+<!-- HTML -->
+<div style="background-color: #4a4a4a;" align="center">
+  <div id="{{ chartdivid }}" style="width: 90%;height: 350px;background-color: #4a4a4a;" ></div>
+</div>

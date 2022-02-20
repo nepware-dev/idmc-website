@@ -1,0 +1,102 @@
+.expert-opinion .white-overlay{
+	background-color: rgba(255, 255, 255, 0.85);
+    word-wrap: break-word;
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+	padding:0 6px;
+	line-height:1.3;
+}
+
+.expert-opinion .alignfull.sm-height {
+	height:450px;
+}
+
+.expert-opinion .pt-large {
+	padding-top:4em;
+}
+.expert-opinion .hidden-sm {
+	display: none;
+}
+@media screen and (min-width: 992px) {
+	.expert-opinion .hidden-sm {
+		display:block;
+	}
+}
+.expert-opinion .file {
+	display: inline;
+    font-size: 100%;
+    font-weight: inherit;
+    margin: unset;
+    width: unset;
+}
+.expert-opinion .has-dropcap:first-letter {
+  float: left;
+  font-size: 6rem;
+  line-height: 0.65;
+  margin: 0.1em 0.1em 0em 0;
+
+}
+.expert-opinion .has-dropcap {
+	padding-top: 20px;
+}
+
+.expert-opinion .alignwide {
+	margin: 32px calc( -1 * ( 1000px - 750px ) / 2 );
+	max-width: 1000px;
+	width: 1000px;
+}
+
+
+@media (max-width: 1170px) {
+	.expert-opinion .alignwide {
+		margin: 32px calc( ( 767px - 750px ) / 2 );
+		max-width: 750px;
+		width: 100%;
+	}
+}
+
+.expert-opinion figure:not(.align-left):not(.align-right):not(.align-center) {
+	display: flex;
+	justify-content: space-between;
+}
+.expert-opinion figure:not(.align-left):not(.align-right):not(.align-center) img{
+	max-width:80% !important;
+	flex-basis: 80%;
+}
+
+.expert-opinion figure:not(.align-left):not(.align-right):not(.align-center) figcaption {
+	flex-basis:18%;
+	align-self: flex-end;
+}
+
+
+@media only screen and (max-width: 767px) {
+	article.expert-opinion figure:not(.align-left):not(.align-right):not(.align-center) img {
+		max-width:100% !important;
+	}
+}
+.expert-opinion blockquote:before {
+	font-family: 'Lora', sans-serif;
+	color: #008dca;
+}
+.expert-opinion blockquote p{
+	font-size:1.8em;
+	font-style: italic;
+}
+
+@media only screen and (max-width: 767px) {
+	.expert-opinion blockquote p{
+	font-size:1.2em;
+		
+}
+}
+
+.expert-opinion .article-desc {
+	font-size:12px;
+}
+
+.expert-opinion blockquote {
+	    quotes: "“" "”";
+
+}

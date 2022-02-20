@@ -1,0 +1,42 @@
+{% block content %}
+
+{% set bgimg = "noimg" %}
+{% set imgsettings = "" %}
+{% if content.field_quote_background_image.0['#item'].entity.uri.value %}
+{% set bgimg = "hasimg" %}
+{% set imgsettings = "background-image:url(" ~ file_url(content.field_quote_background_image.0['#item'].entity.uri.value|image_style('slide_image_style')) ~ "); background-size: cover;" %}
+{% endif %}
+
+{% set bgcl = "darkgrey" %}
+{% if paragraph.field_background_color.value == "lightgrey" %}
+{% set bgcl = "lightgrey" %}
+{% elseif paragraph.field_background_color.value == "darkgrey" %}
+{% set bgcl = "darkgrey" %}
+{% elseif paragraph.field_background_color.value == "white" %}
+{% set bgcl = "white" %}
+{% endif %}
+
+
+<div class="row quote1" id="quote1-{{ content['#paragraph'].id() }}">
+      <div class="quote1-bg {{ bgimg }} {{ bgcl }}" style="height:100%; width:100%;  {{imgsettings}} /* filter: grayscale(1); */ z-index:-1;background-position:{{(content.field_slider_image_focus.0 is not empty)? content.field_slider_image_focus.0 : "center"}} {{(content.field_slider_image_focus_v.0 is not empty)? content.field_slider_image_focus_v.0 : "center"}}">
+        <div class="quote1-content" style="height:100%; width:100%; {% if not is_front %} background:rgba(52,50,51,0.3); {% endif %} ">
+          <div class="container" {% if is_front %} style="min-height:600px" {% endif %}>
+          	<div class="q-content" style={{(paragraph.field_background_color.value == "blue")? "background:rgba(0,141,202,0.8);margin-top:10px" : ""}}>
+              <p class="q-text">{{ paragraph.field_quote_text.value|striptags('<br>')|raw }}</p>
+              <p class="q-name">
+                {% if paragraph.field_quote_name.value is not empty %}
+                <strong>
+                  {{ paragraph.field_quote_name.value }}{% if paragraph.field_quote_pos_org.value is not empty %},{% endif %}
+                </strong>
+                {% endif %}
+                {% if paragraph.field_quote_pos_org.value is not empty %}
+                  <span class="pl5">{{ paragraph.field_quote_pos_org.value }}</span>
+                {% endif %}
+              </p>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}

@@ -1,0 +1,395 @@
+.panel-collapse .country-latest-grid-container {
+    padding-top: 30px;
+    display: inline-block;
+}
+
+.panel-collapse .country-latest-grid-left {
+    padding-right: 50px;
+}
+
+@media only screen and (max-width : 768px) {
+    .panel-collapse .country-latest-grid-left {
+      	padding-right: 0;
+    }
+
+    .our-key-services-container .big-title {
+      margin-left: 0px;
+    }
+}
+
+.country-latest-grid-container .span-title {
+  font-family: Lora;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #333132;
+  text-transform: uppercase;
+  /*display: inline-block;*/
+  border-bottom: 1px solid #008dca;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.country-latest-grid-container .div-title {
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* 4 column accordions: in about-us */
+
+@media only screen and (min-width : 768px) {
+  .our-key-services-container {
+    padding-bottom: 90px;
+  }
+}
+
+.our-key-services-container .big-title {
+  padding-top: 90px;
+  margin-top: -20px;
+  margin-bottom: 50px;
+  color: #444243;
+}
+
+.our-key-services-container .collapse-link-header {
+  display: table;
+  width: 100%;
+  margin: 0;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #444243;
+}
+
+.our-key-services-container .our-key-service-item {
+  display: table-cell;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.our-key-services-container .service-item {
+  text-align: center;
+  line-height: 2.5em;
+    border-right: 1px solid #008dca;
+    flex: 1;
+}
+
+.our-key-services-container .tab-titles {
+  display: flex;
+}
+
+.our-key-services-container .expand-down-arrows {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+a.our-key-service-item:hover {
+  color: #008dca;
+}
+
+a.our-key-service-item:active {
+  color: #008dca;
+}
+
+a.our-key-service-item[aria-expanded="true"] {
+  color: #008dca;
+}
+
+.our-key-service-item-mobile {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+  text-align: left;
+  color: #333132;
+}
+
+a.our-key-service-item-mobile:hover {
+  color: #333132;
+}
+
+a.our-key-service-item-mobile:active {
+  color: #333132;
+}
+
+a.our-key-service-item-mobile[aria-expanded="true"] {
+  color: #333132;
+}
+
+@media only screen and (max-width : 768px) {
+  .our-key-services-container .tab-titles {
+    display: block;
+  }
+
+  .our-key-services-container .service-item {
+      border-right: none;
+  }
+
+  .our-key-services-container .our-key-service-item {
+      display: inline-block;
+      height: auto;
+  }
+
+  .our-key-services-container .collapse-content {
+      padding: 0 20px 30px;
+  }
+
+  .our-key-services-container .collapse-content-mobile {
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.31;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333132;
+      padding: 20px 36px;
+  }
+
+  .our-key-services-container .collapse-content-mobile.in {
+      border-top: solid 1px #d8d8d8;
+  }
+
+  div.collapse-content-mobile p {
+    font-size: 16px;
+  }
+}
+
+/* end of 4 column accordions: in about-us */
+
+/* infographics paragraph */
+
+div#hero-image.container-infographic {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.about-item > h2 {
+    margin-top: 0px;
+}
+
+.container-infographic .infographic-text-mobile {
+    padding: 0 0 30px;
+    background-color: #333132;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-bottom: 1px solid #008dca;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.container-infographic .div-under-img {
+    display: inline-block;
+    height: 2px;width: 24px;
+    background-color: #008dca;
+}
+
+/* end of infographics paragraph */
+
+/* global report - paragraph 2 columns image/text */
+.flex_content_2_col_container {
+    background-color: #f6f6f6;  
+  }
+  
+  .flex_content_2_col_container .right-title {
+    font-family: Lora;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #444243;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .flex_content_2_col_container .right-readmore {
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+
+  .flex_content_2_col_container .right-text {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #444243;
+  }
+
+  .flex_content_2_col_container .left-col img {
+    max-width: 80%;
+  }
+
+  .flex_content_2_col_container .right-title-line {
+    display: block;
+    width: 103px;
+    height: 1px;
+    background-color: #008dca;
+    margin-top: 5px;
+  }
+
+  .flex_content_2_col_container .paragraph-content {
+    padding-top: 65px;
+    padding-bottom: 40px;
+  }
+
+  .flex_content_2_col_container a {
+    color: #333132;
+  }
+
+  .flex_content_2_col_container a:hover {
+    color: #008dca;
+  }
+
+  .flex_content_2_col_container a:active {
+    color: #008dca;
+  }
+
+  .flex_content_2_col_container a:focus {
+    color: #008dca;
+  }
+
+  @media only screen and (max-width : 767px) {
+    .flex_content_2_col_container .paragraph-title {
+      width: 90%;
+    }
+
+    .flex_content_2_col_container .right-col {
+      width: 90%;
+        margin: auto;
+    }
+
+    .flex_content_2_col_container .right-title {
+      padding-top: 30px;
+    }
+  }
+/* end of global report - paragraph 2 columns image/text */
+
+
+/* partners - project partners block: 2 columns */
+.partner-accordion-item .panel-title > a {
+    position: relative;
+    display: table;
+    padding: 7px 0px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.partner-accordion-item {
+    margin: 20px 0px;
+}
+
+.partner-accordion-item .panel {
+    border-radius: 0px;
+}
+
+.partner-accordion-item .panel-title {
+    min-height: 60px;
+    font-family: Lora;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333132;
+    text-transform: uppercase;
+}
+
+.partner-accordion-item .panel-body {
+    padding: 15px 0;
+}
+
+.partner-accordion-item .collapsed .accordian-arrow-down {
+  display: none;
+}
+
+.partner-accordion-item .collapsed .accordian-arrow-right {
+  display: block;
+}
+
+.partner-accordion-item a[aria-expanded="true"] .accordian-arrow-down {
+  display: block;
+}
+
+.partner-accordion-item a[aria-expanded="true"] .accordian-arrow-right {
+  display: none;
+}
+
+.partner-accordion-item .partner-accordion-item-title > a div {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.partner-accordion-item .partner-accordion-item-title > a div:first-child {
+  padding-right: 15px;
+}
+
+.partner-accordion-item .partner-accordion-item-title img {
+  float: right;
+}
+
+.partner-accordion-item .partner-accordion-item-title {
+  text-transform: uppercase;
+}
+
+.partner-accordion-item .partner-accordion-item-body {
+  border-top: none !important;
+  padding-left: 0;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444243;
+}
+
+.project-partners-accordions-container {
+  padding-bottom: 40px;
+}
+
+@media only screen and (max-width : 767px) {
+  .project-partners-accordions-container .paragraph-title {
+    margin-left: 0;
+  }
+
+  .project-partners-accordions-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .project-partners-accordions-container {
+    padding-top: 30px;
+  }
+  .project-partners-accordions-container .paragraph-title {
+    display: none;
+  }
+}
+
+/* end of partners - project partners block: 2 columns */
+

@@ -1,0 +1,64 @@
+{#}
+<ol class="nav nav-tabs">
+	{% for key,value in content.field_global_picture_map['#items'] %}
+        <li>{{ key }}</li>
+    {% endfor %}
+</ol>
+<ol class="nav nav-tabs">
+	{% for key,value in content.field_global_picture_map['#items'].1 %}
+        <li>{{ key }}</li>
+    {% endfor %}
+</ol>
+<ul class="nav nav-tabs">
+    {% for key,value in content.field_global_picture_map['#items'] %}
+		{% set tab_title = value['#paragraph'].field_map_title.value %}
+		{% set tab_id = tab_title|replace({' ': "_"}) %}
+    	<li><a data-toggle="tab" href="#{{ tab_id }}">{{ tab_title }}</a></li>
+	{% endfor %}
+</ul>
+{#}
+{#}
+<div class="tab-content">
+  {{ main.content }}
+</div>
+{#}
+
+<div class="row xs-padding" style="background-color: #f6f6f6">
+	<div class="container text-center global-picture-container">
+		<h1 class="paragraph-title">{{ content.field_ptitle }}</h1>
+        {% if content.field_global_picture_description.0 is empty %}
+		<p class="text-left">This map displays all displacement events recorded by IDMC that have occurred in the past six months.</p>
+        {% else %}
+        <div class="text-left">{{ content.field_global_picture_description.0|raw }}</div>
+        {% endif %}
+		<ul class="nav nav-pills map-tabs-ul" style="display:inline-block;">
+			{% for key,value in content.field_global_picture_map['#items'] %}
+				{% if key != 0 %}
+					<li class="map-tab-divider"></li>
+				{% endif %}
+				{% set tab_title = content.field_global_picture_map[key]['#paragraph'].field_map_title.value %}
+				{% set tab_id = tab_title|replace({' ': "_"}) %}
+					<li class="{% if key == 0 %}active{% endif %}">
+						<a data-toggle="tab" href="#{{ tab_id }}" class="map-title">
+							<span>{{ tab_title }}</span>
+						</a>
+					</li>
+			{% endfor %}
+		</ul>
+		<div class="tab-content">
+				{% for key,value in content.field_global_picture_map['#items'] %}
+				{% set tab_title_sub = content.field_global_picture_map[key]['#paragraph'].field_map_title.value %}
+				{% set tab_id_sub = tab_title_sub|replace({' ': '_'}) %}
+				<div id="{{ tab_id_sub }}" class="tab-pane fade {% if key == 0 %}active in{% endif %}">
+						<iframe class="global-picture-iframe" src="{{ content.field_global_picture_map[key]['#paragraph'].field_iframe_code_src.value }}"></iframe>
+				</div>
+			{% endfor %}
+		</div>
+		<div style="paddong-top:20px">
+		  <p>Hover over and click on the coloured bubbles to see near real-time snapshots of situations of internal displacement across the globe. </p>
+		</div>
+		<div style="padding-top: 60px;">
+			<a href="{{ content.field_country_profiles_link.0 }}" class="map-title" style="display: inline-block !important; background: #008dca; padding: 10px 30px;border-radius: 10px; color: #fff !important">Find out more about our country-level data and analysis</a>
+		</div>
+	</div>
+</div>

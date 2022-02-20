@@ -1,0 +1,42 @@
+{#}
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ title }}'] }}
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ view_node }}'] }}
+{#}
+<style type="text/css">
+	.select-country-on-map {
+	    width: 225px;
+	    height: 36px;
+	    border-radius:  0;
+	    -webkit-appearance: none;
+	    text-align-last: center;
+	    background: #333132;
+    	color: #ffffff;
+    	font-family: Lato;
+  		font-size: 18px;
+  		background: url("{{ '/' ~ active_theme_path() ~ '/images/down-arrow.svg' }}") 96% / 15% no-repeat;
+		background-size: auto;
+	}
+</style>
+
+<div class="text-center div-select-country-on-map 998">
+<select id="select2country" placeholder="Select a country" name="select2country" class="select-country-on-map">
+	<option value="" disabled selected>Select country</option>
+{% for token in rows.0.content['#view'].style_plugin.render_tokens %}
+  <option value="{{ token['{{ field_iso3_code }}']|raw }}">
+    {{ token['{{ title }}']|raw }}
+  </option>
+{% endfor %}
+</select>
+</div>
+<script type="text/javascript">
+	document.getElementById("select2country").onchange = function(e) {
+		//console.log(this[this.selectedIndex].value)
+		//window.location.href = this[this.selectedIndex].value
+	}
+
+	document.addEventListener('DOMContentLoaded', function(){
+    	jQuery('#select2country').select2();
+	    jQuery('b[role="presentation"]').hide();
+	});
+</script>
+

@@ -1,0 +1,127 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+{#}
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+{#}
+
+<script>
+    var url_newdis = '{{ url }}'
+    var chartdivid_newdis = '{{ chartdivid }}'
+
+    var intervalNewDis = setInterval(function (){
+      if (document.readyState === 'complete') {
+        clearInterval(intervalNewDis);
+
+        var chartDis = AmCharts.makeChart(chartdivid_newdis, {
+          "type": "serial",
+          "theme": "light",
+          "color": "#FFFFFF",
+          "dataLoader": {
+            "url" : url_newdis,
+            "format": "json",
+            "postProcess": function(data, config, chart) {
+              var newData = [];
+              for ( var i = 0; i < data.results.length; i++ ) {
+                data.results[i]["disaster_new_displacements"] = roundChartNumberIdmc(data.results[i]["disaster_new_displacements"]);
+                newData.push(data.results[i]);
+              }
+
+              return newData;
+            }
+          },
+          "useColumnNames": true,
+          "categoryField": "year",
+          "categoryAxis": {
+            "autoGridCount": false,
+            "gridColor": "#333132", // vertical grid lines color
+            "gridPosition": "start",
+            "tickPosition":"start",
+            "axisColor": "#008dca",
+            "axisAlpha": 1,
+          },
+          "graphs": [ {
+            "lineColor": "#168ECA",
+            "fillColors": "#168ECA",
+            "fillAlphas": 1,
+            "type": "column",
+            "valueField": "disaster_new_displacements",
+            "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+            "title": "New displacements"
+          }],
+          "valueAxes": [{
+            "id": "v1",
+            "title": "New displacements",
+            "gridColor": "#333132",
+            "axisColor": "#008dca",
+            "axisAlpha": 1,
+          }],
+          "export": {
+              "enabled": true,
+              "backgroundColor": "#333132",
+          },
+          "responsive": {
+            "enabled": true
+          },
+          "legend":{
+            // "labelText": 'New displacements',
+            "useGraphSettings": true,
+            "position":"bottom",
+            "autoMargins":true,
+            "color": "#FFFFFF",
+            "align": "center"
+          }
+        });
+        
+        if ('matchMedia' in window) {
+            // Chrome, Firefox, and IE 10 support mediaMatch listeners
+            window.matchMedia('print').addListener(function(media) {
+                chartDis.validateNow();
+
+            });
+        } else {
+            // IE and Firefox fire before/after events
+            window.onbeforeprint = function () {
+                chartDis.validateNow();
+
+            }
+        }
+      }
+    }, 500);
+
+</script>
+
+<!-- HTML -->
+<style type="text/css">
+    .disaster-new-div-container {
+        background-color: #333132;
+        height: 320px;
+        font-family: Lato;
+    }
+
+    .disaster-new-div-map {
+        width: 95%;
+        height: 300px;
+        background-color: #333132;
+    }
+</style>
+
+<!-- HTML -->
+<div class="container disaster-new-div-container" align="center">
+  <div class="row">
+    <div id="{{ chartdivid }}" class="disaster-new-div-map" ></div>
+    <div class="row">
+    <div class="col-md-offset-3 col-md-6 text-white text-center">
+      <span style="height:10px; width:10px; background: #168ECA; margin-right:5px;display: inline-block"></span> New Displacements
+    </div>
+  </div>
+  </div>
+</div>
+<!-- <div class="row"> -->
+  
+<!-- </div> -->

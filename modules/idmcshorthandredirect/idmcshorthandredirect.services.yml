@@ -1,0 +1,5 @@
+services:
+  idmcshorthandredirect.subscriber:
+    class: Drupal\idmcshorthandredirect\EventSubscriber\IdmcShorthandRedirectSubscriber
+    tags:
+      - { name: event_subscriber }

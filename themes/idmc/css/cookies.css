@@ -1,0 +1,9 @@
+.eu-cookie-compliance-banner h1,
+.eu-cookie-compliance-banner h2,
+.eu-cookie-compliance-banner p {
+  font-weight: normal;
+}
+.eu-cookie-compliance-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+{#
+
+#}
+{% block content %}
+<div class="row xs-padding with-thanks">
+	<div class="container">
+    {% if content.field_with_thanks_title|render|striptags|trim %} 
+      <h1 class="paragraph-title"> 
+          {{ paragraph.field_with_thanks_title.value }}
+      </h1>
+    {% endif %}
+   		 {{ paragraph.field_with_thanks_text.value|raw }}
+      <ul class="row logos">
+        {% for item in paragraph.field_partner_logo %}
+          {% set urlx = item.alt | slice(0,4) == 'http' ? item.alt : 'http://' ~ item.alt %}
+          <li class="col-md-3 col-sm-6 col-xs-12">
+            <div>
+              <a href="{{ urlx }}" title="{{ item.title }}" target="_blank"><img src="{{ file_url(item.entity.uri.value) }}" /></a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}

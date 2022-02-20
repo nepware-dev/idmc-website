@@ -1,0 +1,44 @@
+global-styling:
+  css:
+    theme:
+      css/layout.css: {}
+      css/style.css: {}
+      css/responsive.css: {}
+      css/select2.min.css: {}
+      css/ngochi.css: {}
+      css/tranquyet.css: {}
+      css/khanhdang.css: {}
+      css/bootstrapgridupdate.css: {}
+      css/expert-opinion.css: {}
+      css/publication.css: {}
+      css/nav.css: {}
+      css/country-profiles.css: {}
+      css/cookies.css: {}
+
+global-scripts:
+  js:
+    js/select2.min.js: {}
+    js/exposedFilter.js: {}
+    js/common.js: {}
+    js/idmc.js: {}
+    js/smoothscroll.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Lato|Lora&display=swap': { type: external }
+
+smoothscroll:
+  js:
+    js/smoothscroll.js: {}
+  dependencies:
+    - core/jquery
+    
+paragraph-infographic:
+  js:
+    '//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js': { type: external}
+    '//cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js': { type: external}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,14 @@
+{#
+
+#}
+<div id="quote1" class="container-fluid" style="background:url({{ file_url(node.field_quote_bg_image.entity.uri.value) }}); background-size: 100% 100%; margin: 0; padding:0;">
+<div style="height:100%; width:100%; background:rgba(0,0,0,0.5);padding: 100px 50px;">
+	<div class="container" style="text-align:center;color:#fff;">
+    {% block content %}
+      <strong><em>{{ node.field_quote_text.value }}</em></strong><br />
+      <strong>{{ node.field_quote_name.value }}, </strong>
+      {{ node.field_quote_pos_org.value }}
+    {% endblock %}
+    </div>
+</div>
+</div>

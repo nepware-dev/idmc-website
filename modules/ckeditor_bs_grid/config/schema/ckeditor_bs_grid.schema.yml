@@ -1,0 +1,33 @@
+# Plugin \Drupal\ckeditor_config\Plugin\CKEditorPlugin\CustomConfig
+ckeditor.plugin.bs_grid:
+  type: mapping
+  label: 'CKEditor custom configuration'
+  mapping:
+    use_cdn:
+      type: boolean
+      label: 'Whether to use CDN or not'
+    cdn_url:
+      type: string
+      label: 'CDN URL'
+    available_columns:
+      type: sequence
+      label: 'Allowed columns.'
+    available_breakpoints:
+      type: sequence
+      label: 'Allowed Breakpoints.'
+
+ckeditor_bs_grid.settings:
+  type: config_object
+  mapping:
+    breakpoints:
+      type: sequence
+      label: 'List of breakpoint configurations'
+      sequence:
+        type: mapping
+        mapping:
+          label:
+            type: string
+          prefix:
+            type: string
+          columns:
+            type: sequence

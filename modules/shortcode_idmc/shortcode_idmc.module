@@ -1,0 +1,69 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function shortcode_idmc_theme(array $variables) {
+	
+  return array(
+    'country_conflict_violence_displacement' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'country_latest_grid_stock' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'gridvalue' => NULL, 'year' => NULL),
+    ),
+    'country_events_timeline' => array(
+      'variables' => array('attached' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'country_new_displacement' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'database_map' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL),
+    ),
+    'database_map_prospective' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL),
+    ),
+    'database_map_aad' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL),
+    ),
+    'database_total_annual_new_displacements' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'database_disaster_scale' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'database_disaster_hazard' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'database_displaced_vs_refugees' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL),
+    ),
+    'confidence_assessment_table' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'tabledata' => NULL),
+    ),
+    'myf_2019' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL, 'subtype' => NULL),
+    ),
+    'myf_2020' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL, 'subtype' => NULL),
+    ),
+    'arid' => array(
+      'variables' => array('attributes' => NULL, 'url' => NULL, 'chartdivid' => NULL, 'modulepath' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+
+function shortcode_idmc_page_attachments(array &$attachments) {
+//	var_dump(json_encode($attachments));
+ // $attachments['#attached']['library'][] = 'shortcode_idmc/amchart-lib';
+	
+}
+
+
+

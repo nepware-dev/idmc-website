@@ -1,0 +1,54 @@
+<div class="row idmc-live-block xs-padding">
+    <div class="container">
+        <h1 class="paragraph-title" style="position: relative;">{{ paragraph.field_ptitle.value }}</h1>
+
+        {% if tweet_0 or tweet_1 %}
+        <div class="row mt20 row-tweets">
+            {% if tweet_0 is not empty %}
+            <div class="col-xs-12 col-md-5 tweet-1">
+                <div class="tweet-author">
+                    <a target="_blank" href="https://twitter.com/{{ tweet_0.user.screen_name }}">@{{ tweet_0.user.screen_name }}</a> 
+                    <i class="fa fa-circle idmc-live-dot"></i> {{ tweet_0_date }}
+                </div>
+                <div class="tweet-content mt20">
+                    {{ tweet_0.text|raw }}
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-xs-12 col-md-2 text-center div-separator">
+                <div class="tweet-img-separator mt20">
+                    <img src="{{ file_url(directory ~ '/images/twitter.png') }}"/>
+                </div>
+            </div>
+            {% if tweet_1 is not empty %}
+            <div class="col-xs-12 col-md-5 tweet-2">
+                <div class="tweet-author">
+                    <a target="_blank" href="https://twitter.com/{{ tweet_1.user.screen_name }}">@{{ tweet_1.user.screen_name }}</a> 
+                    <i class="fa fa-circle idmc-live-dot"></i> {{ tweet_1_date }}
+                </div>
+                <div class="tweet-content mt20">
+                    {{ tweet_1.text|raw }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="row mt20 row-tweets text-center">
+            Could not load tweets. The Twitter API info does not correct.
+        </div>
+        {% endif %}
+
+        {% if paragraph.field_follow_text.value is not empty %}
+        <div class="row idmc-live-footer text-center">
+            <a class="readmore readmore16" target="_blank" href="{{ paragraph.field_twitter_url.value }}" style="color: #333132;">
+                {{ paragraph.field_follow_text.value }}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {% if content.field_view|render is not empty %}
+    <div class="external-article-view">
+        {{ content.field_view }}
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,126 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+
+{% if subtype == "top10" %}
+<div class="wow zoomIn container" align="center">
+<embed type="image/svg+xml" src="/{{ modulepath }}/assets/conflicts-disasters.svg" width="100%" height="700" style="height: auto" />
+</div>
+{% elseif subtype == "cumulative" %}
+<div class="wow zoomIn container" align="center">
+
+<embed type="image/svg+xml" src="/{{ modulepath }}/assets/cumulative-nd-figures.svg" width="100%" height="700" style="height: auto" />
+</div>
+{% elseif subtype == "timeline_event" %}
+<div class="wow zoomIn container" align="center">
+<figcaption><span>Hover over the icons to see data</span></figcaption>
+<embed type="image/svg+xml" src="/{{ modulepath }}/assets/timeline-event.svg" width="100%" height="700" style="height: auto" />
+</div>
+{% elseif subtype == "globalmap" %}
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+	#globaltooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000005;
+    opacity: 0;
+    margin-top: 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px;
+		}
+	#globaltooltip.showIt {
+			opacity: 1;
+		font-family: roboto, sans-serif;
+		}
+		#globaltooltip .name {
+			font-weight: bold;
+		}
+		#globaltooltip .disaster {
+			color: #0d93d2!important
+		}
+		#globaltooltip .conflict {
+			color: #ef7d00!important
+		}
+	</style>
+<div class="wow zoomIn container" align="center"><figcaption><span>Hover over the map to see country data</span></figcaption><div style="position: relative">
+<embed type="image/svg+xml" src="/{{ modulepath }}/assets/globalmap.svg" width="100%" height="700" style="height: auto" />
+	<div id="globaltooltip">
+              <p><span class="name"></span><br/>
+                <span class="disaster"></span> <span class="colon"></span> <span class="conflict"></span></p>
+    </div> </div>   </div>        
+<script>
+	var show, stock=[];
+	
+	stock['afghanistan']={name:'Afghanistan',disaster:'106,000',conflict:'213,000', url:'/countries/afghanistan/'};
+stock['bangladesh']={name:'Bangladesh',disaster:'1,671,000',conflict:'71', url:'/countries/bangladesh/'};
+stock['bolivia']={name:'Bolivia',disaster:'76,000',conflict:'0', url:'/countries/bolivia/'};
+stock['brazil']={name:'Brazil',disaster:'253,000',conflict:'0', url:'/countries/brazil/'};
+stock['burkina_faso']={name:'Burkina Faso',disaster:'0',conflict:'173,000', url:'/countries/burkina-faso/'};
+stock['canada']={name:'Canada',disaster:'29,000',conflict:'0', url:'/countries/canada/'};
+stock['car']={name:'Central African Republic',disaster:'960',conflict:'58,000', url:'/countries/central-african-republic/'};
+stock['chad']={name:'Chad',disaster:'0',conflict:'44,000', url:'/countries/chad/'};
+stock['china']={name:'China',disaster:'120,000',conflict:'0', url:'/countries/china/'};
+stock['colombia']={name:'Colombia',disaster:'14,000',conflict:'39,000', url:'/countries/colombia/'};
+stock['drc']={name:'Dem. Rep. Congo',disaster:'14,000',conflict:'718,000', url:'/countries/drc'};
+stock['ethiopia']={name:'Ethiopia',disaster:'233,000',conflict:'522,000', url:'/countries/ethiopia/'};
+stock['india']={name:'India',disaster:'2,171,000',conflict:'6,800', url:'/countries/india/'};
+stock['indonesia']={name:'Indonesia',disaster:'111,000',conflict:'600', url:'/countries/indonesia/'};
+stock['iran']={name:'Iran',disaster:'501,000',conflict:'0', url:'/countries/iran/'};
+stock['iraq']={name:'Iraq',disaster:'38,000',conflict:'22,000', url:'/countries/iraq/'};
+stock['libya']={name:'Libya',disaster:'4,600',conflict:'137,000', url:'/countries/libya/'};
+stock['malawi']={name:'Malawi',disaster:'119,000',conflict:'0', url:'/countries/malawi/'};
+stock['mali']={name:'Mali',disaster:'650',conflict:'140,000', url:'/countries/mali/'};
+stock['mozambique']={name:'Mozambique',disaster:'502,000',conflict:'1,200', url:'/countries/mozambique/'};
+stock['myanmar']={name:'Myanmar',disaster:'39,000',conflict:'42,000', url:'/countries/myanmar/'};
+stock['niger']={name:'Niger',disaster:'0',conflict:'42,000', url:'/countries/niger/'};
+stock['nigeria']={name:'Nigeria',disaster:'2,000',conflict:'140,000', url:'/countries/nigeria/'};
+stock['pakistan']={name:'Pakistan',disaster:'20,000',conflict:'16,000', url:'/countries/pakistan/'};
+stock['paraguay']={name:'Paraguay',disaster:'54,000',conflict:'0', url:'/countries/paraguay/'};
+stock['philippines']={name:'Philippines',disaster:'484,000',conflict:'88,000', url:'/countries/philippines/'};
+stock['somalia']={name:'Somalia',disaster:'72,000',conflict:'106,000', url:'/countries/somalia/'};
+stock['south_sudan']={name:'South Sudan',disaster:'37,000',conflict:'135,000', url:'/countries/south-sudan/'};
+stock['sudan']={name:'Sudan',disaster:'8,000',conflict:'21,000', url:'/countries/sudan/'};
+stock['syria']={name:'Syria',disaster:'14,000',conflict:'804,000', url:'/countries/syria/'};
+stock['thailand']={name:'Thailand',disaster:'45,000',conflict:'0', url:'/countries/thailand/'};
+stock['united_states']={name:'United States',disaster:'36,000',conflict:'0', url:'/countries/united-states/'};
+stock['yemen']={name:'Yemen',disaster:'3,000',conflict:'282,000', url:'/countries/yemen/'};
+stock['zimbabwe']={name:'Zimbabwe',disaster:'52,000',conflict:'0', url:'/countries/zimbabwe/'};
+
+	function showstocktooltip(thisId,pos,tooltipId, el) {
+
+			var tooltip = document.getElementById(tooltipId);
+			tooltip.querySelector(".name").innerHTML = stock[thisId].name;
+			tooltip.querySelector(".disaster").innerHTML = (stock[thisId].disaster=="0") ? "":stock[thisId].disaster;
+			tooltip.querySelector(".conflict").innerHTML = (stock[thisId].conflict=="0") ? "":stock[thisId].conflict;
+			if ( stock[thisId].disaster != "0" &&  stock[thisId].conflict != "0") {
+				tooltip.querySelector(".colon").innerHTML = " | "
+			} else {
+				tooltip.querySelector(".colon").innerHTML = "";
+			}
+			tooltip.style.left = pos[0]+"px";
+			tooltip.style.top = pos[1]+"px";
+			tooltip.classList.add("showIt");	
+
+		
+	}
+	
+	function hidetooltip(tooltipId) {
+		var tooltip = document.getElementById(tooltipId);
+		tooltip.querySelector(".name").innerHTML = "";
+		tooltip.style.left = "-500px";
+			tooltip.style.top = "-500px";
+		tooltip.classList.remove("showIt");
+	}
+
+	function openStockWindow(el) {
+		console.log("url",stock[el].url);
+		if (stock[el].url != "") {
+			window.open('http://internal-displacement.org'+stock[el].url, "_blank");
+		}
+
+	}
+	</script>
+
+{% endif %}

@@ -1,0 +1,60 @@
+{# {{ attach_library('shortcode_idmc/amchart-lib') }} #}
+
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+<script>
+    var url = '{{ url }}'
+    var chartdivid = '{{ chartdivid }}'
+
+    AmCharts.makeChart(chartdivid, {
+      "type": "serial",
+      "theme": "light",
+      "dataLoader": {
+        "url" : url,
+        "format": "json",
+        "postProcess": function(data, config, chart) {
+          return data.results;
+        }
+      },
+      "useColumnNames": true,
+      "categoryField": "year",
+      "categoryAxis": {
+        "autoGridCount": false,
+        "gridColor": "#FFFFFF", // vertical grid lines color
+        "gridPosition": "start",
+        "tickPosition":"start",
+      },
+      "graphs": [ {
+        "lineColor": "#168ECA",
+        "fillColors": "#168ECA",
+        "fillAlphas": 1,
+        "type": "column",
+        "valueField": "disaster_new_displacements",
+        "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+        "title": "New displacements"
+      }],
+      "export": {
+          "enabled": true
+      },
+      "responsive": {
+        "enabled": true
+      },
+      "legend":{
+        // "labelText": 'New displacements',
+        "useGraphSettings": true,
+        "position":"bottom",
+        "autoMargins":true
+      }
+  });
+</script>
+
+<!-- HTML -->
+<!-- <div class="row"> -->
+  <div id="{{ chartdivid }}" style="width: 100%;height: 400px;" ></div>
+<!-- </div> -->

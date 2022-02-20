@@ -1,0 +1,95 @@
+<style type="text/css">
+	.related-links-container {
+		background-color: #333132;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.related-links-container .div-fit-content {
+		display: inline-block;
+	}
+
+	.related-links-container .div-fit-content div {
+		padding-bottom: 20px;
+	}
+
+	.related-links-container a {
+		font-family: Lato;
+		font-size: 21px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: 1.43;
+		letter-spacing: normal;
+		text-align: left;
+		color: #ffffff;
+	}
+
+	.related-links-container a:hover {
+		color: #008dca;
+	}
+
+	.related-links-container a:active {
+		color: #008dca;
+	}
+
+	.related-links-container a:focus {
+		color: #008dca;
+	}
+
+	@media only screen and (max-width : 767px) {
+		.related-links-container .div-fit-content {
+			width: 90%;
+			margin: auto;
+		}
+	}
+</style>
+<div class="container-fluid related-links-container">
+	<div class="container">
+		<div class="row hidden-xs">
+			<div class="col-sm-6 text-center">
+				<div class="div-fit-content">
+					{% for key, value in content.field_left_column['#items'] %}
+						<div class="text-left">
+							<a class="readmore" href='{{ content.field_left_column[key]["#url"] }}'>
+								{{ content.field_left_column[key]["#title"] }}
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-sm-6 text-center">
+				<div class="div-fit-content">
+					{% for key, value in content.field_right_column_related_links['#items'] %}
+						<div class="text-left">
+							<a class="readmore" href='{{ content.field_right_column_related_links[key]["#url"] }}'>
+								{{ content.field_right_column_related_links[key]["#title"] }}
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="row visible-xs">
+			<div class="col-xs-12 text-center">
+				<div class="div-fit-content">
+					{% for key, value in content.field_left_column['#items'] %}
+						<div class="text-left">
+							<a class="readmore" href='{{ content.field_left_column[key]["#url"] }}'>
+								{{ content.field_left_column[key]["#title"] }}
+							</a>
+						</div>
+					{% endfor %}
+					{% for key, value in content.field_right_column_related_links['#items'] %}
+						<div class="text-left">
+							<a class="readmore" href='{{ content.field_right_column_related_links[key]["#url"] }}'>
+								{{ content.field_right_column_related_links[key]["#title"] }}
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

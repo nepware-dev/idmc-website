@@ -1,0 +1,12 @@
+name: 'Shortcode for IDMC charts'
+type: module
+description: 'Provides a custom module to draw IDMC charts, that implements shortcodes plugins.'
+dependencies:
+  - shortcode
+package: 'Input filters'
+
+# Information added by Drupal.org packaging script on 2017-02-17
+core_version_requirement: ^8 || ^9
+libraries:
+  - shortcode_idmc/amchart-lib
+  - shortcode_idmc/ammap-lib

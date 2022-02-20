@@ -1,0 +1,13 @@
+  <div class="card-container">
+    <div class="card-overlay">
+      <a class="card-link" href="{{ url }}">
+        <div class="card-date">{{ content.field_published }}</div>
+        <div class="card-title">{{ node.label }}</div>
+        <div class="card-body">{{ content.body }}</div>
+        <div class="card-more"><a>Read more</a></div>
+      </a>
+    </div>
+    <div class="card-image">
+        {{ content.field_image }}
+    </div>
+  </div>

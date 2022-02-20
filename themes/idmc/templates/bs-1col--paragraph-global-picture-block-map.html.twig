@@ -1,0 +1,7 @@
+{#}
+{% set tab_title_sub = content.field_map_title.0['#context'].value %}
+{% set tab_id_sub = tab_title_sub|replace({' ': '_'}) %}
+<div id="{{ tab_id_sub }}" class="tab-pane fade">
+    <iframe style="border: 0;width: 90%;height:100px;" src="{{ content.field_iframe_code_src.0 }}"></iframe>
+</div>
+{#}

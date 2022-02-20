@@ -1,0 +1,6946 @@
+[
+ {
+   "iso3": "AGO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 623.5182829,
+   "population": 25830958,
+   "aad_over_pop": 0.0000241
+ },
+ {
+   "iso3": "AGO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 20465.08702,
+   "population": 25830958,
+   "aad_over_pop": 0.00079227
+ },
+ {
+   "iso3": "AGO",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.013105456,
+   "population": 25830958,
+   "aad_over_pop": 5.07e-10
+ },
+ {
+   "iso3": "BDI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 11004.28975,
+   "population": 11552561,
+   "aad_over_pop": 0.000952541
+ },
+ {
+   "iso3": "BDI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11096.14027,
+   "population": 11552561,
+   "aad_over_pop": 0.000960492
+ },
+ {
+   "iso3": "BEN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 98.78862348,
+   "population": 11166658,
+   "aad_over_pop": 0.00000885
+ },
+ {
+   "iso3": "BEN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 9932.936721,
+   "population": 11166658,
+   "aad_over_pop": 0.000889517
+ },
+ {
+   "iso3": "BFA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 20.64003565,
+   "population": 18633725,
+   "aad_over_pop": 0.00000111
+ },
+ {
+   "iso3": "BFA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 10096.29708,
+   "population": 18633725,
+   "aad_over_pop": 0.000541829
+ },
+ {
+   "iso3": "BWA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 762.4861729,
+   "population": 2303820,
+   "aad_over_pop": 0.000330966
+ },
+ {
+   "iso3": "BWA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2092.472407,
+   "population": 2303820,
+   "aad_over_pop": 0.000908262
+ },
+ {
+   "iso3": "CAF",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 502.4329676,
+   "population": 4998493,
+   "aad_over_pop": 0.000100517
+ },
+ {
+   "iso3": "CAF",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 8572.372209,
+   "population": 4998493,
+   "aad_over_pop": 0.001714991
+ },
+ {
+   "iso3": "CIV",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 170.2465559,
+   "population": 23254184,
+   "aad_over_pop": 0.00000732
+ },
+ {
+   "iso3": "CIV",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 25995.1784,
+   "population": 23254184,
+   "aad_over_pop": 0.001117871
+ },
+ {
+   "iso3": "CIV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.909449515,
+   "population": 23254184,
+   "aad_over_pop": 3.91e-8
+ },
+ {
+   "iso3": "CMR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2510.776918,
+   "population": 23924407,
+   "aad_over_pop": 0.000104946
+ },
+ {
+   "iso3": "CMR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 31331.73491,
+   "population": 23924407,
+   "aad_over_pop": 0.001309614
+ },
+ {
+   "iso3": "COD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12152.08385,
+   "population": 79722624,
+   "aad_over_pop": 0.00015243
+ },
+ {
+   "iso3": "COD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 203891.4813,
+   "population": 79722624,
+   "aad_over_pop": 0.002557511
+ },
+ {
+   "iso3": "COG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 72.2823653,
+   "population": 4740992,
+   "aad_over_pop": 0.0000152
+ },
+ {
+   "iso3": "COG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11136.48215,
+   "population": 4740992,
+   "aad_over_pop": 0.002348977
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 129.8307126,
+   "population": 807118,
+   "aad_over_pop": 0.000160857
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 72.26668948,
+   "population": 807118,
+   "aad_over_pop": 0.0000895
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 27.58035135,
+   "population": 807118,
+   "aad_over_pop": 0.0000342
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 293.667,
+   "population": 807118,
+   "aad_over_pop": 0.000363846
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 293.667,
+   "population": 807118,
+   "aad_over_pop": 0.000363846
+ },
+ {
+   "iso3": "COM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 1114.266758,
+   "population": 807118,
+   "aad_over_pop": 0.00138055
+ },
+ {
+   "iso3": "CPV",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2.820551015,
+   "population": 526993,
+   "aad_over_pop": 0.00000535
+ },
+ {
+   "iso3": "CPV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.024960628,
+   "population": 526993,
+   "aad_over_pop": 4.74e-8
+ },
+ {
+   "iso3": "DJI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 452.7936681,
+   "population": 899598,
+   "aad_over_pop": 0.000503329
+ },
+ {
+   "iso3": "DJI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 27.38847142,
+   "population": 899598,
+   "aad_over_pop": 0.0000304
+ },
+ {
+   "iso3": "DJI",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.012108078,
+   "population": 899598,
+   "aad_over_pop": 1.35e-8
+ },
+ {
+   "iso3": "DZA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 23783.29198,
+   "population": 40375954,
+   "aad_over_pop": 0.000589046
+ },
+ {
+   "iso3": "DZA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 13052.28382,
+   "population": 40375954,
+   "aad_over_pop": 0.000323269
+ },
+ {
+   "iso3": "DZA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 9.983460228,
+   "population": 40375954,
+   "aad_over_pop": 2.47e-7
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 14052.23168,
+   "population": 93383574,
+   "aad_over_pop": 0.000150479
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 34447.30773,
+   "population": 93383574,
+   "aad_over_pop": 0.00036888
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2642.215024,
+   "population": 93383574,
+   "aad_over_pop": 0.0000283
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 597.75,
+   "population": 93383574,
+   "aad_over_pop": 0.0000064
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 597.75,
+   "population": 93383574,
+   "aad_over_pop": 0.0000064
+ },
+ {
+   "iso3": "EGY",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 37674.46564,
+   "population": 93383574,
+   "aad_over_pop": 0.000403438
+ },
+ {
+   "iso3": "ERI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 297.1517396,
+   "population": 5351680,
+   "aad_over_pop": 0.0000555
+ },
+ {
+   "iso3": "ERI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3867.243548,
+   "population": 5351680,
+   "aad_over_pop": 0.000722622
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4896.460292,
+   "population": 101853268,
+   "aad_over_pop": 0.0000481
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 117326.255,
+   "population": 101853268,
+   "aad_over_pop": 0.001151914
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 6163.92,
+   "population": 101853268,
+   "aad_over_pop": 0.0000605
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 255.5,
+   "population": 101853268,
+   "aad_over_pop": 0.00000251
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 4.11111,
+   "population": 101853268,
+   "aad_over_pop": 4.04e-8
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 6423.53,
+   "population": 101853268,
+   "aad_over_pop": 0.0000631
+ },
+ {
+   "iso3": "ETH",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 129513.4971,
+   "population": 101853268,
+   "aad_over_pop": 0.001271569
+ },
+ {
+   "iso3": "GAB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 40.79513188,
+   "population": 1763142,
+   "aad_over_pop": 0.0000231
+ },
+ {
+   "iso3": "GAB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4082.249304,
+   "population": 1763142,
+   "aad_over_pop": 0.002315326
+ },
+ {
+   "iso3": "GHA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 35.71142058,
+   "population": 28033375,
+   "aad_over_pop": 0.00000127
+ },
+ {
+   "iso3": "GHA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 20046.76759,
+   "population": 28033375,
+   "aad_over_pop": 0.000715104
+ },
+ {
+   "iso3": "GHA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.246796272,
+   "population": 28033375,
+   "aad_over_pop": 8.8e-9
+ },
+ {
+   "iso3": "GIN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 421.099831,
+   "population": 12947122,
+   "aad_over_pop": 0.0000325
+ },
+ {
+   "iso3": "GIN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 23383.66118,
+   "population": 12947122,
+   "aad_over_pop": 0.00180609
+ },
+ {
+   "iso3": "GIN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.023252979,
+   "population": 12947122,
+   "aad_over_pop": 1.8e-9
+ },
+ {
+   "iso3": "GMB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 45.86290365,
+   "population": 2054986,
+   "aad_over_pop": 0.0000223
+ },
+ {
+   "iso3": "GMB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1212.037458,
+   "population": 2054986,
+   "aad_over_pop": 0.000589803
+ },
+ {
+   "iso3": "GMB",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.038790164,
+   "population": 2054986,
+   "aad_over_pop": 1.89e-8
+ },
+ {
+   "iso3": "GNB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 55.97941081,
+   "population": 1888429,
+   "aad_over_pop": 0.0000296
+ },
+ {
+   "iso3": "GNB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 715.2344002,
+   "population": 1888429,
+   "aad_over_pop": 0.000378746
+ },
+ {
+   "iso3": "GNQ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 101.4944289,
+   "population": 869587,
+   "aad_over_pop": 0.000116716
+ },
+ {
+   "iso3": "GNQ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1121.227731,
+   "population": 869587,
+   "aad_over_pop": 0.00128938
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5941.604471,
+   "population": 47251449,
+   "aad_over_pop": 0.000125744
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 59853.32796,
+   "population": 47251449,
+   "aad_over_pop": 0.001266698
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.318893895,
+   "population": 47251449,
+   "aad_over_pop": 6.75e-9
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 8695.4,
+   "population": 47251449,
+   "aad_over_pop": 0.000184024
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 99.8,
+   "population": 47251449,
+   "aad_over_pop": 0.00000211
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 8795.2,
+   "population": 47251449,
+   "aad_over_pop": 0.000186136
+ },
+ {
+   "iso3": "KEN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 76331.23986,
+   "population": 47251449,
+   "aad_over_pop": 0.001615426
+ },
+ {
+   "iso3": "LBR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 223.9995484,
+   "population": 4615222,
+   "aad_over_pop": 0.0000485
+ },
+ {
+   "iso3": "LBR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12619.21379,
+   "population": 4615222,
+   "aad_over_pop": 0.002734259
+ },
+ {
+   "iso3": "LBR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.576525932,
+   "population": 4615222,
+   "aad_over_pop": 5.58e-7
+ },
+ {
+   "iso3": "LBY",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 579.1589297,
+   "population": 6330159,
+   "aad_over_pop": 0.0000915
+ },
+ {
+   "iso3": "LBY",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 574.3694625,
+   "population": 6330159,
+   "aad_over_pop": 0.0000907
+ },
+ {
+   "iso3": "LBY",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 46.41644136,
+   "population": 6330159,
+   "aad_over_pop": 0.00000733
+ },
+ {
+   "iso3": "LSO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1933.401676,
+   "population": 2160309,
+   "aad_over_pop": 0.000894965
+ },
+ {
+   "iso3": "LSO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4179.177387,
+   "population": 2160309,
+   "aad_over_pop": 0.001934528
+ },
+ {
+   "iso3": "MAR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12630.3092,
+   "population": 34817065,
+   "aad_over_pop": 0.000362762
+ },
+ {
+   "iso3": "MAR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 19731.00006,
+   "population": 34817065,
+   "aad_over_pop": 0.000566705
+ },
+ {
+   "iso3": "MAR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 32.17565815,
+   "population": 34817065,
+   "aad_over_pop": 9.24e-7
+ },
+ {
+   "iso3": "MAR",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 148,
+   "population": 34817065,
+   "aad_over_pop": 0.00000425
+ },
+ {
+   "iso3": "MAR",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 148,
+   "population": 34817065,
+   "aad_over_pop": 0.00000425
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 550.4375764,
+   "population": 24915822,
+   "aad_over_pop": 0.0000221
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 85143.02108,
+   "population": 24915822,
+   "aad_over_pop": 0.003417227
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 7990.764144,
+   "population": 24915822,
+   "aad_over_pop": 0.00032071
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 7.02498089,
+   "population": 24915822,
+   "aad_over_pop": 2.82e-7
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 103875.8402,
+   "population": 24915822,
+   "aad_over_pop": 0.004169071
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 166209,
+   "population": 24915822,
+   "aad_over_pop": 0.006670821
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 166209,
+   "population": 24915822,
+   "aad_over_pop": 0.006670821
+ },
+ {
+   "iso3": "MDG",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 243217.2206,
+   "population": 24915822,
+   "aad_over_pop": 0.009761557
+ },
+ {
+   "iso3": "MLI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 94.31218325,
+   "population": 18134835,
+   "aad_over_pop": 0.0000052
+ },
+ {
+   "iso3": "MLI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 36957.51327,
+   "population": 18134835,
+   "aad_over_pop": 0.002037929
+ },
+ {
+   "iso3": "MLI",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 17453.9,
+   "population": 18134835,
+   "aad_over_pop": 0.000962452
+ },
+ {
+   "iso3": "MLI",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 17453.9,
+   "population": 18134835,
+   "aad_over_pop": 0.000962452
+ },
+ {
+   "iso3": "MLI",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 67962.56029,
+   "population": 18134835,
+   "aad_over_pop": 0.003747625
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5524.077186,
+   "population": 28751362,
+   "aad_over_pop": 0.000192133
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 62189.0245,
+   "population": 28751362,
+   "aad_over_pop": 0.002162994
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 2672.668389,
+   "population": 28751362,
+   "aad_over_pop": 0.000093
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.190324847,
+   "population": 28751362,
+   "aad_over_pop": 6.62e-9
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 15515.53532,
+   "population": 28751362,
+   "aad_over_pop": 0.000539645
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 117820,
+   "population": 28751362,
+   "aad_over_pop": 0.004097893
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 37.2857,
+   "population": 28751362,
+   "aad_over_pop": 0.0000013
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 71.381,
+   "population": 28751362,
+   "aad_over_pop": 0.00000248
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 117928,
+   "population": 28751362,
+   "aad_over_pop": 0.004101649
+ },
+ {
+   "iso3": "MOZ",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 152629.108,
+   "population": 28751362,
+   "aad_over_pop": 0.005308587
+ },
+ {
+   "iso3": "MRT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 66.13824538,
+   "population": 4166463,
+   "aad_over_pop": 0.0000159
+ },
+ {
+   "iso3": "MRT",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 7257.41379,
+   "population": 4166463,
+   "aad_over_pop": 0.001741864
+ },
+ {
+   "iso3": "MRT",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.450460806,
+   "population": 4166463,
+   "aad_over_pop": 1.08e-7
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 3532.115018,
+   "population": 1277459,
+   "aad_over_pop": 0.002764954
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.021611081,
+   "population": 1277459,
+   "aad_over_pop": 1.69e-8
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 530.8870011,
+   "population": 1277459,
+   "aad_over_pop": 0.00041558
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 46.9474,
+   "population": 1277459,
+   "aad_over_pop": 0.0000368
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 1.78947,
+   "population": 1277459,
+   "aad_over_pop": 0.0000014
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 48.7368,
+   "population": 1277459,
+   "aad_over_pop": 0.0000382
+ },
+ {
+   "iso3": "MUS",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 3587.439384,
+   "population": 1277459,
+   "aad_over_pop": 0.002808262
+ },
+ {
+   "iso3": "MWI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 7171.669802,
+   "population": 17749826,
+   "aad_over_pop": 0.000404042
+ },
+ {
+   "iso3": "MWI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 33510.56382,
+   "population": 17749826,
+   "aad_over_pop": 0.001887938
+ },
+ {
+   "iso3": "NAM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 173.5115182,
+   "population": 2513981,
+   "aad_over_pop": 0.000069
+ },
+ {
+   "iso3": "NAM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4185.912348,
+   "population": 2513981,
+   "aad_over_pop": 0.001665053
+ },
+ {
+   "iso3": "NAM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.496959291,
+   "population": 2513981,
+   "aad_over_pop": 1.98e-7
+ },
+ {
+   "iso3": "NER",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 37604.13213,
+   "population": 20715285,
+   "aad_over_pop": 0.001815284
+ },
+ {
+   "iso3": "NER",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 35214.1,
+   "population": 20715285,
+   "aad_over_pop": 0.001699909
+ },
+ {
+   "iso3": "NER",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 35214.1,
+   "population": 20715285,
+   "aad_over_pop": 0.001699909
+ },
+ {
+   "iso3": "NER",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 87833.14185,
+   "population": 20715285,
+   "aad_over_pop": 0.004240016
+ },
+ {
+   "iso3": "NGA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6371.948291,
+   "population": 186987563,
+   "aad_over_pop": 0.0000341
+ },
+ {
+   "iso3": "NGA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 208055.3076,
+   "population": 186987563,
+   "aad_over_pop": 0.001112669
+ },
+ {
+   "iso3": "NGA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.708161459,
+   "population": 186987563,
+   "aad_over_pop": 3.79e-9
+ },
+ {
+   "iso3": "RWA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 10869.11649,
+   "population": 11882766,
+   "aad_over_pop": 0.000914696
+ },
+ {
+   "iso3": "RWA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 18735.32597,
+   "population": 11882766,
+   "aad_over_pop": 0.001576681
+ },
+ {
+   "iso3": "SDN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 946.117374,
+   "population": 41175541,
+   "aad_over_pop": 0.000023
+ },
+ {
+   "iso3": "SDN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 69253.75457,
+   "population": 41175541,
+   "aad_over_pop": 0.001681915
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 322.5290322,
+   "population": 15589485,
+   "aad_over_pop": 0.0000207
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 5188.783107,
+   "population": 15589485,
+   "aad_over_pop": 0.000332839
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 4.402766084,
+   "population": 15589485,
+   "aad_over_pop": 2.82e-7
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 219.2,
+   "population": 15589485,
+   "aad_over_pop": 0.0000141
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 219.2,
+   "population": 15589485,
+   "aad_over_pop": 0.0000141
+ },
+ {
+   "iso3": "SEN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 5562.748188,
+   "population": 15589485,
+   "aad_over_pop": 0.000356827
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 186.9496369,
+   "population": 6592102,
+   "aad_over_pop": 0.0000284
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11436.19852,
+   "population": 6592102,
+   "aad_over_pop": 0.001734833
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.112363047,
+   "population": 6592102,
+   "aad_over_pop": 1.7e-8
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 1641.1,
+   "population": 6592102,
+   "aad_over_pop": 0.000248949
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 23.1,
+   "population": 6592102,
+   "aad_over_pop": 0.0000035
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1664.2,
+   "population": 6592102,
+   "aad_over_pop": 0.000252454
+ },
+ {
+   "iso3": "SLE",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 14501.57479,
+   "population": 6592102,
+   "aad_over_pop": 0.002199841
+ },
+ {
+   "iso3": "SOM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 199.6642144,
+   "population": 11079013,
+   "aad_over_pop": 0.000018
+ },
+ {
+   "iso3": "SOM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 29871.33025,
+   "population": 11079013,
+   "aad_over_pop": 0.002696209
+ },
+ {
+   "iso3": "SOM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 0.045326723,
+   "population": 11079013,
+   "aad_over_pop": 4.09e-9
+ },
+ {
+   "iso3": "SOM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.181306892,
+   "population": 11079013,
+   "aad_over_pop": 1.64e-8
+ },
+ {
+   "iso3": "STP",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6.092566143,
+   "population": 194390,
+   "aad_over_pop": 0.0000313
+ },
+ {
+   "iso3": "SWZ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 722.88877,
+   "population": 1304063,
+   "aad_over_pop": 0.000554336
+ },
+ {
+   "iso3": "SWZ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1782.077296,
+   "population": 1304063,
+   "aad_over_pop": 0.001366558
+ },
+ {
+   "iso3": "SYC",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 0.011450986,
+   "population": 97026,
+   "aad_over_pop": 1.18e-7
+ },
+ {
+   "iso3": "SYC",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 0.884615,
+   "population": 97026,
+   "aad_over_pop": 0.00000912
+ },
+ {
+   "iso3": "SYC",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 0.769231,
+   "population": 97026,
+   "aad_over_pop": 0.00000793
+ },
+ {
+   "iso3": "SYC",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 5.69231,
+   "population": 97026,
+   "aad_over_pop": 0.0000587
+ },
+ {
+   "iso3": "SYC",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 7.34615,
+   "population": 97026,
+   "aad_over_pop": 0.0000757
+ },
+ {
+   "iso3": "TCD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 89.42437614,
+   "population": 14496739,
+   "aad_over_pop": 0.00000617
+ },
+ {
+   "iso3": "TCD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 24454.18592,
+   "population": 14496739,
+   "aad_over_pop": 0.001686875
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 36.38362749,
+   "population": 7496833,
+   "aad_over_pop": 0.00000485
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 6253.5429,
+   "population": 7496833,
+   "aad_over_pop": 0.000834158
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 13141.3,
+   "population": 7496833,
+   "aad_over_pop": 0.001752914
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 16.8571,
+   "population": 7496833,
+   "aad_over_pop": 0.00000225
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 13158.1,
+   "population": 7496833,
+   "aad_over_pop": 0.001755154
+ },
+ {
+   "iso3": "TGO",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 24317.85576,
+   "population": 7496833,
+   "aad_over_pop": 0.00324375
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5151.286778,
+   "population": 11375220,
+   "aad_over_pop": 0.000452852
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2981.550181,
+   "population": 11375220,
+   "aad_over_pop": 0.000262109
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 25.17879179,
+   "population": 11375220,
+   "aad_over_pop": 0.00000221
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 4.75,
+   "population": 11375220,
+   "aad_over_pop": 4.18e-7
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 1.7,
+   "population": 11375220,
+   "aad_over_pop": 1.49e-7
+ },
+ {
+   "iso3": "TUN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 6.45,
+   "population": 11375220,
+   "aad_over_pop": 5.67e-7
+ },
+ {
+   "iso3": "TZA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 27971.91071,
+   "population": 55155473,
+   "aad_over_pop": 0.000507147
+ },
+ {
+   "iso3": "TZA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 62207.54457,
+   "population": 55155473,
+   "aad_over_pop": 0.001127858
+ },
+ {
+   "iso3": "TZA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.013044532,
+   "population": 55155473,
+   "aad_over_pop": 2.37e-10
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 18820.08271,
+   "population": 40322768,
+   "aad_over_pop": 0.000466736
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 28301.51536,
+   "population": 40322768,
+   "aad_over_pop": 0.000701874
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 9410.38,
+   "population": 40322768,
+   "aad_over_pop": 0.000233376
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 685.458,
+   "population": 40322768,
+   "aad_over_pop": 0.000017
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 10095.8,
+   "population": 40322768,
+   "aad_over_pop": 0.000250375
+ },
+ {
+   "iso3": "UGA",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 37867.37196,
+   "population": 40322768,
+   "aad_over_pop": 0.000939106
+ },
+ {
+   "iso3": "ZAF",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 29460.51405,
+   "population": 54978907,
+   "aad_over_pop": 0.000535851
+ },
+ {
+   "iso3": "ZAF",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 38927.30121,
+   "population": 54978907,
+   "aad_over_pop": 0.000708041
+ },
+ {
+   "iso3": "ZAF",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 5.171761977,
+   "population": 54978907,
+   "aad_over_pop": 9.41e-8
+ },
+ {
+   "iso3": "ZMB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5980.266938,
+   "population": 16717332,
+   "aad_over_pop": 0.000357729
+ },
+ {
+   "iso3": "ZMB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11157.50188,
+   "population": 16717332,
+   "aad_over_pop": 0.000667421
+ },
+ {
+   "iso3": "ZWE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3063.300485,
+   "population": 15966810,
+   "aad_over_pop": 0.000191854
+ },
+ {
+   "iso3": "ZWE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12390.57848,
+   "population": 15966810,
+   "aad_over_pop": 0.000776021
+ },
+ {
+   "iso3": "ZWE",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 0.083780777,
+   "population": 15966810,
+   "aad_over_pop": 5.25e-9
+ },
+ {
+   "iso3": "AFG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 78153.30499,
+   "population": 33369945,
+   "aad_over_pop": 0.002342027
+ },
+ {
+   "iso3": "AFG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 59001.12636,
+   "population": 33369945,
+   "aad_over_pop": 0.001768092
+ },
+ {
+   "iso3": "AUS",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 90.18770515,
+   "population": 24309330,
+   "aad_over_pop": 0.00000371
+ },
+ {
+   "iso3": "AUS",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 23582.30448,
+   "population": 24309330,
+   "aad_over_pop": 0.000970093
+ },
+ {
+   "iso3": "AUS",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 3857.289921,
+   "population": 24309330,
+   "aad_over_pop": 0.000158675
+ },
+ {
+   "iso3": "AUS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 95.97553358,
+   "population": 24309330,
+   "aad_over_pop": 0.00000395
+ },
+ {
+   "iso3": "AUS",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 619.6787336,
+   "population": 24309330,
+   "aad_over_pop": 0.0000255
+ },
+ {
+   "iso3": "BGD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 37930.63813,
+   "population": 162910864,
+   "aad_over_pop": 0.000232831
+ },
+ {
+   "iso3": "BGD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1055616.094,
+   "population": 162910864,
+   "aad_over_pop": 0.006479716
+ },
+ {
+   "iso3": "BGD",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 9035.323426,
+   "population": 162910864,
+   "aad_over_pop": 0.0000555
+ },
+ {
+   "iso3": "BGD",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2185.012386,
+   "population": 162910864,
+   "aad_over_pop": 0.0000134
+ },
+ {
+   "iso3": "BGD",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 109949.4549,
+   "population": 162910864,
+   "aad_over_pop": 0.000674906
+ },
+ {
+   "iso3": "BRN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 33.16586303,
+   "population": 428874,
+   "aad_over_pop": 0.0000773
+ },
+ {
+   "iso3": "BRN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 150.3961336,
+   "population": 428874,
+   "aad_over_pop": 0.000350677
+ },
+ {
+   "iso3": "BRN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.3326657,
+   "population": 428874,
+   "aad_over_pop": 0.00000544
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 359.9100309,
+   "population": 784103,
+   "aad_over_pop": 0.000459009
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4192.690764,
+   "population": 784103,
+   "aad_over_pop": 0.005347117
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 5.125,
+   "population": 784103,
+   "aad_over_pop": 0.00000654
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1374.5,
+   "population": 784103,
+   "aad_over_pop": 0.001752958
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1379.62,
+   "population": 784103,
+   "aad_over_pop": 0.001759488
+ },
+ {
+   "iso3": "BTN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 7521.557286,
+   "population": 784103,
+   "aad_over_pop": 0.009592563
+ },
+ {
+   "iso3": "CHN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 294941.7662,
+   "population": 1382323332,
+   "aad_over_pop": 0.000213367
+ },
+ {
+   "iso3": "CHN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 718410.8209,
+   "population": 1382323332,
+   "aad_over_pop": 0.000519713
+ },
+ {
+   "iso3": "CHN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 283637.3511,
+   "population": 1382323332,
+   "aad_over_pop": 0.000205189
+ },
+ {
+   "iso3": "CHN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 7778.459926,
+   "population": 1382323332,
+   "aad_over_pop": 0.00000563
+ },
+ {
+   "iso3": "CHN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2380.19371,
+   "population": 1382323332,
+   "aad_over_pop": 0.00000172
+ },
+ {
+   "iso3": "FJI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 75.45219313,
+   "population": 897537,
+   "aad_over_pop": 0.0000841
+ },
+ {
+   "iso3": "FJI",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 3614.435676,
+   "population": 897537,
+   "aad_over_pop": 0.00402706
+ },
+ {
+   "iso3": "FJI",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.056560391,
+   "population": 897537,
+   "aad_over_pop": 0.00000118
+ },
+ {
+   "iso3": "FJI",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2076.589058,
+   "population": 897537,
+   "aad_over_pop": 0.002313653
+ },
+ {
+   "iso3": "FSM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4.888589009,
+   "population": 104966,
+   "aad_over_pop": 0.0000466
+ },
+ {
+   "iso3": "FSM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 146.5326133,
+   "population": 104966,
+   "aad_over_pop": 0.001396001
+ },
+ {
+   "iso3": "FSM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.330606388,
+   "population": 104966,
+   "aad_over_pop": 0.0000222
+ },
+ {
+   "iso3": "FSM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 195.6458797,
+   "population": 104966,
+   "aad_over_pop": 0.001863898
+ },
+ {
+   "iso3": "HKG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 9.178183666,
+   "population": 7346248,
+   "aad_over_pop": 0.00000125
+ },
+ {
+   "iso3": "HKG",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1612.274471,
+   "population": 7346248,
+   "aad_over_pop": 0.000219469
+ },
+ {
+   "iso3": "HKG",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1.279984533,
+   "population": 7346248,
+   "aad_over_pop": 1.74e-7
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 63549.35831,
+   "population": 260581100,
+   "aad_over_pop": 0.000243876
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 310554.3663,
+   "population": 260581100,
+   "aad_over_pop": 0.001191776
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 21.19422426,
+   "population": 260581100,
+   "aad_over_pop": 8.13e-8
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 4120.338675,
+   "population": 260581100,
+   "aad_over_pop": 0.0000158
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2.877747881,
+   "population": 260581100,
+   "aad_over_pop": 1.1e-8
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 51395.7,
+   "population": 260581100,
+   "aad_over_pop": 0.000197235
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 1476.91,
+   "population": 260581100,
+   "aad_over_pop": 0.00000567
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 204103,
+   "population": 260581100,
+   "aad_over_pop": 0.000783261
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 2.28125,
+   "population": 260581100,
+   "aad_over_pop": 8.75e-9
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 256978,
+   "population": 260581100,
+   "aad_over_pop": 0.000986173
+ },
+ {
+   "iso3": "IDN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 460452.6238,
+   "population": 260581100,
+   "aad_over_pop": 0.001767022
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 81720.61879,
+   "population": 1326801576,
+   "aad_over_pop": 0.0000616
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1938484.463,
+   "population": 1326801576,
+   "aad_over_pop": 0.001461021
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 36713.24035,
+   "population": 1326801576,
+   "aad_over_pop": 0.0000277
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 3667.815694,
+   "population": 1326801576,
+   "aad_over_pop": 0.00000276
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 240415.3522,
+   "population": 1326801576,
+   "aad_over_pop": 0.000181199
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 30.8333,
+   "population": 1326801576,
+   "aad_over_pop": 2.32e-8
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 6.16667,
+   "population": 1326801576,
+   "aad_over_pop": 4.65e-9
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 37,
+   "population": 1326801576,
+   "aad_over_pop": 2.79e-8
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 157624,
+   "population": 1326801576,
+   "aad_over_pop": 0.0001188
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 99.2159,
+   "population": 1326801576,
+   "aad_over_pop": 7.48e-8
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 157723,
+   "population": 1326801576,
+   "aad_over_pop": 0.000118875
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 33115.9,
+   "population": 1326801576,
+   "aad_over_pop": 0.000025
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 0.382353,
+   "population": 1326801576,
+   "aad_over_pop": 2.88e-10
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 4485.24,
+   "population": 1326801576,
+   "aad_over_pop": 0.00000338
+ },
+ {
+   "iso3": "IND",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 37601.5,
+   "population": 1326801576,
+   "aad_over_pop": 0.0000283
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 146362.2612,
+   "population": 80043146,
+   "aad_over_pop": 0.001828542
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 30141.01554,
+   "population": 80043146,
+   "aad_over_pop": 0.00037656
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 0.225828965,
+   "population": 80043146,
+   "aad_over_pop": 2.82e-9
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 9.560092839,
+   "population": 80043146,
+   "aad_over_pop": 1.19e-7
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 4354.43,
+   "population": 80043146,
+   "aad_over_pop": 0.0000544
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 2.875,
+   "population": 80043146,
+   "aad_over_pop": 3.59e-8
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 13023.3,
+   "population": 80043146,
+   "aad_over_pop": 0.000162703
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 17380.6,
+   "population": 80043146,
+   "aad_over_pop": 0.00021714
+ },
+ {
+   "iso3": "IRN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 102225.2447,
+   "population": 80043146,
+   "aad_over_pop": 0.001277127
+ },
+ {
+   "iso3": "JPN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 30439.48695,
+   "population": 126323715,
+   "aad_over_pop": 0.000240964
+ },
+ {
+   "iso3": "JPN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 10331.59178,
+   "population": 126323715,
+   "aad_over_pop": 0.0000818
+ },
+ {
+   "iso3": "JPN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 88163.15187,
+   "population": 126323715,
+   "aad_over_pop": 0.000697914
+ },
+ {
+   "iso3": "JPN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 15980.40282,
+   "population": 126323715,
+   "aad_over_pop": 0.000126504
+ },
+ {
+   "iso3": "JPN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2981.016012,
+   "population": 126323715,
+   "aad_over_pop": 0.0000236
+ },
+ {
+   "iso3": "KAZ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 7800.593405,
+   "population": 17855384,
+   "aad_over_pop": 0.000436876
+ },
+ {
+   "iso3": "KAZ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 13609.40066,
+   "population": 17855384,
+   "aad_over_pop": 0.000762202
+ },
+ {
+   "iso3": "KGZ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 17519.73035,
+   "population": 6033769,
+   "aad_over_pop": 0.002903613
+ },
+ {
+   "iso3": "KGZ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 10937.57884,
+   "population": 6033769,
+   "aad_over_pop": 0.001812727
+ },
+ {
+   "iso3": "KHM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.010827644,
+   "population": 15827241,
+   "aad_over_pop": 6.84e-10
+ },
+ {
+   "iso3": "KHM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 193981.5728,
+   "population": 15827241,
+   "aad_over_pop": 0.012256184
+ },
+ {
+   "iso3": "KHM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 3579.89,
+   "population": 15827241,
+   "aad_over_pop": 0.000226185
+ },
+ {
+   "iso3": "KHM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 3579.89,
+   "population": 15827241,
+   "aad_over_pop": 0.000226185
+ },
+ {
+   "iso3": "KHM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 279217.8689,
+   "population": 15827241,
+   "aad_over_pop": 0.017641601
+ },
+ {
+   "iso3": "KIR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.53573545,
+   "population": 114405,
+   "aad_over_pop": 0.0000134
+ },
+ {
+   "iso3": "KOR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 73.46239904,
+   "population": 50503933,
+   "aad_over_pop": 0.00000145
+ },
+ {
+   "iso3": "KOR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 16116.24154,
+   "population": 50503933,
+   "aad_over_pop": 0.000319109
+ },
+ {
+   "iso3": "KOR",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 74296.94537,
+   "population": 50503933,
+   "aad_over_pop": 0.001471112
+ },
+ {
+   "iso3": "KOR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 10.50816601,
+   "population": 50503933,
+   "aad_over_pop": 2.08e-7
+ },
+ {
+   "iso3": "KOR",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 0.021058449,
+   "population": 50503933,
+   "aad_over_pop": 4.17e-10
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1813.967246,
+   "population": 6918367,
+   "aad_over_pop": 0.000262196
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 84429.61979,
+   "population": 6918367,
+   "aad_over_pop": 0.012203692
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 0.314668673,
+   "population": 6918367,
+   "aad_over_pop": 4.55e-8
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 6271.29,
+   "population": 6918367,
+   "aad_over_pop": 0.00090647
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 6271.29,
+   "population": 6918367,
+   "aad_over_pop": 0.00090647
+ },
+ {
+   "iso3": "LAO",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 88310.13557,
+   "population": 6918367,
+   "aad_over_pop": 0.012764593
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 29.9671013,
+   "population": 20810816,
+   "aad_over_pop": 0.00000144
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 18866.08163,
+   "population": 20810816,
+   "aad_over_pop": 0.000906552
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1432.644072,
+   "population": 20810816,
+   "aad_over_pop": 0.0000688
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 221.934297,
+   "population": 20810816,
+   "aad_over_pop": 0.0000107
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 8486.92,
+   "population": 20810816,
+   "aad_over_pop": 0.000407813
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 41.6375,
+   "population": 20810816,
+   "aad_over_pop": 0.000002
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 6257.45,
+   "population": 20810816,
+   "aad_over_pop": 0.000300683
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 14786,
+   "population": 20810816,
+   "aad_over_pop": 0.000710496
+ },
+ {
+   "iso3": "LKA",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 24755.49189,
+   "population": 20810816,
+   "aad_over_pop": 0.001189549
+ },
+ {
+   "iso3": "MAC",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.476688017,
+   "population": 597126,
+   "aad_over_pop": 7.98e-7
+ },
+ {
+   "iso3": "MAC",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 157.0742445,
+   "population": 597126,
+   "aad_over_pop": 0.00026305
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.293404245,
+   "population": 369812,
+   "aad_over_pop": 7.93e-7
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 3.087122925,
+   "population": 369812,
+   "aad_over_pop": 0.00000835
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2.83871,
+   "population": 369812,
+   "aad_over_pop": 0.00000768
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 483.839,
+   "population": 369812,
+   "aad_over_pop": 0.001308338
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 486.677,
+   "population": 369812,
+   "aad_over_pop": 0.001316012
+ },
+ {
+   "iso3": "MDV",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 19.13505945,
+   "population": 369812,
+   "aad_over_pop": 0.0000517
+ },
+ {
+   "iso3": "MHL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.306288671,
+   "population": 53069,
+   "aad_over_pop": 0.00000577
+ },
+ {
+   "iso3": "MHL",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 5.033343822,
+   "population": 53069,
+   "aad_over_pop": 0.0000948
+ },
+ {
+   "iso3": "MMR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4785.664571,
+   "population": 54363426,
+   "aad_over_pop": 0.000088
+ },
+ {
+   "iso3": "MMR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 549461.191,
+   "population": 54363426,
+   "aad_over_pop": 0.010107185
+ },
+ {
+   "iso3": "MMR",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 11735.54722,
+   "population": 54363426,
+   "aad_over_pop": 0.000215872
+ },
+ {
+   "iso3": "MMR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1015.067407,
+   "population": 54363426,
+   "aad_over_pop": 0.0000187
+ },
+ {
+   "iso3": "MMR",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2144.808193,
+   "population": 54363426,
+   "aad_over_pop": 0.0000395
+ },
+ {
+   "iso3": "MNG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 227.9488273,
+   "population": 3006444,
+   "aad_over_pop": 0.0000758
+ },
+ {
+   "iso3": "MNG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3728.730619,
+   "population": 3006444,
+   "aad_over_pop": 0.001240246
+ },
+ {
+   "iso3": "MYS",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 147.397591,
+   "population": 30751602,
+   "aad_over_pop": 0.00000479
+ },
+ {
+   "iso3": "MYS",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 34803.45594,
+   "population": 30751602,
+   "aad_over_pop": 0.001131761
+ },
+ {
+   "iso3": "MYS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 148.2010214,
+   "population": 30751602,
+   "aad_over_pop": 0.00000482
+ },
+ {
+   "iso3": "NCL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 22.20939842,
+   "population": 266431,
+   "aad_over_pop": 0.0000834
+ },
+ {
+   "iso3": "NCL",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1506.16963,
+   "population": 266431,
+   "aad_over_pop": 0.005653132
+ },
+ {
+   "iso3": "NCL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.712974821,
+   "population": 266431,
+   "aad_over_pop": 0.0000102
+ },
+ {
+   "iso3": "NCL",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2788.000906,
+   "population": 266431,
+   "aad_over_pop": 0.010464251
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6398.555343,
+   "population": 28850717,
+   "aad_over_pop": 0.000221782
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 89918.26905,
+   "population": 28850717,
+   "aad_over_pop": 0.003116674
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 12811.2,
+   "population": 28850717,
+   "aad_over_pop": 0.000444051
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 724.833,
+   "population": 28850717,
+   "aad_over_pop": 0.0000251
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 3283.74,
+   "population": 28850717,
+   "aad_over_pop": 0.000113818
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 16819.8,
+   "population": 28850717,
+   "aad_over_pop": 0.000582994
+ },
+ {
+   "iso3": "NPL",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 106155.1095,
+   "population": 28850717,
+   "aad_over_pop": 0.003679462
+ },
+ {
+   "iso3": "NZL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 38.95245576,
+   "population": 4565185,
+   "aad_over_pop": 0.00000853
+ },
+ {
+   "iso3": "NZL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2657.452636,
+   "population": 4565185,
+   "aad_over_pop": 0.000582113
+ },
+ {
+   "iso3": "NZL",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 326.1880418,
+   "population": 4565185,
+   "aad_over_pop": 0.0000715
+ },
+ {
+   "iso3": "NZL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 95.29835736,
+   "population": 4565185,
+   "aad_over_pop": 0.0000209
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 61761.74934,
+   "population": 192826502,
+   "aad_over_pop": 0.000320297
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 400831.1926,
+   "population": 192826502,
+   "aad_over_pop": 0.002078714
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1617.502733,
+   "population": 192826502,
+   "aad_over_pop": 0.00000839
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 40.1335172,
+   "population": 192826502,
+   "aad_over_pop": 2.08e-7
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 23.84352342,
+   "population": 192826502,
+   "aad_over_pop": 1.24e-7
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 620551,
+   "population": 192826502,
+   "aad_over_pop": 0.003218183
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 131.956,
+   "population": 192826502,
+   "aad_over_pop": 6.84e-7
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 69587.7,
+   "population": 192826502,
+   "aad_over_pop": 0.000360882
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 690271,
+   "population": 192826502,
+   "aad_over_pop": 0.003579752
+ },
+ {
+   "iso3": "PAK",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 636696.0088,
+   "population": 192826502,
+   "aad_over_pop": 0.003301911
+ },
+ {
+   "iso3": "PHL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 64033.06506,
+   "population": 102250133,
+   "aad_over_pop": 0.000626239
+ },
+ {
+   "iso3": "PHL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 84326.02842,
+   "population": 102250133,
+   "aad_over_pop": 0.000824703
+ },
+ {
+   "iso3": "PHL",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 226068.838,
+   "population": 102250133,
+   "aad_over_pop": 0.002210939
+ },
+ {
+   "iso3": "PHL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 4268.233054,
+   "population": 102250133,
+   "aad_over_pop": 0.0000417
+ },
+ {
+   "iso3": "PHL",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 338895.3097,
+   "population": 102250133,
+   "aad_over_pop": 0.003314375
+ },
+ {
+   "iso3": "PLW",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3.293696328,
+   "population": 21501,
+   "aad_over_pop": 0.000153188
+ },
+ {
+   "iso3": "PLW",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 30.16571533,
+   "population": 21501,
+   "aad_over_pop": 0.001402991
+ },
+ {
+   "iso3": "PLW",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.101151106,
+   "population": 21501,
+   "aad_over_pop": 0.0000977
+ },
+ {
+   "iso3": "PLW",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 307.5971643,
+   "population": 21501,
+   "aad_over_pop": 0.014306179
+ },
+ {
+   "iso3": "PNG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6769.112271,
+   "population": 7776115,
+   "aad_over_pop": 0.000870501
+ },
+ {
+   "iso3": "PNG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 23774.31686,
+   "population": 7776115,
+   "aad_over_pop": 0.003057352
+ },
+ {
+   "iso3": "PNG",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 233.0882891,
+   "population": 7776115,
+   "aad_over_pop": 0.00003
+ },
+ {
+   "iso3": "PNG",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 159.7830995,
+   "population": 7776115,
+   "aad_over_pop": 0.0000205
+ },
+ {
+   "iso3": "PNG",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 34.53118702,
+   "population": 7776115,
+   "aad_over_pop": 0.00000444
+ },
+ {
+   "iso3": "PRK",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3512.053963,
+   "population": 25281327,
+   "aad_over_pop": 0.000138919
+ },
+ {
+   "iso3": "PRK",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 62994.21042,
+   "population": 25281327,
+   "aad_over_pop": 0.002491729
+ },
+ {
+   "iso3": "PRK",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 375.8095891,
+   "population": 25281327,
+   "aad_over_pop": 0.0000149
+ },
+ {
+   "iso3": "PRK",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.09809415,
+   "population": 25281327,
+   "aad_over_pop": 3.88e-9
+ },
+ {
+   "iso3": "PYF",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.477993641,
+   "population": 285735,
+   "aad_over_pop": 0.00000517
+ },
+ {
+   "iso3": "PYF",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1155.47178,
+   "population": 285735,
+   "aad_over_pop": 0.004043858
+ },
+ {
+   "iso3": "SGP",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.163531876,
+   "population": 5696506,
+   "aad_over_pop": 2.87e-8
+ },
+ {
+   "iso3": "SLB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 277.9193781,
+   "population": 594934,
+   "aad_over_pop": 0.000467143
+ },
+ {
+   "iso3": "SLB",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1368.550227,
+   "population": 594934,
+   "aad_over_pop": 0.00230034
+ },
+ {
+   "iso3": "SLB",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 10.88089407,
+   "population": 594934,
+   "aad_over_pop": 0.0000183
+ },
+ {
+   "iso3": "SLB",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2371.506814,
+   "population": 594934,
+   "aad_over_pop": 0.003986168
+ },
+ {
+   "iso3": "THA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 907.4147333,
+   "population": 68146609,
+   "aad_over_pop": 0.0000133
+ },
+ {
+   "iso3": "THA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 198545.2866,
+   "population": 68146609,
+   "aad_over_pop": 0.002913502
+ },
+ {
+   "iso3": "THA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1.405488199,
+   "population": 68146609,
+   "aad_over_pop": 2.06e-8
+ },
+ {
+   "iso3": "THA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 20.49431262,
+   "population": 68146609,
+   "aad_over_pop": 3.01e-7
+ },
+ {
+   "iso3": "TJK",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 23193.51618,
+   "population": 8669464,
+   "aad_over_pop": 0.002675311
+ },
+ {
+   "iso3": "TJK",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 21566.89395,
+   "population": 8669464,
+   "aad_over_pop": 0.002487685
+ },
+ {
+   "iso3": "TKM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2538.133117,
+   "population": 5438670,
+   "aad_over_pop": 0.000466683
+ },
+ {
+   "iso3": "TKM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12148.46577,
+   "population": 5438670,
+   "aad_over_pop": 0.00223372
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1470.947337,
+   "population": 1211245,
+   "aad_over_pop": 0.001214409
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 109.6525012,
+   "population": 1211245,
+   "aad_over_pop": 0.0000905
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 36.88786845,
+   "population": 1211245,
+   "aad_over_pop": 0.0000305
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 1058.56,
+   "population": 1211245,
+   "aad_over_pop": 0.000873944
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 45.9375,
+   "population": 1211245,
+   "aad_over_pop": 0.0000379
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1104.5,
+   "population": 1211245,
+   "aad_over_pop": 0.000911872
+ },
+ {
+   "iso3": "TLS",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 2263.943533,
+   "population": 1211245,
+   "aad_over_pop": 0.001869105
+ },
+ {
+   "iso3": "TON",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 168.5239092,
+   "population": 106915,
+   "aad_over_pop": 0.001576242
+ },
+ {
+   "iso3": "TON",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 10.16755417,
+   "population": 106915,
+   "aad_over_pop": 0.0000951
+ },
+ {
+   "iso3": "TON",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1051.615603,
+   "population": 106915,
+   "aad_over_pop": 0.009835997
+ },
+ {
+   "iso3": "TUV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.131839031,
+   "population": 9943,
+   "aad_over_pop": 0.0000133
+ },
+ {
+   "iso3": "TWN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 21138.51162,
+   "population": 23395600,
+   "aad_over_pop": 0.000903525
+ },
+ {
+   "iso3": "TWN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3094.540521,
+   "population": 23395600,
+   "aad_over_pop": 0.00013227
+ },
+ {
+   "iso3": "TWN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 43986.64104,
+   "population": 23395600,
+   "aad_over_pop": 0.001880125
+ },
+ {
+   "iso3": "TWN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 448.2501728,
+   "population": 23395600,
+   "aad_over_pop": 0.0000192
+ },
+ {
+   "iso3": "TWN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 6336.189614,
+   "population": 23395600,
+   "aad_over_pop": 0.000270828
+ },
+ {
+   "iso3": "UZB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 50637.73907,
+   "population": 30300446,
+   "aad_over_pop": 0.001671188
+ },
+ {
+   "iso3": "UZB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 32734.99407,
+   "population": 30300446,
+   "aad_over_pop": 0.001080347
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 541.42658,
+   "population": 94444200,
+   "aad_over_pop": 0.00000573
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1008358.753,
+   "population": 94444200,
+   "aad_over_pop": 0.010676767
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 28271.88765,
+   "population": 94444200,
+   "aad_over_pop": 0.00029935
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 366.5805366,
+   "population": 94444200,
+   "aad_over_pop": 0.00000388
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 5326.305773,
+   "population": 94444200,
+   "aad_over_pop": 0.0000564
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 127626,
+   "population": 94444200,
+   "aad_over_pop": 0.001351338
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 134.167,
+   "population": 94444200,
+   "aad_over_pop": 0.00000142
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 127760,
+   "population": 94444200,
+   "aad_over_pop": 0.001352756
+ },
+ {
+   "iso3": "VNM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 1149501.054,
+   "population": 94444200,
+   "aad_over_pop": 0.012171219
+ },
+ {
+   "iso3": "VUT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 417.908338,
+   "population": 270470,
+   "aad_over_pop": 0.001545119
+ },
+ {
+   "iso3": "VUT",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1125.921311,
+   "population": 270470,
+   "aad_over_pop": 0.004162833
+ },
+ {
+   "iso3": "VUT",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.100497572,
+   "population": 270470,
+   "aad_over_pop": 0.00000407
+ },
+ {
+   "iso3": "VUT",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2134.471188,
+   "population": 270470,
+   "aad_over_pop": 0.007891711
+ },
+ {
+   "iso3": "WSM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 17.56180027,
+   "population": 194523,
+   "aad_over_pop": 0.0000903
+ },
+ {
+   "iso3": "WSM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.940211104,
+   "population": 194523,
+   "aad_over_pop": 0.00000483
+ },
+ {
+   "iso3": "WSM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1193.049541,
+   "population": 194523,
+   "aad_over_pop": 0.006133206
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1367.822002,
+   "population": 2903700,
+   "aad_over_pop": 0.000471062
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 5246.326256,
+   "population": 2903700,
+   "aad_over_pop": 0.001806773
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 6.027193846,
+   "population": 2903700,
+   "aad_over_pop": 0.00000208
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 284.909,
+   "population": 2903700,
+   "aad_over_pop": 0.0000981
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 191.841,
+   "population": 2903700,
+   "aad_over_pop": 0.0000661
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 92.8409,
+   "population": 2903700,
+   "aad_over_pop": 0.000032
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 569.591,
+   "population": 2903700,
+   "aad_over_pop": 0.00019616
+ },
+ {
+   "iso3": "ALB",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 11021.44099,
+   "population": 2903700,
+   "aad_over_pop": 0.003795654
+ },
+ {
+   "iso3": "AND",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.426196051,
+   "population": 69165,
+   "aad_over_pop": 0.00000616
+ },
+ {
+   "iso3": "ARM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3035.010015,
+   "population": 3026048,
+   "aad_over_pop": 0.001002962
+ },
+ {
+   "iso3": "ARM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3620.22724,
+   "population": 3026048,
+   "aad_over_pop": 0.001196355
+ },
+ {
+   "iso3": "AUT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1448.149779,
+   "population": 8569633,
+   "aad_over_pop": 0.000168986
+ },
+ {
+   "iso3": "AUT",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 5016.773859,
+   "population": 8569633,
+   "aad_over_pop": 0.000585413
+ },
+ {
+   "iso3": "AZE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6018.655434,
+   "population": 9868447,
+   "aad_over_pop": 0.000609889
+ },
+ {
+   "iso3": "AZE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4845.162268,
+   "population": 9868447,
+   "aad_over_pop": 0.000490975
+ },
+ {
+   "iso3": "BEL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 533.985137,
+   "population": 11371928,
+   "aad_over_pop": 0.000047
+ },
+ {
+   "iso3": "BEL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1690.579673,
+   "population": 11371928,
+   "aad_over_pop": 0.000148663
+ },
+ {
+   "iso3": "BIH",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 771.6384191,
+   "population": 3802134,
+   "aad_over_pop": 0.000202949
+ },
+ {
+   "iso3": "BIH",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 13731.8143,
+   "population": 3802134,
+   "aad_over_pop": 0.003611607
+ },
+ {
+   "iso3": "BLR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1.337401619,
+   "population": 9481521,
+   "aad_over_pop": 1.41e-7
+ },
+ {
+   "iso3": "BLR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 25534.78621,
+   "population": 9481521,
+   "aad_over_pop": 0.002693111
+ },
+ {
+   "iso3": "CHE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 987.2092697,
+   "population": 8379477,
+   "aad_over_pop": 0.000117813
+ },
+ {
+   "iso3": "CHE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3452.844435,
+   "population": 8379477,
+   "aad_over_pop": 0.00041206
+ },
+ {
+   "iso3": "CYP",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 282.4945637,
+   "population": 1176598,
+   "aad_over_pop": 0.000240094
+ },
+ {
+   "iso3": "CYP",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 0.11830251,
+   "population": 1176598,
+   "aad_over_pop": 1.01e-7
+ },
+ {
+   "iso3": "CYP",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 19.99312419,
+   "population": 1176598,
+   "aad_over_pop": 0.000017
+ },
+ {
+   "iso3": "CZE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 592.1626646,
+   "population": 10548058,
+   "aad_over_pop": 0.0000561
+ },
+ {
+   "iso3": "CZE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4699.055133,
+   "population": 10548058,
+   "aad_over_pop": 0.00044549
+ },
+ {
+   "iso3": "DEU",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6406.369482,
+   "population": 80682351,
+   "aad_over_pop": 0.0000794
+ },
+ {
+   "iso3": "DEU",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 20401.84358,
+   "population": 80682351,
+   "aad_over_pop": 0.000252866
+ },
+ {
+   "iso3": "DNK",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2.321813937,
+   "population": 5690750,
+   "aad_over_pop": 4.08e-7
+ },
+ {
+   "iso3": "DNK",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 138.5700772,
+   "population": 5690750,
+   "aad_over_pop": 0.0000244
+ },
+ {
+   "iso3": "ESP",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 195.4786168,
+   "population": 46064604,
+   "aad_over_pop": 0.00000424
+ },
+ {
+   "iso3": "ESP",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 15072.70982,
+   "population": 46064604,
+   "aad_over_pop": 0.000327208
+ },
+ {
+   "iso3": "ESP",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 26.34648379,
+   "population": 46064604,
+   "aad_over_pop": 5.72e-7
+ },
+ {
+   "iso3": "EST",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5.788597734,
+   "population": 1309104,
+   "aad_over_pop": 0.00000442
+ },
+ {
+   "iso3": "EST",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 914.7419609,
+   "population": 1309104,
+   "aad_over_pop": 0.000698754
+ },
+ {
+   "iso3": "FIN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1.342641594,
+   "population": 5523904,
+   "aad_over_pop": 2.43e-7
+ },
+ {
+   "iso3": "FRA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1924.327899,
+   "population": 64668129,
+   "aad_over_pop": 0.0000298
+ },
+ {
+   "iso3": "FRA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 28401.87197,
+   "population": 64668129,
+   "aad_over_pop": 0.000439194
+ },
+ {
+   "iso3": "FRA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.560602314,
+   "population": 64668129,
+   "aad_over_pop": 8.67e-9
+ },
+ {
+   "iso3": "FRO",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 0.454675888,
+   "population": 48239,
+   "aad_over_pop": 0.00000943
+ },
+ {
+   "iso3": "GBR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3193.060372,
+   "population": 65111143,
+   "aad_over_pop": 0.000049
+ },
+ {
+   "iso3": "GBR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11120.68891,
+   "population": 65111143,
+   "aad_over_pop": 0.000170795
+ },
+ {
+   "iso3": "GBR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.107402686,
+   "population": 65111143,
+   "aad_over_pop": 1.65e-9
+ },
+ {
+   "iso3": "GEO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 7094.123114,
+   "population": 3979781,
+   "aad_over_pop": 0.001782541
+ },
+ {
+   "iso3": "GEO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4999.257538,
+   "population": 3979781,
+   "aad_over_pop": 0.001256164
+ },
+ {
+   "iso3": "GRC",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 24212.33933,
+   "population": 10919459,
+   "aad_over_pop": 0.002217357
+ },
+ {
+   "iso3": "GRC",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1057.232441,
+   "population": 10919459,
+   "aad_over_pop": 0.0000968
+ },
+ {
+   "iso3": "GRC",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 78.39369781,
+   "population": 10919459,
+   "aad_over_pop": 0.00000718
+ },
+ {
+   "iso3": "HRV",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1441.311001,
+   "population": 4225001,
+   "aad_over_pop": 0.000341139
+ },
+ {
+   "iso3": "HRV",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 8443.821791,
+   "population": 4225001,
+   "aad_over_pop": 0.001998537
+ },
+ {
+   "iso3": "HRV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.07913949,
+   "population": 4225001,
+   "aad_over_pop": 1.87e-8
+ },
+ {
+   "iso3": "HUN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 966.6603729,
+   "population": 9821318,
+   "aad_over_pop": 0.0000984
+ },
+ {
+   "iso3": "HUN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 33628.97699,
+   "population": 9821318,
+   "aad_over_pop": 0.00342408
+ },
+ {
+   "iso3": "IRL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12.76523065,
+   "population": 4713993,
+   "aad_over_pop": 0.00000271
+ },
+ {
+   "iso3": "IRL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2053.541352,
+   "population": 4713993,
+   "aad_over_pop": 0.000435627
+ },
+ {
+   "iso3": "IRL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.227950547,
+   "population": 4713993,
+   "aad_over_pop": 4.84e-8
+ },
+ {
+   "iso3": "ISL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 82.99403966,
+   "population": 331778,
+   "aad_over_pop": 0.000250149
+ },
+ {
+   "iso3": "ISR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1308.793154,
+   "population": 8192463,
+   "aad_over_pop": 0.000159756
+ },
+ {
+   "iso3": "ISR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 60.30821097,
+   "population": 8192463,
+   "aad_over_pop": 0.00000736
+ },
+ {
+   "iso3": "ISR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 60.06051443,
+   "population": 8192463,
+   "aad_over_pop": 0.00000733
+ },
+ {
+   "iso3": "ITA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 30073.38201,
+   "population": 59801004,
+   "aad_over_pop": 0.000502891
+ },
+ {
+   "iso3": "ITA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 7508.680907,
+   "population": 59801004,
+   "aad_over_pop": 0.000125561
+ },
+ {
+   "iso3": "ITA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 24.9129473,
+   "population": 59801004,
+   "aad_over_pop": 4.17e-7
+ },
+ {
+   "iso3": "LIE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 9.911321248,
+   "population": 37776,
+   "aad_over_pop": 0.000262371
+ },
+ {
+   "iso3": "LTU",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4.178696551,
+   "population": 2850030,
+   "aad_over_pop": 0.00000147
+ },
+ {
+   "iso3": "LTU",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4362.184694,
+   "population": 2850030,
+   "aad_over_pop": 0.001530575
+ },
+ {
+   "iso3": "LUX",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 11.59836428,
+   "population": 576243,
+   "aad_over_pop": 0.0000201
+ },
+ {
+   "iso3": "LUX",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 44.43867664,
+   "population": 576243,
+   "aad_over_pop": 0.0000771
+ },
+ {
+   "iso3": "LVA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1.517085387,
+   "population": 1955742,
+   "aad_over_pop": 7.76e-7
+ },
+ {
+   "iso3": "LVA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4357.736748,
+   "population": 1955742,
+   "aad_over_pop": 0.002228176
+ },
+ {
+   "iso3": "MDA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 172.9017226,
+   "population": 4062862,
+   "aad_over_pop": 0.0000426
+ },
+ {
+   "iso3": "MDA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 16171.57891,
+   "population": 4062862,
+   "aad_over_pop": 0.003980342
+ },
+ {
+   "iso3": "MKD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 636.8753595,
+   "population": 2081012,
+   "aad_over_pop": 0.000306041
+ },
+ {
+   "iso3": "MKD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 930.4058843,
+   "population": 2081012,
+   "aad_over_pop": 0.000447093
+ },
+ {
+   "iso3": "MLT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 51.51685787,
+   "population": 419615,
+   "aad_over_pop": 0.000122772
+ },
+ {
+   "iso3": "MLT",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.799158078,
+   "population": 419615,
+   "aad_over_pop": 0.00000667
+ },
+ {
+   "iso3": "MNE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 131.7363024,
+   "population": 626101,
+   "aad_over_pop": 0.000210407
+ },
+ {
+   "iso3": "MNE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 643.9789024,
+   "population": 626101,
+   "aad_over_pop": 0.001028554
+ },
+ {
+   "iso3": "MNE",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.034540195,
+   "population": 626101,
+   "aad_over_pop": 5.52e-8
+ },
+ {
+   "iso3": "NLD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 487.7110479,
+   "population": 16979729,
+   "aad_over_pop": 0.0000287
+ },
+ {
+   "iso3": "NLD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 7570.571652,
+   "population": 16979729,
+   "aad_over_pop": 0.000445859
+ },
+ {
+   "iso3": "NOR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12.44058609,
+   "population": 5271958,
+   "aad_over_pop": 0.00000236
+ },
+ {
+   "iso3": "POL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1920.255045,
+   "population": 38593161,
+   "aad_over_pop": 0.0000498
+ },
+ {
+   "iso3": "POL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 22632.7184,
+   "population": 38593161,
+   "aad_over_pop": 0.000586444
+ },
+ {
+   "iso3": "PRT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 15.0551052,
+   "population": 10304434,
+   "aad_over_pop": 0.00000146
+ },
+ {
+   "iso3": "PRT",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3115.771986,
+   "population": 10304434,
+   "aad_over_pop": 0.000302372
+ },
+ {
+   "iso3": "PRT",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 4.623387893,
+   "population": 10304434,
+   "aad_over_pop": 4.49e-7
+ },
+ {
+   "iso3": "ROU",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5688.907605,
+   "population": 19372734,
+   "aad_over_pop": 0.000293655
+ },
+ {
+   "iso3": "ROU",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 34910.70095,
+   "population": 19372734,
+   "aad_over_pop": 0.001802053
+ },
+ {
+   "iso3": "RUS",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5238.320274,
+   "population": 143439832,
+   "aad_over_pop": 0.0000365
+ },
+ {
+   "iso3": "RUS",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 241175.4571,
+   "population": 143439832,
+   "aad_over_pop": 0.00168137
+ },
+ {
+   "iso3": "RUS",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 333.0928539,
+   "population": 143439832,
+   "aad_over_pop": 0.00000232
+ },
+ {
+   "iso3": "RUS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 85.69765819,
+   "population": 143439832,
+   "aad_over_pop": 5.97e-7
+ },
+ {
+   "iso3": "SMR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 18.47765736,
+   "population": 31950,
+   "aad_over_pop": 0.00057833
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2343.366886,
+   "population": 8812705,
+   "aad_over_pop": 0.000265908
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 53058.80458,
+   "population": 8812705,
+   "aad_over_pop": 0.006020717
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 483.75,
+   "population": 8812705,
+   "aad_over_pop": 0.0000549
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 33,
+   "population": 8812705,
+   "aad_over_pop": 0.00000374
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 499.875,
+   "population": 8812705,
+   "aad_over_pop": 0.0000567
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1016.62,
+   "population": 8812705,
+   "aad_over_pop": 0.000115358
+ },
+ {
+   "iso3": "SRB",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 54488.40761,
+   "population": 8812705,
+   "aad_over_pop": 0.006182938
+ },
+ {
+   "iso3": "SVK",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 317.6249342,
+   "population": 5429418,
+   "aad_over_pop": 0.0000585
+ },
+ {
+   "iso3": "SVK",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 8567.110855,
+   "population": 5429418,
+   "aad_over_pop": 0.001577906
+ },
+ {
+   "iso3": "SVN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1004.553478,
+   "population": 2069362,
+   "aad_over_pop": 0.000485441
+ },
+ {
+   "iso3": "SVN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 969.2410976,
+   "population": 2069362,
+   "aad_over_pop": 0.000468377
+ },
+ {
+   "iso3": "SVN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.011242401,
+   "population": 2069362,
+   "aad_over_pop": 5.43e-9
+ },
+ {
+   "iso3": "SWE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 11.3848469,
+   "population": 9851852,
+   "aad_over_pop": 0.00000116
+ },
+ {
+   "iso3": "SWE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 695.634925,
+   "population": 9851852,
+   "aad_over_pop": 0.0000706
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 49158.54884,
+   "population": 79622062,
+   "aad_over_pop": 0.000617399
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 19834.46148,
+   "population": 79622062,
+   "aad_over_pop": 0.000249108
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 224.7427108,
+   "population": 79622062,
+   "aad_over_pop": 0.00000282
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 21.2375,
+   "population": 79622062,
+   "aad_over_pop": 2.67e-7
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 60.3,
+   "population": 79622062,
+   "aad_over_pop": 7.57e-7
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1897.78,
+   "population": 79622062,
+   "aad_over_pop": 0.0000238
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1979.31,
+   "population": 79622062,
+   "aad_over_pop": 0.0000249
+ },
+ {
+   "iso3": "TUR",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 37635.89867,
+   "population": 79622062,
+   "aad_over_pop": 0.000472682
+ },
+ {
+   "iso3": "UKR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 311.5873988,
+   "population": 44624373,
+   "aad_over_pop": 0.00000698
+ },
+ {
+   "iso3": "UKR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 121354.8034,
+   "population": 44624373,
+   "aad_over_pop": 0.002719474
+ },
+ {
+   "iso3": "ABW",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 104.6334637,
+   "population": 104263,
+   "aad_over_pop": 0.001003553
+ },
+ {
+   "iso3": "ABW",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 359.0500851,
+   "population": 104263,
+   "aad_over_pop": 0.003443696
+ },
+ {
+   "iso3": "ABW",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.296202304,
+   "population": 104263,
+   "aad_over_pop": 0.00000284
+ },
+ {
+   "iso3": "ABW",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 55.17825769,
+   "population": 104263,
+   "aad_over_pop": 0.000529222
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 14961.1377,
+   "population": 43847277,
+   "aad_over_pop": 0.00034121
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 37036.08882,
+   "population": 43847277,
+   "aad_over_pop": 0.000844661
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 2.100652491,
+   "population": 43847277,
+   "aad_over_pop": 4.79e-8
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 3279.82,
+   "population": 43847277,
+   "aad_over_pop": 0.0000748
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 4.88462,
+   "population": 43847277,
+   "aad_over_pop": 1.11e-7
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1044.42,
+   "population": 43847277,
+   "aad_over_pop": 0.0000238
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 0.0641026,
+   "population": 43847277,
+   "aad_over_pop": 1.46e-9
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 4329.19,
+   "population": 43847277,
+   "aad_over_pop": 0.0000987
+ },
+ {
+   "iso3": "ARG",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 56792.92368,
+   "population": 43847277,
+   "aad_over_pop": 0.001295244
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 268.1661934,
+   "population": 92738,
+   "aad_over_pop": 0.002891654
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 983.5883956,
+   "population": 92738,
+   "aad_over_pop": 0.010606099
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.048613594,
+   "population": 92738,
+   "aad_over_pop": 0.0000113
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2114.48469,
+   "population": 92738,
+   "aad_over_pop": 0.022800629
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2.5,
+   "population": 92738,
+   "aad_over_pop": 0.000027
+ },
+ {
+   "iso3": "ATG",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 2.5,
+   "population": 92738,
+   "aad_over_pop": 0.000027
+ },
+ {
+   "iso3": "BHS",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.070489608,
+   "population": 392718,
+   "aad_over_pop": 1.79e-7
+ },
+ {
+   "iso3": "BHS",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 17674.09446,
+   "population": 392718,
+   "aad_over_pop": 0.045004544
+ },
+ {
+   "iso3": "BHS",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.117482681,
+   "population": 392718,
+   "aad_over_pop": 2.99e-7
+ },
+ {
+   "iso3": "BHS",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 5532.012713,
+   "population": 392718,
+   "aad_over_pop": 0.014086476
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 79.42196042,
+   "population": 366942,
+   "aad_over_pop": 0.000216443
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2982.519056,
+   "population": 366942,
+   "aad_over_pop": 0.008128039
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 926.8318338,
+   "population": 366942,
+   "aad_over_pop": 0.002525827
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.051009608,
+   "population": 366942,
+   "aad_over_pop": 1.39e-7
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1314.479354,
+   "population": 366942,
+   "aad_over_pop": 0.003582254
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 421.75,
+   "population": 366942,
+   "aad_over_pop": 0.001149364
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1.25,
+   "population": 366942,
+   "aad_over_pop": 0.00000341
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 423,
+   "population": 366942,
+   "aad_over_pop": 0.001152771
+ },
+ {
+   "iso3": "BLZ",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 4209.56794,
+   "population": 366942,
+   "aad_over_pop": 0.011472025
+ },
+ {
+   "iso3": "BMU",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.660983566,
+   "population": 61662,
+   "aad_over_pop": 0.0000107
+ },
+ {
+   "iso3": "BMU",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 171.0171659,
+   "population": 61662,
+   "aad_over_pop": 0.002773461
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5878.784961,
+   "population": 10888402,
+   "aad_over_pop": 0.000539913
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 22397.8169,
+   "population": 10888402,
+   "aad_over_pop": 0.002057034
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 420.267,
+   "population": 10888402,
+   "aad_over_pop": 0.0000386
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 72.4535,
+   "population": 10888402,
+   "aad_over_pop": 0.00000665
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 94.6395,
+   "population": 10888402,
+   "aad_over_pop": 0.00000869
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 587.36,
+   "population": 10888402,
+   "aad_over_pop": 0.0000539
+ },
+ {
+   "iso3": "BOL",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 28417.04514,
+   "population": 10888402,
+   "aad_over_pop": 0.002609845
+ },
+ {
+   "iso3": "BRA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1250.109432,
+   "population": 209567920,
+   "aad_over_pop": 0.00000597
+ },
+ {
+   "iso3": "BRA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 201712.0512,
+   "population": 209567920,
+   "aad_over_pop": 0.000962514
+ },
+ {
+   "iso3": "BRA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 14.87245456,
+   "population": 209567920,
+   "aad_over_pop": 7.1e-8
+ },
+ {
+   "iso3": "BRB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 254.0875903,
+   "population": 285006,
+   "aad_over_pop": 0.000891517
+ },
+ {
+   "iso3": "BRB",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1030.481697,
+   "population": 285006,
+   "aad_over_pop": 0.003615649
+ },
+ {
+   "iso3": "BRB",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.073939012,
+   "population": 285006,
+   "aad_over_pop": 0.00000377
+ },
+ {
+   "iso3": "BRB",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 389.8504942,
+   "population": 285006,
+   "aad_over_pop": 0.001367868
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 41675.04541,
+   "population": 18131850,
+   "aad_over_pop": 0.002298444
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12922.70992,
+   "population": 18131850,
+   "aad_over_pop": 0.000712708
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 611.6457078,
+   "population": 18131850,
+   "aad_over_pop": 0.0000337
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2403.35,
+   "population": 18131850,
+   "aad_over_pop": 0.000132549
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 5.70455,
+   "population": 18131850,
+   "aad_over_pop": 3.15e-7
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 38021,
+   "population": 18131850,
+   "aad_over_pop": 0.002096918
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 0.318182,
+   "population": 18131850,
+   "aad_over_pop": 1.75e-8
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 40430.4,
+   "population": 18131850,
+   "aad_over_pop": 0.0022298
+ },
+ {
+   "iso3": "CHL",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 44607.46254,
+   "population": 18131850,
+   "aad_over_pop": 0.002460172
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 103682.906,
+   "population": 48654392,
+   "aad_over_pop": 0.002131008
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 49865.19507,
+   "population": 48654392,
+   "aad_over_pop": 0.001024886
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 2.847804867,
+   "population": 48654392,
+   "aad_over_pop": 5.85e-8
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1576.919208,
+   "population": 48654392,
+   "aad_over_pop": 0.0000324
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 4.667235755,
+   "population": 48654392,
+   "aad_over_pop": 9.59e-8
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 10714.5,
+   "population": 48654392,
+   "aad_over_pop": 0.000220217
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 1139.05,
+   "population": 48654392,
+   "aad_over_pop": 0.0000234
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 4388.77,
+   "population": 48654392,
+   "aad_over_pop": 0.0000902
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 348.795,
+   "population": 48654392,
+   "aad_over_pop": 0.00000717
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 16591.1,
+   "population": 48654392,
+   "aad_over_pop": 0.000340999
+ },
+ {
+   "iso3": "COL",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 137525.2434,
+   "population": 48654392,
+   "aad_over_pop": 0.002826574
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4231.945711,
+   "population": 4857218,
+   "aad_over_pop": 0.000871269
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2651.913804,
+   "population": 4857218,
+   "aad_over_pop": 0.000545974
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 0.641603548,
+   "population": 4857218,
+   "aad_over_pop": 1.32e-7
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 34.5277761,
+   "population": 4857218,
+   "aad_over_pop": 0.00000711
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 4.562514117,
+   "population": 4857218,
+   "aad_over_pop": 9.39e-7
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 214.678,
+   "population": 4857218,
+   "aad_over_pop": 0.0000442
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 10.0222,
+   "population": 4857218,
+   "aad_over_pop": 0.00000206
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 482.033,
+   "population": 4857218,
+   "aad_over_pop": 0.0000992
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 706.733,
+   "population": 4857218,
+   "aad_over_pop": 0.000145502
+ },
+ {
+   "iso3": "CRI",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 4539.939177,
+   "population": 4857218,
+   "aad_over_pop": 0.000934679
+ },
+ {
+   "iso3": "CUB",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 100.7497202,
+   "population": 11392889,
+   "aad_over_pop": 0.00000884
+ },
+ {
+   "iso3": "CUB",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 724.9844601,
+   "population": 11392889,
+   "aad_over_pop": 0.0000636
+ },
+ {
+   "iso3": "CUB",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 17943.92929,
+   "population": 11392889,
+   "aad_over_pop": 0.001575011
+ },
+ {
+   "iso3": "CUB",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 3.465621204,
+   "population": 11392889,
+   "aad_over_pop": 3.04e-7
+ },
+ {
+   "iso3": "CUB",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 5655.329907,
+   "population": 11392889,
+   "aad_over_pop": 0.000496391
+ },
+ {
+   "iso3": "CYM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12.26875885,
+   "population": 60764,
+   "aad_over_pop": 0.000201908
+ },
+ {
+   "iso3": "CYM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 548.0669144,
+   "population": 60764,
+   "aad_over_pop": 0.009019599
+ },
+ {
+   "iso3": "CYM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.066020227,
+   "population": 60764,
+   "aad_over_pop": 0.00000109
+ },
+ {
+   "iso3": "CYM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1523.87888,
+   "population": 60764,
+   "aad_over_pop": 0.025078647
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 285.5098993,
+   "population": 73016,
+   "aad_over_pop": 0.003910237
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1376.429287,
+   "population": 73016,
+   "aad_over_pop": 0.018851064
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.011963541,
+   "population": 73016,
+   "aad_over_pop": 1.64e-7
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 732.324218,
+   "population": 73016,
+   "aad_over_pop": 0.01002964
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 11.3333,
+   "population": 73016,
+   "aad_over_pop": 0.000155217
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 0.833333,
+   "population": 73016,
+   "aad_over_pop": 0.0000114
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 12.1667,
+   "population": 73016,
+   "aad_over_pop": 0.000166631
+ },
+ {
+   "iso3": "DMA",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 1414.090513,
+   "population": 73016,
+   "aad_over_pop": 0.019366858
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 11609.39131,
+   "population": 10648613,
+   "aad_over_pop": 0.001090226
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 7793.242984,
+   "population": 10648613,
+   "aad_over_pop": 0.000731855
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 3489.080572,
+   "population": 10648613,
+   "aad_over_pop": 0.000327656
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 23.06471227,
+   "population": 10648613,
+   "aad_over_pop": 0.00000217
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 18863.00206,
+   "population": 10648613,
+   "aad_over_pop": 0.001771405
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 206.133,
+   "population": 10648613,
+   "aad_over_pop": 0.0000194
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 2.95,
+   "population": 10648613,
+   "aad_over_pop": 2.77e-7
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 209.083,
+   "population": 10648613,
+   "aad_over_pop": 0.0000196
+ },
+ {
+   "iso3": "DOM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 23248.07191,
+   "population": 10648613,
+   "aad_over_pop": 0.002183202
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 41105.91003,
+   "population": 16385450,
+   "aad_over_pop": 0.002508684
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 25737.77456,
+   "population": 16385450,
+   "aad_over_pop": 0.00157077
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 258.9938206,
+   "population": 16385450,
+   "aad_over_pop": 0.0000158
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 675.111,
+   "population": 16385450,
+   "aad_over_pop": 0.0000412
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 182.456,
+   "population": 16385450,
+   "aad_over_pop": 0.0000111
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 194.178,
+   "population": 16385450,
+   "aad_over_pop": 0.0000119
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 3.03333,
+   "population": 16385450,
+   "aad_over_pop": 1.85e-7
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1054.78,
+   "population": 16385450,
+   "aad_over_pop": 0.0000644
+ },
+ {
+   "iso3": "ECU",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 42231.49443,
+   "population": 16385450,
+   "aad_over_pop": 0.002577378
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 102.8003488,
+   "population": 107327,
+   "aad_over_pop": 0.000957824
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 374.7813618,
+   "population": 107327,
+   "aad_over_pop": 0.003491958
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.173649238,
+   "population": 107327,
+   "aad_over_pop": 0.00000162
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 156.5968827,
+   "population": 107327,
+   "aad_over_pop": 0.001459063
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 129.769,
+   "population": 107327,
+   "aad_over_pop": 0.001209099
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 129.769,
+   "population": 107327,
+   "aad_over_pop": 0.001209099
+ },
+ {
+   "iso3": "GRD",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 654.078796,
+   "population": 107327,
+   "aad_over_pop": 0.006094261
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 30125.04901,
+   "population": 16672956,
+   "aad_over_pop": 0.001806821
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12578.37979,
+   "population": 16672956,
+   "aad_over_pop": 0.000754418
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 50.83414867,
+   "population": 16672956,
+   "aad_over_pop": 0.00000305
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 8.327208582,
+   "population": 16672956,
+   "aad_over_pop": 4.99e-7
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 2.362159455,
+   "population": 16672956,
+   "aad_over_pop": 1.42e-7
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 5905.62,
+   "population": 16672956,
+   "aad_over_pop": 0.000354204
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 364.4,
+   "population": 16672956,
+   "aad_over_pop": 0.0000219
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 2234.74,
+   "population": 16672956,
+   "aad_over_pop": 0.000134034
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 59.96,
+   "population": 16672956,
+   "aad_over_pop": 0.0000036
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 8564.72,
+   "population": 16672956,
+   "aad_over_pop": 0.000513689
+ },
+ {
+   "iso3": "GTM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 31799.6769,
+   "population": 16672956,
+   "aad_over_pop": 0.001907261
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.430246012,
+   "population": 770610,
+   "aad_over_pop": 5.58e-7
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 3015.639588,
+   "population": 770610,
+   "aad_over_pop": 0.003913315
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.328345641,
+   "population": 770610,
+   "aad_over_pop": 4.26e-7
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 16.05,
+   "population": 770610,
+   "aad_over_pop": 0.0000208
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1.4,
+   "population": 770610,
+   "aad_over_pop": 0.00000182
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 17.45,
+   "population": 770610,
+   "aad_over_pop": 0.0000226
+ },
+ {
+   "iso3": "GUY",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 3098.903514,
+   "population": 770610,
+   "aad_over_pop": 0.004021364
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 31620.16225,
+   "population": 8189501,
+   "aad_over_pop": 0.003861061
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 16483.28696,
+   "population": 8189501,
+   "aad_over_pop": 0.002012734
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 377.8341812,
+   "population": 8189501,
+   "aad_over_pop": 0.0000461
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.993574276,
+   "population": 8189501,
+   "aad_over_pop": 2.43e-7
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 626.2127935,
+   "population": 8189501,
+   "aad_over_pop": 0.0000765
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 5667.82,
+   "population": 8189501,
+   "aad_over_pop": 0.000692084
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 99.1923,
+   "population": 8189501,
+   "aad_over_pop": 0.0000121
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 129.833,
+   "population": 8189501,
+   "aad_over_pop": 0.0000159
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 5896.85,
+   "population": 8189501,
+   "aad_over_pop": 0.00072005
+ },
+ {
+   "iso3": "HND",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 32071.19402,
+   "population": 8189501,
+   "aad_over_pop": 0.003916135
+ },
+ {
+   "iso3": "HTI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 26167.89041,
+   "population": 10848175,
+   "aad_over_pop": 0.002412193
+ },
+ {
+   "iso3": "HTI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11961.98554,
+   "population": 10848175,
+   "aad_over_pop": 0.001102673
+ },
+ {
+   "iso3": "HTI",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 4562.335282,
+   "population": 10848175,
+   "aad_over_pop": 0.000420562
+ },
+ {
+   "iso3": "HTI",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 61.45766318,
+   "population": 10848175,
+   "aad_over_pop": 0.00000567
+ },
+ {
+   "iso3": "HTI",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 7718.22026,
+   "population": 10848175,
+   "aad_over_pop": 0.000711476
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1136.361531,
+   "population": 2803362,
+   "aad_over_pop": 0.000405357
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 545.2886201,
+   "population": 2803362,
+   "aad_over_pop": 0.000194512
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 4787.33979,
+   "population": 2803362,
+   "aad_over_pop": 0.001707714
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 4.601207288,
+   "population": 2803362,
+   "aad_over_pop": 0.00000164
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 8431.609853,
+   "population": 2803362,
+   "aad_over_pop": 0.003007678
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 807.912,
+   "population": 2803362,
+   "aad_over_pop": 0.000288194
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 0.558824,
+   "population": 2803362,
+   "aad_over_pop": 1.99e-7
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 0.191176,
+   "population": 2803362,
+   "aad_over_pop": 6.82e-8
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 808.662,
+   "population": 2803362,
+   "aad_over_pop": 0.000288461
+ },
+ {
+   "iso3": "JAM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 13342.36222,
+   "population": 2803362,
+   "aad_over_pop": 0.004759415
+ },
+ {
+   "iso3": "KNA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 214.0121083,
+   "population": 56183,
+   "aad_over_pop": 0.003809197
+ },
+ {
+   "iso3": "KNA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 327.8836208,
+   "population": 56183,
+   "aad_over_pop": 0.005835993
+ },
+ {
+   "iso3": "KNA",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 366.7569592,
+   "population": 56183,
+   "aad_over_pop": 0.006527899
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 151.5008414,
+   "population": 186383,
+   "aad_over_pop": 0.000812847
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1492.473078,
+   "population": 186383,
+   "aad_over_pop": 0.00800756
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.571214556,
+   "population": 186383,
+   "aad_over_pop": 0.00000306
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 752.9344903,
+   "population": 186383,
+   "aad_over_pop": 0.004039717
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 112.714,
+   "population": 186383,
+   "aad_over_pop": 0.000604744
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 112.714,
+   "population": 186383,
+   "aad_over_pop": 0.000604744
+ },
+ {
+   "iso3": "LCA",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 1638.095937,
+   "population": 186383,
+   "aad_over_pop": 0.00878887
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 24822.80648,
+   "population": 128632004,
+   "aad_over_pop": 0.000192975
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 68314.17372,
+   "population": 128632004,
+   "aad_over_pop": 0.000531082
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 6018.61722,
+   "population": 128632004,
+   "aad_over_pop": 0.0000468
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 121.2378795,
+   "population": 128632004,
+   "aad_over_pop": 9.43e-7
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 10049.57338,
+   "population": 128632004,
+   "aad_over_pop": 0.0000781
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 31179,
+   "population": 128632004,
+   "aad_over_pop": 0.000242389
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 777.791,
+   "population": 128632004,
+   "aad_over_pop": 0.00000605
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 8944.62,
+   "population": 128632004,
+   "aad_over_pop": 0.0000695
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 931.058,
+   "population": 128632004,
+   "aad_over_pop": 0.00000724
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 41832.5,
+   "population": 128632004,
+   "aad_over_pop": 0.000325211
+ },
+ {
+   "iso3": "MEX",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 109627.0109,
+   "population": 128632004,
+   "aad_over_pop": 0.000852253
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 5152.0293,
+   "population": 6150035,
+   "aad_over_pop": 0.000837724
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 9675.503929,
+   "population": 6150035,
+   "aad_over_pop": 0.001573244
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 485.7286937,
+   "population": 6150035,
+   "aad_over_pop": 0.000079
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 3.548393617,
+   "population": 6150035,
+   "aad_over_pop": 5.77e-7
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 227.2601919,
+   "population": 6150035,
+   "aad_over_pop": 0.000037
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2505.19,
+   "population": 6150035,
+   "aad_over_pop": 0.000407346
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 777.262,
+   "population": 6150035,
+   "aad_over_pop": 0.000126383
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 253.976,
+   "population": 6150035,
+   "aad_over_pop": 0.0000413
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 3536.43,
+   "population": 6150035,
+   "aad_over_pop": 0.000575026
+ },
+ {
+   "iso3": "NIC",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 12133.50001,
+   "population": 6150035,
+   "aad_over_pop": 0.001972916
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2303.228855,
+   "population": 3990406,
+   "aad_over_pop": 0.000577192
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1290.035686,
+   "population": 3990406,
+   "aad_over_pop": 0.000323284
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 0.051476853,
+   "population": 3990406,
+   "aad_over_pop": 1.29e-8
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 48.07938114,
+   "population": 3990406,
+   "aad_over_pop": 0.000012
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 1431.59,
+   "population": 3990406,
+   "aad_over_pop": 0.000358758
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 5.84483,
+   "population": 3990406,
+   "aad_over_pop": 0.00000146
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 91.7931,
+   "population": 3990406,
+   "aad_over_pop": 0.000023
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 1529.22,
+   "population": 3990406,
+   "aad_over_pop": 0.000383224
+ },
+ {
+   "iso3": "PAN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 3088.611208,
+   "population": 3990406,
+   "aad_over_pop": 0.000774009
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 51172.20276,
+   "population": 31774225,
+   "aad_over_pop": 0.001610494
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 20927.10788,
+   "population": 31774225,
+   "aad_over_pop": 0.000658619
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 561.700876,
+   "population": 31774225,
+   "aad_over_pop": 0.0000177
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 6175.49,
+   "population": 31774225,
+   "aad_over_pop": 0.000194355
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 132.163,
+   "population": 31774225,
+   "aad_over_pop": 0.00000416
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 14738.1,
+   "population": 31774225,
+   "aad_over_pop": 0.000463838
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 21045.7,
+   "population": 31774225,
+   "aad_over_pop": 0.000662351
+ },
+ {
+   "iso3": "PER",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 54466.63651,
+   "population": 31774225,
+   "aad_over_pop": 0.001714177
+ },
+ {
+   "iso3": "PRI",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2632.5321,
+   "population": 3680772,
+   "aad_over_pop": 0.000715212
+ },
+ {
+   "iso3": "PRI",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 150.9488744,
+   "population": 3680772,
+   "aad_over_pop": 0.000041
+ },
+ {
+   "iso3": "PRI",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 6370.211448,
+   "population": 3680772,
+   "aad_over_pop": 0.001730673
+ },
+ {
+   "iso3": "PRI",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 80.16747253,
+   "population": 3680772,
+   "aad_over_pop": 0.0000218
+ },
+ {
+   "iso3": "PRI",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 44170.95288,
+   "population": 3680772,
+   "aad_over_pop": 0.012000459
+ },
+ {
+   "iso3": "PRY",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1.93121642,
+   "population": 6725430,
+   "aad_over_pop": 2.87e-7
+ },
+ {
+   "iso3": "PRY",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 12834.99844,
+   "population": 6725430,
+   "aad_over_pop": 0.001908428
+ },
+ {
+   "iso3": "PRY",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2073,
+   "population": 6725430,
+   "aad_over_pop": 0.000308233
+ },
+ {
+   "iso3": "PRY",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 2073,
+   "population": 6725430,
+   "aad_over_pop": 0.000308233
+ },
+ {
+   "iso3": "PRY",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 13608.37015,
+   "population": 6725430,
+   "aad_over_pop": 0.00202342
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 9951.952432,
+   "population": 6146419,
+   "aad_over_pop": 0.001619146
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2094.518362,
+   "population": 6146419,
+   "aad_over_pop": 0.000340771
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 2.22553989,
+   "population": 6146419,
+   "aad_over_pop": 3.62e-7
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 13.94671664,
+   "population": 6146419,
+   "aad_over_pop": 0.00000227
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 1465.93,
+   "population": 6146419,
+   "aad_over_pop": 0.000238501
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 21.9333,
+   "population": 6146419,
+   "aad_over_pop": 0.00000357
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 13980.9,
+   "population": 6146419,
+   "aad_over_pop": 0.002274642
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 16.0556,
+   "population": 6146419,
+   "aad_over_pop": 0.00000261
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 15484.8,
+   "population": 6146419,
+   "aad_over_pop": 0.002519321
+ },
+ {
+   "iso3": "SLV",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 10097.10328,
+   "population": 6146419,
+   "aad_over_pop": 0.001642762
+ },
+ {
+   "iso3": "SUR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.036180312,
+   "population": 547610,
+   "aad_over_pop": 6.61e-8
+ },
+ {
+   "iso3": "SUR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 2916.675825,
+   "population": 547610,
+   "aad_over_pop": 0.005326192
+ },
+ {
+   "iso3": "TCA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.784782933,
+   "population": 34904,
+   "aad_over_pop": 0.0000225
+ },
+ {
+   "iso3": "TCA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.606423175,
+   "population": 34904,
+   "aad_over_pop": 0.0000174
+ },
+ {
+   "iso3": "TCA",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 639.0035575,
+   "population": 34904,
+   "aad_over_pop": 0.018307459
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 6876.637212,
+   "population": 1364973,
+   "aad_over_pop": 0.005037929
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11.76254194,
+   "population": 1364973,
+   "aad_over_pop": 0.00000862
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 230.0611667,
+   "population": 1364973,
+   "aad_over_pop": 0.000168546
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.321673891,
+   "population": 1364973,
+   "aad_over_pop": 2.36e-7
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 30.03361893,
+   "population": 1364973,
+   "aad_over_pop": 0.000022
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 3.94792,
+   "population": 1364973,
+   "aad_over_pop": 0.00000289
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 0.458333,
+   "population": 1364973,
+   "aad_over_pop": 3.36e-7
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 0.15625,
+   "population": 1364973,
+   "aad_over_pop": 1.14e-7
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Retrospective",
+   "hazard": "Volcanic",
+   "aad": 0.708333,
+   "population": 1364973,
+   "aad_over_pop": 5.19e-7
+ },
+ {
+   "iso3": "TTO",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 5.27083,
+   "population": 1364973,
+   "aad_over_pop": 0.00000386
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 0.011557476,
+   "population": 3444071,
+   "aad_over_pop": 3.36e-9
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1737.146389,
+   "population": 3444071,
+   "aad_over_pop": 0.000504388
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.011557476,
+   "population": 3444071,
+   "aad_over_pop": 3.36e-9
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 275.774,
+   "population": 3444071,
+   "aad_over_pop": 0.0000801
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 275.774,
+   "population": 3444071,
+   "aad_over_pop": 0.0000801
+ },
+ {
+   "iso3": "URY",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 1842.26163,
+   "population": 3444071,
+   "aad_over_pop": 0.000534908
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 58.1496235,
+   "population": 109644,
+   "aad_over_pop": 0.000530349
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 879.0840631,
+   "population": 109644,
+   "aad_over_pop": 0.008017621
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.43503459,
+   "population": 109644,
+   "aad_over_pop": 0.00000397
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 149.9298377,
+   "population": 109644,
+   "aad_over_pop": 0.001367424
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 106.926,
+   "population": 109644,
+   "aad_over_pop": 0.000975211
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 1.97059,
+   "population": 109644,
+   "aad_over_pop": 0.000018
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 108.897,
+   "population": 109644,
+   "aad_over_pop": 0.000993187
+ },
+ {
+   "iso3": "VCT",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 953.4508093,
+   "population": 109644,
+   "aad_over_pop": 0.008695878
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 31984.43309,
+   "population": 31518855,
+   "aad_over_pop": 0.001014771
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 9714.369148,
+   "population": 31518855,
+   "aad_over_pop": 0.000308208
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 359.6229871,
+   "population": 31518855,
+   "aad_over_pop": 0.0000114
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 119.7689272,
+   "population": 31518855,
+   "aad_over_pop": 0.0000038
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 30.63545163,
+   "population": 31518855,
+   "aad_over_pop": 9.72e-7
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 4031.66,
+   "population": 31518855,
+   "aad_over_pop": 0.000127913
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 629.333,
+   "population": 31518855,
+   "aad_over_pop": 0.00002
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 29.6,
+   "population": 31518855,
+   "aad_over_pop": 9.39e-7
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 4690.59,
+   "population": 31518855,
+   "aad_over_pop": 0.000148819
+ },
+ {
+   "iso3": "VEN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 33424.14121,
+   "population": 31518855,
+   "aad_over_pop": 0.001060449
+ },
+ {
+   "iso3": "VIR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 143.3263517,
+   "population": 106415,
+   "aad_over_pop": 0.001346862
+ },
+ {
+   "iso3": "VIR",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 1953.100026,
+   "population": 106415,
+   "aad_over_pop": 0.018353616
+ },
+ {
+   "iso3": "VIR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.011251872,
+   "population": 106415,
+   "aad_over_pop": 1.06e-7
+ },
+ {
+   "iso3": "VIR",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 1490.130481,
+   "population": 106415,
+   "aad_over_pop": 0.014003012
+ },
+ {
+   "iso3": "CAN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1275.156813,
+   "population": 36286378,
+   "aad_over_pop": 0.0000351
+ },
+ {
+   "iso3": "CAN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 14046.65546,
+   "population": 36286378,
+   "aad_over_pop": 0.000387105
+ },
+ {
+   "iso3": "CAN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 15.47638392,
+   "population": 36286378,
+   "aad_over_pop": 4.27e-7
+ },
+ {
+   "iso3": "CAN",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 434.480543,
+   "population": 36286378,
+   "aad_over_pop": 0.000012
+ },
+ {
+   "iso3": "USA",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 49847.12427,
+   "population": 324118787,
+   "aad_over_pop": 0.000153793
+ },
+ {
+   "iso3": "USA",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 45523.09314,
+   "population": 324118787,
+   "aad_over_pop": 0.000140452
+ },
+ {
+   "iso3": "USA",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 55206.48838,
+   "population": 324118787,
+   "aad_over_pop": 0.000170328
+ },
+ {
+   "iso3": "USA",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 798.5453653,
+   "population": 324118787,
+   "aad_over_pop": 0.00000246
+ },
+ {
+   "iso3": "USA",
+   "analysis_type": "Prospective",
+   "hazard": "Wind",
+   "aad": 81284.91002,
+   "population": 324118787,
+   "aad_over_pop": 0.000250787
+ },
+ {
+   "iso3": "ARE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 4138.477181,
+   "population": 9266971,
+   "aad_over_pop": 0.000446584
+ },
+ {
+   "iso3": "ARE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 7891.951991,
+   "population": 9266971,
+   "aad_over_pop": 0.000851622
+ },
+ {
+   "iso3": "ARE",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 1.72125913,
+   "population": 9266971,
+   "aad_over_pop": 1.86e-7
+ },
+ {
+   "iso3": "BHR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 148.2968983,
+   "population": 1396829,
+   "aad_over_pop": 0.000106167
+ },
+ {
+   "iso3": "IRQ",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 39162.32896,
+   "population": 37547686,
+   "aad_over_pop": 0.001043002
+ },
+ {
+   "iso3": "IRQ",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 57201.8636,
+   "population": 37547686,
+   "aad_over_pop": 0.001523446
+ },
+ {
+   "iso3": "JOR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2502.780797,
+   "population": 7747800,
+   "aad_over_pop": 0.000323031
+ },
+ {
+   "iso3": "JOR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 138.0221262,
+   "population": 7747800,
+   "aad_over_pop": 0.0000178
+ },
+ {
+   "iso3": "JOR",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 2.79167,
+   "population": 7747800,
+   "aad_over_pop": 3.6e-7
+ },
+ {
+   "iso3": "JOR",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 2.79167,
+   "population": 7747800,
+   "aad_over_pop": 3.6e-7
+ },
+ {
+   "iso3": "KWT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 908.9675608,
+   "population": 4007146,
+   "aad_over_pop": 0.000226837
+ },
+ {
+   "iso3": "KWT",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 4.747742688,
+   "population": 4007146,
+   "aad_over_pop": 0.00000118
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 3230.994482,
+   "population": 5988153,
+   "aad_over_pop": 0.000539564
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 87.04796551,
+   "population": 5988153,
+   "aad_over_pop": 0.0000145
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 127.830062,
+   "population": 5988153,
+   "aad_over_pop": 0.0000213
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 19.3043,
+   "population": 5988153,
+   "aad_over_pop": 0.00000322
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 9.1087,
+   "population": 5988153,
+   "aad_over_pop": 0.00000152
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 1.47826,
+   "population": 5988153,
+   "aad_over_pop": 2.47e-7
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 29.8913,
+   "population": 5988153,
+   "aad_over_pop": 0.00000499
+ },
+ {
+   "iso3": "LBN",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 3255.643762,
+   "population": 5988153,
+   "aad_over_pop": 0.000543681
+ },
+ {
+   "iso3": "OMN",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 810.5895511,
+   "population": 4654471,
+   "aad_over_pop": 0.000174153
+ },
+ {
+   "iso3": "OMN",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 313.3599091,
+   "population": 4654471,
+   "aad_over_pop": 0.0000673
+ },
+ {
+   "iso3": "OMN",
+   "analysis_type": "Prospective",
+   "hazard": "Storm",
+   "aad": 239.4462715,
+   "population": 4654471,
+   "aad_over_pop": 0.0000514
+ },
+ {
+   "iso3": "OMN",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 13.63229484,
+   "population": 4654471,
+   "aad_over_pop": 0.00000293
+ },
+ {
+   "iso3": "PSE",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1483.120963,
+   "population": 4797239,
+   "aad_over_pop": 0.000309161
+ },
+ {
+   "iso3": "PSE",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 19.9740243,
+   "population": 4797239,
+   "aad_over_pop": 0.00000416
+ },
+ {
+   "iso3": "PSE",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 7.603371681,
+   "population": 4797239,
+   "aad_over_pop": 0.00000158
+ },
+ {
+   "iso3": "PSE",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 10.4394,
+   "population": 4797239,
+   "aad_over_pop": 0.00000218
+ },
+ {
+   "iso3": "PSE",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 10.4394,
+   "population": 4797239,
+   "aad_over_pop": 0.00000218
+ },
+ {
+   "iso3": "QAT",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 375.5179077,
+   "population": 2291368,
+   "aad_over_pop": 0.000163884
+ },
+ {
+   "iso3": "QAT",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 0.096249624,
+   "population": 2291368,
+   "aad_over_pop": 4.2e-8
+ },
+ {
+   "iso3": "SAU",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1718.792985,
+   "population": 32157974,
+   "aad_over_pop": 0.0000534
+ },
+ {
+   "iso3": "SAU",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 1588.88477,
+   "population": 32157974,
+   "aad_over_pop": 0.0000494
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 12292.77652,
+   "population": 18563595,
+   "aad_over_pop": 0.000662198
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 8035.201955,
+   "population": 18563595,
+   "aad_over_pop": 0.000432847
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 17.80034899,
+   "population": 18563595,
+   "aad_over_pop": 9.59e-7
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 132.263,
+   "population": 18563595,
+   "aad_over_pop": 0.00000712
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 2.13158,
+   "population": 18563595,
+   "aad_over_pop": 1.15e-7
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 134.395,
+   "population": 18563595,
+   "aad_over_pop": 0.00000724
+ },
+ {
+   "iso3": "SYR",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 10558.79777,
+   "population": 18563595,
+   "aad_over_pop": 0.000568791
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 14605.60252,
+   "population": 27477600,
+   "aad_over_pop": 0.000531546
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 11844.23714,
+   "population": 27477600,
+   "aad_over_pop": 0.000431051
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Prospective",
+   "hazard": "Tsunami",
+   "aad": 0.086134627,
+   "population": 27477600,
+   "aad_over_pop": 3.13e-9
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 823.433,
+   "population": 27477600,
+   "aad_over_pop": 0.00003
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 3436.57,
+   "population": 27477600,
+   "aad_over_pop": 0.000125068
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 4260,
+   "population": 27477600,
+   "aad_over_pop": 0.000155035
+ },
+ {
+   "iso3": "YEM",
+   "analysis_type": "Hybrid",
+   "hazard": "Total",
+   "aad": 20842.11863,
+   "population": 27477600,
+   "aad_over_pop": 0.000758513
+ },
+ {
+   "iso3": "OCEANIA",
+   "analysis_type": "Retrospective",
+   "hazard": "Hydrometeorological",
+   "aad": 11416.7,
+   "population": 38965737,
+   "aad_over_pop": 0.000292993
+ },
+ {
+   "iso3": "OCEANIA",
+   "analysis_type": "Retrospective",
+   "hazard": "Landslides",
+   "aad": 87.75,
+   "population": 38965737,
+   "aad_over_pop": 0.00000225
+ },
+ {
+   "iso3": "OCEANIA",
+   "analysis_type": "Retrospective",
+   "hazard": "Tectonic",
+   "aad": 837.792,
+   "population": 38965737,
+   "aad_over_pop": 0.0000215
+ },
+ {
+   "iso3": "OCEANIA",
+   "analysis_type": "Retrospective",
+   "hazard": "Total",
+   "aad": 12342.3,
+   "population": 38965737,
+   "aad_over_pop": 0.000316748
+ },
+ {
+   "iso3": "BGR",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 1237.323442,
+   "population": 7097796,
+   "aad_over_pop": 0.000174325
+ },
+ {
+   "iso3": "BGR",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 5264.980743,
+   "population": 7097796,
+   "aad_over_pop": 0.000741777
+ },
+ {
+   "iso3": "SSD",
+   "analysis_type": "Prospective",
+   "hazard": "Earthquake",
+   "aad": 2141.434901,
+   "population": 12733427,
+   "aad_over_pop": 0.000168174
+ },
+ {
+   "iso3": "SSD",
+   "analysis_type": "Prospective",
+   "hazard": "Flood",
+   "aad": 16008.70841,
+   "population": 12733427,
+   "aad_over_pop": 0.001257219
+ }
+]

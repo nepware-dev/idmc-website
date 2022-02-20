@@ -1,0 +1,326 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+<div class="visible-xs-block visible-sm-block hidden-md hidden-lg idmc-form-search idmc-form-mobile-search">
+  <a class="search-filters-mobile" role="button" data-toggle="collapse" href="#searchFormControls" aria-expanded="false" aria-controls="searchFormControls">
+    Search filters<img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+  </a>
+  <div class="collapse" id="searchFormControls">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingCountry">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseCountry" aria-expanded="true" aria-controls="collapseCountry">
+                Countries
+                <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseCountry" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCountry">
+            <div class="panel-body">
+              {% for key,value in form.field_country["#options"] %}
+                {% if key != "All" %}
+                <div class="accordion-sub-item dropdown-filter-item" data-field-name="field_country" data-key="{{ key }}">{{ value }}</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingRegion">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
+                Regions
+                <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseRegion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRegion">
+            <div class="panel-body">
+              {% for key,value in form.field_region["#options"] %}
+                {% if key != "All" %}
+                <div class="accordion-sub-item dropdown-filter-item" data-field-name="field_region" data-key="{{ key }}">{{ value }}</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTheme">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTheme" aria-expanded="true" aria-controls="collapseTheme">
+                Theme
+                <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTheme" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTheme">
+            <div class="panel-body">
+              {% for key,value in form.field_theme["#options"] %}
+                {% if key != "All" %}
+                <div class="accordion-sub-item dropdown-filter-item" data-field-name="field_theme" data-key="{{ key }}">{{ value }}</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingYear">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseYear" aria-expanded="true" aria-controls="collapseYear">
+                Years
+                <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseYear" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingYear">
+            <div class="panel-body">
+              {% for key,value in form.field_published_year["#options"] %}
+                {% if key != "All" %}
+                <div class="accordion-sub-item dropdown-filter-item" data-field-name="field_published_year" data-key="{{ key }}">{{ value }}</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingAuthor">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAuthor" aria-expanded="true" aria-controls="collapseAuthor">
+                Authors
+                <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseAuthor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAuthor">
+            <div class="panel-body">
+              {% for key,value in form.field_authors["#options"] %}
+                {% if key != "All" %}
+                <div class="accordion-sub-item dropdown-filter-item" data-field-name="field_authors" data-key="{{ key }}">{{ value }}</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="filter-status filter-status-mobile">
+      <div class="col-sm-12">
+        {% if is_mobile %}
+          {{ form.search_api_fulltext }} {{ form.actions }}
+        {% endif %}
+      </div>
+      <div class="col-sm-12 filter-terms" id="selectedFilters">
+        <div class="filter-terms-label col-sm-12" style="display:{{ get is not empty ? 'block' : 'none' }};">Selected filters: </div>
+          {% if get is not empty %}
+            {% if get.region is not empty %}
+              {% for item in get.region["#options"] %}
+              <span data-field-name="field_region" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.country is not empty %}
+              {% for item in get.country["#options"] %}
+              <span data-field-name="field_country" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.theme is not empty %}
+              {% for item in get.theme["#options"] %}
+              <span data-field-name="field_theme" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.year is not empty %}
+              {% for item in get.year["#options"] %}
+              <span data-field-name="field_published_year" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.author is not empty %}
+              {% for item in get.author["#options"] %}
+              <span data-field-name="field_authors" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.type is not empty %}
+              {% for item in get.type["#options"] %}
+              <span data-field-name="type" data-field-value="{{ item.value }}" class="filter-term col-xs-6">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.search_api_fulltext is not empty %}
+              <span data-field-name="search_api_fulltext" class="filter-term col-xs-6">{{ get.search_api_fulltext }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+            {% endif %}
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hidden-xs hidden-sm idmc-form-search form--inline form-inline clearfix mt60">
+  <div class="text-center form-filters">
+    <div class="dropdown idmc-dropdown-filter">
+      <button class="btn btn-default dropdown-toggle" type="button" id="toggleCountry" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Countries
+        <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+      </button>
+      <span class="caret-up"></span>
+      <ul id="dropdown_country" class="dropdown-menu" aria-labelledby="toggleCountry">
+        {% for key,value in form.field_country["#options"] %}
+          {% if key != "All" %}
+          <li class="dropdown-item dropdown-filter-item" data-field-name="field_country" data-key="{{ key }}"><a>{{ value }}</a></li>
+         {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="dropdown idmc-dropdown-filter">
+      <button class="btn btn-default dropdown-toggle" type="button" id="toggleRegion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Regions
+        <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+      </button>
+      <span class="caret-up"></span>
+      <ul id="dropdown_region" class="dropdown-menu" aria-labelledby="toggleRegion">
+        {% for key,value in form.field_region["#options"] %}
+          {% if key != "All" %}
+          <li class="dropdown-item dropdown-filter-item" data-field-name="field_region" data-key="{{ key }}"><a>{{ value }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="dropdown idmc-dropdown-filter">
+      <button class="btn btn-default dropdown-toggle" type="button" id="toggleTheme" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Theme
+        <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+      </button>
+      <span class="caret-up"></span>
+      <ul id="dropdown_theme" class="dropdown-menu" aria-labelledby="toggleTheme">
+        {% for key,value in form.field_theme["#options"] %}
+          {% if key != "All" %}
+          <li class="dropdown-item dropdown-filter-item" data-field-name="field_theme" data-key="{{ key }}"><a>{{ value }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="dropdown idmc-dropdown-filter">
+      <button class="btn btn-default dropdown-toggle" type="button" id="toggleYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Years
+        <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+      </button>
+      <span class="caret-up"></span>
+      <ul id="dropdown_year" class="dropdown-menu" aria-labelledby="toggleYear">
+        {% for key,value in form.field_published_year["#options"] %}
+          {% if key != "All" %}
+          <li class="dropdown-item dropdown-filter-item" data-field-name="field_published_year" data-key="{{ key }}"><a>{{ value }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="dropdown idmc-dropdown-filter">
+      <button class="btn btn-default dropdown-toggle" type="button" id="toggleAuthor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Authors
+        <img class="arrow-dropdown" src="/themes/idmc/images/down-arrow.png"/>
+      </button>
+      <span class="caret-up"></span>
+      <ul id="dropdown_author" class="dropdown-menu" aria-labelledby="toggleAuthor">
+        {% for key,value in form.field_authors["#options"] %}
+          {% if key != "All" %}
+          <li class="dropdown-item dropdown-filter-item" data-field-name="field_authors" data-key="{{ key }}"><a>{{ value }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container filter-status">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 filter-terms" id="selectedFilters" style="padding-top: 5px;">
+        <span class="filter-terms-label" style="display:{{ get is not empty ? 'inline-block' : 'none' }};">Selected filters: </span>
+          {% if get is not empty %}
+            {% if get.region is not empty %}
+              {% for item in get.region["#options"] %}
+                <span data-field-name="field_region" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.country is not empty %}
+              {% for item in get.country["#options"] %}
+                <span data-field-name="field_country" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.theme is not empty %}
+              {% for item in get.theme["#options"] %}
+                <span data-field-name="field_theme" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.year is not empty %}
+              {% for item in get.year["#options"] %}
+                <span data-field-name="field_published_year" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.author is not empty %}
+              {% for item in get.author["#options"] %}
+                <span data-field-name="field_authors" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.type is not empty %}
+              {% for item in get.type["#options"] %}
+                <span data-field-name="type" data-field-value="{{ item.value }}" class="filter-term">{{ item.name }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+              {% endfor %}
+            {% endif %}
+            {% if get.search_api_fulltext is not empty %}
+              <span data-field-name="search_api_fulltext" class="filter-term">{{ get.search_api_fulltext }} <i title="Remove" class="fa fa-remove remove-filter-icon"></i></span>
+            {% endif %}
+          {% endif %}
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 text-right">
+        {% if is_mobile %}
+        {% else %}
+        {{ form.search_api_fulltext }} {{ form.actions }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% if get.region is not empty %}
+  {% for item in get.region["#options"] %}
+    <input type="hidden" name="field_region[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}
+
+{% if get.country is not empty %}
+  {% for item in get.country["#options"] %}
+    <input type="hidden" name="field_country[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}
+
+{% if get.theme is not empty %}
+  {% for item in get.theme["#options"] %}
+    <input type="hidden" name="field_theme[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}
+
+{% if get.author is not empty %}
+  {% for item in get.author["#options"] %}
+    <input type="hidden" name="field_authors[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}
+
+{% if get.year is not empty %}
+  {% for item in get.year["#options"] %}
+    <input type="hidden" name="field_published_year[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}
+
+{% if get.type is not empty %}
+  {% for item in get.type["#options"] %}
+    <input type="hidden" name="type[]" value="{{ item.value }}"></input>
+  {% endfor %}
+{% endif %}

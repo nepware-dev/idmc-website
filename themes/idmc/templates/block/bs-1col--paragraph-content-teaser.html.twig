@@ -1,0 +1,24 @@
+{#
+
+#}
+{% block content %}
+{% set bgimage = file_url(content.field_content_teaser_image.0['#item'].entity.uri.value|image_style("slide_image_style")) %}
+<div class="row bc-teaser" id="bct-{{ content['#paragraph'].id() }}" style="height:666px;position:relative;">
+
+	<div class="div-image-fullwidth grayscale" style="background-image:url({{ bgimage }});background-position:{{(content.field_slider_image_focus.0 is not empty)? content.field_slider_image_focus.0 : "center"}} {{(content.field_slider_image_focus_v.0 is not empty)? content.field_slider_image_focus_v.0 : "center"}}"></div>
+
+	<div class="bc-teaser-text xs-padding {{ paragraph.field_content_teaser_bg_color.value }}" style="width:100%;height:100%;">
+		<div class="container">
+			<div class="idmc-leading {{ paragraph.field_content_teaser_bg_color.value }}">
+				<h1 class="paragraph-title" style="margin-bottom:25px;">
+					{{ paragraph.field_content_teaser_title.value }}
+				</h1>
+					{{ paragraph.field_content_teaser_text.value|raw }}
+				<p style="margin-top:20px;">
+					<a class="readmore readmore21" href="{{ paragraph.field_content_teaser_link.value }}">Read more</a>
+				</p>
+			</div>
+		</div>
+    </div>
+</div>
+{% endblock %}

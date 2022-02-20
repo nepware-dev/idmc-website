@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+<div class="row idmc-form-search form--inline form-inline clearfix">
+  <div class="col-xs-12 col-md-6 text-left">
+    {% if get is not empty %}
+    <label>Selected filters: </label>
+      {% if get.region is not empty %}
+        <span>{{ get.region }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+      {% if get.country is not empty %}
+        <span>{{ get.country }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+      {% if get.theme is not empty %}
+        <span>{{ get.theme }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+      {% if get.year is not empty %}
+        <span>{{ get.year }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+      {% if get.author is not empty %}
+        <span>{{ get.author }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+      {% if get.search_api_fulltext is not empty %}
+        <span>{{ get.search_api_fulltext }} <i class="fa fa-remove remove-filter-icon"></i></span>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="col-xs-12 col-md-6">
+    {{ form }}
+  </div>
+</div>

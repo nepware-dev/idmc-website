@@ -1,0 +1,75 @@
+<div id="country-profile-chart-tabs-id" class="tab-content country-profile-chart-tabs-container" align="center"
+	style="display: none;">
+	<div class="common-title">Annual conflict and disaster displacement figures</div>
+	<div id="chart_conflict_id" class="tab-pane fade active in">
+		{{ content.field_conflict_graph_shortcode_l }}
+	</div>
+	<div id="chart_disaster_id" class="tab-pane fade">
+		{{ content.field_disaster_graph_shortcode_r }}
+	</div>
+	<div align="center" class="tabs-text">
+		<a id="tab_conflict_a" data-toggle="tab" href="#chart_conflict_id" style="display: none;">Conflict</a>
+		<a id="tab_disaster_a" data-toggle="tab" href="#chart_disaster_id" style="display: none;">Disaster</a>
+	</div>
+</div>
+
+<div id="eventimeline_bottom_id" style="margin-top: -20px;display: none;">
+	{{ content.field_eventtimeline_graph_shortc }}
+</div>
+
+{% block javascripts %}
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function(){
+		var checkChartInterval = setInterval(function(){
+			// show conflict chart if data is not empty
+			var conflict_data = jQuery('#chart_conflict_id').text().trim();
+			if (conflict_data && !conflict_data.includes("data_chart_got_is_empty") && !jQuery("#tab_conflict_a").is(':visible')) {
+				// show parent container if not yet
+				if (!jQuery("#country-profile-chart-tabs-id").is(':visible')) {
+					jQuery("#country-profile-chart-tabs-id").show();
+				}
+
+				// show conflict tab
+				jQuery("#tab_conflict_a").show();
+				jQuery("#tab_conflict_a").click(function() {
+					jQuery("#tab_conflict_a").addClass("first-active");
+					jQuery("#tab_disaster_a").removeClass("first-active");
+				});
+
+				jQuery("#tab_conflict_a").click();
+			}
+
+			// show disaster chart if data is not empty
+			var disaster_data = jQuery('#chart_disaster_id').text().trim();
+			if (disaster_data && !disaster_data.includes("data_chart_got_is_empty") && !jQuery("#tab_disaster_a").is(':visible')) {
+				// show parent container if not yet
+				if (!jQuery("#country-profile-chart-tabs-id").is(':visible')) {
+					jQuery("#country-profile-chart-tabs-id").show();
+				}
+
+				// show disaster tab
+				jQuery("#tab_disaster_a").show();
+				jQuery("#tab_disaster_a").click(function() {
+					jQuery("#tab_disaster_a").addClass("first-active");
+					jQuery("#tab_conflict_a").removeClass("first-active");
+				});
+
+				if (!jQuery("#tab_conflict_a").is(':visible')) {
+					jQuery("#tab_disaster_a").click();
+				}
+			}
+
+			// show event timeline chart
+			var eventtimeline_data = jQuery('#eventimeline_bottom_id').text().trim();
+			if (eventtimeline_data && !eventtimeline_data.includes("data_chart_got_is_empty") && !jQuery("#eventimeline_bottom_id").is(':visible')) {
+				jQuery("#eventimeline_bottom_id").show();
+			}
+
+		}, 500);
+
+		setTimeout(function(){
+			clearInterval(checkChartInterval);
+		}, 30000);
+	})
+</script>
+{% endblock %}

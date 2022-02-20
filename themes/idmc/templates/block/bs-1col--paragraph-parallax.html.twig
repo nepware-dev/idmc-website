@@ -1,0 +1,85 @@
+{#
+
+#}
+
+{% block content %}
+
+<style>
+/*
+    
+
+    .hero-nav{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        min-height: 315px;
+        background-image: url({{ file_url(content.field_parallax_image.0['#item'].entity.uri.value) }});
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        .hero-nav__inner{
+            z-index: 1;
+        }
+        h1{
+            color: #efefef;
+            font-size: 5vw;
+        }
+        &:before{
+            content: "";
+            background: rgba(#000, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: background 400ms;
+        }
+        &.fixme{
+        	position:fixed;
+        	top: -230px;
+            &:before{
+                background: rgba(#000, 0.8);
+            }
+        }
+    }
+*/
+
+
+</style>
+
+
+<div class="container-fluid" style="padding:0">
+	<div class="parallax parallax--{{ content['#paragraph'].id() }}">
+      <div class="parallax__bg" style="background-image:url({{ file_url(content.field_parallax_image.0['#item'].entity.uri.value) }}); background-size: cover; background-position:bottom;">
+        	
+      </div>
+      <div class="container parallax__content">
+            <div class="container">
+                      <h2>
+                        {{ paragraph.field_parallax_title.value }}
+                      </h2>
+                        {{ paragraph.field_parallax_text.value|raw }}
+            </div>
+      </div>
+	</div>
+</div>
+
+<!--div class="hero-nav">
+          <div class="block-block-parallax">
+          
+          </div>
+    <div class="hero-nav__inner">
+        <h1>{{ paragraph.field_parallax_title.value }}</h1>
+        <div class="hero-nav__button">
+            {{ paragraph.field_parallax_text.value|raw }}
+        </div>
+    </div>
+</div-->
+
+{% endblock %}

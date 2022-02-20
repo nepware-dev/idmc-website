@@ -1,0 +1,16 @@
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }} >
+    {% block content %}
+<div id="policy-monitoring" class="container-fluid">
+	<div class="container title-h2 Policy-Monitoring-an">
+		<h2 style="padding-top: 10px;">{{ content.field_title_block_text }}</h2>
+	</div>
+	<div class="container">		
+		<div class="row">
+			{{ content.field_body_text_block }}	
+		</div>		
+	</div> 
+  </div>
+  {% endblock %}
+  </div>
+{% endblock paragraph %}

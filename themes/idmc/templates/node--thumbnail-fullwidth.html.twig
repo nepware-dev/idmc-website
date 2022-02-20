@@ -1,0 +1,51 @@
+{% set content_type = node.getType %}
+
+{% set image_url = "" %}
+{% set file_uri_path = node.field_image.entity.uri.value %}
+{% if file_uri_path is not null %}
+    {% set image_url = file_url(node.field_image.entity.uri.value) %}
+{% endif %}
+
+
+
+
+{% if content_type == 'publications' %}
+  <div class="card-container">
+    <div class="card-overlay">
+      <a class="card-link" href="{{ url }}">
+        <div class="card-link-container">
+          <div class="card-date">{{ content.field_published }}</div>
+          <div class="card-title">{{ node.label }}</div>
+          <div class="card-body">{{ node.body.summary }}</div>
+        </div>
+      </a>
+    </div>
+    <div class="card-image">
+        {{ content.field_image }}
+    </div>
+    <div class="card-content-type" style="padding-left:0px;">
+      {{ node.type.entity.label }}
+    </div>
+  </div>
+{% else %}
+  <div class="card-fullwidth-container">
+    <div class="card-overlay">
+      <a class="card-link" href="{{ url }}">
+        <div class="card-link-container">
+          <div class="card-date">{{ content.field_published }}</div>
+          <div class="card-title">{{ node.label }}</div>
+          <div class="card-body">{{ node.body.summary }}</div>
+        </div>
+      </a>
+    </div>
+    {% if content.field_image|render %}
+    <div class="card-fullwidth-image" style="background:url({{ image_url }}) center no-repeat;background-size:cover;"></div>
+    {% else %}
+      {% if content_type == 'events' %}<img class="card-placeholder-event" src="/themes/idmc/images/calendar.png"></img>{% endif %}
+      {% if content_type == 'media_centre' %}<img class="card-placeholder-media-centre" src="/themes/idmc/images/bullhorn.png"></img>{% endif %}
+    {% endif %}
+    <div class="card-content-type">
+      {{ node.type.entity.label }}
+    </div>
+  </div>
+{% endif %}

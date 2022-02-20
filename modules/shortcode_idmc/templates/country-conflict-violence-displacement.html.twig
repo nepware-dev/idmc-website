@@ -1,0 +1,186 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+{#}
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+{#}
+
+<script>
+    var url_conflict = '{{ url }}'
+    var chartdivid_conflict = '{{ chartdivid }}'
+
+    var intervalConflict = setInterval(function (){
+      if (document.readyState === 'complete') {
+        clearInterval(intervalConflict);
+        
+        var chart2 = AmCharts.makeChart(chartdivid_conflict, {
+          "type": "serial",
+          "theme": "light",
+          "color": "#FFFFFF",
+          "valueAxes": [{
+            "id": "v1",
+            "title": "IDPs (Stock)",
+            "position": "left",
+            "autoGridCount": false,
+            "gridColor": "#333132",
+            "axisColor": "#008dca",
+            "axisAlpha": 1,
+            // "gridCount": 7,
+            // "maximum": 3500000,
+            // "minimum": 0,
+            // "baseValue": 500000,
+            // "autoWrap": true,
+            // "labelFrequency":500,
+            // "includeGuidesInMinMax": true,
+          }, {
+            "id": "v2",
+            "title": "New Displacements (Flow)",
+            // "gridAlpha": 0,
+            "position": "right",
+            "autoGridCount": false,
+            "gridColor": "#333132",
+            "axisColor": "#008dca",
+            "axisAlpha": 1,
+            // "maximum": 700000,
+            // "minimum": 0,
+            // "baseValue": 100000,
+            // "autoWrap": true,
+            // "gridCount": 7,
+            // "includeGuidesInMinMax": true,
+            // "labelFrequency":100,
+          }],
+          "legend":{
+            "enabled": true,
+            "useGraphSettings": true,
+            "position":"bottom",
+            "autoMargins":true,
+            "color": "#FFFFFF",
+            "horizontalGap": 10,
+            "maxColumns": 3,
+            "markerSize": 10,
+          },
+          "dataLoader": {
+            "url" : url_conflict,
+            "format": "json",
+            "postProcess": function(data, config, chart) {
+              var newData = [];
+              for ( var i = 0; i < data.results.length; i++ ) {
+                if (data.results[i]["conflict_stock_displacement"] == undefined &&
+                  data.results[i]["conflict_new_displacements"] == undefined) {
+                  continue;
+                } else {
+                  data.results[i]["conflict_stock_displacement"] = roundChartNumberIdmc(data.results[i]["conflict_stock_displacement"]);
+                  data.results[i]["conflict_new_displacements"] = roundChartNumberIdmc(data.results[i]["conflict_new_displacements"]);
+                }
+
+                newData.push(data.results[i]);
+              }
+
+              return newData;
+            }
+          },
+          "useColumnNames": true,
+          "categoryField": "year",
+          "categoryAxis": {
+            "autoGridCount": true,
+            "gridColor": "#333132", // vertical grid lines color
+            "gridPosition": "start",
+            "tickPosition":"start",
+            "axisColor": "#008dca",
+            "axisAlpha": 1,
+          },
+          "graphs": [ {
+            // "id": "g3",
+            "valueAxis": "v1",
+            "lineColor": "#d8d8d8",
+            "fillColors": "#d8d8d8",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "IDPs (stock)",
+            "valueField": "conflict_stock_displacement",
+            "clustered": true,
+            "columnWidth": 0.8,
+            "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+          }, {
+            // "id": "g4",
+            "valueAxis": "v2",
+            "lineColor": "#EF7C00",
+            "fillColors": "#EF7C00",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "New Displacements (Flow)",
+            "valueField": "conflict_new_displacements",
+            "clustered": true,
+            "columnWidth": 0.8,
+            "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+          } ],
+          "export": {
+              "enabled": true,
+              "backgroundColor": "#333132",
+          },
+          "responsive": {
+            "enabled": true
+          },
+          "chartCursor": {
+              "enabled": true,
+              "animationDuration": 0.6,
+              "categoryBalloonEnabled": false,
+              "cursorAlpha": 0,
+          },
+        });
+        
+        
+        if ('matchMedia' in window) {
+    // Chrome, Firefox, and IE 10 support mediaMatch listeners
+    window.matchMedia('print').addListener(function(media) {
+        chart2.validateNow();
+      
+    });
+} else {
+    // IE and Firefox fire before/after events
+    window.onbeforeprint = function () {
+        chart2.validateNow();
+      
+    }
+}
+        
+        
+      }  
+
+  
+  
+ 
+    }, 500);
+  
+
+</script>
+
+<style type="text/css">
+    .conflict-violence-div-container {
+        background-color: #333132;
+        height: 320px;
+        font-family: Lato;
+    }
+
+    .conflict-violence-div-map {
+        width: 95%;
+        height: 300px;
+    }
+</style>
+
+<!-- HTML -->
+<div class="container conflict-violence-div-container" align="center">
+  <div class="row">
+    <div class="conflict-violence-div-map" id="{{ chartdivid }}"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6 text-white">
+      <span style="height:10px; width:10px; background: #d8d8d8; margin-right:5px;display: inline-block"></span> IDPs (Stock) <span style="height:10px; width:10px; background: #EF7C00; margin-left:25px;margin-right:5px;display: inline-block"></span> New Displacements (Flow)
+    </div>
+  </div>
+</div>

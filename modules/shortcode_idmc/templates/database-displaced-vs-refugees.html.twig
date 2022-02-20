@@ -1,0 +1,130 @@
+{{ attach_library('shortcode_idmc/amchart-lib') }}
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+
+<!-- amCharts plugins -->
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css">
+
+<!-- amCharts javascript code -->
+<script type="text/javascript">
+    var chartdivid = '{{ chartdivid }}'
+
+    var chart = AmCharts.makeChart(chartdivid, {
+        "type": "serial",
+        "categoryField": "year",
+        "startDuration": 1,
+        "minMarginLeft": 120,
+        "chartCursor": {
+            "enabled": true,
+            "animationDuration": 0.61,
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0.01
+        },
+        "trendLines": [],
+        "graphs": [
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#F4A467",
+                "id": "AmGraph-1",
+                "lineColor": "#F4A467",
+                "title": "Conflict IDPs",
+                "type": "column",
+                "valueAxis": "ValueAxis-1",
+                "valueField": "stock_displacement"
+            },
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "fillAlphas": 1,
+                "fillColors": "#74B9DF",
+                "id": "AmGraph-2",
+                "lineColor": "#74B9DF",
+                "title": "Refugees",
+                "type": "column",
+                "valueAxis": "ValueAxis-1",
+                "valueField": "refugees"
+            },
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletBorderColor": "#033353",
+                "bulletColor": "#FFFFFF",
+                "id": "AmGraph-5",
+                "lineColor": "#033353",
+                "lineThickness": 3,
+                "title": "Humanitarian spending overseas",
+                "valueAxis": "ValueAxis-2",
+                "valueField": "refugee_cost"
+            },
+            {
+                "balloonText": "<b>[[title]]:</b> <span style='font-weight:normal;'>[[value]]</span>",
+                "bullet": "round",
+                "bulletBorderAlpha": 1,
+                "bulletBorderColor": "#168EC6",
+                "bulletColor": "#FFFFFF",
+                "id": "AmGraph-6",
+                "lineColor": "#168EC6",
+                "lineThickness": 3,
+                "title": "Humanitarian spending in donor countries",
+                "valueAxis": "ValueAxis-2",
+                "valueField": "humanitarian_aid"
+            }
+        ],
+        "guides": [],
+        "valueAxes": [
+            {
+                "id": "ValueAxis-1",
+                "synchronizeWith": "ValueAxis-2",
+                "axisColor": "#929696",
+                // "synchronizationMultiplier": 3000,
+                "title": "Displaced",
+                "minimum": 10000000,
+                "maximum": 50000000,
+                // "autoGridCount": false,
+                // "gridCount": 11
+            },
+            {
+                "id": "ValueAxis-2",
+                "minimum": 0,
+                "maximum": 16000,
+                "position": "right",
+                "synchronizeWith": "ValueAxis-1",
+                "title": "USD [MILLIONS]",
+                "axisColor": "#929696",
+                "gridColor": "#FFFFFF",
+                // "autoGridCount": false,
+                // "gridCount": 11
+            }
+        ],
+        "allLabels": [],
+        "balloon": {},
+        "legend": {
+            "enabled": true,
+            "useGraphSettings": true,
+            "valueText": ""
+        },
+        "dataLoader": {
+            "url": "https://api.idmcdb.org/public/assets/data/displaced_vs_refugees.json",
+            "format": "json",
+            "postProcess": function (data, config, chart) {
+                chart.categoryAxis.gridCount = data.length;
+                return data;
+            }
+        },
+        "categoryAxis": {
+            "autoRotateAngle": 0,
+            "gridPosition": "start",
+            "tickPosition": "start",
+            "axisColor": "#929696",
+            "gridColor": "#FFFFFF",
+            "labelRotation": 90,
+            "autoGridCount": false
+        },
+    });
+</script>
+
+<div id="{{ chartdivid }}" style="width: 100%; height: 450px; background-color: #FFFFFF;" ></div>

@@ -1,0 +1,121 @@
+{#
+/**
+ * @file
+ * Bootstrap Layouts: "1 Column" template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ *
+ * Available region variables:
+ * - main
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+ */
+#}
+{% set panelId = random(1000) %}
+{% set has_extended_figures_ana = (main.content.field_latest_grid_figures_text.0 is not empty or main.content.field_extended_figures_ana_file.0 is not empty or main.content.field_extended_figures_ana_2019.0 is not empty or main.content.field_fa_extra_files_2019[0] is not empty or main.content.field_extended_figures_ana_2020.0 is not empty) %}
+{% set tabTitle = main.content.field_acc_item_title[0] %}
+{% if has_extended_figures_ana %}
+  {% set tabClass = "tabData" %}
+{% else %}
+{% if main.content.field_acc_item_title.0|render|trim|lower == "data analysis" %}
+<style>.smoothscroll {display: none}
+</style> 
+{% endif %}
+{% endif %}
+{% if main.content.field_acc_item_title.0|render|trim|lower == "data analysis" %}
+{% set tabTitle = "What's behind our data?" %}
+{% endif %}
+<style>.extra .file { font-size: inherit; font-weight:inherit} .extra {margin: 0 0 10px}</style>
+<div class="panel panel-default {{tabClass}}">
+  <div class="panel-heading">
+          <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#{{panelId}}">{{ tabTitle }}</a>
+          </h4>
+      </div>
+  <div id="{{panelId}}" class="panel-collapse collapse">
+      <div class="panel-body">
+
+          <div class="col-xs-12">
+            <p>{{ main.content.field_acc_item_body[0] }}</p>
+          </div>
+
+        {#} Get file type/size {#}
+        {% if main.content.field_extended_figures_ana_2020.0 is not empty %}
+          {% set file_uploaded_2020 = main.content.field_extended_figures_ana_2020.0['#file'] %}
+          {% set file_uploaded_extension_2020 = file_uploaded_2020.filename.value|split('.')|last|upper  %}
+          {% set file_uploaded_size_KB_2020 = (file_uploaded_2020.filesize.value/1024)|round %}
+        {% else %}
+        
+        {% if main.content.field_extended_figures_ana_file.0 is not empty %}
+          {% set file_uploaded = main.content.field_extended_figures_ana_file.0['#file'] %}
+          {% set file_uploaded_extension = file_uploaded.filename.value|split('.')|last|upper  %}
+          {% set file_uploaded_size_KB = (file_uploaded.filesize.value/1024)|round %}
+        {% endif %}
+        
+        {% if main.content.field_extended_figures_ana_2018.0 is not empty %}
+          {% set file_uploaded_2018 = main.content.field_extended_figures_ana_2018.0['#file'] %}
+          {% set file_uploaded_extension_2018 = file_uploaded_2018.filename.value|split('.')|last|upper  %}
+          {% set file_uploaded_size_KB_2018 = (file_uploaded_2018.filesize.value/1024)|round %}
+        {% endif %}
+        {% if main.content.field_extended_figures_ana_2019.0 is not empty %}
+          {% set file_uploaded_2019 = main.content.field_extended_figures_ana_2019.0['#file'] %}
+          {% set file_uploaded_extension_2019 = file_uploaded_2019.filename.value|split('.')|last|upper  %}
+          {% set file_uploaded_size_KB_2019 = (file_uploaded_2019.filesize.value/1024)|round %}
+        {% endif %}
+        {% endif %}
+
+        {% set has_left_col = main.content.field_latest_grid_confidence_ass.0 is not empty %}
+
+        {% set has_right_col = main.content.field_latest_grid_figures_text.0 is not empty or main.content.field_extended_figures_ana_file.0 is not empty or main.content.field_latest_grid_stock_by_year.0 is not empty or main.content.field_extended_figures_ana_2020.0 is not empty %}
+
+        
+
+        
+
+        
+          <div class="col-xs-12 country-latest-grid-container">
+              {% if has_extended_figures_ana %}
+                <p></p>
+                <div class="div-title">
+                  <span class="span-title">Latest Figure Analysis</span>
+                </div>
+                <p>{{ main.content.field_latest_grid_figures_text }}</p>
+                {% if main.content.field_extended_figures_ana_2020.0 is not empty %}
+                  <p>
+                    <a href="{{ file_url(main.content.field_extended_figures_ana_2020.0['#file'].uri.0.value) }}">Learn more about the sources of our figures, as well as our methodologies and caveats. ({{ file_uploaded_extension_2020 }}, {{ file_uploaded_size_KB_2020 }} KB)</a>
+                  </p>
+                {% else %}
+                
+                {% if main.content.field_extended_figures_ana_2019.0 is not empty %}
+                  <p>
+                    <a href="{{ file_url(main.content.field_extended_figures_ana_2019.0['#file'].uri.0.value) }}">Download conflict figure analysis for 2019 ({{ file_uploaded_extension_2019 }}, {{ file_uploaded_size_KB_2019 }} KB)</a>
+                  </p>
+                {% endif %}
+                {% if main.content.field_fa_extra_files_2019[0] is not empty %}
+                <div class="extra">{{ main.content.field_fa_extra_files_2019[0] }}</div>
+                {% endif %}
+                 {% if main.content.field_extended_figures_ana_2018.0 is not empty %}
+                  <p>
+                    <a href="{{ file_url(main.content.field_extended_figures_ana_2018.0['#file'].uri.0.value) }}">Download figure analysis for 2018 ({{ file_uploaded_extension_2018 }}, {{ file_uploaded_size_KB_2018 }} KB)</a>
+                  </p>
+                {% endif %}
+                {% if main.content.field_extended_figures_ana_file.0 is not empty %}
+                  <p>
+                    <a href="{{ file_url(main.content.field_extended_figures_ana_file.0['#file'].uri.0.value) }}">Download figure analysis for 2017 ({{ file_uploaded_extension }}, {{ file_uploaded_size_KB }} KB)</a>
+                  </p>
+                {% endif %}
+                {% endif %}
+                
+              {% endif %}
+
+
+          </div>
+
+      </div>
+  </div>
+</div>

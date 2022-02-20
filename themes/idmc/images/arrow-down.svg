@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="11px" viewBox="0 0 8 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>down arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Expert-Opinion" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Expert-opinion" transform="translate(-357.000000, -775.000000)" fill="#008DCA">
+            <g id="filter-dropdowns" transform="translate(268.000000, 758.000000)">
+                <g id="down-arrow" transform="translate(89.000000, 17.000000)">
+                    <g id="Read-more-arrow" transform="translate(4.000000, 5.500000) rotate(-270.000000) translate(-4.000000, -5.500000) translate(-1.500000, 1.500000)">
+                        <path d="M7.2,4.2 L7.2,0.4 L11,4.2 L7.2,8 L7.2,4.74285714 L0.292857143,4.74285714 L0,4.74285714 L0,4.2 L0.292857143,4.2 L7.2,4.2 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

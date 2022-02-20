@@ -1,0 +1,79 @@
+ {% block paragraph %}
+  <div{{ attributes.addClass(classes) }} >
+    {% block content %}
+
+    {#} This will be showed for medium/large screens {#}
+	 <div id="our-key-services" class="container-fluid hidden-xs our-key-services-container">
+		<div class="container">
+			<div class="paragraph-title big-title" style="text-transform: uppercase;">
+				{{ content.field_title_4_cols_acc.0 }}
+			</div>
+		</div>
+		<div class="container" id="accordion_service">
+			<div class="row tab-titles">
+			{% for key, item in content.field_paragraph_4accordion if key|first != '#' %}
+				<div class="col-sm-3 service-item" {% if key==3 %}style="border-right: none;"{% endif %}>
+					<h4 class="collapse-link-header">
+						<a class="our-key-service-item" id="{{key+1}}" onclick="return false;" data-toggle="collapse" data-parent="#accordion_service" data-target="#tab_service_{{key+1}}" {% if key == 0 %}aria-expanded="true"{% endif %}>
+							{{content.field_paragraph_4accordion[key]['#paragraph'].field_ptitle.value}}
+						</a>
+					</h4>
+				</div>
+			{% endfor %}			
+			</div>
+
+			<div class="row text-center expand-down-arrows">
+			{% for key, item in content.field_paragraph_4accordion if key|first != '#' %}
+				<div class="col-sm-3">
+					<a class="our-arrow-service-item" id="{{key+1}}" onclick="return false;" data-toggle="collapse" data-parent="#accordion_service" data-target="#tab_service_{{key+1}}">
+						<img src="{{ directory }}/images/arrow-down.svg">
+					</a>
+				</div>
+			{% endfor %}			
+			</div>
+
+			{% for key, item in content.field_paragraph_4accordion if key|first != '#' %}
+				<div id="tab_service_{{key+1}}" class="collapse {% if key==0 %}in{% endif %} collapse-content">			
+					<p>{{content.field_paragraph_4accordion[key]['#paragraph'].field_body.value|raw}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	{#} This will be showed for small screens {#}
+	<div id="our-key-services" class="container hidden-sm hidden-md hidden-lg our-key-services-container">
+		{#}
+		<div class="container">
+			<div class="paragraph-title big-title">OUR KEY SERVICES</div>
+		</div>
+		{#}
+		<div id="accordion_service_small">
+			<div class="row tab-titles" style="border-bottom: solid 1px #008dca;">
+			{% for key, item in content.field_paragraph_4accordion if key|first != '#' %}
+				<div class="row" style="border-top: solid 1px #008dca;padding: 15px 0;display: flex;">
+					<div class="col-xs-11" style="padding-left: 36px;flex: 11;">
+						<a class="our-key-service-item-mobile" id="{{key+1}}" onclick="return false;" data-toggle="collapse" data-parent="#accordion_service_small" data-target="#tab_service_small_{{key+1}}">
+							{{content.field_paragraph_4accordion[key]['#paragraph'].field_ptitle.value}}
+						</a>
+					</div>
+					<div class="col-xs-1" style="padding-left: 0px;flex: 1;position: relative;">
+						<a id="{{key+1}}" onclick="return false;" data-toggle="collapse" data-parent="#accordion_service_small" data-target="#tab_service_small_{{key+1}}" style="position: absolute;top: 50%;transform: translateY(-50%);">
+							<img src="{{ directory }}/images/arrow-down.svg">
+						</a>
+					</div>
+				</div>
+				<div class="row collapse collapse-content-mobile" id="tab_service_small_{{key+1}}" style="background-color: #f6f6f6;">
+					<div class="col-xs-11" style="padding: 0px;">
+						{{content.field_paragraph_4accordion[key]['#paragraph'].field_body.value|raw}}
+					</div>
+					<div class="col-xs-1">
+					</div>
+				</div>
+			{% endfor %}			
+			</div>
+		</div>
+	</div>
+
+	 {% endblock %}
+  </div>
+{% endblock paragraph %}

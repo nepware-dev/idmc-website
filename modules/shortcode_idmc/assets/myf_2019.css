@@ -1,0 +1,12 @@
+figcaption {
+    font-family: 'Roboto Condensed',sans-serif;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+display:block;
+  text-align:left;
+}
+figcaption span:before {
+content: '\f0a6';
+    font-family: FontAwesome;
+    margin-right: 1em;
+}

@@ -1,0 +1,45 @@
+/* styling menu */
+
+.navbar-default{
+    background: rgba(200,200,200,0.4);
+}
+
+.navbar-nav{
+    float: right;
+}
+
+ul.menu--main li.expanded:hover > ul{
+    display: block;
+    background: #333;
+}
+ul.menu--main  li > ul a{
+    color: #fff;
+}
+ul.menu--main  li > ul a:hover, ul.menu--main  li > ul a:focus {
+    border-left: 3px solid #008dca;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+ul.menu--main  ul.dropdown-menu > li.expanded:hover > ul{
+    display: block;
+    top: auto;
+    left: 100%;
+    right: 100%;
+    margin-top: -30px;
+}
+
+
+ul.menu--main li > ul li a {
+    color: #fff;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    color: #008dca !important;
+    border-left: 3px solid #008dca;
+    margin-left: 10px;
+    padding-left: 10px;
+    background: #333;
+}
+
+/* end menu */

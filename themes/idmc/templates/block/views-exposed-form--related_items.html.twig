@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+<style>
+  .related-items {
+    margin-top:2em;
+  }
+.related-items .form-item-type .select-wrapper:after {
+    right: 0px
+  }
+  .related-items label, .related-items legend {
+        text-transform: uppercase;
+    margin-right:1em;
+    font-weight: 400;
+  }
+   .bef-exposed-form .form--inline .related-items .form-item {
+    margin-right:3em;
+  }
+  
+  .related-items legend{   
+    display: inline;
+    float: left;
+    vertical-align: middle;
+    width: auto;
+    border: 0;
+  }
+</style>
+<div class="row idmc-form-search form--inline form-inline clearfix">
+  <div class="col-xs-12 col-md-12 related-items">
+    {{ form }}
+  </div>
+</div>

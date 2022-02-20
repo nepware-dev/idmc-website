@@ -1,0 +1,5 @@
+name: IDMC Custom Module
+type: module
+description: This module use for IDMC project
+package: idmcModule
+core_version_requirement: ^8 || ^9

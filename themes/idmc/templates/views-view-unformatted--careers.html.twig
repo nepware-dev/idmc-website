@@ -1,0 +1,32 @@
+{#
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ title }}'] }}
+{{ rows.0.content['#view'].style_plugin.render_tokens.0['{{ view_node }}'] }}
+	{% for token in rows.0.content['#view'].style_plugin.render_tokens %}
+		
+	    {{ token['{{ title }}'] }}
+	    {{ token['{{ view_node }}'] }}
+
+	{% endfor %}
+	{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_body }}'] }}
+#}
+<div class="row xs-padding">
+<div class="container">
+	<!--h1 class="paragraph-title w100">{{ view.title }}</h1-->
+	{% for row in rows %}
+	<div class="career-item">
+		<h2>{{ row.content['#row']._entity.title.value }} 
+		- {{ row.content['#row']._entity.created.value |date('d F Y')}} </h2>
+		<p>Location: {{ row.content['#row']._entity.field_job_location.value }}
+		 | Deadline: {{ row.content['#row']._entity.field_job_deadline.value }} </p>
+		<p>
+		{{ row.content['#row']._entity.view_node.content }} 
+		{{ row.content['#row']._entity.body.summary |raw }}
+		</p>
+		<p>
+		<a href="{{ path('entity.node.canonical', {'node': row.content['#row']._entity.nid.value}) }}"> Read more </a>
+		</p>
+	</div>
+	{% endfor %}
+
+</div>
+</div>

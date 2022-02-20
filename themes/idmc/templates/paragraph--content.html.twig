@@ -1,0 +1,17 @@
+ {% block paragraph %}
+  <div{{ attributes.addClass(classes) }} >
+    {% block content %}
+ <div id="global-monitoring" class="container-fluid">
+	<div class="container title-h2 global-monitoring">
+		<h2>{{ content.field_ptitle }}</h2>
+	</div>
+	<div class="container We-monitor-situation">
+		
+		<div class="We-monitor-situation">
+			{{ content.field_body }}
+		</div>		
+	</div>
+	</div>
+	 {% endblock %}
+  </div>
+{% endblock paragraph %}

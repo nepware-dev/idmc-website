@@ -1,0 +1,17 @@
+{% set text = node.body.summary %}
+
+<div class="search-result-row">
+    <div class="search-result-title">
+        <a href="{{ content.field_iframe_url.0 }}">{{ node.label }}</a>
+    </div>
+    <div class="search-result-type">
+        {{ node.type.entity.label }}
+        {% if content.field_published|render is not empty %}
+        <span class="vertical-line-separator">|</span>
+        <span class="article-date">{{ content.field_published }}</span>
+        {% endif %}
+    </div>
+    <div class="search-result-content">
+        {{ text|length > 600 ? text|slice(0, 600)|raw ~ '...' : text|raw }}
+    </div>
+</div>

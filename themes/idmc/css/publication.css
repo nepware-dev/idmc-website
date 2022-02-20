@@ -1,0 +1,17 @@
+/* CSS Document */
+
+.publications .article-body ul {
+    list-style-position: inside;
+}
+
+.publications .link-button {
+	margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+	.publications .article-thumbnail {
+		float: left;
+		padding-top: 20px;
+		margin-right: 10px;
+	}
+}
