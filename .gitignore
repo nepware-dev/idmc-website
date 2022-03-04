@@ -1,6 +1,5 @@
 # Files and directories suggested to be ignored by Drupal
 # @see https://git.drupalcode.org/project/drupal/-/blob/9.2.x/example.gitignore
-vendor/
 sites/*/settings*.php
 sites/*/services*.yml
 sites/*/files/*
@@ -15,6 +14,7 @@ sites/grid2018
 sites/grid2019
 sites/grid2020
 sites/grid2021
+sites/grid2022
 sites/law-and-policy
 .htaccess
 .htpasswd
