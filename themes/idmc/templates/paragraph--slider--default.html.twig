@@ -56,19 +56,28 @@
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
 
-			{#}
-			    <ol>
-			    	{% for key, value in content.field_slider['#items'] %}
-			    		<li>{{ key }}</li>
-			    	{% endfor %}
-			    </ol>
-			    {#}
+
+			<ol>
+				{% for key, value in content.field_slider['#items'] %}
+					<li>{{ key }}</li>
+				{% endfor %}
+			</ol>
+
 			{% set items_count = content.field_slider['#items']|length %}
 			<div id="carouselblock" class="row carousel slide" data-ride="carousel" data-interval={{ autoplay }} data-pause="hover" data-wrap="1">
 				<div class="container">
 					<h1 class="block-title">News</h1>
 				</div>
 				<div class="carousel-inner" role="listbox">
+					<ol class="carousel-indicators" style="bottom:0">
+						{% for key, value in content.field_slider['#items'] %}
+							{% set indic = "" %}
+							{% if (key == 0) %}
+								{% set indic = 'active' %}
+							{% endif %}
+							<li data-target="#carouselblock" data-slide-to="{{key}}" class="{{indic}}"></li>
+						{% endfor %}
+					</ol>
 					{% for key, item in content.field_slider if key|first != '#' %}
 						{% set row_classes = ['item', key=="0" ? 'active'] %}
 						<div class="{{ row_classes|join(' ') }}">{{ item }}</div>
