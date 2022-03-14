@@ -62,7 +62,7 @@
     margin-top: 20px;
  }
 
- .external-articles-block .view-content a { 
+ .external-articles-block .view-content a {
     /*color: #333132 !important;*/
  }
 
@@ -359,7 +359,7 @@ blockquote p{
     font-size: 30px;
 }
 
-#block-views-block-latest-publications-block-1-2 .block-title, 
+#block-views-block-latest-publications-block-1-2 .block-title,
 #block-views-block-latest-publications-block-1 .block-title {
     margin-left: 15px;
 }
@@ -531,7 +531,7 @@ blockquote p{
     color: #008dca;
 }
 
-.idmc-form-search #edit-submit-search-site, 
+.idmc-form-search #edit-submit-search-site,
 .idmc-form-search #edit-submit-list-publications,
 .idmc-form-search #edit-submit-list-media-centres,
 .idmc-form-search #edit-submit-list-expert-opinion {
@@ -694,9 +694,9 @@ blockquote p{
 #block-contactus-2 {
     padding-left: 0px;
 }
-  
+
   /* CAUTION: IE hackery ahead */
-.idmc-form-search select::-ms-expand { 
+.idmc-form-search select::-ms-expand {
     display: none; /* remove default arrow in IE 10 and 11 */
 }
 
@@ -1221,8 +1221,8 @@ ul.list-group  li a:hover, ul li a:focus {
     width: 115px;
 
     /*outline: none;
-    border: 0px; 
-    box-sizing: none; 
+    border: 0px;
+    box-sizing: none;
     background-color: transparent;*/
 
     /* format text: like label */
@@ -1513,7 +1513,7 @@ float: right;
     margin-bottom: 60px;
 }
 
-.department .people-description {     
+.department .people-description {
     font-family: Lato;
     font-size: 18px;
     font-weight: normal;
@@ -1657,7 +1657,7 @@ ul.menu--main li > ul li a {
     color: #fff;
 }
 
-.menu--main .dropdown-menu > li > a:hover, 
+.menu--main .dropdown-menu > li > a:hover,
 .menu--main .dropdown-menu > li > a:focus{
     color: #008dca !important;
     border-left: 3px solid #008dca;
@@ -1713,15 +1713,15 @@ ul.menu--main li span.caret {
 }
 
 
-    .navbar-default .navbar-nav > .open > a, 
-    .navbar-default .navbar-nav > .open > a:hover, 
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
     .navbar-default .navbar-nav > .open > a:focus {
         color: #000;
         background:transparent;
     }
 
-    .nav .open > a, 
-    .nav .open > a:hover, 
+    .nav .open > a,
+    .nav .open > a:hover,
     .nav .open > a:focus{
         color: #000;
     }
@@ -1960,7 +1960,7 @@ ul.menu--main > li >a.signupmenu:before {
 }
 
 .featured-stories-block {
-margin-top:50px !important
+margin-top:79px !important
 }
 .featured-stories-block .block-title {
 margin-top:92px !important;
@@ -2109,7 +2109,7 @@ margin: 80px 0 10px;
 }
 
 .is-front .paragraph-title, .is-front .paragraph .inline-button {
-    margin-top: 10px !important; 
+    margin-top: 10px !important;
 }
 
 .wow {
@@ -2122,7 +2122,7 @@ visibility: hidden;
     border-radius: 10px;
     color: #fff !important;
     color: #fff;
-} 
+}
 
 .grayscale{
     -webkit-filter: none !important;
