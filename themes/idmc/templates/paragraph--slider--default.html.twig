@@ -56,13 +56,6 @@
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
 
-
-			<ol>
-				{% for key, value in content.field_slider['#items'] %}
-					<li>{{ key }}</li>
-				{% endfor %}
-			</ol>
-
 			{% set items_count = content.field_slider['#items']|length %}
 			<div id="carouselblock" class="row carousel slide" data-ride="carousel" data-interval={{ autoplay }} data-pause="hover" data-wrap="1">
 				<div class="container">
