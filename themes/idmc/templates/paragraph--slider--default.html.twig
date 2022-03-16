@@ -58,9 +58,6 @@
 
 			{% set items_count = content.field_slider['#items']|length %}
 			<div id="carouselblock" class="row carousel slide" data-ride="carousel" data-interval={{ autoplay }} data-pause="hover" data-wrap="1">
-				<div class="container">
-					<h1 class="block-title">News</h1>
-				</div>
 				<div class="carousel-inner" role="listbox">
 					<ol class="carousel-indicators" style="bottom:0">
 						{% for key, value in content.field_slider['#items'] %}
