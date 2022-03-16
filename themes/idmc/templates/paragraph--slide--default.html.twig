@@ -76,14 +76,14 @@
 		{% block content %}
 			<div class="">
 				<div class="container">
-					<div class="my-carousel-caption row" style="background: rgb(25, 50, 86); padding:0px 30px 20px 30px">
+					<div class="my-carousel-caption container" style="background: rgb(25, 50, 86); ">
 						{% if content.field_slider_video_link|render|trim is not empty %}
-							<div class="col-md-6">
+							<div class="col-md-6 row">
 								<div class="videoWrapper" style="min-width:496px">
 									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 container">
 							{% endif %}
 
 							{% if content.field_slider_title %}
