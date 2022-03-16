@@ -63,6 +63,14 @@
 				max-height: 610px;
 			}
 		}
+
+		.featured-stories-block .my-carousel-caption a.asbutton {
+			background: #ffffff;
+			color: rgb(25, 50, 86);
+			padding: 10px;
+			margin: 1em 0;
+			border-radius: 10px;
+		}
 	</style>
 	<div{{attributes.addClass(classes)}} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
 		{% block content %}
@@ -88,14 +96,14 @@
 							{% endif %}
 							{% if content.field_slider_link|render %}
 								<div class="mt20">
-									<a class="readmore font18" href="{{ content.field_slider_link[0]['#url'] }}">
+									<a class="readmore font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
 										{{ content.field_slider_link_text }}
 									</a>
 								</div>
 							{% endif %}
 							{% if content.field_external_link|render %}
 								<div class="mt20">
-									<a class="readmore font18" href="{{ content.field_external_link.0 }}">
+									<a class="readmore font18 asbutton" href="{{ content.field_external_link.0 }}">
 										{{ content.field_slider_link_text }}
 									</a>
 								</div>
