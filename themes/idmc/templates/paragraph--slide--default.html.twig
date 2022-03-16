@@ -79,7 +79,7 @@
 				<div class="container">
 					<div class="my-carousel-caption container" style="background: rgb(25, 50, 86); ">
 						{% if content.field_slider_video_link|render|trim is not empty %}
-							<div class="col-md-6 row">
+							<div class="col-md-6 row" style="padding-top:20px">
 								<div class="videoWrapper" style="min-width:496px">
 									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 								</div>
@@ -91,8 +91,8 @@
 								<h3>{{ content.field_slider_title }}</h3>
 							{% endif %}
 							{% if content.field_slider_description %}
-								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% else %} container {% endif %} caption-container hidden-xs">
-									<div class="row">{{ content.field_slider_description }}</div>
+								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% endif %} caption-container hidden-xs">
+									<div class="">{{ content.field_slider_description }}</div>
 								</div>
 							{% endif %}
 							{% if content.field_slider_link|render %}
