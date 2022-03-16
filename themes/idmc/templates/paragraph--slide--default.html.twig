@@ -55,6 +55,7 @@
 		#paragraph-slide {
 			height: 900px;
 			max-height: 900px;
+			background: rgb(25, 50, 86);
 		}
 		@media(min-width: 992px) {
 			#paragraph-slide {
@@ -67,7 +68,7 @@
 		{% block content %}
 			<div class="">
 				<div class="container">
-					<div class="my-carousel-caption row">
+					<div class="my-carousel-caption row" style="background: rgb(25, 50, 86); padding:0px 30px 20px 30px">
 						{% if content.field_slider_video_link|render|trim is not empty %}
 							<div class="col-md-6">
 								<div class="videoWrapper" style="min-width:496px">
