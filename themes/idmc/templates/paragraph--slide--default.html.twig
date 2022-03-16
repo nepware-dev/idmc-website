@@ -48,55 +48,63 @@
 %}
 {% set imgurl = "" %}
 {% if content.field_slider_background_image.0['#item'].entity.uri.value %}
-{% set imgurl = file_url(content.field_slider_background_image.0['#item'].entity.uri.value|image_style('slide_image_style')) %}
+	{% set imgurl = file_url(content.field_slider_background_image.0['#item'].entity.uri.value|image_style('slide_image_style')) %}
 {% endif %}
 {% block paragraph %}
-  <style>
-  #paragraph-slide {
-  height:900px;
-  max-height: 900px;
-  }
-  @media (min-width: 992px) {
-    #paragraph-slide {
-  height:610px;
-  max-height: 610px;
-  }
-  }
-  </style>
-  <div{{ attributes.addClass(classes) }} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
-    {% block content %}
-      <div class="featured-stories-mask">
-            <div class="container">
-              <div class="my-carousel-caption row">
-               {% if content.field_slider_video_link|render|trim is not empty %}
-               <div class="col-md-6"><div class="videoWrapper" style="min-width:496px"><iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></div><div class="col-md-4">
-               {% endif %}
-               
-                {% if content.field_slider_title %}
-                  <h3>{{ content.field_slider_title }}</h3>
-                {% endif %}
-                {% if content.field_slider_description %}
-                  <div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% else %} container {% endif %} caption-container hidden-xs">
-                    <div class="row">{{ content.field_slider_description }}</div>
-                  </div>
-                {% endif %}
-				{% if content.field_slider_link|render %}
-                <div class="mt20">
-                  <a class="readmore font18" href="{{ content.field_slider_link[0]['#url'] }}">
-                      {{ content.field_slider_link_text }}
-                  </a>
-                </div>
-				{% endif %}
-				{% if content.field_external_link|render %}
-                <div class="mt20">
-                  <a class="readmore font18" href="{{ content.field_external_link.0 }}">
-                      {{ content.field_slider_link_text }}
-                  </a>
-                </div>
-				{% endif %}
-                </div>{% if content.field_slider_video_link|render|trim is not empty %}</div>{% endif %}
-            </div>
-          </div>
-    {% endblock %}
-  </div>
+	<style>
+		#paragraph-slide {
+			height: 900px;
+			max-height: 900px;
+		}
+		@media(min-width: 992px) {
+			#paragraph-slide {
+				height: 610px;
+				max-height: 610px;
+			}
+		}
+	</style>
+	<div{{attributes.addClass(classes)}} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
+		{% block content %}
+			<div class="">
+				<div class="container">
+					<div class="my-carousel-caption row">
+						{% if content.field_slider_video_link|render|trim is not empty %}
+							<div class="col-md-6">
+								<div class="videoWrapper" style="min-width:496px">
+									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+								</div>
+							</div>
+							<div class="col-md-4">
+							{% endif %}
+
+							{% if content.field_slider_title %}
+								<h3>{{ content.field_slider_title }}</h3>
+							{% endif %}
+							{% if content.field_slider_description %}
+								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% else %} container {% endif %} caption-container hidden-xs">
+									<div class="row">{{ content.field_slider_description }}</div>
+								</div>
+							{% endif %}
+							{% if content.field_slider_link|render %}
+								<div class="mt20">
+									<a class="readmore font18" href="{{ content.field_slider_link[0]['#url'] }}">
+										{{ content.field_slider_link_text }}
+									</a>
+								</div>
+							{% endif %}
+							{% if content.field_external_link|render %}
+								<div class="mt20">
+									<a class="readmore font18" href="{{ content.field_external_link.0 }}">
+										{{ content.field_slider_link_text }}
+									</a>
+								</div>
+							{% endif %}
+						</div>
+						{% if content.field_slider_video_link|render|trim is not empty %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		{% endblock %}
+	</div>
 {% endblock paragraph %}
