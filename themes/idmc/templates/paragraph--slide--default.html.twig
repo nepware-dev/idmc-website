@@ -95,9 +95,12 @@
 									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 								</div>
 							</div>
+						{% elseif paragraph.field_slider_text_position is defined and paragraph.field_slider_text_position.value == "right" %}
+
+							<div class="col-md-8 hidden-sm"></div>
+
 						{% endif %}
 						<div class="col-md-4 container">
-
 
 							{% if content.field_slider_title %}
 								<h3 style="border-bottom:0">
@@ -105,7 +108,7 @@
 								</h3>
 							{% endif %}
 							{% if content.field_slider_description %}
-								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% endif %} caption-container hidden-xs">
+								<div class="caption-container hidden-xs">
 									<div class="add-shadow">{{ content.field_slider_description.0 }}</div>
 								</div>
 							{% endif %}
