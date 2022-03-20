@@ -95,8 +95,9 @@
 									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 								</div>
 							</div>
-							<div class="col-md-4 container">
-							{% endif %}
+						{% endif %}
+						<div class="col-md-4 container">
+
 
 							{% if content.field_slider_title %}
 								<h3 style="border-bottom:0">
@@ -127,9 +128,9 @@
 								</div>
 							{% endif %}
 						</div>
-						{% if content.field_slider_video_link|render|trim is not empty %}
-						</div>
-					{% endif %}
+
+					</div>
+
 				</div>
 			</div>
 		{% endblock %}
