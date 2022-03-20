@@ -56,7 +56,7 @@
 			height: 900px;
 			min-height: 500px;
 			max-height: 85vh;
-			background: rgb(25, 50, 86);
+			background: #000000;
 		}
 		@media(min-width: 992px) {
 			#paragraph-slide {
@@ -106,7 +106,7 @@
 							{% endif %}
 							{% if content.field_slider_description %}
 								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% endif %} caption-container hidden-xs">
-									<div style="background: rgb(25, 50, 86); padding:10px ">{{ content.field_slider_description }}</div>
+									<div class="add-shadow">{{ content.field_slider_description.0 }}</div>
 								</div>
 							{% endif %}
 							{% if content.field_slider_link|render %}
