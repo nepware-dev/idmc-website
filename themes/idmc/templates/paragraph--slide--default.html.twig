@@ -56,7 +56,7 @@
 			height: 900px;
 			min-height: 500px;
 			max-height: 85vh;
-			background: rgb(25, 50, 86);
+			background: #000000;
 		}
 		@media(min-width: 992px) {
 			#paragraph-slide {
@@ -72,47 +72,68 @@
 			margin: 1em 0;
 			border-radius: 10px;
 		}
+		.has-shadow {
+			display: inline;
+			line-height: 1.5;
+			padding: 0.5rem 0;
+			background: rgb(25, 50, 86);
+			-webkit-box-decoration-break: clone;
+			-ms-box-decoration-break: clone;
+			-o-box-decoration-break: clone;
+			box-decoration-break: clone;
+			box-shadow: 0.5rem 0 0 rgb(25, 50, 86), -0.5rem 0 0 rgb(25, 50, 86);
+		}
 	</style>
 	<div{{attributes.addClass(classes)}} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
 		{% block content %}
 			<div class="">
 				<div class="container">
-					<div class="my-carousel-caption container" style="background: rgb(25, 50, 86); ">
+					<div class="my-carousel-caption container">
 						{% if content.field_slider_video_link|render|trim is not empty %}
 							<div class="col-md-6 row" style="padding-top:20px">
 								<div class="videoWrapper" style="min-width:496px">
 									<iframe src="{{ content.field_slider_video_link.0 }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 								</div>
 							</div>
-							<div class="col-md-4 container">
-							{% endif %}
+						{% elseif paragraph.field_slider_text_position is defined and paragraph.field_slider_text_position.value == "right" %}
+
+							<div class="col-md-8 hidden-sm"></div>
+
+						{% endif %}
+						<div class="col-md-4 container">
 
 							{% if content.field_slider_title %}
-								<h3>{{ content.field_slider_title }}</h3>
+								<h3 style="border-bottom:0">
+									<span class="has-shadow">{{ content.field_slider_title.0 }}</span>
+								</h3>
 							{% endif %}
 							{% if content.field_slider_description %}
-								<div class="{% if content.field_slider_video_link|render|trim is not empty %} col-md-12 {% endif %} caption-container hidden-xs">
-									<div class="">{{ content.field_slider_description }}</div>
+								<div class="caption-container hidden-xs">
+									<div class="add-shadow">{{ content.field_slider_description.0 }}</div>
 								</div>
 							{% endif %}
 							{% if content.field_slider_link|render %}
 								<div class="mt20">
-									<a class="readmore font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
-										{{ content.field_slider_link_text }}
-									</a>
+									<div class="add-shadow">
+										<a class="readmore font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
+											{{ content.field_slider_link_text }}
+										</a>
+									</div>
 								</div>
 							{% endif %}
 							{% if content.field_external_link|render %}
 								<div class="mt20">
-									<a class="readmore font18 asbutton" href="{{ content.field_external_link.0 }}">
-										{{ content.field_slider_link_text }}
-									</a>
+									<div class="add-shadow">
+										<a class="readmore font18 asbutton" href="{{ content.field_external_link.0 }}">
+											{{ content.field_slider_link_text }}
+										</a>
+									</div>
 								</div>
 							{% endif %}
 						</div>
-						{% if content.field_slider_video_link|render|trim is not empty %}
-						</div>
-					{% endif %}
+
+					</div>
+
 				</div>
 			</div>
 		{% endblock %}
