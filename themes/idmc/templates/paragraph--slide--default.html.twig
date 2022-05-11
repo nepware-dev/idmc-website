@@ -86,7 +86,7 @@
 		}
 		.whiteboxslide {
 			background: #ffffff;
-			padding: 0 1em;
+			padding: 0.1em 1em 1em;
 		}
 		.is-blue {
 			color: rgb(25, 50, 86);
@@ -105,23 +105,24 @@
 							</div>
 						{% elseif paragraph.field_slider_text_position is defined and paragraph.field_slider_text_position.value == "right" %}
 
-							<div class="col-md-4 hidden-sm"></div>
+							<div class="col-md-5 hidden-sm"></div>
 
 						{% endif %}
-						<div class="col-md-6 container whiteboxslide">
-
-							{% if content.field_slider_title %}
-								<h3>
-									<span class="">{{ content.field_slider_title.0 }}</span>
-								</h3>
-							{% endif %}
-							{% if content.field_slider_description %}
-								<div class="caption-container hidden-xs">
-									<div class="is-blue">{{ content.field_slider_description.0 }}</div>
-								</div>
-							{% endif %}
+						<div class="col-md-6 container ">
+							<div class="whiteboxslide">
+								{% if content.field_slider_title %}
+									<h3>
+										<span class="">{{ content.field_slider_title.0 }}</span>
+									</h3>
+								{% endif %}
+								{% if content.field_slider_description %}
+									<div class="caption-container hidden-xs">
+										<div class="is-blue">{{ content.field_slider_description.0 }}</div>
+									</div>
+								{% endif %}
+							</div>
 							{% if content.field_slider_link|render %}
-								<div class="mt20">
+								<div class="">
 									<div class="">
 										<a class="font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
 											{{ content.field_slider_link_text }}
@@ -130,7 +131,7 @@
 								</div>
 							{% endif %}
 							{% if content.field_external_link|render %}
-								<div class="mt20">
+								<div class="">
 									<div class="">
 										<a class="font18 asbutton" href="{{ content.field_external_link.0 }}">
 											{{ content.field_slider_link_text }}
