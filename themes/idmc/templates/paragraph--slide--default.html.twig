@@ -51,47 +51,7 @@
 	{% set imgurl = file_url(content.field_slider_background_image.0['#item'].entity.uri.value|image_style('slide_image_style')) %}
 {% endif %}
 {% block paragraph %}
-	<style>
-		#paragraph-slide {
-			height: 400px;
-			min-height: 400px;
-
-			background: #000000;
-		}
-		@media(min-width: 992px) {
-			#paragraph-slide {
-				height: 610px;
-				max-height: 610px;
-			}
-		}
-
-		.featured-stories-block .my-carousel-caption a.asbutton {
-			background: #008dca;
-			color: #ffffff;
-			padding: 10px;
-			margin: 1em 0;
-			border-radius: 10px;
-			display: inline-flex !important;
-		}
-		.has-shadow {
-			display: inline;
-			line-height: 1.5;
-			padding: 0.5rem 0;
-			background: rgb(25, 50, 86);
-			-webkit-box-decoration-break: clone;
-			-ms-box-decoration-break: clone;
-			-o-box-decoration-break: clone;
-			box-decoration-break: clone;
-			box-shadow: 0.5rem 0 0 rgb(25, 50, 86), -0.5rem 0 0 rgb(25, 50, 86);
-		}
-		.whiteboxslide {
-			background: #ffffff;
-			padding: 0.1em 1em 1em;
-		}
-		.is-blue {
-			color: rgb(25, 50, 86);
-		}
-	</style>
+	<style></style>
 	<div{{attributes.addClass(classes)}} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
 		{% block content %}
 			<div class="">
