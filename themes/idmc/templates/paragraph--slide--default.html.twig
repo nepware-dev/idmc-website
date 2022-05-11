@@ -66,11 +66,12 @@
 		}
 
 		.featured-stories-block .my-carousel-caption a.asbutton {
-			background: #ffffff;
-			color: rgb(25, 50, 86);
+			background: #008dca;
+			color: #ffffff;
 			padding: 10px;
 			margin: 1em 0;
 			border-radius: 10px;
+			display: inline-flex !important;
 		}
 		.has-shadow {
 			display: inline;
@@ -97,10 +98,10 @@
 							</div>
 						{% elseif paragraph.field_slider_text_position is defined and paragraph.field_slider_text_position.value == "right" %}
 
-							<div class="col-md-8 hidden-sm"></div>
+							<div class="col-md-6 hidden-sm"></div>
 
 						{% endif %}
-						<div class="col-md-4 container">
+						<div class="col-md-6 container">
 
 							{% if content.field_slider_title %}
 								<h3 style="border-bottom:0">
@@ -115,7 +116,7 @@
 							{% if content.field_slider_link|render %}
 								<div class="mt20">
 									<div class="add-shadow">
-										<a class="readmore font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
+										<a class="font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
 											{{ content.field_slider_link_text }}
 										</a>
 									</div>
@@ -124,7 +125,7 @@
 							{% if content.field_external_link|render %}
 								<div class="mt20">
 									<div class="add-shadow">
-										<a class="readmore font18 asbutton" href="{{ content.field_external_link.0 }}">
+										<a class="font18 asbutton" href="{{ content.field_external_link.0 }}">
 											{{ content.field_slider_link_text }}
 										</a>
 									</div>
