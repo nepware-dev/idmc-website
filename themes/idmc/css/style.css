@@ -92,13 +92,13 @@
 }
 
 .featured-stories-block .my-carousel-caption h3 {
-    text-transform: uppercase;
-    border-bottom: solid 1px #008dca;
-    display: inline-block;
+    /*text-transform: uppercase;*/
+    border-bottom: solid 1px rgb(25, 50, 86);
+    display: block;
     padding-bottom: 8px;
-    color: #fff;
-    font-family: Lora;
-    font-size: 20px;
+    color: rgb(25, 50, 86);
+    font-family: freight-big-pro, serif;
+    font-size: 30px;
 }
 
 .title-h2{

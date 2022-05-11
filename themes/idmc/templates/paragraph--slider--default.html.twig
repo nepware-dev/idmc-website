@@ -87,13 +87,13 @@
 			</div>
 		{% endblock %}
 	</div>
-	<script>
-		[].forEach.call(document.getElementsByClassName("add-shadow"), function (el) {
-console.log(el.getElementsByTagName("p"));
-[].forEach.call(el.getElementsByTagName("p"), function (elp) {
-let content = "<span class='has-shadow'>" + elp.innerHTML + "</span>";
-elp.innerHTML = content;
-});
-});
-	</script>
+	{# <script>
+			[].forEach.call(document.getElementsByClassName("add-shadow"), function (el) {
+	console.log(el.getElementsByTagName("p"));
+	[].forEach.call(el.getElementsByTagName("p"), function (elp) {
+	let content = "<span class='has-shadow'>" + elp.innerHTML + "</span>";
+	elp.innerHTML = content;
+	});
+	});
+		</script> #}
 {% endblock paragraph %}

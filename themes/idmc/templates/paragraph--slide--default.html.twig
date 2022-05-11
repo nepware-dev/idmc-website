@@ -84,6 +84,13 @@
 			box-decoration-break: clone;
 			box-shadow: 0.5rem 0 0 rgb(25, 50, 86), -0.5rem 0 0 rgb(25, 50, 86);
 		}
+		.whiteboxslide {
+			background: #ffffff;
+			padding: 0 1em;
+		}
+		.is-blue {
+			color: rgb(25, 50, 86);
+		}
 	</style>
 	<div{{attributes.addClass(classes)}} id="paragraph-slide" style="background-image: url({{ imgurl }});background-size:cover;background-position: bottom {{ content.field_slider_image_focus.0 }};background-repeat: no-repeat;">
 		{% block content %}
@@ -98,24 +105,24 @@
 							</div>
 						{% elseif paragraph.field_slider_text_position is defined and paragraph.field_slider_text_position.value == "right" %}
 
-							<div class="col-md-6 hidden-sm"></div>
+							<div class="col-md-4 hidden-sm"></div>
 
 						{% endif %}
-						<div class="col-md-6 container">
+						<div class="col-md-6 container whiteboxslide">
 
 							{% if content.field_slider_title %}
-								<h3 style="border-bottom:0">
-									<span class="has-shadow">{{ content.field_slider_title.0 }}</span>
+								<h3>
+									<span class="">{{ content.field_slider_title.0 }}</span>
 								</h3>
 							{% endif %}
 							{% if content.field_slider_description %}
 								<div class="caption-container hidden-xs">
-									<div class="add-shadow">{{ content.field_slider_description.0 }}</div>
+									<div class="is-blue">{{ content.field_slider_description.0 }}</div>
 								</div>
 							{% endif %}
 							{% if content.field_slider_link|render %}
 								<div class="mt20">
-									<div class="add-shadow">
+									<div class="">
 										<a class="font18 asbutton" href="{{ content.field_slider_link[0]['#url'] }}">
 											{{ content.field_slider_link_text }}
 										</a>
@@ -124,7 +131,7 @@
 							{% endif %}
 							{% if content.field_external_link|render %}
 								<div class="mt20">
-									<div class="add-shadow">
+									<div class="">
 										<a class="font18 asbutton" href="{{ content.field_external_link.0 }}">
 											{{ content.field_slider_link_text }}
 										</a>
