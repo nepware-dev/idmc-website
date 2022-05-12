@@ -53,6 +53,47 @@
 	{% set autoplay = "false" %}
 {% endif %}
 {% block paragraph %}
+	<style>
+		#paragraph-slide {
+			height: 400px;
+			min-height: 400px;
+
+			background: #000000;
+		}
+		@media(min-width: 992px) {
+			#paragraph-slide {
+				height: 610px;
+				max-height: 610px;
+			}
+		}
+
+		.featured-stories-block .my-carousel-caption a.asbutton {
+			background: #008dca;
+			color: #ffffff;
+			padding: 10px;
+			margin: 1em 0;
+			border-radius: 10px;
+			display: inline-flex !important;
+		}
+		.has-shadow {
+			display: inline;
+			line-height: 1.5;
+			padding: 0.5rem 0;
+			background: rgb(25, 50, 86);
+			-webkit-box-decoration-break: clone;
+			-ms-box-decoration-break: clone;
+			-o-box-decoration-break: clone;
+			box-decoration-break: clone;
+			box-shadow: 0.5rem 0 0 rgb(25, 50, 86), -0.5rem 0 0 rgb(25, 50, 86);
+		}
+		.whiteboxslide {
+			background: #ffffff;
+			padding: 0.1em 1em 1em;
+		}
+		.is-blue {
+			color: rgb(25, 50, 86);
+		}
+	</style>
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
 
@@ -87,13 +128,13 @@
 			</div>
 		{% endblock %}
 	</div>
-	<script>
-		[].forEach.call(document.getElementsByClassName("add-shadow"), function (el) {
-console.log(el.getElementsByTagName("p"));
-[].forEach.call(el.getElementsByTagName("p"), function (elp) {
-let content = "<span class='has-shadow'>" + elp.innerHTML + "</span>";
-elp.innerHTML = content;
-});
-});
-	</script>
+	{# <script>
+				[].forEach.call(document.getElementsByClassName("add-shadow"), function (el) {
+		console.log(el.getElementsByTagName("p"));
+		[].forEach.call(el.getElementsByTagName("p"), function (elp) {
+		let content = "<span class='has-shadow'>" + elp.innerHTML + "</span>";
+		elp.innerHTML = content;
+		});
+		});
+			</script> #}
 {% endblock paragraph %}
