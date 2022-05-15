@@ -78,6 +78,21 @@
     position: absolute;
     bottom: 40px;
 }
+@media (min-width:768px) {
+  .featured-stories-block .my-carousel-caption.container {
+    width:600px;
+  }
+}
+@media (min-width:992px) {
+  .featured-stories-block .my-carousel-caption.container {
+    width:970px;
+  }
+}
+@media (min-width:1200px) {
+  .featured-stories-block .my-carousel-caption.container {
+    width:1170px;
+  }
+}
 .carousel-control {
   width: 0 !important;
 }
@@ -967,7 +982,7 @@ article.events {
     height: 73.1px;
     position: absolute;
     top: 46%;
-    left: 100px;
+    left: 20px;
     z-index: 5;
     background: url('../images/slider-arrow-left.svg') bottom center;
     display: inline-block;
@@ -982,7 +997,7 @@ article.events {
     height: 73.1px;
     position: absolute;
     top: 46%;
-    right: 100px;
+    right: 20px;
     z-index: 5;
     background: url('../images/slider-arrow-right.svg') bottom center;
     display: inline-block;
