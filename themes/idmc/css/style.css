@@ -117,7 +117,7 @@
 
 .featured-stories-block .my-carousel-caption h3 {
     /*text-transform: uppercase;*/
-    border-bottom: solid 1px rgb(25, 50, 86);
+    border-bottom: 0;
     display: block;
     padding-bottom: 8px;
     color: rgb(25, 50, 86);
@@ -127,8 +127,13 @@
 @media only screen and (min-width: 766px) {
   .featured-stories-block .my-carousel-caption h3 {
     /*text-transform: uppercase;*/
-    border-bottom: solid 1px rgb(25, 50, 86);
     font-size: 30px;
+}
+}
+@media only screen and (min-width: 992px) {
+  .featured-stories-block .my-carousel-caption h3 {
+    /*text-transform: uppercase;*/
+    border-bottom: solid 1px rgb(25, 50, 86);
 }
 }
 
