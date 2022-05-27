@@ -1,45 +1,47 @@
 <div class="row xs-padding {% if not is_front %} flex_content_2_col_container {% endif %}">
-{% if is_front %}
-<div class="container paragraph" >
-            <div class="row">
-                <div class="col-md-8">
-                    <h2 class="paragraph-title">{{ content.field_flex_2_col_big_title.0 }}</h2>
-                </div>
-                <div class="col-md-4 inline-button">
-                <a class="readmore font18" href="/grid2021">
-                      GRID2021 Homepage
-                  </a>
-
-                </div>
-            </div>
-{% else %}
-	<div class="container">
-		<div class="paragraph-title">
-			{{ content.field_flex_2_col_big_title.0 }}
-		</div>
-        {% endif %}
-		<div class="row paragraph-content {% if is_front %} flex_content_2_col_container {% endif %}" {% if is_front %} style="background: #fff"{% endif %}>
-			<div class="col-sm-6 left-col text-center">
-				<img src="{{ file_url(content.field_flex_2_col_left_image['#items'].entity.uri.value|image_style("optimized") ) }}">
-				<p><em>{{ content.field_photo_caption }}</em></p>
-			</div>
-			<div class="col-sm-6 right-col">
-				<div class="right-title">
-					<div>{{ content.field_flex_2_col_right_tittle.0 }}</div>
-					<div>{{ content.field_flex_2_col_right_below_tit.0 }}</div>
-					<div class="right-title-line"></div>
+	{% if is_front %}
+		<div class="container paragraph">
+			<div class="row">
+				<div class="col-md-8">
+					<h2 class="paragraph-title">{{ content.field_flex_2_col_big_title.0 }}</h2>
 				</div>
-				<div class="right-text">
-					<div>
-						{{ content.field_flex_2_col_right_content.0 }}
+				<div class="col-md-4 inline-button">
+					<a class="readmore font18" href="/grid2022">
+						GRID2022 Homepage
+					</a>
+
+				</div>
+			</div>
+		{% else %}
+			<div class="container">
+				<div class="paragraph-title">
+					{{ content.field_flex_2_col_big_title.0 }}
+				</div>
+			{% endif %}
+			<div class="row paragraph-content {% if is_front %} flex_content_2_col_container {% endif %}" {% if is_front %} style="background: #fff" {% endif %}>
+				<div class="col-sm-6 left-col text-center">
+					<img src="{{ file_url(content.field_flex_2_col_left_image['#items'].entity.uri.value|image_style("optimized") ) }}">
+					<p>
+						<em>{{ content.field_photo_caption }}</em>
+					</p>
+				</div>
+				<div class="col-sm-6 right-col">
+					<div class="right-title">
+						<div>{{ content.field_flex_2_col_right_tittle.0 }}</div>
+						<div>{{ content.field_flex_2_col_right_below_tit.0 }}</div>
+						<div class="right-title-line"></div>
 					</div>
-					{% if content.field_flex_2_col_right_read_link.0 is not empty %}
-					<div class="right-readmore">
-						<a href="{{ content.field_flex_2_col_right_read_link.0 }}" class="readmore">{{ content.field_flex_2_col_right_read_text.0|render|trim is empty ? 'Read more' : content.field_flex_2_col_right_read_text.0 }}</a>
+					<div class="right-text">
+						<div>
+							{{ content.field_flex_2_col_right_content.0 }}
+						</div>
+						{% if content.field_flex_2_col_right_read_link.0 is not empty %}
+							<div class="right-readmore">
+								<a href="{{ content.field_flex_2_col_right_read_link.0 }}" class="readmore">{{ content.field_flex_2_col_right_read_text.0|render|trim is empty ? 'Read more' : content.field_flex_2_col_right_read_text.0 }}</a>
+							</div>
+						{% endif %}
 					</div>
-					{% endif %}
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

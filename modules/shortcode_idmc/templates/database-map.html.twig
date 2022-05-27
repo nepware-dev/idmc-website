@@ -7,60 +7,85 @@
 {{ attach_library('shortcode_idmc/ammap-lib') }}
 
 <div class="row" style="text-align: center;background: #333132;">
-    <div id="mapdiv_id" class="containter" style="height: 480px;display: inline-block;width: 80%;"></div>
+	<div id="mapdiv_id" class="containter" style="height: 480px;display: inline-block;width: 80%;"></div>
 </div>
 
 <script type="text/javascript">
-    var intervalLastGridStock = setInterval(function (){
-        if (document.readyState === 'complete') {
-            clearInterval(intervalLastGridStock);
+	var intervalLastGridStock = setInterval(function () {
+if (document.readyState === 'complete') {
+clearInterval(intervalLastGridStock);
 
-            var removeLinkCountries = ['LUX','GRL', 'ESH', 'ISL', 'SJM', 'BEL', 'NLD', 'DNK', 'BLR', 'LTU', 'LVA', 'EST', 'GNQ', 'DJI', 'SWZ', 'KWT', 'QAT', 'ARE', 'GUY', 'GUF', 'FLK', 'PRI', 'NCL', 'ATF', 'SVK'];
+var removeLinkCountries = [
+'LUX',
+'GRL',
+'ESH',
+'ISL',
+'SJM',
+'BEL',
+'DNK',
+'BLR',
+'LTU',
+'LVA',
+'EST',
+'GNQ',
+'DJI',
+'SWZ',
+'KWT',
+'QAT',
+'ARE',
+'GUY',
+'GUF',
+'FLK',
+'PRI',
+'NCL',
+'ATF',
+'SVK'
+];
 
-            var removeLinkContriesConfigs = removeLinkCountries.map(function(item){
-                return {
-                    "id": item,
-                    "selectable": false,
-                    "color" : "#A5A9A9",
-                    "colorSolid" : "#A5A9A9",
-                    "selectedColor" : "#A5A9A9",
-                    "outlineColor" : "#A5A9A9",
-                    "rollOverOutlineColor" : "#A5A9A9",
-                }
-            });
-        
-            var map = AmCharts.makeChart("mapdiv_id",{
-                type: "map",
-                //projection: "mercator",
-                projection: "equirectangular",
-                panEventsEnabled : true,
-                // backgroundColor : "#F9F9F9",
-                backgroundColor : "#333132",
-                backgroundAlpha : 1,
-                zoomControl: {
-                zoomControlEnabled : true
-                },
-                dataProvider : {
-                    // mapURL : "https://api.idmcdb.org/public/assets/data/worldLow.svg",
-                    // map : "worldLow",
-                    mapURL: "/" + "{{ modulepath }}" + "/js/idmcmap/worldLow.svg",
-                    getAreasFromMap : true,
-                    "areas": removeLinkContriesConfigs
-                },
-                areasSettings : {
-                    autoZoom : false,
-                    selectable: true,
-                    color : "#D8D8D8",
-                    colorSolid : "#D8D8D8",
-                    selectedColor : "#D8D8D8",
-                    outlineColor : "#A5A9A9",
-                    rollOverColor : "#A5A9A9",
-                    rollOverOutlineColor : "#F9F9F9"
-                },
-                responsive: {
-                    "enabled": true
-                },
-                /*
+var removeLinkContriesConfigs = removeLinkCountries.map(function (item) {
+return {
+"id": item,
+"selectable": false,
+"color": "#A5A9A9",
+"colorSolid": "#A5A9A9",
+"selectedColor": "#A5A9A9",
+"outlineColor": "#A5A9A9",
+"rollOverOutlineColor": "#A5A9A9"
+}
+});
+
+var map = AmCharts.makeChart("mapdiv_id", {
+type: "map",
+// projection: "mercator",
+projection: "equirectangular",
+panEventsEnabled: true,
+// backgroundColor : "#F9F9F9",
+backgroundColor: "#333132",
+backgroundAlpha: 1,
+zoomControl: {
+zoomControlEnabled: true
+},
+dataProvider: {
+// mapURL : "https://api.idmcdb.org/public/assets/data/worldLow.svg",
+// map : "worldLow",
+mapURL: "/" + "{{ modulepath }}" + "/js/idmcmap/worldLow.svg",
+getAreasFromMap: true,
+"areas": removeLinkContriesConfigs
+},
+areasSettings: {
+autoZoom: false,
+selectable: true,
+color: "#D8D8D8",
+colorSolid: "#D8D8D8",
+selectedColor: "#D8D8D8",
+outlineColor: "#A5A9A9",
+rollOverColor: "#A5A9A9",
+rollOverOutlineColor: "#F9F9F9"
+},
+responsive: {
+"enabled": true
+},
+/*
                 areasSettings : {
                     autoZoom : false,
                     selectable: true,
@@ -72,9 +97,9 @@
                     rollOverOutlineColor : "#F9F9F9"
                 }
                 */
-            });
+});
 
-            /*
+/*
             function applyRemoveLinkColor(item, index) {
               var area = map.getObjectById(item);
               area.color = '#A5A9A9';
@@ -88,47 +113,46 @@
             removeLinkCountries.forEach(applyRemoveLinkColor);
             */
 
-            // click to an area then redirect to it's link
-            map.addListener("clickMapObject", function(event) {
-                // remove links from some countries
-                // List removed countries IDs: GRL, ESH, ISL, SJM, BEL, NLD, DNK, BLR, LTU, LVA, EST, GNQ, DJI, SWZ, KWT, QAT, ARE, GUY, GUF, FLK, PRI, NCL, ATF, SVK
-                if (removeLinkCountries.indexOf(event.mapObject.id) != -1) {
-                    return;
-                }
+// click to an area then redirect to it's link
+map.addListener("clickMapObject", function (event) {
+// remove links from some countries
+// List removed countries IDs: GRL, ESH, ISL, SJM, BEL, DNK, BLR, LTU, LVA, EST, GNQ, DJI, SWZ, KWT, QAT, ARE, GUY, GUF, FLK, PRI, NCL, ATF, SVK
+if (removeLinkCountries.indexOf(event.mapObject.id) != -1) {
+return;
+}
 
-                // normal cases
-                var urlSurffix = event.mapObject.title.toLowerCase();
-                urlSurffix = urlSurffix.replace(/ /g, '-')
+// normal cases
+var urlSurffix = event.mapObject.title.toLowerCase();
+urlSurffix = urlSurffix.replace(/ /g, '-')
 
-                // special case
-                if (event.mapObject.id == 'CD') {
-                    urlSurffix = 'drc'
-                }
+// special case
+if (event.mapObject.id == 'CD') {
+urlSurffix = 'drc'
+}
 
-                if (event.mapObject.id == 'RU') {
-                    urlSurffix = 'russian-federation'
-                }
+if (event.mapObject.id == 'RU') {
+urlSurffix = 'russian-federation'
+}
 
-                if (event.mapObject.id == 'KP') {
-                    urlSurffix = 'democratic-peoples-republic-of-korea'
-                }
+if (event.mapObject.id == 'KP') {
+urlSurffix = 'democratic-peoples-republic-of-korea'
+}
 
-                if (event.mapObject.id == 'KR') {
-                    urlSurffix = 'republic-of-korea'
-                }
+if (event.mapObject.id == 'KR') {
+urlSurffix = 'republic-of-korea'
+}
 
-                if (event.mapObject.id == 'AB9') {
-                    urlSurffix = 'abyei';
-                }
+if (event.mapObject.id == 'AB9') {
+urlSurffix = 'abyei';
+}
 
-                if (event.mapObject.id === 'COD') {
-                    urlSurffix = 'drc';
-                }
-                window.location = '/countries/' + urlSurffix
-                // window.location = window.location.href + '/' + urlSurffix
-                // window.location = "http://www.internal-displacement.org/countries/" + urlSurffix
-            });
-        }
-    }, 500);
-
-</script> 
+if (event.mapObject.id === 'COD') {
+urlSurffix = 'drc';
+}
+window.location = '/countries/' + urlSurffix
+// window.location = window.location.href + '/' + urlSurffix
+// window.location = "http://www.internal-displacement.org/countries/" + urlSurffix
+});
+}
+}, 500);
+</script>
