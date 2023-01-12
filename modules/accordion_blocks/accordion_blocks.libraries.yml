@@ -8,3 +8,4 @@ accordion-widget:
   dependencies:
     - core/jquery
     - jquery_ui_accordion/accordion
+    - core/drupal

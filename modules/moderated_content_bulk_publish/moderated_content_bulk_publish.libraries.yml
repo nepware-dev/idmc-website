@@ -4,5 +4,6 @@ moderated-content-bulk-publish:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/drupal.dialog.ajax #Required for dialogs
     - core/drupalSettings
     

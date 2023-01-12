@@ -7,6 +7,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\SetDialogTitleCommand;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,13 +31,23 @@ class GridDialog extends FormBase {
   protected $formBuilder;
 
   /**
+   * The extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected ModuleExtensionList $moduleExtensionList;
+
+  /**
    * GridDialog class initialize..
    *
    * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
    *   The form builder.
+   * @param \Drupal\Core\Extension\ModuleExtensionList $moduleExtensionList
+   *   The extension list.
    */
-  public function __construct(FormBuilderInterface $form_builder) {
+  public function __construct(FormBuilderInterface $form_builder, ModuleExtensionList $moduleExtensionList) {
     $this->formBuilder = $form_builder;
+    $this->moduleExtensionList = $moduleExtensionList;
   }
 
   /**
@@ -44,7 +55,8 @@ class GridDialog extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('form_builder')
+      $container->get('form_builder'),
+      $container->get('extension.list.module')
     );
   }
 
@@ -72,7 +84,7 @@ class GridDialog extends FormBase {
     // The default values are set directly from \Drupal::request()->request,
     // provided by the editor plugin opening the dialog.
     if (!$form_state->get('bs_grid_settings')) {
-      $form_state->set('bs_grid_settings', isset($input['editor_object']) ? $input['editor_object'] : []);
+      $form_state->set('bs_grid_settings', $input['editor_object'] ?? []);
     }
     $settings += $form_state->get('bs_grid_settings');
 
@@ -126,7 +138,7 @@ class GridDialog extends FormBase {
     $available_cols = array_filter($settings['editor_settings']['available_columns']);
     foreach ($available_cols as $column) {
       $title = $this->t('Column @num', ['@num' => $column]);
-      $img = drupal_get_path('module', 'ckeditor_bs_grid') . '/images/ui/col_' . $column . '.png';
+      $img = $this->moduleExtensionList->getPath('ckeditor_bs_grid') . '/images/ui/col_' . $column . '.png';
       $img_src = '<img src="/' . $img . '" title="' . $title . '" />';
       $columns[$column] = $img_src . '<p>' . $this->t('Column @num', ['@num' => $column]) . '</p>';
     }

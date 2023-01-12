@@ -9,7 +9,7 @@ services:
 
   conflict.resolution_inline_form.builder:
     class: Drupal\conflict\Form\ConflictResolutionInlineFormBuilder
-    arguments: ['@entity_type.manager', '@string_translation']
+    arguments: ['@entity_type.manager', '@module_handler', '@string_translation']
 
   conflict_resolver.manager:
     class: \Drupal\conflict\ConflictResolver\ConflictResolverManager

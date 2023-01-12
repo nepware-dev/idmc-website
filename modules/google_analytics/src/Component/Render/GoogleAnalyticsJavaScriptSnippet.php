@@ -34,9 +34,12 @@ class GoogleAnalyticsJavaScriptSnippet implements MarkupInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Returns a representation of the google analytics javascript snippet.
+   *
+   * @return mixed
+   *   The safe string content.
    */
-  public function jsonSerialize() {
+  public function jsonSerialize(): mixed {
     return $this->__toString();
   }
 

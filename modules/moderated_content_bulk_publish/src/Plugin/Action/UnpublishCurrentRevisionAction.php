@@ -4,11 +4,13 @@ namespace Drupal\moderated_content_bulk_publish\Plugin\Action;
 
 //use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
 //use Drupal\views_bulk_operations\Action\ViewsBulkOperationsPreconfigurationInterface;
+use Drupal\node\NodeInterface;
 use Drupal\Core\Action\ActionBase;
 use Drupal\Core\Plugin\PluginFormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\moderated_content_bulk_publish\AdminModeration;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * An example action covering most of the possible options.
@@ -53,7 +55,7 @@ class UnpublishCurrentRevisionAction extends ActionBase/*extends ViewsBulkOperat
     if ($user->hasPermission('moderated content bulk unpublish')) {
       \Drupal::logger('moderated_content_bulk_publish')->notice("Executing unpublish latest revision of ".$entity->label());
 
-      $adminModeration = new AdminModeration($entity, \Drupal\node\NodeInterface::NOT_PUBLISHED);
+      $adminModeration = new AdminModeration($entity, NodeInterface::NOT_PUBLISHED);
       $entity = $adminModeration->unpublish();
 
       //check if published
@@ -133,19 +135,28 @@ class UnpublishCurrentRevisionAction extends ActionBase/*extends ViewsBulkOperat
   }
   */
 
-  /**
+ /**
    * {@inheritdoc}
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($object->getEntityType() === 'node') {
-      $access = $object->access('update', $account, TRUE)
-        ->andIf($object->status->access('edit', $account, TRUE));
-      return $return_as_object ? $access : $access->isAllowed();
+    if ($object->getEntityTypeId() === 'node') {
+      $moderation_info = \Drupal::service('content_moderation.moderation_information');
+      // Moderated Entities will return AccessResult::forbidden for attemps
+      // to edit $object->status.
+      // @see content_moderation_entity_field_access
+      if ($moderation_info->isModeratedEntity($object)) {
+        $access = $object->access('update', $account, TRUE)
+          ->andIf($object->moderation_state->access('edit', $account, TRUE));
+      }
+      else {
+        $access = $object->access('update', $account, TRUE)
+          ->andIf($object->status->access('edit', $account, TRUE));
+      }
     }
-
-    // Other entity types may have different
-    // access methods and properties.
-    return TRUE;
+    else {
+      $access = AccessResult::forbidden()->setReason('The chosen Action only acts on entities of type node')->setCacheMaxAge(0);
+    }
+    return $return_as_object ? $access : $access->isAllowed();
   }
 
 }

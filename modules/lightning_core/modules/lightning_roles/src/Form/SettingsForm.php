@@ -56,17 +56,13 @@ class SettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('lightning_roles.settings')->get('content_roles');
 
-    $permission_map = function ($permission) {
-      return str_replace('?', NULL, $permission);
-    };
-
     foreach ($config as $key => $role) {
-      $role['permissions'] = array_map($permission_map, $role['permissions']);
+      $role['permissions'] = str_replace('?', '', $role['permissions']);
 
       $form['content_roles'][$key] = [
         '#type' => 'checkbox',
         '#title' => $this->t('Provide @label role for new content types', [
-          '@label' => $permission_map($role['label']),
+          '@label' => str_replace('?', '', $role['label']),
         ]),
         '#default_value' => $role['enabled'],
         '#description' => $this->t('Gives permission to @permissions', [

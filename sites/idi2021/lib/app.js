@@ -25866,7 +25866,7 @@ select2.push({'country_name':'Cyprus','relative_url':'/countries/cyprus/'});
 select2.push({'country_name':'Czech Republic','relative_url':'/countries/czech-republic/'});
 select2.push({'country_name':'Dominica','relative_url':'/countries/dominica/'});
 select2.push({'country_name':'Dominican republic','relative_url':'/countries/dominican-republic/'});
-select2.push({'country_name':'Democratic Republic of the Congo','relative_url':'/countries/drc/'});
+select2.push({'country_name':'Democratic Republic of the Congo','relative_url':'/countries/democratic-republic-of-the-congo/'});
 select2.push({'country_name':'Ecuador','relative_url':'/countries/ecuador/'});
 select2.push({'country_name':'Egypt','relative_url':'/countries/egypt/'});
 select2.push({'country_name':'El Salvador','relative_url':'/countries/el-salvador/'});

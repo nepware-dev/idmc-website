@@ -54,7 +54,7 @@ class ModerationDashboardComponentsTest extends ModerationDashboardTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->drupalLogin($this->user);

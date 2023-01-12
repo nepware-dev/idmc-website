@@ -42,7 +42,7 @@ class ConflictResolverManager implements ConflictResolverManagerInterface {
       $result = $result ?? $local;
       $event = new EntityConflictResolutionEvent($local, $remote, $base, $result, $conflicts, $context);
       // Fire an event to allow listeners to automatically resolve conflicts.
-      $this->eventDispatcher->dispatch(EntityConflictEvents::ENTITY_CONFLICT_RESOLVE, $event);
+      $this->eventDispatcher->dispatch($event, EntityConflictEvents::ENTITY_CONFLICT_RESOLVE);
       $conflicts = $event->getConflicts();
     }
 
@@ -56,7 +56,7 @@ class ConflictResolverManager implements ConflictResolverManagerInterface {
     $event = new EntityConflictDiscoveryEvent($local, $remote, $base, $context);
     // Fire an event to allow listeners to build a list of conflicting
     // properties.
-    $this->eventDispatcher->dispatch(EntityConflictEvents::ENTITY_CONFLICT_DISCOVERY, $event);
+    $this->eventDispatcher->dispatch($event, EntityConflictEvents::ENTITY_CONFLICT_DISCOVERY);
 
     return $event->getConflicts();
   }

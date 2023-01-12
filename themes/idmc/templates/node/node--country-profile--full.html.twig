@@ -1,597 +1,102 @@
-{#
-/**
- * @file
- * Theme override to display a node.
- *
- * Available variables:
- * - node: The node entity with limited access to object properties and methods.
-     Only "getter" methods (method names starting with "get", "has", or "is")
-     and a few common methods such as "id" and "label" are available. Calling
-     other methods (such as node.delete) will result in an exception.
- * - label: The title of the node.
- * - content: All node items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
- *   {{ content|without('field_example') }} to temporarily suppress the printing
- *   of a given child element.
- * - author_picture: The node author user entity, rendered using the "compact"
- *   view mode.
- * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
- * - url: Direct URL of the current node.
- * - display_submitted: Whether submission information should be displayed.
- * - attributes: HTML attributes for the containing element.
- *   The attributes.class element may contain one or more of the following
- *   classes:
- *   - node: The current template type (also known as a "theming hook").
- *   - node--type-[type]: The current node type. For example, if the node is an
- *     "Article" it would result in "node--type-article". Note that the machine
- *     name will often be in a short form of the human readable label.
- *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
- *     teaser would result in: "node--view-mode-teaser", and
- *     full: "node--view-mode-full".
- *   The following are controlled through the node publishing options.
- *   - node--promoted: Appears on nodes promoted to the front page.
- *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
- *     teaser listings.
- *   - node--unpublished: Appears on unpublished nodes visible only to site
- *     admins.
- * - title_attributes: Same as attributes, except applied to the main title
- *   tag that appears in the template.
- * - content_attributes: Same as attributes, except applied to the main
- *   content tag that appears in the template.
- * - author_attributes: Same as attributes, except applied to the author of
- *   the node tag that appears in the template.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
- * - view_mode: View mode; for example, "teaser" or "full".
- * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
- * - page: Flag for the full page state. Will be true if view_mode is 'full'.
- * - readmore: Flag for more state. Will be true if the teaser content of the
- *   node cannot hold the main body content.
- * - logged_in: Flag for authenticated user status. Will be true when the
- *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
- *   is an administrator.
- *
- * @ingroup templates
- *
- * @see template_preprocess_node()
- *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- */
-#}
-{%
-  set classes = [
-    node.bundle|clean_class,
-    node.isPromoted() ? 'is-promoted',
-    node.isSticky() ? 'is-sticky',
-    not node.isPublished() ? 'is-unpublished',
-    view_mode ? view_mode|clean_class,
-    'clearfix',
-  ]
-%}
+    {#
+    /**
+     * @file
+     * Theme override to display a node.
+     *
+     * Available variables:
+     * - node: The node entity with limited access to object properties and methods.
+     *   Only method names starting with "get", "has", or "is" and a few common
+     *   methods such as "id", "label", and "bundle" are available. For example:
+     *   - node.getCreatedTime() will return the node creation timestamp.
+     *   - node.hasField('field_example') returns TRUE if the node bundle includes
+     *     field_example. (This does not indicate the presence of a value in this
+     *     field.)
+     *   - node.isPublished() will return whether the node is published or not.
+     *   Calling other methods, such as node.delete(), will result in an exception.
+     *   See \Drupal\node\Entity\Node for a full list of public properties and
+     *   methods for the node object.
+     * - label: The title of the node.
+     * - content: All node items. Use {{ content }} to print them all,
+     *   or print a subset such as {{ content.field_example }}. Use
+     *   {{ content|without('field_example') }} to temporarily suppress the printing
+     *   of a given child element.
+     * - author_picture: The node author user entity, rendered using the "compact"
+     *   view mode.
+     * - metadata: Metadata for this node.
+     * - date: Themed creation date field.
+     * - author_name: Themed author name field.
+     * - url: Direct URL of the current node.
+     * - display_submitted: Whether submission information should be displayed.
+     * - attributes: HTML attributes for the containing element.
+     *   The attributes.class element may contain one or more of the following
+     *   classes:
+     *   - node: The current template type (also known as a "theming hook").
+     *   - node--type-[type]: The current node type. For example, if the node is an
+     *     "Article" it would result in "node--type-article". Note that the machine
+     *     name will often be in a short form of the human readable label.
+     *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+     *     teaser would result in: "node--view-mode-teaser", and
+     *     full: "node--view-mode-full".
+     *   The following are controlled through the node publishing options.
+     *   - node--promoted: Appears on nodes promoted to the front page.
+     *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+     *     teaser listings.
+     *   - node--unpublished: Appears on unpublished nodes visible only to site
+     *     admins.
+     * - title_attributes: Same as attributes, except applied to the main title
+     *   tag that appears in the template.
+     * - content_attributes: Same as attributes, except applied to the main
+     *   content tag that appears in the template.
+     * - author_attributes: Same as attributes, except applied to the author of
+     *   the node tag that appears in the template.
+     * - title_prefix: Additional output populated by modules, intended to be
+     *   displayed in front of the main title tag that appears in the template.
+     * - title_suffix: Additional output populated by modules, intended to be
+     *   displayed after the main title tag that appears in the template.
+     * - view_mode: View mode; for example, "teaser" or "full".
+     * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+     * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+     * - readmore: Flag for more state. Will be true if the teaser content of the
+     *   node cannot hold the main body content.
+     * - logged_in: Flag for authenticated user status. Will be true when the
+     *   current user is a logged-in member.
+     * - is_admin: Flag for admin user status. Will be true when the current user
+     *   is an administrator.
+     *
+     * @see template_preprocess_node()
+     */
+    #}
+    {%
+      set classes = [
+        'node',
+        'node--type-' ~ node.bundle|clean_class,
+        node.isPromoted() ? 'node--promoted',
+        node.isSticky() ? 'node--sticky',
+        not node.isPublished() ? 'node--unpublished',
+        view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+      ]
+    %}
+    {% set iso3 = node.field_iso3_code.value %}
+    {% set country_name = node.title.value %}
 
-{% set cover_image = file_url(node.field_cover_image.entity.uri.value) %}
-{% set map_image = file_url(node.field_map_image.entity.uri.value) %}
-{% set iso3 = node.field_iso3_code.value %}
-<style>
-i.fa {
-width:1em;
-text-align:center;
-}
-  .print-only {
-    display:none;
-  }
-  #country-information-pt {
-    padding-top:36px;
-  }
-  .print-page:before {
-    content: '\f02f';
-    font-family: FontAwesome;
-    display: inline-block;
-    margin-right: 2px;
-  }
-@media print {
-  .print-only {
-    display:block;
-  }
-  #country-information-pt {
-    padding-top:0px !important;
-  }
-  #country-profile-chart-tabs-id, .riskmodel {
-/*    page-break-before: always;*/
-    page-break-inside: avoid;
-  }
-  .country-profile-accordion-item, .panel-body  {
-        /*page-break-before: always;*/
-    widows: 5;
-    orphans:5;
-    }
-  
-  p {page-break-inside: avoid;}
-  .navbar {
-    display: block;
-    position: relative;
-    top: 0 !important;
-  }
-  .tab-content>.tab-pane {
-    display:block;
-  }
-  .tab-pane.fade {
-    opacity:1;
-    -webkit-transition: none !important;
-    transition: none !important;
-  }
-  .navbar .navbar-toggle, .navbar .collapse {
-    display: none !important;
-  }
-  .navbar .logo:after {
-    content: none;
-  }
-  .navbar img {
-    width: 185px !important;
-    height: auto;
-  }
-    text.amcharts-legend-label {
-     fill: black !important   
-    }
-    .col-md-4 { width:33%; float: left;margin-right:0.2% }
-  .collapse {
-    display:block;
-  }
-    nav.tabs { display:none;}
-    .header-container { padding-top: 0 !important;}
-    .container { width: 100%; }
-.modal.fade {
-opacity:1;
-}
-.modal {
-display:block;
-position: relative;
-font-size:0.7em;
-}
-    .modal.fade .modal-dialog {
-        -webkit-transform: translate(0,0);
-        transform: translate(0,0);
-        width:100%;
-      margin:0;
-    }
-  .modal .light-title {
-    font-size:1.5em;
-    margin-top:0;
-  }
-    .modal-footer {
-        display:none;
-    }
-.country-information {
-margin:1em !important;
-padding:1em !important
-}
-    #share-sidebar, .smoothscroll,#latestblock,#block-views-block-previous-infomation-block-1, #read_figure_link {
-        display:none;
-    }
-    .amcharts-chart-div {
-     width: 100% !important   
-    }
-  svg text {
-    fill: #000000 !important
-  }
-    #block-footerblockgrouprow2 {
-/*        background: #979797 !important;*/
-      display:none;
-    }
-  .svg-map-container, .header-mask {
-    display:none;
-  }
-.header-map {
-margin:0 !important;
-padding:0 ! important;
-    }
-    }
-</style>
+    {{ attach_library('classy/node') }}
+    <article{{ attributes.addClass(classes) }}>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js" type="text/javascript"></script>
-<article{{ attributes.addClass(classes) }}>
- <div class="print-only">
-   <img src="{{ map_image }}" alt="" style="height: 150px; width: auto;">
- </div>
-  <div{{ content_attributes.addClass( 'content') }}>
+      <div id="app-container" style="min-height: 100vh;"></div>
+       <script>
+           window.page = "country-profile";
+           window.iso3 = "{{iso3}}";
+           window.countryName = "{{country_name}}";
+       </script>
 
-    {% if node.field_map_image.entity.uri.value %} {% if country_info2 is not empty %}
-    <div class="row hidden-xs hidden-sm visible-md-block visible-lg-block" style="height:400px;background-color: #4a4a4a">
-      <div class="container" style="
-    position: relative;
-">
-        <div class="row">
-          <div class="svg-map-container" style="height:400px;position:absolute;right:0;top:0">
-            <svg class="svg-map" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                    <linearGradient id="Gradient">
-                    <stop offset="0.1" stop-color="white" stop-opacity="0" />
-                    <stop offset="0.5" stop-color="white" stop-opacity="1"></stop>
-                    <stop offset="0.95" stop-color=white stop-opacity="0" />
-                    </linearGradient>
-                    <mask id="Mask">
-                        <rect x="0" y="0" width="848" height="442" fill="url(#Gradient)"  />
-                    </mask>
-                </defs>
-                <image xlink:href="{{ map_image }}" width="848" height="442" mask="url(#Mask)" opacity="0.5" />
-            </svg>
-          </div>
-          <div class="header-map col-md-10">
-            <style>
-              .largenumber {
-                font-size: 2em;
-                margin-bottom: 0;
-                margin-top: 0.5em;
-              }
-              .shadow {
-                text-shadow: 0px 0px 5px rgba(74, 74, 74, 1), 1px 1px 5px rgba(74, 74, 74, 1), 1px 1px 1px rgba(74,74,74,1);
-              }
-              a.whitelink {
-                color:#fff;
-              }
-              a.whitelink:hover {
-                color:#fff;
-              }
-            </style>
-            <div class="country-information" id="country-information-pt" style="">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 text-white">
-                  <h2 class="light-title text-center" style="color: #fff">Country information</h2>
-                  <div class="row mt20">
-                  
-                  {% if country_info2.disaster_nd and country_info2.disaster_nd > 0 %}
-                  <div class="col-md-4">
-                  <p style="color:#168ECA !important">Disasters</p>
-                  </div>
-                  {% endif %} 
-                  
-                  <div class="col-md-8">
-                  {% if (country_info2.conflict_stock and country_info2.conflict_stock > 0) or (country_info2.conflict_nd and country_info2.conflict_nd > 0) or (country_info2.partial_solutions and country_info2.partial_solutions > 0) or (country_info2.unverified_solutions and country_info2.unverified_solutions > 0) %}
-                  <p style="color:#EF7C00">Conflict and violence</p>
-                  {% endif %} 
-                  </div>
-                  </div>
-                  <div class="row">
-                  {% if country_info2.disaster_nd and country_info2.disaster_nd > 0 %}
-                  <div class="col-md-2 mb30" id="disasterNew">
-                    <p class=" bold largenumber" style="color:#168ECA !important; margin-top:0">{{ country_info2.disaster_nd|number_format }}</p>
-                    <p class=" shadow">New displacements </p>
-                    <p class=" country-info-source-date shadow">({{ country_info2.disaster_nd_year }})</p>
-                  </div>
-                  {% endif %}
-                  {% if country_info2.disaster_stock and country_info2.disaster_stock > 0 %}
-                  <div class="col-md-2 mb30" id="disasterStock">
-                    <p class=" bold largenumber" style="color:#168ECA; margin-top:0">{{ country_info2.disaster_stock|number_format }}</p>
-                    <p class=" shadow">Total number of IDPs</p>
-                    <p class=" country-info-source-date shadow">({{ country_info2.disaster_stock_year }})</p>
-                  </div>
-                  {% endif %}
-                  {% if country_info2.conflict_nd and country_info2.conflict_nd > 0 %}
-                  <div class="col-md-2 mb30" id="conflictNew">
-                    <p class=" bold largenumber" style="color:#EF7C00 !important; margin-top:0">{{ country_info2.conflict_nd|number_format }}</p>
-                    <p class=" shadow">New displacements</p>
-                    <p class=" country-info-source-date shadow">({{ country_info2.conflict_nd_year }})</p>
-                  </div>
-                  {% endif %} 
-                  {% if country_info2.conflict_stock and country_info2.conflict_stock > 0 %}
-                  <div class="col-md-2 mb30" id="conflictStock">
-                    <p class=" bold largenumber" style="color:#EF7C00; margin-top:0">{{ country_info2.conflict_stock|number_format }}</p>
-                    <p class=" shadow">Total number of IDPs</p>
-                    <p class=" country-info-source-date shadow">({{ country_info2.conflict_stock_year }})</p>
-                  </div>
-                  {% endif %}
-</div>
-                </div>
-              </div>
-              <div class="row"><div class="col-md-12"><a class="whitelink" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i> &nbsp;How to read our figures</a></div>
-              {% if content.field_country_overview|render is not empty %}
-        <div class="col-md-12 mt-3" id="jump_to_data_analysis"><a href="#" class="whitelink smoothscroll"><i class="fa fa-info"></i> What's behind our data?</a></div>
-        {% endif %}
-        {% if content.field_country_myf_link|render is not empty %}
-        <div class="col-md-12 mt-3"> <a href="{{content.field_country_myf_link.0}}" class="whitelink"><i class="fa fa-arrow-circle-o-down"></i> Mid-year displacement update</a></div>
-        {% endif %}
-        
-        </div>
-            </div>
-          </div>
-<!--          <div class="col-md-4" style="height: 400px;background-image: url({{ map_image }});background-position: right;background-size:cover;"></div>-->
-        </div>
-
+       <!-- Add react-website-component script and styles here -->
+       <!-- On new release, please update the bundle count so that cache is busted -->
+       <script defer="" src="https://idmc-website-components.idmcdb.org/js/runtime.bundle.js?bundle=3"></script>
+       <script defer="" src="https://idmc-website-components.idmcdb.org/js/main.bundle.js?bundle=3"></script>
+       <link href="https://idmc-website-components.idmcdb.org/css/main.css?bundle=3" rel="stylesheet">
+       <!-- end -->
+      <div{{ content_attributes.addClass('node__content') }}>
+        {{ content|without('field_tags') }}
       </div>
 
-    </div>
-    {% endif %}
-    <div class="row visible-xs-block visible-sm-block hidden-md hidden-lg">
-      <div class="header-mask col-md-12" style="padding:0">
-        <div class="header-map" style="background: url({{ map_image }}) center center no-repeat;background-size: cover; height:200px">
-        </div>
-      </div>
-      {% if country_info2 is not empty %}
-      <div class="container country-information" style="margin-bottom:5em">
-        <div class="row">
-          <div class="col-sm-12 col-md-12">
-            <h2 class="light-title">Country information</h2>
-            {% if country_info2.disaster_nd and country_info2.disaster_nd > 0 %}
-            <div class="col-md-4">
-              <p class=" bold largenumber" style="color:#168ECA !important">{{ country_info2.disaster_nd|number_format }}</p>
-              <p class="">New displacements (Disasters)</p>
-              <p class=" country-info-source-date">({{ country_info2.disaster_nd_year }})</p>
-            </div>
-            {% endif %}
-            {% if country_info2.disaster_stock and country_info2.disaster_stock > 0 %}
-            <div class="col-md-4">
-              <p class=" bold largenumber" style="color:#168ECA !important">{{ country_info2.disaster_stock|number_format }}</p>
-              <p class="">Total number of IDPs (Disasters)</p>
-              <p class=" country-info-source-date">({{ country_info2.disaster_stock_year }})</p>
-            </div>
-            {% endif %}
-            {% if country_info2.conflict_nd and country_info2.conflict_nd > 0 %}
-            <div class="col-md-4">
-              <p class=" bold largenumber" style="color:#EF7C00 !important">{{ country_info2.conflict_nd|number_format }}</p>
-              <p class="">New displacements (Conflict and violence)</p>
-              <p class=" country-info-source-date">({{ country_info2.conflict_nd_year }})</p>
-            </div>
-            {% endif %} {% if country_info2.conflict_stock and country_info2.conflict_stock > 0 %}
-            <div class="col-md-4">
-              <p class=" bold largenumber" style="color:#EF7C00 !important">{{ country_info2.conflict_stock|number_format }}</p>
-              <p class="">Total number of IDPs (Conflict and violence)</p>
-              <p class=" country-info-source-date">({{ country_info2.conflict_stock_year }})</p>
-            </div>
-            {% endif %} 
-
-          </div>
-        </div>
-        <div class="row" id="read_figure_link"><div class="col-md-12"><a data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i> &nbsp;How to read our figures</a></div>
-        {% if content.field_country_overview|render is not empty %}
-        <div class="col-md-12 mt-3"  id="jump_to_data_analysis"><a href="#" class="smoothscroll "><i class="fa fa-info"></i> What's behind our data?</a></div>
-        {% endif %}
-        {% if content.field_country_myf_link|render is not empty %}
-        <div class="col-md-12 mt-3"><a href="{{content.field_country_myf_link.0}}" class=""><i class="fa fa-arrow-circle-o-down"></i> Mid-year displacement update</a></div>
-        {% endif %}
-        </div>
-      </div>
-      {% endif %}
-
-    </div>
-    {% endif %} 
-            <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <h3 class="light-title">About the figures: </h3>
-<p><strong>New displacements (disasters):</strong> This corresponds to the latest reported occurrences of disaster-related internal displacement. This refers to a number of movements, and not people, as individuals can be displaced several times, and the data we collect does not always reflect this.</p>
-<p><strong>New displacements (conflict or violence):</strong> This corresponds to new instances of internal displacement that occurred in 2019. This refers to a number of movements, and not people, as individuals can be displaced several times, and the data we collect does not always reflect this.  </p>
-<p><strong>Total number of IDPs (conflict or violence):</strong> This corresponds to the total number of people living in internal displacement as a result of conflict or violence as of 31 December 2019.</p>
-<p><strong>Total number of IDPs (disasters):</strong> This corresponds to the total number of people living in internal displacement estimated by IDMC using empirical information, as a result of disasters as of 31 December 2019.</p>
- 
-<p>You can find more information about our metrics and data model <a href="/monitoring-tools/data-model" target="_blank">here</a>.</p>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-    {% if content.field_country_overview|render is not empty %}
-    <div class="container">
-      <div class="row">
-       
-        <div class="col-sm-12 col-md-12 pt40 pb40" id="overviewblock">
-          {{ content.field_country_overview }}
-          <p><a href="#" onclick="window.print();return false;" class="print-page">Print page</a></p>
-        </div>
-        <div class="col-sm-12 col-md-6 pt40 pb40 hide" id="latestblock" style="">
-          <div class="light-title mb30">Latest new displacements</div>
-          <div style="height:300px;background: #eeeeee;padding:10px;overflow-y: scroll;margin-bottom:1em" id="latestnewdisplacement">
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script type="text/javascript">
-    function tickerListener () {
-                  var ticker = _.filter(JSON.parse(this.responseText), { 'iso3': '{{ iso3 }}'  });
-                  var tickerSorted = _.sortBy(ticker, function(o){
-                    return new moment(o.displacement_start_date).format('YYYYMMDD'); 
-                  }).reverse();
-
-                  var thisTicker = [];
-                  for(var i = 0; i < tickerSorted.length; i++) {
-                      var obj = tickerSorted[i];
-                        var resultArray = obj.standard_popup_text.split('<br>');
-                        var title= resultArray[0].split(":")[1];
-                        document.getElementById("latestnewdisplacement").innerHTML += "<p><strong>"+title+"</strong></p><p>"+resultArray[1]+"</p><p>"+resultArray[2]+"</p><hr>";
-                   // thisTicker.push("<p><strong>"+title+"</strong></p><p>"+resultArray[1]+"</p><p>"+resultArray[2]+"</p><hr>");
-
-                  }
-      if (_.size(ticker)>0) {
-        var element = document.getElementById("latestblock");
-      element.className = element.className.replace(/\bhide\b/g, "");
-        var element2 = document.getElementById("overviewblock");
-      element2.className = element2.className.replace(/\bcol-md-12\b/g, "col-md-6");
-      }
-
-                }
-              
-                var tReq = new XMLHttpRequest();
-                tReq.addEventListener("load", tickerListener);
-                tReq.open("GET", "https://backend.idmcdb.org/data/idus_view_flat");
-                tReq.send();
-      
-
-    </script>
-    {% endif %} {% if content.field_country_charts_all_in_one|render is not empty %}
-    <div class="row">
-      {{ content.field_country_charts_all_in_one }}
-    </div>
-    {% endif %}
-    {% if node.field_disaster_risk_model.value|render != '1' %}
-     <div class="row riskmodel">
-      <div class="container" style="padding-bottom:30px;padding-top:30px">
-       <div class="field--label light-title country-overview-title">Risk of future displacement</div>
-        <div id="aadresult">
-         <p>Average expected number of displacements per year – for sudden-onset hazards:</p>
-          <p id="aadtitle" class="lead"></p>
-          <div id="test"></div>
-          <div class="row">
-            <div class="container" id="aadspecific">
-            </div>
-          </div>
-          <div class="row">
-           <div class="container" style="padding-bottom:0em;padding-top:1em">
-            <p>IDMC uses information about the probability of future hazard scenarios to model displacement risk based on probable housing destruction. Find out how we calculate our metrics <a href="/database/global-displacement-risk-model">here</a> and explore the likelihood of future displacement around the world <a href="/disaster-risk-model">here</a>. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-<script type="text/javascript">
-function reqListener () {
-                  var prospective = JSON.parse(this.responseText);
-                  var thisCountry = [];
-                  for(var i = 0; i < prospective.length; i++) {
-                      var obj = prospective[i];
-                      if (obj.iso3 === "{{ iso3 }}" && obj.analysis_type === "Prospective") {
-                        //obj.country = event.mapObject.enTitle;
-                        thisCountry.push(obj)
-                      } 
-                  }
-                
-                  outputThisCountry(thisCountry)
-                }
-              
-              
-                var oReq = new XMLHttpRequest();
-                oReq.addEventListener("load", reqListener);
-                oReq.open("GET", "/" + "modules/shortcode_idmc" + "/js/idmcscript/prospective_displacement.json");
-                oReq.send();
-  
-  
- function outputThisCountry (thisCountry) {
-            if (thisCountry.length === 0) return;
-            document.getElementById('aadtitle').innerHTML = "Total: ";
-            var result = [];
-            count = 0;
-            specificCounter=0;
-            for(var i = 0; i < thisCountry.length; i++) {
-              count += Math.floor(thisCountry[i].aad);
-            }
-            
-            document.getElementById('aadtitle').innerHTML += " <span id='aadtotal' style='font-weight: bold'>"+count.toLocaleString('en') +"<\/span>";
-            
-
-              spec(thisCountry);
-
-  }
-            
-    function spec(thisCountry) {
-
-      if (specificCounter >= thisCountry.length) {
-        specificCounter = 0;
-        return;}
-      if (Math.floor(thisCountry[specificCounter].aad) > 0) {
-        var haz = (thisCountry[specificCounter].hazard).toLowerCase();
-        var theme = "{{ '/' ~ active_theme_path() }}";
-        var imgSrc = theme+"/images/icons/aad_"+haz+".png";
-        var hazName;
-        if (haz === 'storm') {
-          hazName = 'Storm surge';
-        } else if (haz === 'wind') {
-          hazName = 'Cyclonic wind';
-        } else {
-          hazName = thisCountry[specificCounter].hazard;
-        }
-        
-        document.getElementById('aadspecific').innerHTML += "<div class='col-xs-2 text-center'><img src='"+imgSrc +"' alt='"+haz+"'><br> <span id='aad"+specificCounter+"' class='lead'>"+Math.floor(thisCountry[specificCounter].aad).toLocaleString('en') +"<\/span> <br>"+hazName+"<\/div>";
-        specificCounter ++;
-        spec(thisCountry);
-      } else {
-        specificCounter ++;
-        spec(thisCountry);
-      }
-
-
-    }
-
-</script>
-     {% endif %}
-    <div class="container">
-      {% if content.field_accordion_paragraph_block|render is not empty %}
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
-          {{ content.field_accordion_paragraph_block }}
-        </div>
-      </div>
-      {% endif %} {% if content.field_paragraph|render is not empty %}
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
-          {{ content.field_paragraph }}
-        </div>
-      </div>
-      {% endif %}
-    </div>
-    </div>
-   <!-- </div>-->
     </article>
-
-
-<script type="text/javascript">
-  window.onload = function(){
-    var options = {
-              useEasing: true, 
-              useGrouping: true, 
-              separator: ',', 
-              decimal: '.', 
-            };
-  var conflictStock = document.getElementById("conflictStock");
-    var disasterStock = document.getElementById("disasterStock");
-    var conflictNew = document.getElementById("conflictNew");
-    var disasterNew = document.getElementById("disasterNew");
-    var conflictPartial = document.getElementById("conflictPartial");
-    var conflictUnverified = document.getElementById("conflictUnverified");
-
-  if ( document.getElementById("conflictStock") ) {
-    startCount(conflictStock.children[0],{{ country_info2.conflict_stock }} );
-
-  }
-    if ( document.getElementById("disasterStock") ) {
-    startCount(disasterStock.children[0],{{ country_info2.disaster_stock }} );
-
-  }
-    if ( document.getElementById("conflictNew") ) {
-      startCount(conflictNew.children[0],{{ country_info2.conflict_nd }} );
-
-  }
-    if ( document.getElementById("disasterNew") ) {
-      startCount(disasterNew.children[0],{{ country_info2.disaster_nd }} );
-
-  }
-    if ( document.getElementById("conflictPartial") ) {
-      startCount(conflictPartial.children[0],{{ country_info2.partial_solutions }} );
-
-  }
-    if ( document.getElementById("conflictUnverified") ) {
-      startCount(conflictUnverified.children[0],{{ country_info2.unverified_solutions }} );
-
-  }
-    
-    function startCount(el, num) {
-      var counter = new CountUp(el, 0, num, 0, 3, options);
-      counter.start();
-    }
-    }  
-  </script>

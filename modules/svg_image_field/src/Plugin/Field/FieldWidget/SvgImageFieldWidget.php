@@ -191,9 +191,13 @@ class SvgImageFieldWidget extends FileWidget {
       ];
       if (!empty($element['#preview_image_max_width'])) {
         $attributes['style'] = "max-width: {$element['#preview_image_max_width']}px;";
+        $attributes['width'] = $element['#preview_image_max_width'];
       }
       if (!empty($element['#preview_image_max_height'])) {
         $attributes['style'] .= "max-height: {$element['#preview_image_max_height']}px;";
+        if (empty($attributes['width'])) {
+          $attributes['height'] = $element['#preview_image_max_height'];
+        }
       }
       if (!empty($item['alt'])) {
         $attributes['alt'] = $item['alt'];
@@ -216,9 +220,13 @@ class SvgImageFieldWidget extends FileWidget {
         ];
         if (!empty($element['#preview_image_max_width'])) {
           $attributes['style'] = "max-width={$element['#preview_image_max_width']}px;";
+          $attributes['width'] = $element['#preview_image_max_width'];
         }
         if (!empty($element['#preview_image_max_height'])) {
           $attributes['style'] .= "max-height={$element['#preview_image_max_height']}px;";
+          if (empty($attributes['width'])) {
+            $attributes['height'] = $element['#preview_image_max_height'];
+          }
         }
         $element['preview'] = [
           '#weight' => -10,
@@ -268,7 +276,7 @@ class SvgImageFieldWidget extends FileWidget {
   public static function validateRequiredFields($element, FormStateInterface $form_state) {
     // Only do validation if the function is triggered from other places than
     // the image process form.
-    if (!in_array('file_managed_file_submit', $form_state->getTriggeringElement()['#submit'])) {
+    if (!empty($form_state->getTriggeringElement()['#submit']) && !in_array('file_managed_file_submit', $form_state->getTriggeringElement()['#submit'])) {
       // If the image is not there, we do not check for empty values.
       $parents = $element['#parents'];
       $field = array_pop($parents);

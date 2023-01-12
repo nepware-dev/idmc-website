@@ -12,3 +12,4 @@ drupal.autosave_form:
     - core/drupal.dialog
     - core/drupal.dialog.ajax
     - core/drupal.ajax
+    - core/once

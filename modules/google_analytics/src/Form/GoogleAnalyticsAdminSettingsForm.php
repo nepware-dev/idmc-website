@@ -110,7 +110,7 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
     global $cookie_domain;
     $multiple_sub_domains = [];
     foreach (['www', 'app', 'shop'] as $subdomain) {
-      if (count(explode('.', $cookie_domain)) > 2 && !is_numeric(str_replace('.', '', $cookie_domain))) {
+      if ($cookie_domain !== NULL && count(explode('.', $cookie_domain)) > 2 && !is_numeric(str_replace('.', '', $cookie_domain))) {
         $multiple_sub_domains[] = $subdomain . $cookie_domain;
       }
       // IP addresses or localhost.

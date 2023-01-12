@@ -8,6 +8,11 @@ namespace Drupal\Tests\lightning_scheduler\Functional;
  */
 class MigrationStatusPageTest extends MigrationTestBase {
 
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
+
   public function test() {
     parent::test();
 

@@ -61,6 +61,7 @@ class AdminHelper {
    * Make sure the moderation state is processed correctly.
    */
   static public function bulkPublishShutdown($entity, $langcode, $moderation_state) {
+    $pathauto_enabled = \Drupal::service('module_handler')->moduleExists('pathauto');
     if (!empty($moderation_state)) {
       $vid = 0;
       $latest_revision = self::bulkLatestRevision($entity->id(), $vid, $langcode, $entity->getEntityTypeId());
@@ -78,16 +79,18 @@ class AdminHelper {
         $latest_revision->set('moderation_state', $moderation_state);
         $latest_revision->save();
         // Ensure the alias gets updated.
-        \Drupal::service('pathauto.generator')->updateEntityAlias($latest_revision, 'insert', array('language' => $langcode));
-        \Drupal::service('pathauto.generator')->updateEntityAlias($latest_revision, 'update', array('language' => $langcode));
+        if ($pathauto_enabled) {
+          \Drupal::service('pathauto.generator')->updateEntityAlias($latest_revision, 'insert', array('language' => $langcode));
+          \Drupal::service('pathauto.generator')->updateEntityAlias($latest_revision, 'update', array('language' => $langcode));
+        }
       }
-      else {
+      elseif ($pathauto_enabled) {
         // Ensure the alias gets updated.
         \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'insert', array('language' => $langcode));
         \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update', array('language' => $langcode));
       }
     }
-    else {
+    elseif ($pathauto_enabled) {
       // Ensure the alias gets updated.
       \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'insert', array('language' => $langcode));
       \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update', array('language' => $langcode));

@@ -34,7 +34,7 @@ class YearOnlyDefaultWidget extends WidgetBase implements WidgetInterface {
       '#type' => 'select',
       '#options' => $options,
       '#empty_value' => '',
-      '#default_value' => isset($items[$delta]->value) ? $items[$delta]->value : '',
+      '#default_value' => $items[$delta]->value ?? '',
       '#description' => $this->t('Select year'),
     ];
     return $element;

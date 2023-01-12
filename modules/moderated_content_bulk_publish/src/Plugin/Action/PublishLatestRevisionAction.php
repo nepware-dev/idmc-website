@@ -4,11 +4,14 @@ namespace Drupal\moderated_content_bulk_publish\Plugin\Action;
 
 //use Drupal\views_bulk_operations\Action\ViewsBulkOperationsActionBase;
 //use Drupal\views_bulk_operations\Action\ViewsBulkOperationsPreconfigurationInterface;
+use Drupal\node\NodeInterface;
 use Drupal\Core\Action\ActionBase;
 use Drupal\Core\Plugin\PluginFormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\moderated_content_bulk_publish\AdminModeration;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * An example action covering most of the possible options.
@@ -52,8 +55,26 @@ class PublishLatestRevisionAction extends ActionBase/*extends ViewsBulkOperation
     if ($user->hasPermission('moderated content bulk publish')) {
       \Drupal::logger('moderated_content_bulk_publish')->notice("Executing publish latest revision of ".$entity->label());
 
-      $adminModeration = new AdminModeration($entity, \Drupal\node\NodeInterface::PUBLISHED);
-      $entity = $adminModeration->publish();
+      $adminModeration = new AdminModeration($entity, NodeInterface::PUBLISHED);
+      $entity = $adminModeration->publish($error_message, $msgdetail_isToken, $msgdetail_isPublished, $msgdetail_isAbsoluteURL);
+      if (!isset($entity) && !empty($error_message)) {
+        // When publish () return NULL, we output messages and to stop the process.
+        $msgError = Markup::create(utf8_encode($error_message));
+        \Drupal::Messenger()->addWarning($msgError);
+        if (!empty($msgdetail_isToken)) {
+          $msgToken = Markup::create($msgdetail_isToken);
+          \Drupal::messenger()->addWarning($msgToken,TRUE);
+        }
+        if (!empty($msgdetail_isPublished)) {
+          $msgPublished = Markup::create($msgdetail_isPublished);
+          \Drupal::messenger()->addWarning($msgPublished,TRUE);
+        }
+        if (!empty($msgdetail_isAbsoluteURL)) {
+          $msgAbsoluteURL = Markup::create($msgdetail_isAbsoluteURL);
+          \Drupal::messenger()->addWarning($msgAbsoluteURL,TRUE);
+        }
+        return $msgError;
+      }
 
       // Check if published
       if (!$entity->isPublished()){
@@ -135,15 +156,24 @@ class PublishLatestRevisionAction extends ActionBase/*extends ViewsBulkOperation
    * {@inheritdoc}
    */
   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($object->getEntityType() === 'node') {
-      $access = $object->access('update', $account, TRUE)
-        ->andIf($object->status->access('edit', $account, TRUE));
-      return $return_as_object ? $access : $access->isAllowed();
+    if ($object->getEntityTypeId() === 'node') {
+      $moderation_info = \Drupal::service('content_moderation.moderation_information');
+      // Moderated Entities will return AccessResult::forbidden for attemps
+      // to edit $object->status.
+      // @see content_moderation_entity_field_access
+      if ($moderation_info->isModeratedEntity($object)) {
+        $access = $object->access('update', $account, TRUE)
+          ->andIf($object->moderation_state->access('edit', $account, TRUE));
+      }
+      else {
+        $access = $object->access('update', $account, TRUE)
+          ->andIf($object->status->access('edit', $account, TRUE));
+      }
     }
-
-    // Other entity types may have different
-    // access methods and properties.
-    return TRUE;
+    else {
+      $access = AccessResult::forbidden()->setReason('The chosen Action only acts on entities of type node')->setCacheMaxAge(0);
+    }
+    return $return_as_object ? $access : $access->isAllowed();
   }
 
 }

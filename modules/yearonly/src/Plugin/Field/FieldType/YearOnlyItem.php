@@ -45,7 +45,9 @@ class YearOnlyItem extends FieldItemBase implements FieldItemInterface {
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties = [];
-    $properties['value'] = DataDefinition::create('integer');
+    $properties['value'] = DataDefinition::create('integer')
+      ->setLabel(t('Year'))
+      ->setRequired(TRUE);
     return $properties;
   }
 

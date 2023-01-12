@@ -33,17 +33,22 @@ class AdminModeration
       $user = \Drupal::currentUser();
       $currentLang = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $allLanguages = AdminHelper::getAllEnabledLanguages();
+      $archived_state = $this->getConfig()
+        ->get('unpublish.state.archived');
+      if (empty($archived_state) || is_null($archived_state) || !isset($archived_state)) {
+        $archived_state = 'published';
+      }
       foreach ($allLanguages as $langcode => $languageName) {
         if ($this->entity->hasTranslation($langcode)) {
           \Drupal::logger('moderated_content_bulk_publish')->notice(
             utf8_encode("Unpublish $langcode for " . $this->id . " in moderated_content_bulk_publish")
           );
           $this->entity = $this->entity->getTranslation($langcode);
-          $this->entity->set('moderation_state', 'archived');
+          $this->entity->set('moderation_state', $archived_state);
           if ($this->entity instanceof RevisionLogInterface) {
             // $now = time();
             $this->entity->setRevisionCreationTime(\Drupal::time()->getRequestTime());
-            $msg = 'Bulk operation create archived revision';
+            $msg = t('Bulk operation create archived revision');
             $this->entity->setRevisionLogMessage($msg);
             $current_uid = \Drupal::currentUser()->id();
             $this->entity->setRevisionUserId($current_uid);
@@ -56,7 +61,7 @@ class AdminModeration
               $this->entity->save();
             }
             else {
-              drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, 'archived');
+              drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, $archived_state);
             }
           }
           else {
@@ -66,14 +71,20 @@ class AdminModeration
           }
         }
       }
+
+      $draft_state = $this->getConfig()
+        ->get('unpublish.state.draft');
+      if (empty($draft_state) || is_null($draft_state) || !isset($draft_state)) {
+        $draft_state = 'draft';
+      }
       foreach ($allLanguages as $langcode => $languageName) {
         if ($this->entity->hasTranslation($langcode)) {
           $this->entity = $this->entity->getTranslation($langcode);
-          $this->entity->set('moderation_state', 'draft');
+          $this->entity->set('moderation_state', $draft_state);
           if ($this->entity instanceof RevisionLogInterface) {
             // $now = time();
             $this->entity->setRevisionCreationTime(\Drupal::time()->getRequestTime());
-            $msg = 'Bulk operation create draft revision';
+            $msg = t('Bulk operation create draft revision');
             $this->entity->setRevisionLogMessage($msg);
             $current_uid = \Drupal::currentUser()->id();
             $this->entity->setRevisionUserId($current_uid);
@@ -86,7 +97,7 @@ class AdminModeration
                 $this->entity->save();
               }
               else {
-                drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, 'draft');
+                drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, $draft_state);
               }
           }
           else {
@@ -103,9 +114,16 @@ class AdminModeration
     /**
      * Publish Latest Revision.
      */
-    public function publish() {
+    public function publish(&$error_message = '', &$msgdetail_isToken = '', &$msgdetail_isPublished ='', &$msgdetail_isAbsoluteURL = '') {
       $user = \Drupal::currentUser();
       $allLanguages = AdminHelper::getAllEnabledLanguages();
+      $published_state = $this->getConfig()
+        ->get('publish.state.published');
+      if (empty($published_state) || is_null($published_state) || !isset($published_state)) {
+        $published_state = 'published';
+      }
+      // Initialize.
+      $validate_failure = FALSE;
       foreach ($allLanguages as $langcode => $languageName) {
         if ($this->entity->hasTranslation($langcode)) {
           \Drupal::logger('moderated_content_bulk_publish')->notice(
@@ -115,12 +133,38 @@ class AdminModeration
           if (!$latest_revision === FALSE) {
             $this->entity = $latest_revision;
           }
+          // Add a hook that allows verifications outside of moderated_content_bulk_publish.
+          $entity = $this->entity->getTranslation($langcode);
+          $bodyfields = $entity->getFields();
+          $bodyfield = NULL;
+          if (isset($bodyfields['body'])) {
+            $bodyfield = $bodyfields['body'];
+          }
+          if (isset($bodyfield)) {
+            $fieldval = $bodyfield->getValue();
+            if (isset($fieldval)) {
+              if (isset($fieldval[0])) {
+                $hookObject = new HookObject();
+                $hookObject->nid = $this->entity->id();
+                $hookObject->body_field_val = $fieldval[0]['value'];
+                $hookObject->validate_failure = $validate_failure;
+                \Drupal::moduleHandler()->invokeAll('moderated_content_bulk_publish_verify_publish', [$hookObject]);
+                if ($hookObject->validate_failure) {
+                  $error_message = $hookObject->error_message;
+                  $msgdetail_isToken = $hookObject->msgdetail_isToken;
+                  $msgdetail_isPublished = $hookObject->msgdetail_isPublished;
+                  $msgdetail_isAbsoluteURL = $hookObject->msgdetail_isAbsoluteURL;
+                  return NULL;
+                }
+              }
+            }
+          }
           $this->entity = $this->entity->getTranslation($langcode);
-          $this->entity->set('moderation_state', 'published');
+          $this->entity->set('moderation_state', $published_state);
           if ($this->entity instanceof RevisionLogInterface) {
             // $now = time();
             $this->entity->setRevisionCreationTime(\Drupal::time()->getRequestTime());
-            $msg = 'Bulk operation publish revision ';
+            $msg = t('Bulk operation publish revision');
             $this->entity->setRevisionLogMessage($msg);
             $current_uid = \Drupal::currentUser()->id();
             $this->entity->setRevisionUserId($current_uid);
@@ -173,21 +217,42 @@ class AdminModeration
     /**
      * Archive current revision.
      */
-    public function archive() {
+    public function archive(&$error_message = '', &$markup = '') {
       $user = \Drupal::currentUser();
       $currentLang = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $allLanguages = AdminHelper::getAllEnabledLanguages();
+      $archived_state = $this->getConfig()
+        ->get('archive.state.archived');
+      if (empty($archived_state) || is_null($archived_state) || !isset($archived_state)) {
+        $archived_state = 'archived';
+      }
+      // Initialize.
       foreach ($allLanguages as $langcode => $languageName) {
         if ($this->entity->hasTranslation($langcode)) {
+          // Add a hook that allows verifications outside of moderated_content_bulk_publish.
+          $bundle = $this->entity->bundle();
+          $nid = $this->entity->id();
+          $hookObject = new HookObject();
+          $hookObject->nid = $nid;
+          $hookObject->bundle = $bundle;
+          $hookObject->show_button = TRUE;
+          $hookObject->markup = $markup;
+          $hookObject->error_message = $error_message;
+          \Drupal::moduleHandler()->invokeAll('moderated_content_bulk_publish_verify_archived', [$hookObject]);
+          if (!$hookObject->show_button) {
+            $markup = $hookObject->markup;
+            $error_message = $hookObject->error_message;
+            return NULL;
+          }
           \Drupal::logger('moderated_content_bulk_publish')->notice(
             utf8_encode("Archive $langcode for " . $this->id . " in moderated_content_bulk_publish")
           );
           $this->entity = $this->entity->getTranslation($langcode);
-          $this->entity->set('moderation_state', 'archived');
+          $this->entity->set('moderation_state', $archived_state);
           if ($this->entity instanceof RevisionLogInterface) {
             // $now = time();
             $this->entity->setRevisionCreationTime(\Drupal::time()->getRequestTime());
-            $msg = 'Bulk operation create archived revision';
+            $msg = t('Bulk operation create archived revision');
             $this->entity->setRevisionLogMessage($msg);
             $current_uid = \Drupal::currentUser()->id();
             $this->entity->setRevisionUserId($current_uid);
@@ -200,7 +265,7 @@ class AdminModeration
               $this->entity->save();
             }
             else {
-              drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, 'archived');
+              drupal_register_shutdown_function('Drupal\moderated_content_bulk_publish\AdminHelper::bulkPublishShutdown', $this->entity, $langcode, $archived_state);
             }
           }
           else {
@@ -213,5 +278,14 @@ class AdminModeration
       return $this->entity;
     }
 
+    /**
+     * Returns config with module settings.
+     *
+     * @return \Drupal\Core\Config\Config
+     *   The config.
+     */
+    protected function getConfig() {
+      return \Drupal::config('moderated_content_bulk_publish.settings');
+    }
 
 }

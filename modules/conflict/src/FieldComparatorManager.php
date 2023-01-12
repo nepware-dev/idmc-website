@@ -19,6 +19,13 @@ class FieldComparatorManager extends DefaultPluginManager implements FieldCompar
   protected $fieldComparators;
 
   /**
+   * The ordered field comparators for a specific field.
+   *
+   * @var array
+   */
+  protected $orderedFieldComparators;
+
+  /**
    * Constructs a new FieldComparatorManager object.
    *
    * @param \Traversable $namespaces
@@ -44,85 +51,110 @@ class FieldComparatorManager extends DefaultPluginManager implements FieldCompar
   /**
    * {@inheritdoc}
    */
+  public function getConflictType(FieldItemListInterface $local, FieldItemListInterface $server, FieldItemListInterface $original, $langcode, $entity_type_id, $bundle, $field_type, $field_name) {
+    // Iterate from the most specific to the most general comparator.
+    foreach ($this->getOrderedFieldComparators($entity_type_id, $bundle, $field_type, $field_name) as &$comparator) {
+      /** @var \Drupal\conflict\FieldComparatorInterface $comparator */
+      if (!is_object($comparator)) {
+        $comparator = $this->createInstance($comparator);
+      }
+      if ($comparator::isApplicable($local->getFieldDefinition())) {
+        $conflict_type = $comparator->getConflictType($local, $server, $original, $langcode, $entity_type_id, $bundle, $field_type, $field_name);
+        if ($conflict_type) {
+          return $conflict_type;
+        }
+      }
+    }
+    return NULL;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function hasChanged(FieldItemListInterface $items_a, FieldItemListInterface $items_b, $langcode, $entity_type_id, $bundle, $field_type, $field_name) {
+    // Iterate from the most specific to the most general comparator.
+    foreach ($this->getOrderedFieldComparators($entity_type_id, $bundle, $field_type, $field_name) as &$comparator) {
+      /** @var \Drupal\conflict\FieldComparatorInterface $comparator */
+      if (!is_object($comparator)) {
+        $comparator = $this->createInstance($comparator);
+      }
+      if ($comparator::isApplicable($items_a->getFieldDefinition())) {
+        $result = $comparator->hasChanged($items_a, $items_b, $langcode, $entity_type_id, $bundle, $field_type, $field_name);
+        if (is_bool($result)) {
+          return $result;
+        }
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * Returns the field comparators.
+   *
+   * @param string $entity_type_id
+   *   The entity type ID.
+   * @param string $bundle
+   *   The entity bundle ID.
+   * @param string $field_type
+   *   The field type.
+   * @param string $field_name
+   *   The field name.
+   *
+   * @return array
+   *   The field comparators.
+   */
+  protected function getOrderedFieldComparators($entity_type_id, $bundle, $field_type, $field_name) {
+    if (isset($this->orderedFieldComparators[$entity_type_id][$bundle][$field_type][$field_name])) {
+      return $this->orderedFieldComparators[$entity_type_id][$bundle][$field_type][$field_name];
+    }
+
     $this->initFieldComparators();
 
-    $entity_type_id_s = 'entity_type_' . $entity_type_id;
-    $bundle_s = 'bundle_' . $bundle;
-    $field_type_s = 'field_type_' . $field_type;
-    $field_name_s = 'field_name_' . $field_name;
-
-    $entity_type_id_g = 'entity_type_' . FieldComparatorInterface::APPLIES_TO_ALL;
-    $bundle_g = 'bundle_' . FieldComparatorInterface::APPLIES_TO_ALL;
-    $field_type_g = 'field_type_' . FieldComparatorInterface::APPLIES_TO_ALL;
-    $field_name_g = 'field_name_' . FieldComparatorInterface::APPLIES_TO_ALL;
-
-    /** @var \Drupal\conflict\FieldComparatorInterface[] $comparators */
+    $generic = FieldComparatorInterface::APPLIES_TO_ALL;
     $comparators = [];
 
-    // Entity type - specific
-    // bundle      - specific
-    // field type  - specific
-    // field name  - specific
-    if (isset($this->fieldComparators[$entity_type_id_s][$bundle_s][$field_type_s][$field_name_s]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_s][$bundle_s][$field_type_s][$field_name_s]['comparators'];
-    }
-    // Entity type - specific
-    // bundle      - specific
-    // field type  - specific
-    // field name  - all
-    elseif (isset($this->fieldComparators[$entity_type_id_s][$bundle_s][$field_type_s][$field_name_g]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_s][$bundle_s][$field_type_s][$field_name_g]['comparators'];
-    }
-    // Entity type - specific
-    // bundle      - all
-    // field type  - specific
-    // field name  - all
-    elseif (isset($this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_s][$field_name_g]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_s][$field_name_g]['comparators'];
-    }
-    // Entity type - specific
-    // bundle      - all
-    // field type  - specific
-    // field name  - specific
-    elseif (isset($this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_s][$field_name_s]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_s][$field_name_s]['comparators'];
-    }
-    // Entity type - specific
-    // bundle      - all
-    // field type  - all
-    // field name  - all
-    elseif (isset($this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_g][$field_name_g]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_s][$bundle_g][$field_type_g][$field_name_g]['comparators'];
-    }
-    // Entity type - all
-    // bundle      - all
-    // field type  - specific
-    // field name  - all
-    elseif (isset($this->fieldComparators[$entity_type_id_g][$bundle_g][$field_type_s][$field_name_g]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_g][$bundle_g][$field_type_s][$field_name_g]['comparators'];
-    }
-    // Entity type - all
-    // bundle      - all
-    // field type  - all
-    // field name  - all
-    elseif (isset($this->fieldComparators[$entity_type_id_g][$bundle_g][$field_type_g][$field_name_g]['comparators'])) {
-      $comparators = &$this->fieldComparators[$entity_type_id_g][$bundle_g][$field_type_g][$field_name_g]['comparators'];
-    }
+    // Entity type - specific.
+    // Bundle      - specific.
+    // Field type  - specific.
+    // Field name  - specific.
+    $comparators += $this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'] ?? [];
+    // Entity type - specific.
+    // Bundle      - specific.
+    // Field type  - specific.
+    // Field name  - all.
+    $comparators += $this->fieldComparators[$entity_type_id][$bundle][$field_type][$generic]['comparators'] ?? [];
+    // Entity type - specific.
+    // Bundle      - all.
+    // Field type  - specific.
+    // Field name  - all.
+    $comparators += $this->fieldComparators[$entity_type_id][$generic][$field_type][$generic]['comparators'] ?? [];
+    // Entity type - specific.
+    // Bundle      - all.
+    // Field type  - specific.
+    // Field name  - specific.
+    $comparators += $this->fieldComparators[$entity_type_id][$generic][$field_type][$field_name]['comparators'] ?? [];
+    // Entity type - specific.
+    // Bundle      - all.
+    // Field type  - all.
+    // Field name  - all.
+    $comparators += $this->fieldComparators[$entity_type_id][$generic][$generic][$generic]['comparators'] ?? [];
+    // Entity type - all.
+    // Bundle      - all.
+    // Field type  - specific.
+    // Field name  - all.
+    $comparators += $this->fieldComparators[$generic][$generic][$field_type][$generic]['comparators'] ?? [];
+    // Entity type - all.
+    // Bundle      - all.
+    // Field type  - all.
+    // Field name  - all.
+    $comparators += $this->fieldComparators[$generic][$generic][$generic][$generic]['comparators'] ?? [];
 
     if (empty($comparators)) {
       throw new \Exception('There are no field comparators available.');
     }
 
-    foreach ($comparators as &$comparator) {
-      if (!is_object($comparator)) {
-        $comparator = $this->createInstance($comparator);
-      }
-      if ($comparator->hasChanged($items_a, $items_b, $langcode, $entity_type_id, $bundle, $field_type, $field_name)) {
-        return TRUE;
-      }
-    }
-    return FALSE;
+    $this->orderedFieldComparators[$entity_type_id][$bundle][$field_type][$field_name] = $comparators;
+    return $comparators;
   }
 
   /**
@@ -132,17 +164,15 @@ class FieldComparatorManager extends DefaultPluginManager implements FieldCompar
     if (!isset($this->fieldComparators)) {
       $this->fieldComparators = [];
       foreach ($this->getDefinitions() as $plugin_id => $definition) {
-        $entity_type_id = 'entity_type_' . $definition['entity_type_id'];
-        $bundle = 'bundle_' . $definition['bundle'];
-        $field_type = 'field_type_' . $definition['field_type'];
-        $field_name = 'field_name_' . $definition['field_name'];
+        $entity_type_id = $definition['entity_type_id'];
+        $bundle = $definition['bundle'];
+        $field_type = $definition['field_type'];
+        $field_name = $definition['field_name'];
 
-        if (isset($this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'])) {
-          $this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'] = [$plugin_id];
+        if (!isset($this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'])) {
+          $this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'] = [];
         }
-        else {
-          $this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'][] = $plugin_id;
-        }
+        $this->fieldComparators[$entity_type_id][$bundle][$field_type][$field_name]['comparators'][] = $plugin_id;
       }
     }
   }

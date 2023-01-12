@@ -12,7 +12,7 @@ use Drupal\Core\Config\FileStorage;
  */
 function ckeditor_bs_grid_update_8201() {
   // Load the entire install file.
-  $config_path = drupal_get_path('module', 'ckeditor_bs_grid') . '/config/install';
+  $config_path = \Drupal::service('extension.list.module')->getPath('ckeditor_bs_grid') . '/config/install';
   $source = new FileStorage($config_path);
   $config_storage = \Drupal::service('config.storage');
   $config_storage->write('ckeditor_bs_grid.settings', $source->read('ckeditor_bs_grid.settings'));

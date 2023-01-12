@@ -40,6 +40,7 @@ class ModerationDashboardTest extends ModerationDashboardTestBase {
     $this->assertSession()->statusCodeEquals(403);
 
     // Allow access if everything looks good.
+    // @phpstan-ignore-next-line
     $this->editorialWorkflow->getTypePlugin()->addEntityTypeAndBundle('node', 'page');
     $this->editorialWorkflow->save();
 

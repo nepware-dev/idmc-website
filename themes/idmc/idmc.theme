@@ -59,36 +59,34 @@ function idmc_preprocess_node__country_profile(&$variables){
     
     try {
        //$response2       = $client->get("{$idmc_server}/api/psql/country_information?iso3=eq.{$iso3}&ci={$ci2}");
-       $response2       = $client->get("{$idmc_server}/api/country_information?iso3={$iso3}&ci={$ci2}&year=2020");
-        $data           = json_decode($response2->getBody());
-        $data2           = $data->results;
-        $country_info2   = $data2 ? $data2[0] : null;
-        
-        if(property_exists($country_info2, 'conflict_stock') ){
-            $country_info2->conflict_stock = idmc_round($country_info2->conflict_stock);
-        }
-        if(property_exists($country_info2, 'conflict_nd') ){
-            $country_info2->conflict_nd = idmc_round($country_info2->conflict_nd);
-        }
-        if(property_exists($country_info2, 'partial_solutions') ){
-            $country_info2->partial_solutions = idmc_round($country_info2->partial_solutions);
-        }
-        if(property_exists($country_info2, 'unverified_solutions') ){
-            $country_info2->unverified_solutions = idmc_round($country_info2->unverified_solutions);
-        }
-        if(property_exists($country_info2, 'disaster_nd') ){
-            $country_info2->disaster_nd = idmc_round($country_info2->disaster_nd);
-        }
-        
-        $variables['country_info2'] = $country_info2;
+       //$response2       = $client->get("{$idmc_server}/api/country_information?iso3={$iso3}&ci={$ci2}&year=2020");
+       //$data           = json_decode($response2->getBody());
+       //$data2           = $data->results;
+       //$country_info2   = $data2 ? $data2[0] : null;
+       //
+       //if(property_exists($country_info2, 'conflict_stock') ){
+       //    $country_info2->conflict_stock = idmc_round($country_info2->conflict_stock);
+       //}
+       //if(property_exists($country_info2, 'conflict_nd') ){
+       //    $country_info2->conflict_nd = idmc_round($country_info2->conflict_nd);
+       //}
+       //if(property_exists($country_info2, 'partial_solutions') ){
+       //    $country_info2->partial_solutions = idmc_round($country_info2->partial_solutions);
+       //}
+       //if(property_exists($country_info2, 'unverified_solutions') ){
+       //    $country_info2->unverified_solutions = idmc_round($country_info2->unverified_solutions);
+       //}
+       //if(property_exists($country_info2, 'disaster_nd') ){
+       //    $country_info2->disaster_nd = idmc_round($country_info2->disaster_nd);
+       //}
+       //
+       //$variables['country_info2'] = $country_info2;
     } catch (RequestException $e) {
 
     }
     
     $variables['#attached']['library'][] = 'idmc/smoothscroll';
 }}
-
-
 
 function idmc_preprocess_paragraph__priority_countries(&$variables) {
     if (isset($variables['paragraph'])){

@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
 /**
  * @file
  * Hooks and documentation related to conflict module.
@@ -29,7 +30,7 @@
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   The main form state.
  */
-function hook_conflict_paths_alter(array &$conflict_paths, \Drupal\Core\Form\FormStateInterface $form_state) {}
+function hook_conflict_paths_alter(array &$conflict_paths, FormStateInterface $form_state) {}
 
 /**
  * @} End of "addtogroup hooks".

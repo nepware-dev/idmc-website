@@ -10,6 +10,8 @@ use Drupal\user\Entity\Role;
  * @group lightning
  * @group lightning_roles
  * @group orca_public
+ *
+ * @requires module quickedit
  */
 class ContentRoleManagerTest extends KernelTestBase {
 
@@ -17,16 +19,20 @@ class ContentRoleManagerTest extends KernelTestBase {
    * {@inheritdoc}
    */
   protected static $modules = [
+    'contextual',
     'lightning_roles',
     'node',
+    'path',
+    'quickedit',
     'system',
+    'toolbar',
     'user',
   ];
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->installConfig('lightning_roles');
     $this->installEntitySchema('user');
@@ -64,7 +70,7 @@ class ContentRoleManagerTest extends KernelTestBase {
       'bypass node access',
     ];
     foreach ($expected_creator_permissions as $permission) {
-      $this->assertTrue($role->hasPermission($permission));
+      $this->assertContains($permission, $role->getPermissions());
     }
     // Content roles should never be administrators.
     $this->assertFalse($role->isAdmin());

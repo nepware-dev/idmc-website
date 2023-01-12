@@ -39,7 +39,7 @@ class Settings extends ConfigFormBase {
    */
   protected function getBreakpoints() {
     $breakpoints = [
-      'xs' => ['bs_label' => $this->t('Extra Smaill (xs)'), 'prefix' => 'none'],
+      'xs' => ['bs_label' => $this->t('Extra Small (xs)'), 'prefix' => 'none'],
       'sm' => ['bs_label' => $this->t('Small (sm)'), 'prefix' => 'sm'],
       'md' => ['bs_label' => $this->t('Medium (md)'), 'prefix' => 'md'],
       'lg' => ['bs_label' => $this->t('Large (lg)'), 'prefix' => 'lg'],

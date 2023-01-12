@@ -59,14 +59,14 @@ abstract class ModerationDashboardTestBase extends BrowserTestBase {
   /**
    * The editorial workflow.
    *
-   * @var \Drupal\workflows\WorkflowInterface||null
+   * @var \Drupal\workflows\WorkflowInterface|null
    */
   protected $editorialWorkflow;
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Create content types for tests.
@@ -79,6 +79,7 @@ abstract class ModerationDashboardTestBase extends BrowserTestBase {
 
     if ($this->setEditorialWorkflow) {
       foreach ($this->testNodeTypes as $node_type_properties) {
+        // @phpstan-ignore-next-line
         $this->editorialWorkflow->getTypePlugin()->addEntityTypeAndBundle('node', $node_type_properties['type']);
       }
       $this->editorialWorkflow->save();

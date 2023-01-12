@@ -57,10 +57,10 @@ class ResponseSubscriber implements EventSubscriberInterface {
   /**
    * Redirects user login to the Moderation Dashboard, when appropriate.
    *
-   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\ResponseEvent $event
    *   The response event.
    */
-  public function onResponse(FilterResponseEvent $event) {
+  public function onResponse(\Symfony\Component\HttpKernel\Event\ResponseEvent $event) {
     $response = $event->getResponse();
     $request = $event->getRequest();
 

@@ -2,6 +2,8 @@
 
 namespace mglaman\PHPStanDrupal\Rules\Drupal;
 
+use Drupal\Core\Render\PlaceholderGenerator;
+use Drupal\Core\Render\Renderer;
 use mglaman\PHPStanDrupal\Drupal\ServiceMap;
 use PhpParser\Node;
 use PhpParser\Node\Name;
@@ -17,13 +19,11 @@ use PHPStan\Type\Constant\ConstantStringType;
 use PHPStan\Type\Generic\GenericClassStringType;
 use PHPStan\Type\IntersectionType;
 use PHPStan\Type\ObjectType;
+use PHPStan\Type\StaticType;
 use PHPStan\Type\ThisType;
 use PHPStan\Type\Type;
-use PHPStan\Type\TypeCombinator;
 use PHPStan\Type\UnionType;
 use PHPStan\Type\VerbosityLevel;
-use Drupal\Core\Render\PlaceholderGeneratorInterface;
-use Drupal\Core\Render\RendererInterface;
 
 final class RenderCallbackRule implements Rule
 {
@@ -66,18 +66,20 @@ final class RenderCallbackRule implements Rule
 
         // @todo Move into its own rule.
         if ($keyChecked === '#lazy_builder') {
-            // Check if being used in array_intersect_key.
-            // NOTE: This only works against existing patterns in Drupal core where the array with boolean values is
-            // being passed as the argument to array_intersect_key.
-            $parent = $node->getAttribute('parent');
-            if ($parent instanceof Node\Expr\Array_) {
-                $parent = $parent->getAttribute('parent');
-                if ($parent instanceof Node\Arg) {
-                    $parent = $parent->getAttribute('parent');
-                    if ($parent instanceof Node\Expr\FuncCall
-                        && $parent->name instanceof Name
-                        && $parent->name->toString() === 'array_intersect_key'
-                    ) {
+            if ($scope->isInClass()) {
+                $classReflection = $scope->getClassReflection();
+                $classType = new ObjectType($classReflection->getName());
+                // These classes use #lazy_builder in array_intersect_key. With
+                // PHPStan 1.6, nodes do not track their parent/next/prev which
+                // saves a lot of memory. But makes it harder to detect if we're
+                // in a call to array_intersect_key. This is an easier workaround.
+                $allowedTypes = [
+                    PlaceholderGenerator::class,
+                    Renderer::class,
+                    'Drupal\Tests\Core\Render\RendererPlaceholdersTest',
+                ];
+                foreach ($allowedTypes as $allowedType) {
+                    if ($classType->isInstanceOf($allowedType)->yes()) {
                         return [];
                     }
                 }
@@ -146,28 +148,33 @@ final class RenderCallbackRule implements Rule
                     ->tip('Change record: https://www.drupal.org/node/2966725.')
                     ->build();
             }
+
+            if (!$trustedCallbackType->isSuperTypeOf($type)->yes()) {
+                return RuleErrorBuilder::message(
+                    sprintf("%s callback class %s at key '%s' does not implement Drupal\Core\Security\TrustedCallbackInterface.", $keyChecked, $type->describe(VerbosityLevel::value()), $pos)
+                )->line($errorLine)->tip('Change record: https://www.drupal.org/node/2966725.')->build();
+            }
         } elseif ($type instanceof ConstantArrayType) {
             if (!$type->isCallable()->yes()) {
                 return RuleErrorBuilder::message(
                     sprintf("%s callback %s at key '%s' is not callable.", $keyChecked, $type->describe(VerbosityLevel::value()), $pos)
                 )->line($errorLine)->build();
             }
-            $typeAndMethodName = $type->findTypeAndMethodName();
-            if ($typeAndMethodName === null) {
+            $typeAndMethodNames = $type->findTypeAndMethodNames();
+            if ($typeAndMethodNames === []) {
                 throw new \PHPStan\ShouldNotHappenException();
             }
 
-            if (!$trustedCallbackType->isSuperTypeOf($typeAndMethodName->getType())->yes()) {
-                return RuleErrorBuilder::message(
-                    sprintf("%s callback class '%s' at key '%s' does not implement Drupal\Core\Security\TrustedCallbackInterface.", $keyChecked, $typeAndMethodName->getType()->describe(VerbosityLevel::value()), $pos)
-                )->line($errorLine)->tip('Change record: https://www.drupal.org/node/2966725.')->build();
+            foreach ($typeAndMethodNames as $typeAndMethodName) {
+                if (!$trustedCallbackType->isSuperTypeOf($typeAndMethodName->getType())->yes()) {
+                    return RuleErrorBuilder::message(
+                        sprintf("%s callback class '%s' at key '%s' does not implement Drupal\Core\Security\TrustedCallbackInterface.", $keyChecked, $typeAndMethodName->getType()->describe(VerbosityLevel::value()), $pos)
+                    )->line($errorLine)->tip('Change record: https://www.drupal.org/node/2966725.')->build();
+                }
             }
         } elseif ($type instanceof ClosureType) {
             if ($scope->isInClass()) {
                 $classReflection = $scope->getClassReflection();
-                if ($classReflection === null) {
-                    throw new \PHPStan\ShouldNotHappenException();
-                }
                 $classType = new ObjectType($classReflection->getName());
                 $formType = new ObjectType('\Drupal\Core\Form\FormInterface');
                 if ($formType->isSuperTypeOf($classType)->yes()) {
@@ -182,25 +189,9 @@ final class RenderCallbackRule implements Rule
                     sprintf("%s callback %s at key '%s' is not callable.", $keyChecked, $type->describe(VerbosityLevel::value()), $pos)
                 )->line($errorLine)->build();
             }
-        } elseif ($type instanceof IntersectionType) {
-            // Try to provide a tip for this weird occurrence.
-            $tip = '';
-            if ($node instanceof Node\Expr\BinaryOp\Concat) {
-                $leftStringType = $scope->getType($node->left)->toString();
-                $rightStringType = $scope->getType($node->right)->toString();
-                if ($leftStringType instanceof GenericClassStringType && $rightStringType instanceof ConstantStringType) {
-                    $methodName = str_replace(':', '', $rightStringType->getValue());
-                    $tip = "Refactor concatenation of `static::class` with method name to an array callback: [static::class, '$methodName']";
-                }
-            }
-
-            if ($tip === '') {
-                $tip = 'If this error is unexpected, open an issue with the error and sample code https://github.com/mglaman/phpstan-drupal/issues/new';
-            }
-
-            return RuleErrorBuilder::message(
-                sprintf("%s value '%s' at key '%s' is invalid.", $keyChecked, $type->describe(VerbosityLevel::value()), $pos)
-            )->line($errorLine)->tip($tip)->build();
+        } elseif ($type->isCallable()->yes()) {
+            // If the value has been marked as callable or callable-string, we cannot resolve the callable, trust it.
+            return null;
         } else {
             return RuleErrorBuilder::message(
                 sprintf("%s value '%s' at key '%s' is invalid.", $keyChecked, $type->describe(VerbosityLevel::value()), $pos)
@@ -214,8 +205,23 @@ final class RenderCallbackRule implements Rule
     private function getType(Node\Expr $node, Scope $scope):  Type
     {
         $type = $scope->getType($node);
-        if ($type instanceof ConstantStringType) {
-            if ($type->isClassString()) {
+        if ($type instanceof IntersectionType) {
+            // Covers concatenation of static::class . '::methodName'.
+            if ($node instanceof Node\Expr\BinaryOp\Concat) {
+                $leftType = $scope->getType($node->left);
+                $rightType = $scope->getType($node->right);
+                if ($rightType instanceof ConstantStringType && $leftType instanceof GenericClassStringType && $leftType->getGenericType() instanceof StaticType) {
+                    return new ConstantArrayType(
+                        [new ConstantIntegerType(0), new ConstantIntegerType(1)],
+                        [
+                            $leftType->getGenericType(),
+                            new ConstantStringType(ltrim($rightType->getValue(), ':'))
+                        ]
+                    );
+                }
+            }
+        } elseif ($type instanceof ConstantStringType) {
+            if ($type->isClassStringType()->yes()) {
                 return $type;
             }
             // Covers  \Drupal\Core\Controller\ControllerResolver::createController.
@@ -236,11 +242,11 @@ final class RenderCallbackRule implements Rule
             }
             // @see \PHPStan\Type\Constant\ConstantStringType::isCallable
             preg_match('#^([a-zA-Z_\\x7f-\\xff\\\\][a-zA-Z0-9_\\x7f-\\xff\\\\]*)::([a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*)\\z#', $type->getValue(), $matches);
-            if ($matches !== null && count($matches) > 0) {
+            if (count($matches) > 0) {
                 return new ConstantArrayType(
                     [new ConstantIntegerType(0), new ConstantIntegerType(1)],
                     [
-                        new ConstantStringType($matches[1], true),
+                        new StaticType($this->reflectionProvider->getClass($matches[1])),
                         new ConstantStringType($matches[2])
                     ]
                 );

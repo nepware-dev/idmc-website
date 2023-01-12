@@ -6,6 +6,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
 use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
 use Drupal\ckeditor\CKEditorPluginCssInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\editor\Entity\Editor;
@@ -29,11 +30,19 @@ class BsGrid extends CKEditorPluginBase implements CKEditorPluginConfigurableInt
   protected $configFactory;
 
   /**
+   * The extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected ModuleExtensionList $moduleExtensionList;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, ModuleExtensionList $moduleExtensionList) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->configFactory = $config_factory;
+    $this->moduleExtensionList = $moduleExtensionList;
   }
 
   /**
@@ -44,7 +53,8 @@ class BsGrid extends CKEditorPluginBase implements CKEditorPluginConfigurableInt
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('config.factory')
+      $container->get('config.factory'),
+      $container->get('extension.list.module')
     );
   }
 
@@ -52,7 +62,7 @@ class BsGrid extends CKEditorPluginBase implements CKEditorPluginConfigurableInt
    * {@inheritdoc}
    */
   public function getButtons() {
-    $path = drupal_get_path('module', 'ckeditor_bs_grid') . '/js/plugins/bs_grid';
+    $path = $this->moduleExtensionList->getPath('ckeditor_bs_grid') . '/js/plugins/bs_grid';
     return [
       'bs_grid' => [
         'label' => 'Bootstrap Grid',
@@ -65,7 +75,7 @@ class BsGrid extends CKEditorPluginBase implements CKEditorPluginConfigurableInt
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'ckeditor_bs_grid') . '/js/plugins/bs_grid/plugin.js';
+    return $this->moduleExtensionList->getPath('ckeditor_bs_grid') . '/js/plugins/bs_grid/plugin.js';
   }
 
   /**

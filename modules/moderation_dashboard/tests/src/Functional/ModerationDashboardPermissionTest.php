@@ -29,7 +29,7 @@ class ModerationDashboardPermissionTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  public function setUp(): void {
     parent::setUp();
 
     // Create a moderated entity type.
@@ -37,6 +37,7 @@ class ModerationDashboardPermissionTest extends BrowserTestBase {
       'type' => 'page',
     ]);
     $workflow = $this->createEditorialWorkflow();
+    // @phpstan-ignore-next-line
     $workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'page');
     $workflow->save();
   }

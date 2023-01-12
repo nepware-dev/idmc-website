@@ -16,10 +16,12 @@ access_conditions:
   -
     id: has_moderated_content_type
     negate: false
+    enable: true
     context_mapping: {  }
   -
     id: moderation_dashboard_access
     negate: false
+    enable: true
     context_mapping:
       dashboard_user: user
       current_user: current_user

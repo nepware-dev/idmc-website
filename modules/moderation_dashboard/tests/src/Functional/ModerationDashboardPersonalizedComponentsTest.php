@@ -57,7 +57,7 @@ class ModerationDashboardPersonalizedComponentsTest extends ModerationDashboardT
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->moderatorUser = $this->createUser($this->userPermissions, 'moderator user');

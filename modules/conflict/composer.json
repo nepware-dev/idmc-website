@@ -3,7 +3,7 @@
   "description": "Find merge conflicts in entities, perform auto merge where possible or offer a way for resolving them.",
   "type": "drupal-module",
   "keywords": ["Drupal"],
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "homepage": "https://www.drupal.org/project/conflict",
   "support": {
     "issues": "https://www.drupal.org/project/issues/conflict",

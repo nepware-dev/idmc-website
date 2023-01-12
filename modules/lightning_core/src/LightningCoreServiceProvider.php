@@ -18,11 +18,23 @@ final class LightningCoreServiceProvider extends ServiceProviderBase {
     $service_id = 'lightning.form_helper';
 
     if ($container->hasDefinition($service_id) === FALSE) {
-      $container->register($service_id, FormHelper::class)
+      $definition = $container->register($service_id, FormHelper::class)
         ->setArguments([
           new Reference('plugin.manager.element_info'),
-        ])
-        ->setDeprecated(TRUE, 'The "%service_id%" service is deprecated in lightning_core:8.x-5.6 and is removed from lightning_core:6.0.0. Use \Drupal\Core\Render\ElementInfoManagerInterface::getInfo() instead. See https://www.drupal.org/node/3156221');
+        ]);
+
+      // Construct the arguments to setDeprecated() dynamically since its
+      // signature is different in Symfony 6.
+      $arguments = [
+        TRUE,
+        'The "%service_id%" service is deprecated in lightning_core:8.x-5.6 and is removed from lightning_core:6.0.0. Use \Drupal\Core\Render\ElementInfoManagerInterface::getInfo() instead. See https://www.drupal.org/node/3156221',
+      ];
+      $reflector = new \ReflectionMethod($definition, 'setDeprecated');
+      if ($reflector->getNumberOfParameters() > 2) {
+        array_shift($arguments);
+        array_unshift($arguments, 'drupal/lightning_core', '8.x-5.6');
+      }
+      $definition->setDeprecated(...$arguments);
     }
   }
 

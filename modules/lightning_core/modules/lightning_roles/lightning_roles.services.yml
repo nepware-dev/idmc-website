@@ -4,3 +4,4 @@ services:
     arguments:
       - '@config.factory'
       - '@entity_type.manager'
+      - '@user.permissions'

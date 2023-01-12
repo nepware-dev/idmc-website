@@ -22,10 +22,10 @@ function lightning_search_node_type_insert(NodeTypeInterface $node_type) {
 
   $type = $node_type->id();
 
-  // No point in continuing without an index to configure.
+  // No point in continuing if the index is missing or disabled.
   /** @var \Drupal\search_api\IndexInterface $index */
   $index = Index::load('content');
-  if (empty($index)) {
+  if (empty($index) || !$index->status()) {
     return;
   }
 

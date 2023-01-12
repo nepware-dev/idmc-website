@@ -21,7 +21,8 @@ class Update8006Test extends KernelTestBase {
   protected $strictConfigSchema = FALSE;
 
   public function testUpdate() {
-    module_load_install('lightning_core');
+    $this->container->get('module_handler')
+      ->loadInclude('lightning_core', 'install');
     lightning_core_update_8006();
 
     $config = $this->container->get('config.factory')

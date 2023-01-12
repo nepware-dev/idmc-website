@@ -16,7 +16,7 @@ class NodeAutosaveFormTest extends ContentEntityAutosaveFormTestBase {
    *
    * @var array
    */
-  public static $modules = ['node'];
+  protected static $modules = ['node'];
 
   /**
    * The entity type to be tested.

@@ -12,7 +12,7 @@ class ModerationDashboardRedirectTest extends ModerationDashboardTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->config('system.site')
       ->set('page.403', '/user/login')
@@ -29,7 +29,7 @@ class ModerationDashboardRedirectTest extends ModerationDashboardTestBase {
     $this->drupalGet('user/login');
     $this->submitForm([
       'name' => $this->user->getDisplayName(),
-      'pass' => $this->user->passRaw,
+      'pass' => $this->user->passRaw, // @phpstan-ignore-line
     ], t('Log in'));
     $this->assertSession()->addressEquals("user/{$this->user->id()}/moderation/dashboard");
   }
@@ -43,7 +43,7 @@ class ModerationDashboardRedirectTest extends ModerationDashboardTestBase {
     $this->drupalGet('admin/content');
     $this->submitForm([
       'name' => $this->user->getDisplayName(),
-      'pass' => $this->user->passRaw,
+      'pass' => $this->user->passRaw, // @phpstan-ignore-line
     ], t('Log in'));
     $this->assertSession()->addressEquals('admin/content');
   }

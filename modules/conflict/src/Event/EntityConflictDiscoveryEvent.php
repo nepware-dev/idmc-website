@@ -2,8 +2,8 @@
 
 namespace Drupal\conflict\Event;
 
+use Symfony\Contracts\EventDispatcher\Event;
 use Drupal\Core\Entity\EntityInterface;
-use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class EntityConflictDiscoveryEvent extends Event {

@@ -33,7 +33,7 @@ class AccordionBlocksFeatureContext extends RawDrupalContext implements SnippetA
     $result = $query->condition('info', 'BDD TESTING', 'STARTS_WITH')
       ->execute();
     $eids = array_keys($result);
-    entity_delete_multiple('block_content', $eids);
+    \Drupal::service('entity_type.manager')->getStorage('block_content')->delete(\Drupal::service('entity_type.manager')->getStorage('block_content')->loadMultiple($eids));
 
   }
 

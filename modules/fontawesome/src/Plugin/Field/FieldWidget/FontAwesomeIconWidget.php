@@ -121,6 +121,7 @@ class FontAwesomeIconWidget extends WidgetBase implements ContainerFactoryPlugin
       'far' => $this->t('Regular'),
       'fal' => $this->t('Light'),
       'fad' => $this->t('Duotone'),
+      'fat' => $this->t('Thin'),
       'fak' => $this->t('Kit Uploads'),
     ];
     if (is_bool($configuration_settings->get('use_solid_file')) && !$configuration_settings->get('use_solid_file')) {
@@ -134,6 +135,9 @@ class FontAwesomeIconWidget extends WidgetBase implements ContainerFactoryPlugin
     }
     if (is_bool($configuration_settings->get('use_duotone_file')) && !$configuration_settings->get('use_duotone_file')) {
       unset($style_options['fad']);
+    }
+    if (is_bool($configuration_settings->get('use_thin_file')) && !$configuration_settings->get('use_thin_file')) {
+      unset($style_options['fat']);
     }
     $element['settings']['style'] = [
       '#type' => 'select',
@@ -149,6 +153,17 @@ class FontAwesomeIconWidget extends WidgetBase implements ContainerFactoryPlugin
       '#default_value' => $items[$delta]->get('style')->getValue() ?? array_keys($style_options)[0],
     ];
 
+    // Allow user to determine icon set.
+    $element['settings']['iconset'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Icon Set'),
+      '#description' => $this->t('Choose the Font Awesome icon set'),
+      '#options' => [
+        '' => $this->t('Classic'),
+        'fa-sharp' => $this->t('Sharp'),
+      ],
+      '#default_value' => isset($iconSettings['iconset']) ? $iconSettings['iconset'] : '',
+    ];
     // Allow user to determine size.
     $element['settings']['size'] = [
       '#type' => 'select',

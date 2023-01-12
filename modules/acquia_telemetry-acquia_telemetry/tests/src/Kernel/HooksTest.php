@@ -25,7 +25,7 @@ class HooksTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->telemetry = $this->prophesize(Telemetry::class);
     $this->container->set('acquia.telemetry', $this->telemetry->reveal());

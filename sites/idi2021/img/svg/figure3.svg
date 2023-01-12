@@ -43,12 +43,12 @@
 		<line class="st1" x1="0" y1="301.4" x2="436.1" y2="301.4"/>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 163.8431 318.0843)" class="st2 st3 st4">.0000</text>
-		<text transform="matrix(1 0 0 1 211.347 318.0843)" class="st2 st3 st4">.2000</text>
-		<text transform="matrix(1 0 0 1 258.8763 318.0843)" class="st2 st3 st4">.4000</text>
-		<text transform="matrix(1 0 0 1 306.1234 318.0843)" class="st2 st3 st4">.6000</text>
-		<text transform="matrix(1 0 0 1 353.5648 318.0843)" class="st2 st3 st4">.8000</text>
-		<text transform="matrix(1 0 0 1 402.0501 318.0843)" class="st2 st3 st4">.0000</text>
+		<text transform="matrix(1 0 0 1 163.8431 318.0843)" class="st2 st3 st4">0.000</text>
+		<text transform="matrix(1 0 0 1 211.347 318.0843)" class="st2 st3 st4">0.200</text>
+		<text transform="matrix(1 0 0 1 258.8763 318.0843)" class="st2 st3 st4">0.400</text>
+		<text transform="matrix(1 0 0 1 306.1234 318.0843)" class="st2 st3 st4">0.600</text>
+		<text transform="matrix(1 0 0 1 353.5648 318.0843)" class="st2 st3 st4">0.800</text>
+		<text transform="matrix(1 0 0 1 402.0501 318.0843)" class="st2 st3 st4">1.000</text>
 	</g>
 	<text transform="matrix(1 0 0 1 7.1604 310.5421)"><tspan x="0" y="0" class="st5 st6 st7">Colours:</tspan><tspan x="22.5" y="0" class="st5 st3 st7"> 2020 global average </tspan></text>
 	<text transform="matrix(1 0 0 1 7.1595 318.0921)"><tspan x="0" y="0" class="st5 st6 st7">Light grey:</tspan><tspan x="28.8" y="0" class="st5 st3 st7"> 2019 global average </tspan></text>

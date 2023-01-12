@@ -8,6 +8,7 @@ use Drupal\content_moderation\ModerationInformation;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Entity\TranslatableRevisionableStorageInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -261,7 +262,7 @@ class ModerationSidebarController extends ControllerBase {
       }
 
       // We maintain our own inline revisions tab.
-      if ($entity_type_id === 'node' && \Drupal::service('access_check.node.revision')->checkAccess($entity, \Drupal::currentUser()->getAccount())) {
+      if ($entity_type_id === 'node' && $entity->access('view all revisions')){
         $build['actions']['secondary']['version_history'] = [
           '#title' => $this->t('Show revisions'),
           '#type' => 'link',
@@ -335,6 +336,7 @@ class ModerationSidebarController extends ControllerBase {
     $node_storage = $this->entityTypeManager()->getStorage('node');
 
     $result = $node_storage->getQuery()
+      ->accessCheck(TRUE)
       ->allRevisions()
       ->condition($node->getEntityType()->getKey('id'), $node->id())
       ->sort($node->getEntityType()->getKey('revision'), 'DESC')
@@ -628,8 +630,7 @@ class ModerationSidebarController extends ControllerBase {
       $time_pretty = $this->t('@diff ago', ['@diff' => $diff]);
     }
     else {
-      $date = date('m/d/Y - h:i A', $time);
-      $time_pretty = $this->t('on @date', ['@date' => $date]);
+      $time_pretty = $this->t('on @date', ['@date' => \Drupal::service('date.formatter')->format($time, 'short')]);
     }
     return $time_pretty;
   }

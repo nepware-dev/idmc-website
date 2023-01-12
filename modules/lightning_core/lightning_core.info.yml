@@ -1,6 +1,5 @@
 name: 'Lightning Core'
-core: 8.x
-core_version_requirement: '^8 || ^9'
+core_version_requirement: '^9.3 || ^10'
 type: module
 package: Lightning
 description: 'Shared functionality for the Lightning distribution.'
@@ -16,7 +15,7 @@ components:
   - lightning_roles
   - lightning_search
 
-# Information added by Drupal.org packaging script on 2021-06-17
-version: '8.x-5.9'
+# Information added by Drupal.org packaging script on 2022-12-21
+version: '8.x-5.13'
 project: 'lightning_core'
-datestamp: 1623947752
+datestamp: 1671650261

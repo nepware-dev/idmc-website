@@ -51,7 +51,6 @@
             }
           var valueEmail = getParameter("email") ? getParameter("email") : "";
           $("#mce-EMAIL").val(valueEmail);
-
       }
     };
   })(jQuery);

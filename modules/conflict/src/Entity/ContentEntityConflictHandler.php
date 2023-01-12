@@ -4,6 +4,7 @@ namespace Drupal\conflict\Entity;
 
 use Drupal\Component\Utility\NestedArray;
 use Drupal\conflict\ConflictResolver\ConflictResolverManagerInterface;
+use Drupal\conflict\ConflictTypes;
 use Drupal\conflict\FieldComparatorManagerInterface;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\ContentEntityInterface;
@@ -234,6 +235,14 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
         $form_display = $form_state->getFormObject()
           ->getFormDisplay($form_state);
 
+        // Append each field's widget to the field so that further processing
+        // can access it.
+        foreach (array_keys($form_display->getComponents()) as $field_name) {
+          if ($entity->getFieldDefinition($field_name)) {
+            $entity->get($field_name)->conflictWidget = $form_display->getRenderer($field_name);
+          }
+        }
+
         // Auto merge changes in other translations.
         $this->autoMergeNonEditedTranslations($entity, $entity_server);
         // Auto merge changes in non-editable fields.
@@ -246,6 +255,12 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
         // Run the entities through the event system for conflict discovery
         // and resolution.
         $context = new ParameterBag(['form' => $form, 'form_state' => $form_state, 'form_display' => $form_display]);
+        // Disable the merge remote only changes strategy, which is enabled by
+        // default.
+        // TODO reconsider the decision for having all strategies enabled by
+        // default! They should be instead enabled through configuration and/or
+        // hooks/events.
+        $context->set('merge_strategy.disabled', ['conflict.merge_remote_only_changes']);
         $conflicts = $this->conflictManager->resolveConflicts($entity, $entity_server, $entity_original, $entity, $context);
 
         // In case the entity still has conflicts then a user interaction is
@@ -260,7 +275,7 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
           // would've been flagged by the entity constraint "EntityChanged".
           // @see \Drupal\Core\Entity\Plugin\Validation\Constraint\EntityChangedConstraint::$message
           // @see \Drupal\Core\Entity\Plugin\Validation\Constraint\EntityChangedConstraintValidator::validate()
-          if ($this->entityType->get('conflict_ui_merge_supported')) {
+          if ($this->entityType->get('conflict_ui_merge_supported') && !(bool) $form_state->get('manual-merge-not-possible')) {
             $path = implode('.', $form['#parents']);
             $conflict_paths = $form_state->get('conflict.paths') ?: [];
             $conflict_paths[$path] = ['entity_type' => $entity_type_id, 'entity_id' => $entity->id()];
@@ -452,7 +467,7 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
       $input = &$form_state->getUserInput();
       $auto_merged_untouched_fields = [];
       foreach ($conflicts as $field_name => $conflict_type) {
-        if ($conflict_type === static::CONFLICT_TYPE_SERVER_ONLY) {
+        if ($conflict_type === ConflictTypes::CONFLICT_TYPE_REMOTE) {
           $entity_local_edited->set($field_name, $entity_server->get($field_name)->getValue());
           $auto_merged_untouched_fields[] = $field_name;
 
@@ -596,7 +611,6 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
     $entity_server = $entity_server->getTranslation($langcode);
     $entity_local_original = $entity_local_original->getTranslation($langcode);
 
-    $skip_fields = [];
     // The revision created field is updated constantly and it will always cause
     // conflicts, therefore we skip it here, as it gets updated correctly on
     // submit during entity building from user input.
@@ -617,16 +631,9 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
       $field_items_list_server = $entity_server->get($field_name);
       $field_items_list_local_original = $entity_local_original->get($field_name);
 
-      // Check for changes between the server and the locally edited version.
-      if ($this->fieldComparatorManager->hasChanged($field_items_list_server, $field_items_list_local_edited, $langcode, $entity_type_id, $entity_bundle, $field_type, $field_name)) {
-        // Check for changes between the server and the locally used original
-        // version.
-        if ($this->fieldComparatorManager->hasChanged($field_items_list_server, $field_items_list_local_original, $langcode, $entity_type_id, $entity_bundle, $field_type, $field_name)) {
-          // Check for changes between the locally edited and locally used
-          // original version.
-          $conflict_type = $this->fieldComparatorManager->hasChanged($field_items_list_local_edited, $field_items_list_local_original, $langcode, $entity_type_id, $entity_bundle, $field_type, $field_name) ? static::CONFLICT_TYPE_BOTH : static::CONFLICT_TYPE_SERVER_ONLY;
-          $conflicts[$field_name] = $conflict_type;
-        }
+      $conflict_type = $this->fieldComparatorManager->getConflictType($field_items_list_local_edited, $field_items_list_server, $field_items_list_local_original, $langcode, $entity_type_id, $entity_bundle, $field_type, $field_name);
+      if ($conflict_type) {
+        $conflicts[$field_name] = $conflict_type;
       }
     }
     return $conflicts;
@@ -647,14 +654,9 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
   }
 
   /**
-   * Prepares the entity for the manual conflict resolution.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The current entity.
-   * @param \Drupal\Core\Entity\EntityInterface $entity_server
-   *   The server entity i.e. the current entity from the storage.
+   * {@inheritdoc}
    */
-  protected function prepareConflictResolution(EntityInterface $entity, EntityInterface $entity_server) {
+  public function prepareConflictResolution(EntityInterface $entity, EntityInterface $entity_server = NULL) {
     // Manual merge is needed if even after the auto-merge of non-edited
     // translations, fields with no edit access and entity metadata there
     // are still conflicts in the current translation and/or
@@ -663,7 +665,7 @@ class ContentEntityConflictHandler implements EntityConflictHandlerInterface, En
 
     // Append the server entity that will be used for building the manual
     // conflict resolution.
-    $entity->{static::CONFLICT_ENTITY_SERVER} = $entity_server;
+    $entity->{static::CONFLICT_ENTITY_SERVER} = $entity_server ?? 'removed';
   }
 
   /**

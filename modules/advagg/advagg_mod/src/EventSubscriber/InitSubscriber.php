@@ -127,7 +127,7 @@ class InitSubscriber implements EventSubscriberInterface {
    * Only if using unified_multisite_dir.
    */
   public function onEvent() {
-    $dir = rtrim($this->config->get('unified_multisite_dir'), '/');
+    $dir = rtrim((string) $this->config->get('unified_multisite_dir'), '/');
     if (empty($dir) || !file_exists($dir) || !is_dir($dir)) {
       return;
     }

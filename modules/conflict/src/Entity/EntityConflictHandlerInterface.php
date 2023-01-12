@@ -23,19 +23,14 @@ interface EntityConflictHandlerInterface {
   const CONFLICT_ENTITY_SERVER = 'conflictEntityServer';
 
   /**
+   * The entity object property name to use to append the form display.
+   */
+  const CONFLICT_FORM_DISPLAY = 'conflictFormDisplay';
+
+  /**
    * The entity object property name to use as a needs merge flag.
    */
   const CONFLICT_ENTITY_NEEDS_MANUAL_MERGE = 'conflictEntityNeedsManualMerge';
-
-  /**
-   * A constant indicating a server only change.
-   */
-  const CONFLICT_TYPE_SERVER_ONLY = 'server-only-change';
-
-  /**
-   * A constant indicating a merge conflict.
-   */
-  const CONFLICT_TYPE_BOTH = 'server-and-local-change';
 
   /**
    * A constant defining the property name on fields for the conflict type.
@@ -84,5 +79,17 @@ interface EntityConflictHandlerInterface {
    *  The current state of the form.
    */
   public function finishConflictResolution(EntityInterface $entity, $path_parents, FormStateInterface $form_state);
+
+  /**
+   * Prepares the entity for the manual conflict resolution.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The current entity.
+   * @param \Drupal\Core\Entity\EntityInterface $entity_server
+   *   (optional) The server entity i.e. the current entity from the storage or
+   *   NULL if the entity has been deleted or in case of inline reference the
+   *   relationship was removed.
+   */
+  public function prepareConflictResolution(EntityInterface $entity, EntityInterface $entity_server = NULL);
 
 }

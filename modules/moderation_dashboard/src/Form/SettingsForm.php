@@ -31,9 +31,16 @@ class SettingsForm extends ConfigFormBase {
     $config = $this->config('moderation_dashboard.settings');
     $form['redirect_on_login'] = [
       '#type' => 'checkbox',
-      '#title' => t('Redirect on login'),
+      '#title' => $this->t('Redirect on login'),
       '#default_value' => $config->get('redirect_on_login'),
       '#description' => $this->t('Redirect to moderation dashboard after login.'),
+    ];
+
+    $form['chart_js_cdn'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Pull chart.js from CDN'),
+      '#default_value' => $config->get('chart_js_cdn'),
+      '#description' => $this->t('Pull in chart.js from the CDN or leave uncheck to use local copy. For security it\'s best to use local copy'),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -46,6 +53,7 @@ class SettingsForm extends ConfigFormBase {
     $values = $form_state->getValues();
     $this->config('moderation_dashboard.settings')
       ->set('redirect_on_login', $values['redirect_on_login'])
+      ->set('chart_js_cdn', $values['chart_js_cdn'])
       ->save();
 
     parent::submitForm($form, $form_state);

@@ -6,6 +6,7 @@ use Drupal\content_moderation\ModerationInformationInterface;
 use Drupal\Core\Condition\ConditionPluginBase;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -80,7 +81,45 @@ class HasModeratedContentType extends ConditionPluginBase implements ContainerFa
   /**
    * {@inheritdoc}
    */
+  public function defaultConfiguration() {
+    return [
+      'enable' => FALSE,
+    ] + parent::defaultConfiguration();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+
+    $form['enable'] = [
+      '#title' => $this->t('Enable'),
+      '#type' => 'checkbox',
+      '#default_value' => $this->configuration['enable'],
+      '#description' => $this->t('Leaving this unchecked will bypass this condition.'),
+      '#weight' => 0,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->configuration['enable'] = $form_state->getValue('enable', FALSE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function evaluate() {
+    if (!$this->configuration['enable']) {
+      return TRUE;
+    }
+
     $entity_type = $this->entityTypeManager->getDefinition('node');
 
     foreach ($this->bundleInfo->getBundleInfo('node') as $bundle => $info) {

@@ -28,6 +28,9 @@ function lightning_roles_node_type_insert(NodeTypeInterface $node_type) {
 
   $storage = Drupal::entityTypeManager()->getStorage('user_role');
 
+  $all_permissions = Drupal::service('user.permissions')->getPermissions();
+  $all_permissions = array_keys($all_permissions);
+
   foreach ($config as $key => $info) {
     if (empty($info['enabled'])) {
       continue;
@@ -40,11 +43,12 @@ function lightning_roles_node_type_insert(NodeTypeInterface $node_type) {
       'is_admin' => FALSE,
     ]);
 
-    // Only grant permissions the role does not already have.
-    $permissions = array_diff(
-      array_map($permission_map, $info['permissions']),
-      $role->getPermissions()
-    );
+    // Replace ? in the permissions with the node type ID.
+    $permissions = str_replace('?', $node_type->id(), $info['permissions']);
+    // Filter out any undefined permissions.
+    $permissions = array_intersect($permissions, $all_permissions);
+    // Filter out any permissions the role already has.
+    $permissions = array_diff($permissions, $role->getPermissions());
 
     array_walk($permissions, [$role, 'grantPermission']);
     $role->save();
