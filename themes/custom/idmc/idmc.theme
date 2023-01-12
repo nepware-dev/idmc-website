@@ -1,0 +1,347 @@
+<?php
+
+require DRUPAL_ROOT.'/mylibs/twitteroauth/autoload.php';
+use Abraham\TwitterOAuth\TwitterOAuth;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Cache\Cache;
+
+function idmc_round($number){
+    $number = (int)$number;
+
+    if ($number <= 100) {
+        return $number;
+    } else if ($number > 100 && $number <= 1000) {
+        return round($number / 10) * 10;
+    } else if ($number > 1000 && $number <= 10000) {
+        return round($number / 100) * 100;
+    } else if($number > 10000) {
+        return round($number / 1000) * 1000;
+    } else {
+        return $number;
+    }
+}
+function idmc_preprocess_html(&$variables) {
+$variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+if (\Drupal::service('path.matcher')->isFrontPage()) {
+  $variables['attributes']['class'][] = 'is-front';
+}
+$node = \Drupal::routeMatch()->getParameter('node');
+if ($node) {
+//$variables['testtype']= $node->getType();
+//$content_type = $node->getType();
+//$variables['thisnode'] = $node;
+
+} 
+
+}
+function idmc_preprocess_node__country_profile(&$variables){
+
+    $node           = $variables['node'];
+    if (node_is_page($node)){
+    $idmc_server    = "https://api.idmcdb.org";
+    //$idmc_server    = "https://beta.api.idmcdb.org";
+    $iso3_val       = $node->field_iso3_code->getValue();
+    $iso3           = $iso3_val ? $iso3_val[0]['value'] : "";
+    $ci             = "MF005BCOMOCT02";
+    //$ci2             = "MF005BCOMOCT02";
+    $ci2             = "IDMCWSHSOLO009";
+
+    $variables['#cache']['max-age'] = 0;
+
+    $client = \Drupal::httpClient();
+    
+    
+    try {
+       //$response2       = $client->get("{$idmc_server}/api/psql/country_information?iso3=eq.{$iso3}&ci={$ci2}");
+       //$response2       = $client->get("{$idmc_server}/api/country_information?iso3={$iso3}&ci={$ci2}&year=2020");
+       //$data           = json_decode($response2->getBody());
+       //$data2           = $data->results;
+       //$country_info2   = $data2 ? $data2[0] : null;
+       //
+       //if(property_exists($country_info2, 'conflict_stock') ){
+       //    $country_info2->conflict_stock = idmc_round($country_info2->conflict_stock);
+       //}
+       //if(property_exists($country_info2, 'conflict_nd') ){
+       //    $country_info2->conflict_nd = idmc_round($country_info2->conflict_nd);
+       //}
+       //if(property_exists($country_info2, 'partial_solutions') ){
+       //    $country_info2->partial_solutions = idmc_round($country_info2->partial_solutions);
+       //}
+       //if(property_exists($country_info2, 'unverified_solutions') ){
+       //    $country_info2->unverified_solutions = idmc_round($country_info2->unverified_solutions);
+       //}
+       //if(property_exists($country_info2, 'disaster_nd') ){
+       //    $country_info2->disaster_nd = idmc_round($country_info2->disaster_nd);
+       //}
+       //
+       //$variables['country_info2'] = $country_info2;
+    } catch (RequestException $e) {
+
+    }
+    
+    $variables['#attached']['library'][] = 'idmc/smoothscroll';
+}}
+
+function idmc_preprocess_paragraph__priority_countries(&$variables) {
+    if (isset($variables['paragraph'])){
+        $paragraph = $variables['paragraph'];
+        if (!$paragraph->field_priority_background_image->isEmpty()) {
+            $image = $paragraph->field_priority_background_image->entity->url();
+            $variables['background_url'] = $image;
+        }
+    } else {
+        $variables['background_url'] = "";
+    }
+}
+
+function idmc_preprocess_paragraph__text_block(&$variables) {
+    if (isset($variables['paragraph'])){
+        $paragraph = $variables['paragraph'];
+        if (!$paragraph->field_background->isEmpty()) {
+            $image = $paragraph->field_background->entity->url();
+			$variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
+            $variables['background_url'] = $image;
+			$variables['attributes']['style'][] = 'background-size: cover;';
+			$variables['attributes']['style'][] = 'background-position: center center;';
+			$variables['attributes']['style'][] = 'color: white;';
+        }
+    } else {
+        $variables['background_url'] = "";
+    }
+}
+
+function idmc_preprocess_paragraph__infographic(&$variables) {
+    if (isset($variables['paragraph'])){
+        /*
+        $paragraph = $variables['paragraph'];
+        if (!$paragraph->field_background_infographic->isEmpty()) {
+            $image = $paragraph->field_background_infographic->entity->url();
+			$variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
+            $variables['background_url'] = $image;	
+			$variables['attributes']['style'][] = 'background-size: cover;';
+			$variables['attributes']['style'][] = 'background-position: center center;';
+			$variables['attributes']['style'][] = 'min-height: 550px;';
+			$variables['attributes']['style'][] = 'z-index: -1;';
+			$variables['attributes']['style'][] = 'color: white;';
+        }
+        */
+    } else {
+        $variables['background_url'] = "";
+    }
+}
+
+function time_elapsed_string($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'h',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . '' . $v . ($diff->$k > 1 && $k !== 'h' ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . '' : 'just now';
+}
+function idmc_preprocess_paragraph__infographic_twitter(&$variables) {
+    $variables["path"] = DRUPAL_ROOT.'/mylibs/twitteroauth/autoload.php';
+    $variables['#attached']['library'][] = 'idmc/paragraph-infographic';
+    $paragraph = $variables['paragraph'];
+	
+    }
+
+function idmc_preprocess_paragraph__idmc_live(&$variables) {
+    $variables["path"] = DRUPAL_ROOT.'/mylibs/twitteroauth/autoload.php';
+
+    $paragraph = $variables['paragraph'];
+
+    $CONSUMER_KEY = trim($paragraph->field_consumer_key->value);
+    $CONSUMER_SECRET = trim($paragraph->field_consumer_secret->value);
+    $access_token = trim($paragraph->field_access_token->value);
+    $access_token_secret = trim($paragraph->field_access_token_secret->value);
+    $user_id = trim($paragraph->field_user_timeline_id->value);
+
+    if($CONSUMER_KEY && $CONSUMER_SECRET && $access_token && $access_token_secret && $user_id){
+        $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET, $access_token, $access_token_secret);
+
+        $content = $connection->get("account/verify_credentials");
+        $tweets = $connection->get("statuses/user_timeline", ["user_id" => $user_id, "count" => 5, "exclude_replies" => true]);
+
+        // Format tweets
+        if (is_array($tweets) && count($tweets) > 0){
+            foreach ($tweets as $tweet){
+                $str = $tweet->text;
+    
+                $str =  preg_replace_callback("/http.[^\s]+/", function ($matches){
+                    return '<a target="_blank" href="'.$matches[0].'">'.$matches[0].'</a>';
+                }, $str);
+    
+                $str =  preg_replace_callback("/@(\w+)/", function ($matches){
+                    return '<a target="_blank" href="https://twitter.com/'. $matches[1] .'">@'.$matches[1].'</a>';
+                }, $str);
+    
+                $str = preg_replace_callback("/#(\w+)/", function ($matches){
+                    return '<a target="_blank" href="https://twitter.com/hashtag/'.$matches[1].'?src=hash">#'.$matches[1].'</a>';
+                }, $str);
+    
+                $tweet->text = $str;
+            }
+
+            $variables["tweet_0"] = isset($tweets[0]) ? $tweets[0] : null;
+            $variables["tweet_1"] = isset($tweets[1]) ? $tweets[1] : null;
+            $variables["tweet_0_date"] = isset($tweets[0]) ? time_elapsed_string($tweets[0]->created_at) : "";
+            $variables["tweet_1_date"] = isset($tweets[1]) ? time_elapsed_string($tweets[1]->created_at) : "";
+        }
+    }
+
+    $variables['#cache']['max-age'] = 0;
+}
+
+function idmc_preprocess_views_view__external_articles(&$variables) {
+    $view = $variables['view'];
+  
+    $variables['title'] = [
+      '#markup' => $view->getTitle(),
+    ];
+  }
+
+function idmc_preprocess_views_exposed_form(&$variables){
+    if(isset($_GET['search_api_fulltext'])){
+        $variables['get']['search_api_fulltext'] = \Drupal\Component\Utility\XSS::filter($_GET['search_api_fulltext']);
+    }
+
+    if(isset($_GET['field_region']) && is_array($_GET['field_region'])){
+        $options = [];
+        foreach ($_GET['field_region'] as $key => $c){
+            $term = Term::load($c);
+            $options[] = [
+                'name' => $term ? $term->getName() : "",
+                'value' => $c
+            ];
+        }
+        $variables['get']['region'] = ["#type" => "select", "#options" => $options];
+    }
+
+    if(isset($_GET['field_published_year']) && is_array($_GET['field_published_year'])){
+        $options = [];
+        foreach ($_GET['field_published_year'] as $key => $c){
+            $options[] = [
+                'name' => $c,
+                'value' => $c
+            ];
+        }
+        $variables['get']['year'] = ["#type" => "select", "#options" => $options];
+    }
+
+    if(isset($_GET['field_country']) && is_array($_GET['field_country'])){
+        $options = [];
+        foreach ($_GET['field_country'] as $key => $c){
+            $term = Term::load($c);
+            $options[] = [
+                'name' => $term ? $term->getName() : "",
+                'value' => $c
+            ];
+        }
+        $variables['get']['country'] = ["#type" => "select", "#options" => $options];
+    }
+
+    if(isset($_GET['field_theme']) && is_array($_GET['field_theme'])){
+        $options = [];
+        foreach ($_GET['field_theme'] as $key => $c){
+            $term = Term::load($c);
+            $options[] = [
+                'name' => $term ? $term->getName() : "",
+                'value' => $c
+            ];
+        }
+        $variables['get']['theme'] = ["#type" => "select", "#options" => $options];
+    }
+
+    if(isset($_GET['field_authors']) && is_array($_GET['field_authors'])){
+        $options = [];
+        foreach ($_GET['field_authors'] as $key => $c){
+            $term = Term::load($c);
+            $options[] = [
+                'name' => $term ? $term->getName() : "",
+                'value' => $c
+            ];
+        }
+        $variables['get']['author'] = ["#type" => "select", "#options" => $options];
+    }
+
+    if(isset($_GET['type']) && is_array($_GET['type'])){
+        $options = [];
+        foreach ($_GET['type'] as $key => $c){
+            $options[] = [
+                'name' => $c,
+                'value' => $c
+            ];
+        }
+        $variables['get']['type'] = ["#type" => "select", "#options" => $options];
+    }
+
+    // GET param
+    $variables['params'] = $_GET;
+
+    // Detect device
+    require_once DRUPAL_ROOT.'/mylibs/mobiledetect/Mobile_Detect.php';
+    $detect = new Mobile_Detect;
+    $variables['is_mobile'] = $detect->isMobile();
+    $variables['#cache']['max-age'] = 0;
+}
+
+function idmc_preprocess_views_view__list_publications(&$variables) {
+    $actualLink = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+    $actualPath = parse_url($actualLink)['path'];
+
+    $correctPath = Url::fromRoute('view.list_publications.page_1')->toString();
+
+    // redirect to correct path if it's correct but followed by '/' in the end    
+    if ($actualPath === $correctPath . '/') {
+        $response = new RedirectResponse($correctPath);
+        $response->send();
+        return;
+    // redirect to 404 not found if path is wrong
+    } else if ($actualPath !== $correctPath) {
+        throw new NotFoundHttpException();
+    }
+}
+
+
+
+
+
+
+
+//function idmc_theme_suggestions_file_link_alter(&$suggestions, $vars, $hook) {
+
+  // Get the node type.
+  //$node = \Drupal::routeMatch()->getParameter('node');
+  //$type = $node->getType();
+
+  // Create the theme hook suggestion. 
+  //$suggestions[] = 'file__link__' . 'type_' . $type;
+
+//}

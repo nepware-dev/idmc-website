@@ -1,6 +1,0 @@
-dialog:
-  version: VERSION
-  css:
-    component:
-      css/dialog.css: { minified: true }
-      css/grid.css: { minified: true }
