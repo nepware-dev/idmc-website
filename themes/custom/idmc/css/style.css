@@ -1456,7 +1456,6 @@ float: right;
 }
 
 .global-picture-container .map-title {
-    white-space: nowrap;
     font-family: Lato;
     font-size: 21px;
     font-weight: normal;
@@ -1523,7 +1522,6 @@ float: right;
     border: 0;
     max-width: 1096px;
     width: 95%;
-    height: 612px;
 }
 /* end of global picture block */
 

@@ -55,23 +55,3 @@
   </div>
 {% endblock paragraph %}
 {#}
-
-
-{% block paragraph %}
-<div class="visible-xs">
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="row xs-padding">
-        <div class="container">
-          <h1 class="paragraph-title">{{ content.field_ptitle }}</h1>
-          <p>View and interact with near real-time updates of situations of internal displacement on desktop. </p>
-         <a href="/countries"> <img src="/sites/default/files/internal_displacement_updates.jpg" style="width:100%; height:auto;margin-bottom:2em" /></a>
-        </div>
-      </div>
-      <div class="row" id ="select2c-x">
-          {{ content.field_dropdown_countries }}
-      </div>
-    {% endblock %}
-  </div>
-</div>
-{% endblock paragraph %}
